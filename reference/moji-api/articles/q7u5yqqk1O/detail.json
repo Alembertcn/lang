@@ -1,0 +1,131 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "N2高频200词速记",
+      "subtitle": "N2高频200词速记",
+      "brief": "已完结专栏，共7篇文章，帮助你速记N2高频200词",
+      "coverId": "9e0d014c-0394-4d88-b147-da0be497f8f3",
+      "captionTeamId": "",
+      "type": "article",
+      "readingTags": [
+        "10000009",
+        "10000080"
+      ],
+      "levelTags": [
+        "N2"
+      ],
+      "powerTags": [],
+      "subscribedNum": 13827,
+      "articleNum": 7,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "PMf2NZDTwm",
+        "EG9sJdqijH"
+      ],
+      "createdAt": "2025-11-25T06:16:35.665Z",
+      "updatedAt": "2026-10-16T07:06:46.288Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-09-30T16:00:00.000Z"
+      },
+      "objectId": "crt8hgfmgl"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-11-28T03:43:21.748Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "5.インタビューの一日 | 采访的一天",
+    "coverId": "019c6f9a-52f8-4b43-a5c0-12a859065910.png",
+    "excerpt": " 昨日、学校の【活動】で、先輩に【インタビュー】をしました。【テーマ】は「学生の生活」です。 私の【",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "4e681aaa-9b48-43ca-8ce9-3d6fa7b5e7ad.MP3",
+    "audioDuration": 119,
+    "viewedNum": 440,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 1,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 9,
+    "isTrialRead": true,
+    "createdAt": "2025-11-25T08:03:51.204Z",
+    "updatedAt": "2026-10-15T17:25:44.655Z",
+    "analysisStatus": 1,
+    "analysisTime": 1764301401483,
+    "charsNum": 1039,
+    "columnId": "crt8hgfmgl",
+    "contentId": "a39ambi51rq7u5yqqk1O",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000026",
+      "10000027",
+      "10000118",
+      "10000060"
+    ],
+    "shareStyle": 2,
+    "vTag": "1764301401748",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-30T16:00:00.000Z"
+    },
+    "outSharedNum": 111,
+    "objectId": "q7u5yqqk1O",
+    "notationTitle": "<span class=\"moji-notation\"><span class=\"moji-toolkit-org\" lemma=\"五\" lemma-t=\"\">5</span><span class=\"moji-toolkit-org\" lemma=\"．\" lemma-t=\"\">.</span><span class=\"moji-toolkit-org\" lemma=\"インタビュー-interview\" lemma-t=\"interview\">インタビュー</span><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby><rb>一</rb><rp>(</rp><rt roma=\"ichi\" hiragana=\"いち\" lemma=\"一\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n4=\"\"><rb>日</rb><rp>(</rp><rt roma=\"nichi\" hiragana=\"にち\" lemma=\"日\" lemma-t=\"\"></rt><rp>)</rp></ruby> | 采访的一天</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N2高频200词速记",
+      "subtitle": "N2高频200词速记",
+      "brief": "已完结专栏，共7篇文章，帮助你速记N2高频200词",
+      "coverId": "9e0d014c-0394-4d88-b147-da0be497f8f3",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "",
+    "displayTags": [
+      "考试",
+      "生活"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

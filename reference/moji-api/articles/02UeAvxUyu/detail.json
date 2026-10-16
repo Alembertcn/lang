@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "lrVMKTEiK0",
+      "name": "nebula",
+      "username": "6b1TkHZ7mmWWOiNxSk5spBz9v",
+      "vTag": "1695285003702",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP3254487"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-12-18T08:36:12.698Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第四课.追星谷子：“有演唱会！”",
+    "coverId": "6f4255cc-18f6-45da-a3e0-91b73c8169a3.png",
+    "excerpt": " 李：佐藤さん、来週の 金曜日に 私たちの 好きなアイドルグループの コンサートが あります。一緒に",
+    "createdBy": "lrVMKTEiK0",
+    "audioId": "baf10151-d83b-4b93-bba7-3fc4618462b6.mp3",
+    "audioDuration": 74,
+    "viewedNum": 589,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 9,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 14,
+    "isTrialRead": true,
+    "createdAt": "2025-12-18T08:36:12.699Z",
+    "updatedAt": "2026-10-15T02:58:42.102Z",
+    "analysisStatus": 1,
+    "analysisTime": 1766046972774,
+    "charsNum": 1503,
+    "columnId": "0ovamn9iev",
+    "contentId": "02UeAvxUyu",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N4",
+      "N5"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000118",
+      "10000030",
+      "10000031",
+      "10000026"
+    ],
+    "shareStyle": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-30T16:00:00.000Z"
+    },
+    "outSharedNum": 129,
+    "objectId": "02UeAvxUyu",
+    "notationTitle": "第四课.追星谷子：“有演唱会！”",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "NCPhpCpUY8",
+    "previousId": "5eSfKbAGed",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

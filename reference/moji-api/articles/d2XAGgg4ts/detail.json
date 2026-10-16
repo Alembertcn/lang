@@ -1,0 +1,127 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-06-11T05:58:28.070Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第二课:重点理解-接下来怎么办",
+    "coverId": "65b8acee-3258-4361-b8a4-46c7ea14bbe1.png",
+    "excerpt": " 第二课:重点理解-接下来怎么办 准备纸笔，点击页面下方的音频播放按钮开始练习 第一遍：真题实训 第",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "abd1d6e4-49cb-46b4-9961-a4cc6a7766bd.MP3",
+    "audioDuration": 235,
+    "viewedNum": 4719,
+    "commentedNum": 13,
+    "votedNum": 2605,
+    "likedNum": 24,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 9,
+    "isTrialRead": true,
+    "createdAt": "2025-06-09T09:42:34.872Z",
+    "updatedAt": "2026-10-16T08:26:58.972Z",
+    "analysisStatus": 1,
+    "analysisTime": 1749621507809,
+    "charsNum": 6107,
+    "columnId": "0ovamn9iev",
+    "contentId": "naiek998ojd2XAGgg4ts",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000121",
+      "10000009",
+      "10000010"
+    ],
+    "shareStyle": 2,
+    "vTag": "1749621508070",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-06-11T03:34:36.018Z"
+    },
+    "outSharedNum": 352,
+    "objectId": "d2XAGgg4ts",
+    "notationTitle": "第二课:重点理解-接下来怎么办",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "MrYryqUuRN",
+    "previousId": "turxXeBk7v",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

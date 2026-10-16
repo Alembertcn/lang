@@ -1,0 +1,143 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-01-03T07:20:09.894Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "人类是否应该开发AI武器？日本这样回答！",
+    "coverId": "4c7583c4-f3c2-487f-8f82-c31c4b381f4d.png",
+    "excerpt": "外務省 “人間の関与が及ばないAI兵器は認めるべきではない” AI＝人工知能を使った兵器について、外",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "2629e496-a9ed-4093-b3e7-1dc0edcbde3b.mp3",
+    "audioDuration": 74,
+    "viewedNum": 2646,
+    "commentedNum": 5,
+    "votedNum": 0,
+    "likedNum": 16,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2024-06-28T09:40:05.531Z",
+    "updatedAt": "2026-10-14T19:20:03.207Z",
+    "analysisStatus": 1,
+    "analysisTime": 1735888809714,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "y0sj04xffpoSMMagUwkAY",
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000020",
+      "10000022",
+      "10000168"
+    ],
+    "vTag": "1735888809894",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-06-29T23:35:00.000Z"
+    },
+    "outSharedNum": 60,
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "charsNum": 1027,
+    "objectId": "SMMagUwkAY",
+    "notationTitle": "人类是否应该开发AI武器？日本这样回答！",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "BErAd8zQb1",
+    "previousId": "4YxbmHkkBD",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

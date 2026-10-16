@@ -1,0 +1,145 @@
+{
+  "1": [
+    {
+      "objectId": "cRLYHFA9kK",
+      "name": "u650Lg",
+      "username": "nesora@outlook.com",
+      "email": "nesora@outlook.com",
+      "vTag": "1698054003248",
+      "imgVer_a": 3,
+      "imgVer_f": 2,
+      "unionId": "JP20108"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-07-16T02:06:14.988Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "新的希望！研究发现一肠道细菌可增强抗癌药疗效",
+    "coverId": "8a60f580-4e5c-4ad1-b1bf-fd04d5a5c917.jpg",
+    "excerpt": "がん治療薬の効果高める腸内細菌を発見 マウスでの実験成功 国立がん研究センターなどのグループは、がん",
+    "createdBy": "cRLYHFA9kK",
+    "audioId": "dd484109-6b25-4b18-892a-3c1a11c7f89c.mp3",
+    "audioDuration": 102,
+    "viewedNum": 2507,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 16,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-07-15T07:01:09.791Z",
+    "updatedAt": "2026-10-11T05:46:02.983Z",
+    "analysisStatus": 1,
+    "analysisTime": 1752631574816,
+    "charsNum": 1023,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "mu5oad3ajshUHXEcwHuSy",
+    "freeTransNum": 1,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000020",
+      "10000022",
+      "10000023"
+    ],
+    "shareStyle": 2,
+    "vTag": "1752631574988",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-07-15T23:35:00.000Z"
+    },
+    "outSharedNum": 212,
+    "objectId": "UHXEcwHuSy",
+    "notationTitle": "新的希望！研究发现一肠道细菌可增强抗癌药疗效",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "zOStJOHNUT",
+    "previousId": "i7sEhUje3P",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

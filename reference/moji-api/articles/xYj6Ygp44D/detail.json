@@ -1,0 +1,139 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "KjKUelL9GU",
+        "jYi9uYHMxJ",
+        "vdriBjucaM",
+        "VAXWdT4ggf",
+        "9r8XOy1RcF"
+      ],
+      "title": "社会新语",
+      "coverId": "8356f3ba-401d-4c8c-bcd3-17850153d376",
+      "brief": "探讨日本社会万象的社论专栏",
+      "articleNum": 527,
+      "isTrash": false,
+      "isVIP": true,
+      "subscribedNum": 82546,
+      "createdAt": "2022-08-02T07:56:05.468Z",
+      "updatedAt": "2026-10-16T07:52:22.540Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-13T01:00:00.000Z"
+      },
+      "isDetailRead": true,
+      "type": "article",
+      "subtitle": "社会新語",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000089",
+        "10000019",
+        "10000009"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": true,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "k5D1O7Drwh"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-05-27T03:50:49.439Z"
+    },
+    "title": "书店消失｜書店消失",
+    "coverId": "c13d9842-a734-49ae-b50f-364f58b6d888",
+    "excerpt": " 书店消失 夢に本屋が出てきたことがある。書棚で何かを探しているのだが、そこはむかし郷里にあった小さ",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 18282,
+    "commentedNum": 60,
+    "votedNum": 0,
+    "likedNum": 126,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "createdAt": "2022-09-13T15:21:25.122Z",
+    "updatedAt": "2026-10-16T08:17:08.331Z",
+    "contentId": "hbeul9nxyixYj6Ygp44D",
+    "columnId": "k5D1O7Drwh",
+    "outSharedNum": 1299,
+    "vTag": "1748317849439",
+    "notationHtmlSuccess": true,
+    "analysisStatus": 1,
+    "analysisTime": 1748317849135,
+    "levelTags": [
+      "n1up",
+      "N1"
+    ],
+    "readingTags": [
+      "10000019",
+      "10000089",
+      "10000009",
+      "10000011",
+      "10000012",
+      "10000021",
+      "10000022",
+      "10000371"
+    ],
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "charsNum": 2326,
+    "processScore": 9,
+    "recommendUrls": [
+      null
+    ],
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2022-09-13T16:00:00.000Z"
+    },
+    "objectId": "xYj6Ygp44D",
+    "notationTitle": "书店消失｜書店消失",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "社会新语",
+      "subtitle": "社会新語",
+      "brief": "探讨日本社会万象的社论专栏",
+      "coverId": "8356f3ba-401d-4c8c-bcd3-17850153d376",
+      "isSubscribed": false
+    },
+    "nextId": "JSspbWZGyS",
+    "previousId": "Y1tzXgUUeu",
+    "displayTags": [
+      "考试",
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

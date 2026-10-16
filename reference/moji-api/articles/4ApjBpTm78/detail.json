@@ -1,0 +1,143 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-08-02T01:23:11.827Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "带头违规？马斯克涉嫌在X平台传播虚假视频！",
+    "coverId": "5dc1e6a8-0dc5-4c63-8c1f-dc6563587d4f.png",
+    "excerpt": "マスク氏 ハリス副大統領の偽動画をXで拡散 批判の声上がる 実業家のイーロン・マスク氏がみずからが所",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "481d97df-078f-49b6-8291-5530a40a8cd8.mp3",
+    "audioDuration": 84,
+    "viewedNum": 1690,
+    "commentedNum": 7,
+    "votedNum": 0,
+    "likedNum": 13,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2024-07-31T09:55:27.898Z",
+    "updatedAt": "2026-10-16T08:19:02.889Z",
+    "analysisStatus": 1,
+    "analysisTime": 1722561791532,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "dkje59chtv84ApjBpTm78",
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000020",
+      "10000022",
+      "10000168",
+      "10000262"
+    ],
+    "vTag": "1722561791827",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-07-31T23:35:00.000Z"
+    },
+    "outSharedNum": 57,
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "4ApjBpTm78",
+    "notationTitle": "带头违规？马斯克涉嫌在X平台传播虚假视频！",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "S2Eryk3wks",
+    "previousId": "nTQdxdlGUr",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

@@ -1,0 +1,136 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-13T05:41:12.203Z",
+      "updatedAt": "2026-10-16T07:30:20.555Z",
+      "title": "晨读",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "ownerIds": [
+        "GJiALasaYI",
+        "vdriBjucaM",
+        "PMf2NZDTwm",
+        "KjKUelL9GU",
+        "KoXijCLUUh",
+        "jyOqsrjkrr",
+        "CJFe5gR5Zf",
+        "3KLiPXqIGB"
+      ],
+      "articleNum": 423,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:00:00.000Z"
+      },
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "subscribedNum": 117210,
+      "isDetailRead": true,
+      "isVIP": false,
+      "type": "audioArticle",
+      "subtitle": "朝読書",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000099"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": true
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "e72cANzo2W"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-09-19T02:07:27.568Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "福山润 | 八音盒（2）",
+    "coverId": "0aba58d8-94ef-43ce-884c-aa60ea18e983.jpg",
+    "excerpt": "事故 | 事故 手元のオルゴールを見る、もう10年近く経ってだいぶ古びてきてはいるが、その音色は変わ",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "768ac753-2ad7-4991-a2eb-fae4230ee390.mp3",
+    "audioDuration": 183,
+    "viewedNum": 5798,
+    "commentedNum": 10,
+    "votedNum": 0,
+    "likedNum": 17,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2024-07-29T16:54:25.323Z",
+    "updatedAt": "2026-10-16T06:49:52.654Z",
+    "analysisStatus": 1,
+    "analysisTime": 1726711647424,
+    "columnId": "e72cANzo2W",
+    "contentId": "sefw90vmbf9nACUhOqu3J",
+    "levelTags": [
+      "n1up",
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000099",
+      "10000116",
+      "10000117",
+      "10000101",
+      "10000102"
+    ],
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-07-29T23:00:00.000Z"
+    },
+    "vTag": "1726711647568",
+    "outSharedNum": 176,
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "nACUhOqu3J",
+    "notationTitle": "<span class=\"moji-notation\">福山润 | 八音盒（2）</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "晨读",
+      "subtitle": "朝読書",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "isSubscribed": false
+    },
+    "nextId": "eg6AvHynzB",
+    "previousId": "t0QKEnbZF5",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

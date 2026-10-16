@@ -1,0 +1,142 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-04-30T03:16:18.299Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "有违公平竞争！公取委就公寓维修项目“串通承包”行为对相关企业实行突击检查",
+    "coverId": "496d8a31-953a-4c53-bf0d-861d6484d319.png",
+    "excerpt": "マンション修繕受注調整問題 公取委が複数会社に立ち入り検査 関東地方のマンションの老朽化などに伴う大",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "56591885-a476-4804-98de-367f36a08f8b.MP3",
+    "audioDuration": 98,
+    "viewedNum": 2849,
+    "commentedNum": 7,
+    "votedNum": 0,
+    "likedNum": 23,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-04-01T07:01:47.209Z",
+    "updatedAt": "2026-10-16T07:47:11.476Z",
+    "analysisStatus": 1,
+    "analysisTime": 1777518978214,
+    "charsNum": 1120,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "xrsf2mn627Z4cMoFF26w",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000020",
+      "10000243"
+    ],
+    "shareStyle": 2,
+    "vTag": "1777518978299",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-04-01T23:35:00.000Z"
+    },
+    "outSharedNum": 223,
+    "objectId": "Z4cMoFF26w",
+    "notationTitle": "有违公平竞争！公取委就公寓维修项目“串通承包”行为对相关企业实行突击检查",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "DGcItNFiOO",
+    "previousId": "Nl2uqyQgw0",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

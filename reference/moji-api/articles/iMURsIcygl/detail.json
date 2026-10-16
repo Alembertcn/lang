@@ -1,0 +1,146 @@
+{
+  "1": [
+    {
+      "objectId": "mCN9B1o8xR",
+      "name": "はるのせい",
+      "username": "fengqingqing08@outlook.com",
+      "email": "fengqingqing08@outlook.com",
+      "vTag": "1686105304042",
+      "imgVer_a": 1,
+      "imgVer_f": 1,
+      "unionId": "JP3129463"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-01-22T10:34:18.314Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "秃头星人福音？“催产素”或有助于生发",
+    "coverId": "4a06d9c9-e7c1-4456-ba97-53cb45effb8b.jpg",
+    "excerpt": "「オキシトシン」に毛の成長促す働き 神奈川の研究所など発表 出産前や授乳期の女性で多く分泌されるオキ",
+    "createdBy": "mCN9B1o8xR",
+    "audioId": "8f3be810-0671-4b96-b60f-c2ab864b0edd.mp3",
+    "audioDuration": 103,
+    "viewedNum": 1772,
+    "commentedNum": 5,
+    "votedNum": 0,
+    "likedNum": 15,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2024-01-22T10:20:16.410Z",
+    "updatedAt": "2026-10-15T05:40:55.643Z",
+    "analysisStatus": 1,
+    "analysisTime": 1705919658133,
+    "contentId": "ouaz2a4828giMURsIcygl",
+    "notationHtmlSuccess": true,
+    "vTag": "1705919658314",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-01-22T23:35:00.000Z"
+    },
+    "columnId": "G4kGjT2T7y",
+    "outSharedNum": 68,
+    "levelTags": [
+      "N1",
+      "n1up"
+    ],
+    "readingTags": [
+      "10000019",
+      "10000116",
+      "10000020",
+      "10000023",
+      "10000154"
+    ],
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "iMURsIcygl",
+    "notationTitle": "秃头星人福音？“催产素”或有助于生发",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "yLPPJBmcUy",
+    "previousId": "KQoM0H1hAY",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "N2高频200词速记",
+      "subtitle": "N2高频200词速记",
+      "brief": "已完结专栏，共7篇文章，帮助你速记N2高频200词",
+      "coverId": "9e0d014c-0394-4d88-b147-da0be497f8f3",
+      "captionTeamId": "",
+      "type": "article",
+      "readingTags": [
+        "10000009",
+        "10000080"
+      ],
+      "levelTags": [
+        "N2"
+      ],
+      "powerTags": [],
+      "subscribedNum": 13827,
+      "articleNum": 7,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "PMf2NZDTwm",
+        "EG9sJdqijH"
+      ],
+      "createdAt": "2025-11-25T06:16:35.665Z",
+      "updatedAt": "2026-10-16T07:06:46.288Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-09-30T16:00:00.000Z"
+      },
+      "objectId": "crt8hgfmgl"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-11-28T03:37:18.109Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "2.雨の日のアルバイト | 雨天的打工",
+    "coverId": "86faf13d-cfa6-4f10-a2ff-c8fab06dc9fb.png",
+    "excerpt": " 昨日の朝は雨が降っていて、天気が【悪かった】ですが、それでも出発しなければなりませんでした。 私は",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "c700c7f0-88fb-4301-9501-e9fb4df04e58.MP3",
+    "audioDuration": 106,
+    "viewedNum": 1462,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 14,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 9,
+    "isTrialRead": true,
+    "createdAt": "2025-11-25T07:36:42.543Z",
+    "updatedAt": "2026-10-16T07:29:07.011Z",
+    "analysisStatus": 1,
+    "analysisTime": 1764301037900,
+    "charsNum": 939,
+    "columnId": "crt8hgfmgl",
+    "contentId": "mli3vbk8rnbjZeZgjqi0U",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000026",
+      "10000027",
+      "10000060"
+    ],
+    "shareStyle": 2,
+    "vTag": "1764301038109",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-30T16:00:00.000Z"
+    },
+    "outSharedNum": 191,
+    "objectId": "jZeZgjqi0U",
+    "notationTitle": "<span class=\"moji-notation\"><span class=\"moji-toolkit-org\" lemma=\"二\" lemma-t=\"\">2</span><span class=\"moji-toolkit-org\" lemma=\"．\" lemma-t=\"\">.</span><ruby n5=\"\"><rb>雨</rb><rp>(</rp><rt roma=\"ame\" hiragana=\"あめ\" lemma=\"雨\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby n4=\"\"><rb>日</rb><rp>(</rp><rt roma=\"hi\" hiragana=\"ひ\" lemma=\"日\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><span class=\"moji-toolkit-org\" lemma=\"アルバイト-Arbeit\" lemma-t=\"Arbeit\">アルバイト</span> | <ruby n2=\"\"><rb>雨天</rb><rp>(</rp><rt roma=\"uten\" hiragana=\"うてん\" lemma=\"雨天\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n1=\"\" n3=\"\"><rb>的</rb><rp>(</rp><rt roma=\"teki\" hiragana=\"てき\" lemma=\"的\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>打</rb><rp>(</rp><rt roma=\"da\" hiragana=\"だ\" lemma=\"打\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>工</rb><rp>(</rp><rt roma=\"kou\" hiragana=\"こう\" lemma=\"工\" lemma-t=\"\"></rt><rp>)</rp></ruby></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N2高频200词速记",
+      "subtitle": "N2高频200词速记",
+      "brief": "已完结专栏，共7篇文章，帮助你速记N2高频200词",
+      "coverId": "9e0d014c-0394-4d88-b147-da0be497f8f3",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "",
+    "displayTags": [
+      "考试",
+      "生活"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

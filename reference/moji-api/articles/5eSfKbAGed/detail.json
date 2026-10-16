@@ -1,0 +1,129 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-09-28T09:11:11.457Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第七课·文化娱乐：“一起过新年吧~”",
+    "coverId": "e46e8dbb-ba00-43b3-9e66-de8d6258e342.jpg",
+    "excerpt": "どのようにお正月を 李：もうすぐ お正月 ですよね。日本では、どのように お正月を 過ごしますか。 ",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "3971ec9f-a439-4a7c-a341-1403017164c3.mp3",
+    "audioDuration": 86,
+    "viewedNum": 2426,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 15,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 14,
+    "isTrialRead": true,
+    "createdAt": "2025-09-02T07:50:55.062Z",
+    "updatedAt": "2026-10-16T02:10:46.412Z",
+    "analysisStatus": 1,
+    "analysisTime": 1759050671276,
+    "charsNum": 2915,
+    "columnId": "0ovamn9iev",
+    "contentId": "7cu77q8hgn55eSfKbAGed",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N4"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000118",
+      "10000026",
+      "10000116",
+      "10000027",
+      "10000121"
+    ],
+    "shareStyle": 2,
+    "vTag": "1759050671457",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-03T02:44:06.993Z"
+    },
+    "outSharedNum": 349,
+    "objectId": "5eSfKbAGed",
+    "notationTitle": "第七课·文化娱乐：“一起过新年吧~”",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "Dp2v9EPzn7",
+    "previousId": "4Nx78hIzXg",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

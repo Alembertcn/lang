@@ -1,0 +1,144 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-07-18T10:02:10.415Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "又添新就业机会啦~JR东日本计划每年培养100名外籍人才",
+    "coverId": "0592cdd8-dc3e-4d1f-927b-e4ec624a7c3f.jpg",
+    "excerpt": "JR東日本 外国人材 年間最大100人程度育成へ 他社の研修生も JR東日本は今日、車両やレール、電",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "2dc8c988-e136-4ab8-90f7-5954ee04fed3.MP3",
+    "audioDuration": 90,
+    "viewedNum": 2785,
+    "commentedNum": 7,
+    "votedNum": 0,
+    "likedNum": 18,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-07-18T10:02:10.416Z",
+    "updatedAt": "2026-10-15T06:44:00.188Z",
+    "analysisStatus": 1,
+    "analysisTime": 1752832930533,
+    "charsNum": 924,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "lilZbTWgDT",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000121",
+      "10000019",
+      "10000023",
+      "10000022",
+      "10000020"
+    ],
+    "shareStyle": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-07-19T23:35:00.000Z"
+    },
+    "outSharedNum": 243,
+    "objectId": "lilZbTWgDT",
+    "notationTitle": "又添新就业机会啦~JR东日本计划每年培养100名外籍人才",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "tcBMjdAPud",
+    "previousId": "yDcIgxePvi",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

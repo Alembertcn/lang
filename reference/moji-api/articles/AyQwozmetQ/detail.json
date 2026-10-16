@@ -1,0 +1,135 @@
+{
+  "1": [
+    {
+      "objectId": "jyOqsrjkrr",
+      "name": "好想食深海大肥🐷",
+      "username": "546669354@qq.com",
+      "email": "546669354@qq.com",
+      "vTag": "1731316981563",
+      "imgVer_a": 8,
+      "imgVer_f": 5,
+      "unionId": "JP308143"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-13T05:41:12.203Z",
+      "updatedAt": "2026-10-16T07:30:20.555Z",
+      "title": "晨读",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "ownerIds": [
+        "GJiALasaYI",
+        "vdriBjucaM",
+        "PMf2NZDTwm",
+        "KjKUelL9GU",
+        "KoXijCLUUh",
+        "jyOqsrjkrr",
+        "CJFe5gR5Zf",
+        "3KLiPXqIGB"
+      ],
+      "articleNum": 423,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:00:00.000Z"
+      },
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "subscribedNum": 117210,
+      "isDetailRead": true,
+      "isVIP": false,
+      "type": "audioArticle",
+      "subtitle": "朝読書",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000099"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": true
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "e72cANzo2W"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2022-10-21T07:48:43.047Z"
+    },
+    "title": "梶裕贵 | 在恋洼烤鸡肉串店的工作中自得其乐（中篇）",
+    "coverId": "00586d9d-1b58-4d76-9a62-6bf2232492a6",
+    "excerpt": "アルバイトは週に4日くらい入っていたが、「今日もバイトめんどくさいな」と思いつつ、そこそこ仕事がこな",
+    "createdBy": "jyOqsrjkrr",
+    "audioId": "991603f4-930a-4dc7-985b-98f73731a4c6.mp3",
+    "audioDuration": 267,
+    "viewedNum": 2801,
+    "commentedNum": 5,
+    "votedNum": 0,
+    "likedNum": 29,
+    "collectedNum": 35,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 8,
+    "createdAt": "2022-10-21T07:48:43.049Z",
+    "updatedAt": "2026-10-15T23:17:06.939Z",
+    "contentId": "AyQwozmetQ",
+    "notationHtmlSuccess": true,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2022-10-23T23:00:00.000Z"
+    },
+    "columnId": "e72cANzo2W",
+    "outSharedNum": 93,
+    "level": 2,
+    "analysisStatus": 1,
+    "analysisTime": 1682331548436,
+    "levelTags": [
+      "N2",
+      "N3",
+      "nlvall"
+    ],
+    "readingTags": [
+      "10000116",
+      "10000099",
+      "10000101",
+      "10000117",
+      "10001204"
+    ],
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "AyQwozmetQ",
+    "notationTitle": "<span class=\"moji-notation\">梶裕贵 | 在恋洼烤鸡肉串店的工作中自得其乐（中篇）</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "晨读",
+      "subtitle": "朝読書",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "isSubscribed": false
+    },
+    "nextId": "EXs8CJjHl7",
+    "previousId": "SZb8fEPRQ2",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

@@ -1,0 +1,124 @@
+{
+  "1": [
+    {
+      "objectId": "lrVMKTEiK0",
+      "name": "nebula",
+      "username": "6b1TkHZ7mmWWOiNxSk5spBz9v",
+      "vTag": "1695285003702",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP3254487"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-05-25T08:36:25.743Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "N2真题实战：长篇阅读",
+    "coverId": "e1445119-6604-42bb-828a-1170c9767346.png",
+    "excerpt": "N2真题实战：长篇阅读 为保证最佳练习效果，首次练习请关闭翻译 文章を読んで、後の問いに対する答えと",
+    "createdBy": "lrVMKTEiK0",
+    "audioDuration": 0,
+    "viewedNum": 508,
+    "commentedNum": 0,
+    "votedNum": 528,
+    "likedNum": 6,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": false,
+    "isPublished": false,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 5,
+    "isTrialRead": true,
+    "createdAt": "2026-03-23T09:53:23.747Z",
+    "updatedAt": "2026-10-15T17:09:15.569Z",
+    "analysisStatus": 1,
+    "analysisTime": 1779698185480,
+    "charsNum": 2912,
+    "columnId": "0ovamn9iev",
+    "contentId": "849yvba84sdtx19n28sEs",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5",
+      "N4",
+      "N3",
+      "N2",
+      "N1",
+      "n1up"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000010"
+    ],
+    "shareStyle": 2,
+    "outSharedNum": 93,
+    "vTag": "1779698185743",
+    "objectId": "tx19n28sEs",
+    "notationTitle": "N2真题实战：长篇阅读",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

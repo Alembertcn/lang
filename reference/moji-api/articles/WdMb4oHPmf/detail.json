@@ -1,0 +1,135 @@
+{
+  "1": [
+    {
+      "objectId": "jyOqsrjkrr",
+      "name": "好想食深海大肥🐷",
+      "username": "546669354@qq.com",
+      "email": "546669354@qq.com",
+      "vTag": "1731316981563",
+      "imgVer_a": 8,
+      "imgVer_f": 5,
+      "unionId": "JP308143"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-13T05:41:12.203Z",
+      "updatedAt": "2026-10-16T07:30:20.555Z",
+      "title": "晨读",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "ownerIds": [
+        "GJiALasaYI",
+        "vdriBjucaM",
+        "PMf2NZDTwm",
+        "KjKUelL9GU",
+        "KoXijCLUUh",
+        "jyOqsrjkrr",
+        "CJFe5gR5Zf",
+        "3KLiPXqIGB"
+      ],
+      "articleNum": 423,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:00:00.000Z"
+      },
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "subscribedNum": 117210,
+      "isDetailRead": true,
+      "isVIP": false,
+      "type": "audioArticle",
+      "subtitle": "朝読書",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000099"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": true
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "e72cANzo2W"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2022-06-28T09:29:39.567Z"
+    },
+    "title": "坂本真绫 | 四月魔女的房间（2）",
+    "coverId": "252eee20-8a08-4857-9104-40634295aaf3",
+    "excerpt": "死を目前にした病人が追われてきました。 愛する者に憎まれ、家を燃やされ、どこにも行き場所がなくなって",
+    "createdBy": "jyOqsrjkrr",
+    "contentId": "WdMb4oHPmf",
+    "audioId": "3004fba6-b714-4f84-8140-737688e3b05d.mp3",
+    "audioDuration": 400,
+    "viewedNum": 1478,
+    "commentedNum": 3,
+    "votedNum": 0,
+    "likedNum": 13,
+    "collectedNum": 20,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "createdAt": "2022-06-28T09:29:39.569Z",
+    "updatedAt": "2026-10-14T04:48:56.365Z",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2022-06-28T23:00:00.000Z"
+    },
+    "columnId": "e72cANzo2W",
+    "outSharedNum": 35,
+    "notationHtmlSuccess": true,
+    "analysisStatus": 1,
+    "analysisTime": 1682331377854,
+    "levelTags": [
+      "N2",
+      "N3",
+      "nlvall"
+    ],
+    "readingTags": [
+      "10000116",
+      "10000099",
+      "10000101"
+    ],
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "ACL": {
+      "jyOqsrjkrr": {
+        "read": true,
+        "write": true
+      }
+    },
+    "objectId": "WdMb4oHPmf",
+    "notationTitle": "<span class=\"moji-notation\">坂本真绫 | 四月魔女的房间（2）</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "晨读",
+      "subtitle": "朝読書",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "isSubscribed": false
+    },
+    "nextId": "Y4H8YaznFy",
+    "previousId": "Yp4MD4xlTb",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

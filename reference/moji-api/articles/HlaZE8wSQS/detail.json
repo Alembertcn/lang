@@ -1,0 +1,122 @@
+{
+  "1": [
+    {
+      "objectId": "lrVMKTEiK0",
+      "name": "nebula",
+      "username": "6b1TkHZ7mmWWOiNxSk5spBz9v",
+      "vTag": "1695285003702",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP3254487"
+    }
+  ],
+  "211": [
+    {
+      "title": "N1高频200词速记",
+      "subtitle": "N1高频200词速记",
+      "brief": "已完结专栏，共7篇文章，带你速记N2高频200词",
+      "coverId": "d14874ed-2b76-4612-be75-8857c2e5138a",
+      "captionTeamId": "",
+      "type": "article",
+      "readingTags": [
+        "10000009",
+        "10000080"
+      ],
+      "levelTags": [
+        "N1"
+      ],
+      "powerTags": [],
+      "subscribedNum": 6719,
+      "articleNum": 7,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0"
+      ],
+      "createdAt": "2025-12-10T02:41:00.474Z",
+      "updatedAt": "2026-10-16T07:02:12.828Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-09-30T16:00:00.000Z"
+      },
+      "objectId": "8fp7jko4vz"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-12-10T07:21:01.114Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "7.外来種研究への研究 | 外来物种的研究",
+    "coverId": "0f7f2147-8dd9-478b-9411-aa615c6c4750.png",
+    "excerpt": " 李さんは大学で、【外来】生物に関する研究に取り組んでいました。今、主に図書館で文献調査を進めました",
+    "createdBy": "lrVMKTEiK0",
+    "audioId": "3d1c203f-e139-4457-b727-6348d5e9e9e7.MP3",
+    "audioDuration": 82,
+    "viewedNum": 224,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 4,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 9,
+    "isTrialRead": false,
+    "createdAt": "2025-12-10T03:50:08.545Z",
+    "updatedAt": "2026-10-14T15:20:35.840Z",
+    "analysisStatus": 1,
+    "analysisTime": 1765351261040,
+    "charsNum": 711,
+    "columnId": "8fp7jko4vz",
+    "contentId": "d5miult6mjdHlaZE8wSQS",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116"
+    ],
+    "shareStyle": 2,
+    "vTag": "1765351261114",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-30T16:00:00.000Z"
+    },
+    "outSharedNum": 53,
+    "objectId": "HlaZE8wSQS",
+    "notationTitle": "<span class=\"moji-notation\"><span class=\"moji-toolkit-org\" lemma=\"七\" lemma-t=\"\">7</span><span class=\"moji-toolkit-org\" lemma=\"．\" lemma-t=\"\">.</span><ruby><rb>外来</rb><rp>(</rp><rt roma=\"gairai\" hiragana=\"がいらい\" lemma=\"外来\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n2=\"\" n3=\"\"><rb>種</rb><rp>(</rp><rt roma=\"shu\" hiragana=\"しゅ\" lemma=\"種\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n4=\"\"><rb>研究</rb><rp>(</rp><rt roma=\"kenkyuu\" hiragana=\"けんきゅう\" lemma=\"研究\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"へ\" lemma-t=\"\">へ</span><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby n4=\"\"><rb>研究</rb><rp>(</rp><rt roma=\"kenkyuu\" hiragana=\"けんきゅう\" lemma=\"研究\" lemma-t=\"\"></rt><rp>)</rp></ruby> | 外来物种的研究</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N1高频200词速记",
+      "subtitle": "N1高频200词速记",
+      "brief": "已完结专栏，共7篇文章，带你速记N2高频200词",
+      "coverId": "d14874ed-2b76-4612-be75-8857c2e5138a",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

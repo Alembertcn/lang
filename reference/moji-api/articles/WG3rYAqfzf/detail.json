@@ -1,0 +1,128 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-04-27T05:54:33.156Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第四课·搬家与樱花的约定",
+    "coverId": "454475c6-a0d5-45e6-84e7-cfbd050ad92d.jpg",
+    "excerpt": "引越しと桜の約束 四月に東京に引っ越してきたばかりの頃、新しいアパートで困ったことが起きた。荷物を整",
+    "createdBy": "9r8XOy1RcF",
+    "audioDuration": 117,
+    "viewedNum": 6187,
+    "commentedNum": 20,
+    "votedNum": 0,
+    "likedNum": 56,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 0,
+    "isTrialRead": true,
+    "createdAt": "2025-04-09T08:25:36.523Z",
+    "updatedAt": "2026-10-16T01:49:23.266Z",
+    "analysisStatus": 1,
+    "analysisTime": 1745733272977,
+    "charsNum": 1729,
+    "columnId": "0ovamn9iev",
+    "contentId": "r31dh9wac0kWG3rYAqfzf",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000080",
+      "10000082",
+      "10000010",
+      "10000009"
+    ],
+    "shareStyle": 2,
+    "vTag": "1745733273156",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-04-11T05:51:16.609Z"
+    },
+    "outSharedNum": 1145,
+    "audioId": "c7549008-3174-42a8-8cc4-f380dd74401a.mp3",
+    "objectId": "WG3rYAqfzf",
+    "notationTitle": "第四课·搬家与樱花的约定",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "r2pqHeCKIa",
+    "previousId": "OYihO1myeB",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

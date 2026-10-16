@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-08-25T07:44:44.248Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第三课·成长的轨迹",
+    "coverId": "716a56ed-763d-4fef-9518-d3f13359ecfc.jpg",
+    "excerpt": "成長の軌跡 前回、李さんは店長に話して、勉強する時間が多くなりました。だから、試験でいい点が取れまし",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "4ed3a910-daa7-4223-a4ee-e5fb715d7e29.MP3",
+    "audioDuration": 163,
+    "viewedNum": 1671,
+    "commentedNum": 9,
+    "votedNum": 0,
+    "likedNum": 20,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 0,
+    "isTrialRead": true,
+    "createdAt": "2025-08-24T11:47:24.885Z",
+    "updatedAt": "2026-10-16T03:24:06.266Z",
+    "analysisStatus": 1,
+    "analysisTime": 1756107884087,
+    "charsNum": 2200,
+    "columnId": "0ovamn9iev",
+    "contentId": "6oayuezx7zxeME2l8b6PO",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000118",
+      "10000026",
+      "10000027",
+      "10000009",
+      "10000010"
+    ],
+    "shareStyle": 2,
+    "vTag": "1756107884248",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-08-25T06:36:03.823Z"
+    },
+    "outSharedNum": 383,
+    "objectId": "eME2l8b6PO",
+    "notationTitle": "第三课·成长的轨迹",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "rACx1e870B",
+    "previousId": "gqLx5bYR13",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

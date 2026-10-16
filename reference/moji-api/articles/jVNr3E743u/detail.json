@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-05-15T08:21:07.638Z"
+    },
+    "title": "炫水果冰！京都动物园为动物消暑",
+    "coverId": "c79cdbdd-7b8b-431a-b136-250c94e7e393.png",
+    "excerpt": "動物園でゾウやトラに大きな氷 中には好物の果物も 京都 厳しい暑さの中、京都市の動物園では、動物たち",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "ac70ef35-67d9-4b37-878a-b3121805c1cf.mp3",
+    "audioDuration": 85,
+    "viewedNum": 5431,
+    "commentedNum": 22,
+    "votedNum": 501,
+    "likedNum": 47,
+    "collectedNum": 2,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2023-08-01T09:59:01.498Z",
+    "updatedAt": "2026-10-16T01:00:40.606Z",
+    "analysisStatus": 1,
+    "analysisTime": 1778833266850,
+    "contentId": "oho469h6dkqjVNr3E743u",
+    "notationHtmlSuccess": true,
+    "vTag": "1778833267638",
+    "columnId": "0ovamn9iev",
+    "outSharedNum": 846,
+    "levelTags": [
+      "N1",
+      "N2"
+    ],
+    "readingTags": [
+      "10000019",
+      "10000116",
+      "10000020",
+      "10000024",
+      "10000063"
+    ],
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "charsNum": 2154,
+    "recommendUrls": [
+      null
+    ],
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-06-05T16:00:00.000Z"
+    },
+    "objectId": "jVNr3E743u",
+    "notationTitle": "炫水果冰！京都动物园为动物消暑",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "6y0BdgFnHZ",
+    "previousId": "8s4BK5o0TT",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

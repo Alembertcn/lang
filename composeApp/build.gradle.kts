@@ -120,6 +120,11 @@ sqldelight {
     }
 }
 
+compose.resources {
+    publicResClass = true
+    packageOfResClass = "com.moji.offline.resources"
+}
+
 android {
     namespace = "com.moji.offline"
     compileSdk = 36

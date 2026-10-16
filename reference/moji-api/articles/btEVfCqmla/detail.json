@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-04-14T01:56:11.800Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第四课：兴趣爱好“弹钢琴”",
+    "coverId": "ad76a84b-e225-4028-98f2-7f1f464ae2ab.png",
+    "excerpt": " ピアノ 遇到不懂的单词可以点击弹出释义~ 点击右上角三个小点可切换注音方式（假名↔罗马音） 中井：",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "246dd71e-c5c5-4dfd-a1c3-ce098a428dc7.mp3",
+    "audioDuration": 24,
+    "viewedNum": 11260,
+    "commentedNum": 13,
+    "votedNum": 0,
+    "likedNum": 73,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2025-04-09T05:59:08.770Z",
+    "updatedAt": "2026-10-16T07:51:30.203Z",
+    "analysisStatus": 1,
+    "analysisTime": 1744595771443,
+    "charsNum": 1144,
+    "columnId": "0ovamn9iev",
+    "contentId": "3lob50bi4lmbtEVfCqmla",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000002",
+      "10000010",
+      "10000009",
+      "10000001",
+      "10000080",
+      "10000082"
+    ],
+    "shareStyle": 2,
+    "vTag": "1744595771800",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-04-10T09:02:38.417Z"
+    },
+    "outSharedNum": 2345,
+    "objectId": "btEVfCqmla",
+    "notationTitle": "第四课：兴趣爱好“弹钢琴”",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "cF1WgQGVq1",
+    "previousId": "Vu8C9cGwFD",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

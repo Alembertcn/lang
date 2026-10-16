@@ -1,0 +1,144 @@
+{
+  "1": [
+    {
+      "objectId": "cRLYHFA9kK",
+      "name": "u650Lg",
+      "username": "nesora@outlook.com",
+      "email": "nesora@outlook.com",
+      "vTag": "1698054003248",
+      "imgVer_a": 3,
+      "imgVer_f": 2,
+      "unionId": "JP20108"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-08-13T09:57:29.038Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "史上最短联动？联动套餐仅一天就被黄牛抢光！",
+    "coverId": "200ef0a6-5ba1-4577-9658-9751aaa34ba2.PNG",
+    "excerpt": "マクドナルド セットのカードめぐり謝罪 転売目的購入や廃棄で 大手ハンバーガーチェーンの日本マクドナ",
+    "createdBy": "cRLYHFA9kK",
+    "audioId": "c8494fa6-6519-4a85-ac8a-1b17d2b547c1.MP3",
+    "audioDuration": 98,
+    "viewedNum": 2744,
+    "commentedNum": 7,
+    "votedNum": 0,
+    "likedNum": 20,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-08-13T09:45:42.333Z",
+    "updatedAt": "2026-10-13T16:22:05.249Z",
+    "analysisStatus": 1,
+    "analysisTime": 1755079048941,
+    "charsNum": 1056,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "9qpr3opk7k6kGP87YaePZ",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000024",
+      "10000020"
+    ],
+    "shareStyle": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-08-13T23:35:00.000Z"
+    },
+    "vTag": "1755079049038",
+    "outSharedNum": 266,
+    "objectId": "kGP87YaePZ",
+    "notationTitle": "史上最短联动？联动套餐仅一天就被黄牛抢光！",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "DUeB73G5ZS",
+    "previousId": "H0Bc1MsWkB",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

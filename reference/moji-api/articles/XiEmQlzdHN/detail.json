@@ -1,0 +1,141 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-05-14T09:07:23.557Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "特大地磁暴影响全球：北海道观测到极光！",
+    "coverId": "77ded6c2-6b36-460c-a9e6-8a97e80403ea.png",
+    "excerpt": "オーロラ 北海道の各地で観測 「太陽フレア」の影響で 昨夜から今日未明にかけて、北海道の各地でオーロ",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "eb7f898a-cddb-4194-9eda-2607c4effb8d.mp3",
+    "audioDuration": 80,
+    "viewedNum": 2338,
+    "commentedNum": 7,
+    "votedNum": 0,
+    "likedNum": 16,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2024-05-14T09:07:23.558Z",
+    "updatedAt": "2026-10-15T09:10:31.168Z",
+    "analysisStatus": 1,
+    "analysisTime": 1715677643796,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "XiEmQlzdHN",
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000022",
+      "10000020",
+      "10000406"
+    ],
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-05-14T23:35:00.000Z"
+    },
+    "outSharedNum": 78,
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "XiEmQlzdHN",
+    "notationTitle": "特大地磁暴影响全球：北海道观测到极光！",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "HrNhaKgRJZ",
+    "previousId": "AeCgL9yKAp",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

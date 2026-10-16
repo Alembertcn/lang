@@ -1,0 +1,122 @@
+{
+  "1": [
+    {
+      "objectId": "lrVMKTEiK0",
+      "name": "nebula",
+      "username": "6b1TkHZ7mmWWOiNxSk5spBz9v",
+      "vTag": "1695285003702",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP3254487"
+    }
+  ],
+  "211": [
+    {
+      "title": "N1高频200词速记",
+      "subtitle": "N1高频200词速记",
+      "brief": "已完结专栏，共7篇文章，带你速记N2高频200词",
+      "coverId": "d14874ed-2b76-4612-be75-8857c2e5138a",
+      "captionTeamId": "",
+      "type": "article",
+      "readingTags": [
+        "10000009",
+        "10000080"
+      ],
+      "levelTags": [
+        "N1"
+      ],
+      "powerTags": [],
+      "subscribedNum": 6719,
+      "articleNum": 7,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0"
+      ],
+      "createdAt": "2025-12-10T02:41:00.474Z",
+      "updatedAt": "2026-10-16T07:02:12.828Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-09-30T16:00:00.000Z"
+      },
+      "objectId": "8fp7jko4vz"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-12-10T07:18:05.466Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "3.ビジネス研究サークルと私の成長 | 商业研究社团与我的成长",
+    "coverId": "5e9b9db3-5e08-43f6-a333-42de8c9637b6.png",
+    "excerpt": " 大学で新しい【ビジネス】研究サークルの説明会が【開催】されました。そこでは【豊富】な資料と、長時間",
+    "createdBy": "lrVMKTEiK0",
+    "audioId": "d02792bc-fa45-4084-94e4-a75b51685360.MP3",
+    "audioDuration": 135,
+    "viewedNum": 431,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 5,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 9,
+    "isTrialRead": false,
+    "createdAt": "2025-12-10T03:35:47.011Z",
+    "updatedAt": "2026-10-15T13:40:37.276Z",
+    "analysisStatus": 1,
+    "analysisTime": 1765351085394,
+    "charsNum": 1211,
+    "columnId": "8fp7jko4vz",
+    "contentId": "x63ap7jy3vEkHt0o1jAy",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116"
+    ],
+    "shareStyle": 2,
+    "vTag": "1765351085466",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-30T16:00:00.000Z"
+    },
+    "outSharedNum": 88,
+    "objectId": "EkHt0o1jAy",
+    "notationTitle": "<span class=\"moji-notation\"><span class=\"moji-toolkit-org\" lemma=\"三\" lemma-t=\"\">3</span><span class=\"moji-toolkit-org\" lemma=\"．\" lemma-t=\"\">.</span><span class=\"moji-toolkit-org\" lemma=\"ビジネス-business\" lemma-t=\"business\">ビジネス</span><ruby n4=\"\"><rb>研究</rb><rp>(</rp><rt roma=\"kenkyuu\" hiragana=\"けんきゅう\" lemma=\"研究\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"サークル-circle\" lemma-t=\"circle\">サークル</span><span class=\"moji-toolkit-org\" lemma=\"と\" lemma-t=\"\">と</span><ruby><rb>私</rb><rp>(</rp><rt roma=\"watakushi\" hiragana=\"わたくし\" lemma=\"私-代名詞\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby n4=\"\"><rb>成長</rb><rp>(</rp><rt roma=\"seichou\" hiragana=\"せいちょう\" lemma=\"成長\" lemma-t=\"\"></rt><rp>)</rp></ruby> | 商业研究社团与我的成长</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N1高频200词速记",
+      "subtitle": "N1高频200词速记",
+      "brief": "已完结专栏，共7篇文章，带你速记N2高频200词",
+      "coverId": "d14874ed-2b76-4612-be75-8857c2e5138a",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

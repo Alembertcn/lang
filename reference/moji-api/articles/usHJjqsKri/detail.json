@@ -1,0 +1,131 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "N2高频200词速记",
+      "subtitle": "N2高频200词速记",
+      "brief": "已完结专栏，共7篇文章，帮助你速记N2高频200词",
+      "coverId": "9e0d014c-0394-4d88-b147-da0be497f8f3",
+      "captionTeamId": "",
+      "type": "article",
+      "readingTags": [
+        "10000009",
+        "10000080"
+      ],
+      "levelTags": [
+        "N2"
+      ],
+      "powerTags": [],
+      "subscribedNum": 13827,
+      "articleNum": 7,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "PMf2NZDTwm",
+        "EG9sJdqijH"
+      ],
+      "createdAt": "2025-11-25T06:16:35.665Z",
+      "updatedAt": "2026-10-16T07:06:46.288Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-09-30T16:00:00.000Z"
+      },
+      "objectId": "crt8hgfmgl"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-11-28T03:41:14.622Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "4.文化祭、カフェの思い出 | 文化祭——关于咖啡的回忆",
+    "coverId": "6851ce4c-df63-4f81-a365-ccdf33a7b444.png",
+    "excerpt": " 先週、私たちの【クラブ】は文化祭で、コーヒーショップを開くことに【申し込み】ました。 【全体】の【",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "fbecf6de-76f3-431e-8219-8c59a43dc9d0.MP3",
+    "audioDuration": 83,
+    "viewedNum": 483,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 5,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 9,
+    "isTrialRead": true,
+    "createdAt": "2025-11-25T07:55:10.937Z",
+    "updatedAt": "2026-10-15T17:25:40.016Z",
+    "analysisStatus": 1,
+    "analysisTime": 1764301274468,
+    "charsNum": 828,
+    "columnId": "crt8hgfmgl",
+    "contentId": "yqkuceq89usHJjqsKri",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000026",
+      "10000027",
+      "10000060",
+      "10000118"
+    ],
+    "shareStyle": 2,
+    "vTag": "1764301274622",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-30T16:00:00.000Z"
+    },
+    "outSharedNum": 116,
+    "objectId": "usHJjqsKri",
+    "notationTitle": "<span class=\"moji-notation\">4.文化祭、<span class=\"moji-toolkit-org\" lemma=\"カフェ-cafe\" lemma-t=\"cafe\">カフェ</span><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby n3=\"\"><rb>思い出</rb><rp>(</rp><rt roma=\"omoide\" hiragana=\"おもいで\" lemma=\"思い出\" lemma-t=\"\"></rt><rp>)</rp></ruby> | 文化祭——关于咖啡的回忆</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N2高频200词速记",
+      "subtitle": "N2高频200词速记",
+      "brief": "已完结专栏，共7篇文章，帮助你速记N2高频200词",
+      "coverId": "9e0d014c-0394-4d88-b147-da0be497f8f3",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "",
+    "displayTags": [
+      "考试",
+      "生活"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

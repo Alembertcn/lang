@@ -1,0 +1,129 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-05-14T08:54:44.854Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "猴冷呀！上百只猴子抱团贴贴",
+    "coverId": "86ee0303-5090-427b-adf8-39651c8d1df9.png",
+    "excerpt": "自然動物園のサルたち「サルだんご」で寒さしのぐ 香川 小豆島 香川県の小豆島にある自然動物園では、サ",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "e49b2da0-51a5-4c86-b083-06714dc26fed.mp3",
+    "audioDuration": 86,
+    "viewedNum": 8020,
+    "commentedNum": 23,
+    "votedNum": 677,
+    "likedNum": 58,
+    "collectedNum": 6,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2023-12-30T01:28:19.124Z",
+    "updatedAt": "2026-10-16T08:20:47.827Z",
+    "analysisStatus": 1,
+    "analysisTime": 1778748884694,
+    "contentId": "lce55jc90qpD7XdGMeDfg",
+    "notationHtmlSuccess": true,
+    "vTag": "1778748884854",
+    "columnId": "0ovamn9iev",
+    "outSharedNum": 1113,
+    "levelTags": [
+      "N1"
+    ],
+    "readingTags": [
+      "10000019",
+      "10000116",
+      "10000020",
+      "10000024",
+      "10000063"
+    ],
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "charsNum": 2751,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-08-09T16:00:00.000Z"
+    },
+    "objectId": "D7XdGMeDfg",
+    "notationTitle": "猴冷呀！上百只猴子抱团贴贴",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "GQ25xwXGLX",
+    "previousId": "0JptrnBGZ8",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

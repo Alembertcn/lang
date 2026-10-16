@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-04-14T01:57:00.361Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第六课：校园生活“在学校过得怎么样”",
+    "coverId": "4db77884-7aca-4ace-948c-e422095af1ba.png",
+    "excerpt": "学校はどうですか 遇到不懂的单词可以点击弹出释义~ 点击右上角三个小点可切换注音方式（假名↔罗马音）",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "f6b0b124-24d9-4e30-8c81-916bf606d744.mp3",
+    "audioDuration": 46,
+    "viewedNum": 8453,
+    "commentedNum": 15,
+    "votedNum": 0,
+    "likedNum": 57,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2025-04-09T07:37:08.956Z",
+    "updatedAt": "2026-10-16T07:16:47.369Z",
+    "analysisStatus": 1,
+    "analysisTime": 1744595820117,
+    "charsNum": 1461,
+    "columnId": "0ovamn9iev",
+    "contentId": "u8eqmtkdtfdb6H9GRqn1p",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000002",
+      "10000010",
+      "10000009",
+      "10000001",
+      "10000080",
+      "10000082"
+    ],
+    "shareStyle": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-04-10T09:02:17.501Z"
+    },
+    "outSharedNum": 1790,
+    "vTag": "1744595820361",
+    "objectId": "b6H9GRqn1p",
+    "notationTitle": "第六课：校园生活“在学校过得怎么样”",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "Vu8C9cGwFD",
+    "previousId": "mMxNMwTPjl",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

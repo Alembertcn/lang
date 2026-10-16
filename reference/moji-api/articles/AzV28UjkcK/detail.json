@@ -1,0 +1,133 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "初级|MOJi高频350词速记",
+      "subtitle": "初级|MOJi高频350词速记",
+      "brief": "已完结专栏。最容易忘记的初级单词，一篇文章就能记住！",
+      "coverId": "c3f44db6-8414-4094-8cbc-7d5c89735d32",
+      "captionTeamId": "",
+      "type": "article",
+      "readingTags": [
+        "10000009",
+        "10000080",
+        "10000116"
+      ],
+      "levelTags": [
+        "N5",
+        "N4"
+      ],
+      "powerTags": [],
+      "subscribedNum": 17553,
+      "articleNum": 14,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": true,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "eS9OHwSGX1",
+        "EG9sJdqijH",
+        "jYi9uYHMxJ"
+      ],
+      "createdAt": "2025-11-12T09:23:45.468Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-10-01T10:16:43.000Z"
+      },
+      "objectId": "9rfx7re4yh"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-11-12T09:47:40.443Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "1. 李さんの学校生活 | 小李的校园生活（上）",
+    "coverId": "d542bd08-15b4-4c64-9a89-b271466b3da7.png",
+    "excerpt": " 今日は明るいですね。 私は学生です。朝六時半に起きました。 まず、窓を開けました。それから、服を着",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "3aee37c4-585f-414e-acce-78efbf3b94f7.MP3",
+    "audioDuration": 96,
+    "viewedNum": 11370,
+    "commentedNum": 7,
+    "votedNum": 0,
+    "likedNum": 90,
+    "collectedNum": 12,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 9,
+    "isTrialRead": false,
+    "createdAt": "2025-11-05T01:59:34.412Z",
+    "updatedAt": "2026-10-16T08:31:48.609Z",
+    "analysisStatus": 1,
+    "analysisTime": 1762940860335,
+    "charsNum": 1253,
+    "columnId": "9rfx7re4yh",
+    "contentId": "v8kpw4xtjtnAzV28UjkcK",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000121",
+      "10000080",
+      "10000081",
+      "10000001",
+      "10000005"
+    ],
+    "shareStyle": 2,
+    "vTag": "1762940860443",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-10-01T10:16:43.000Z"
+    },
+    "outSharedNum": 1016,
+    "objectId": "AzV28UjkcK",
+    "notationTitle": "<span class=\"moji-notation\">1. <ruby><rb>李</rb><rp>(</rp><rt roma=\"ri\" hiragana=\"り\" lemma=\"リ\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" n5=\"\" lemma=\"さん\" lemma-t=\"\">さん</span><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby n5=\"\"><rb>学校</rb><rp>(</rp><rt roma=\"gakkou\" hiragana=\"がっこう\" lemma=\"学校\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n5=\"\"><rb>生活</rb><rp>(</rp><rt roma=\"seikatsu\" hiragana=\"せいかつ\" lemma=\"生活\" lemma-t=\"\"></rt><rp>)</rp></ruby> | 小李的校园生活（上）</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "初级|MOJi高频350词速记",
+      "subtitle": "初级|MOJi高频350词速记",
+      "brief": "已完结专栏。最容易忘记的初级单词，一篇文章就能记住！",
+      "coverId": "c3f44db6-8414-4094-8cbc-7d5c89735d32",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "fQch4rZAuR",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

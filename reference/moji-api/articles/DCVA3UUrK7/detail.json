@@ -1,0 +1,144 @@
+{
+  "1": [
+    {
+      "objectId": "cRLYHFA9kK",
+      "name": "u650Lg",
+      "username": "nesora@outlook.com",
+      "email": "nesora@outlook.com",
+      "vTag": "1698054003248",
+      "imgVer_a": 3,
+      "imgVer_f": 2,
+      "unionId": "JP20108"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-05-27T08:26:37.496Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "到底是谁在乱取名！日本姓名新政开始实施",
+    "coverId": "e1b892a0-ad95-4b78-8072-52f78d481714.PNG",
+    "excerpt": "戸籍の氏名に読みがな記載 運用開始 戸籍の氏名に読みがなを記載する運用が今日から始まり、これに合わせ",
+    "createdBy": "cRLYHFA9kK",
+    "audioDuration": 87,
+    "viewedNum": 3060,
+    "commentedNum": 14,
+    "votedNum": 0,
+    "likedNum": 21,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-05-27T07:33:49.830Z",
+    "updatedAt": "2026-10-15T22:39:54.156Z",
+    "analysisStatus": 1,
+    "analysisTime": 1748334397304,
+    "charsNum": 1095,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "llpujnd672pDCVA3UUrK7",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "n1up",
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000020"
+    ],
+    "shareStyle": 2,
+    "audioId": "6a5b6869-3980-46cb-89ab-ed1dcbc1422d.mp3",
+    "vTag": "1748334397496",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-05-27T23:00:00.000Z"
+    },
+    "outSharedNum": 248,
+    "objectId": "DCVA3UUrK7",
+    "notationTitle": "到底是谁在乱取名！日本姓名新政开始实施",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "tQwo6Gc6Kc",
+    "previousId": "rznXpTYNY5",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

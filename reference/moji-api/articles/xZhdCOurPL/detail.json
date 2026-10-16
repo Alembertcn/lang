@@ -1,0 +1,129 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-04-11T09:34:45.440Z"
+    },
+    "title": "建立新行业组织：避免AI潜在危害！",
+    "coverId": "8e8b489a-4aea-44ca-8c6e-2e3b70d7209f.png",
+    "excerpt": "生成AI 米グーグルなど4社 安全な開発目指し新業界団体を設立 生成AIの開発を進めるアメリカのIT",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "1e245e2a-6d18-490d-b033-4fbc218c3061.mp3",
+    "audioDuration": 107,
+    "viewedNum": 3891,
+    "commentedNum": 3,
+    "votedNum": 0,
+    "likedNum": 32,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2023-07-28T09:36:49.056Z",
+    "updatedAt": "2026-10-16T08:25:08.130Z",
+    "analysisStatus": 1,
+    "analysisTime": 1744364085193,
+    "contentId": "61f96058svuxZhdCOurPL",
+    "notationHtmlSuccess": true,
+    "columnId": "0ovamn9iev",
+    "outSharedNum": 559,
+    "levelTags": [
+      "N1"
+    ],
+    "readingTags": [
+      "10000019",
+      "10000116",
+      "10000020",
+      "10000022",
+      "10000154"
+    ],
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "charsNum": 1698,
+    "recommendUrls": [
+      null
+    ],
+    "vTag": "1744364085440",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2023-07-30T16:00:00.000Z"
+    },
+    "objectId": "xZhdCOurPL",
+    "notationTitle": "建立新行业组织：避免AI潜在危害！",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "hTS2puZjv1",
+    "previousId": "",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

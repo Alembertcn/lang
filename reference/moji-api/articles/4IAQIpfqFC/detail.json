@@ -1,0 +1,144 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-02-10T09:27:21.871Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "埼玉县道路塌陷惊现15米大坑，一男性坠入其中生死不明！",
+    "coverId": "acdbe2b4-cfd9-43a0-b047-e536cbc55054.PNG",
+    "excerpt": "埼玉 八潮 道路陥没 下水道管に障害物 トラックの運転席部分か 男性1人が安否不明になった埼玉県八潮",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "0412d374-5c95-42ae-8f65-be7a5d1e6a4b.MP3",
+    "audioDuration": 100,
+    "viewedNum": 2688,
+    "commentedNum": 13,
+    "votedNum": 0,
+    "likedNum": 16,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-02-08T09:33:36.896Z",
+    "updatedAt": "2026-10-14T03:07:44.735Z",
+    "analysisStatus": 1,
+    "analysisTime": 1739179641757,
+    "charsNum": 1040,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "wb79y07t4uq4IAQIpfqFC",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000121",
+      "10000019",
+      "10000020",
+      "10000022"
+    ],
+    "shareStyle": 2,
+    "vTag": "1739179641871",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-02-10T23:35:00.000Z"
+    },
+    "outSharedNum": 168,
+    "objectId": "4IAQIpfqFC",
+    "notationTitle": "埼玉县道路塌陷惊现15米大坑，一男性坠入其中生死不明！",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "wXmDnjMT0a",
+    "previousId": "wao7T2X8EL",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

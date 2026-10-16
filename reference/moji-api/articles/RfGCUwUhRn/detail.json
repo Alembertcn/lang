@@ -1,0 +1,139 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "KjKUelL9GU",
+        "jYi9uYHMxJ",
+        "vdriBjucaM",
+        "VAXWdT4ggf",
+        "9r8XOy1RcF"
+      ],
+      "title": "社会新语",
+      "coverId": "8356f3ba-401d-4c8c-bcd3-17850153d376",
+      "brief": "探讨日本社会万象的社论专栏",
+      "articleNum": 527,
+      "isTrash": false,
+      "isVIP": true,
+      "subscribedNum": 82546,
+      "createdAt": "2022-08-02T07:56:05.468Z",
+      "updatedAt": "2026-10-16T07:52:22.540Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-13T01:00:00.000Z"
+      },
+      "isDetailRead": true,
+      "type": "article",
+      "subtitle": "社会新語",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000089",
+        "10000019",
+        "10000009"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": true,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "k5D1O7Drwh"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-05-27T02:57:16.009Z"
+    },
+    "title": "“再见”的季节 | 「さようなら」の季節に",
+    "coverId": "45c2fd20-b989-42a4-b314-773a285d10ed",
+    "excerpt": " “再见”的季节 別れの季節である。〈ぼくもういかなきゃなんない/すぐいかなきゃなんない〉。谷川俊太",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 4028,
+    "commentedNum": 20,
+    "votedNum": 0,
+    "likedNum": 46,
+    "collectedNum": 3,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "createdAt": "2023-04-17T06:40:32.832Z",
+    "updatedAt": "2026-10-16T08:08:45.691Z",
+    "contentId": "tg48ajuhrtbRfGCUwUhRn",
+    "notationHtmlSuccess": true,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2023-04-22T01:00:00.000Z"
+    },
+    "outSharedNum": 509,
+    "columnId": "k5D1O7Drwh",
+    "analysisStatus": 1,
+    "analysisTime": 1748314635855,
+    "levelTags": [
+      "n1up",
+      "N1"
+    ],
+    "readingTags": [
+      "10000019",
+      "10000089",
+      "10000009",
+      "10000011",
+      "10000012",
+      "10000021",
+      "10000022",
+      "10000295"
+    ],
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "charsNum": 3281,
+    "recommendUrls": [
+      null
+    ],
+    "vTag": "1748314636008",
+    "objectId": "RfGCUwUhRn",
+    "notationTitle": "<span class=\"moji-notation\">“再见”的季节 | 「<span class=\"moji-toolkit-org\" lemma=\"さようなら\" lemma-t=\"\">さようなら</span>」<span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby n4=\"\"><rb>季節</rb><rp>(</rp><rt roma=\"kisetsu\" hiragana=\"きせつ\" lemma=\"季節\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"に\" lemma-t=\"\">に</span></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "社会新语",
+      "subtitle": "社会新語",
+      "brief": "探讨日本社会万象的社论专栏",
+      "coverId": "8356f3ba-401d-4c8c-bcd3-17850153d376",
+      "isSubscribed": false
+    },
+    "nextId": "9kjIVrpIZD",
+    "previousId": "GiCzdML793",
+    "displayTags": [
+      "考试",
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

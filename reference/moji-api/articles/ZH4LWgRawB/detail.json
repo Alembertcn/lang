@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-04-14T01:55:33.376Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第二课：相互问候“初次见面，请多关照”",
+    "coverId": "4a6f8da3-4f60-4593-abce-a3c92c960e73.png",
+    "excerpt": "自己紹介 遇到不懂的单词可以点击弹出释义~ 点击右上角三个小点可切换注音方式（假名↔罗马音） 井上：",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "0a03a1e7-04d4-44ce-b5c2-d3b92e484697.mp3",
+    "audioDuration": 42,
+    "viewedNum": 23253,
+    "commentedNum": 19,
+    "votedNum": 0,
+    "likedNum": 140,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2025-04-09T03:49:41.923Z",
+    "updatedAt": "2026-10-16T08:05:58.014Z",
+    "analysisStatus": 1,
+    "analysisTime": 1744595733073,
+    "charsNum": 1281,
+    "columnId": "0ovamn9iev",
+    "contentId": "8uy4cm2bjdZH4LWgRawB",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000001",
+      "10000002",
+      "10000010",
+      "10000080",
+      "10000082",
+      "10000009"
+    ],
+    "shareStyle": 2,
+    "vTag": "1744595733376",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-04-10T09:02:44.282Z"
+    },
+    "outSharedNum": 3633,
+    "objectId": "ZH4LWgRawB",
+    "notationTitle": "第二课：相互问候“初次见面，请多关照”",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "srNrD7dqIQ",
+    "previousId": "cF1WgQGVq1",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": true,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

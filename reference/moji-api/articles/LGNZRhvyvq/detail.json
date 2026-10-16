@@ -1,0 +1,141 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-05-31T08:53:24.936Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "逆天！IT小白通过问AI成功制出勒索病毒？",
+    "coverId": "e5ae77c4-0acb-4670-8866-996eee057c92.png",
+    "excerpt": "生成AIを悪用しコンピューターウイルス作成か 25歳容疑者逮捕 インターネット上に公開されている生成",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "d7beedbd-69cf-43ab-9c30-09c33517592b.mp3",
+    "audioDuration": 101,
+    "viewedNum": 1771,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 15,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2024-05-31T08:53:24.937Z",
+    "updatedAt": "2026-10-15T14:38:12.091Z",
+    "analysisStatus": 1,
+    "analysisTime": 1717145605211,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "LGNZRhvyvq",
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000020",
+      "10000019",
+      "10000022",
+      "10000186"
+    ],
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-05-31T23:35:00.000Z"
+    },
+    "outSharedNum": 61,
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "LGNZRhvyvq",
+    "notationTitle": "逆天！IT小白通过问AI成功制出勒索病毒？",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "lEwzGelFpl",
+    "previousId": "Oc44hizQkN",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

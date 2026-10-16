@@ -1,0 +1,142 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-02-28T09:39:59.613Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "周报还在追我？！马斯克向全体政府雇员发邮件：你上周做了什么工作？",
+    "coverId": "61bc2040-f127-4554-8cf1-5828041215bc.png",
+    "excerpt": "マスク氏 政府職員に「先週何をした？」メール送信 混乱広がる アメリカのトランプ政権のもと政府支出の",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "3f941038-b4fb-49d4-b3bc-9fb432950e1a.MP3",
+    "audioDuration": 128,
+    "viewedNum": 3102,
+    "commentedNum": 17,
+    "votedNum": 0,
+    "likedNum": 16,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-02-28T08:19:22.639Z",
+    "updatedAt": "2026-10-15T23:19:48.568Z",
+    "analysisStatus": 1,
+    "analysisTime": 1740735599492,
+    "charsNum": 1188,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "5o63l2h3rl5VfRlHChEXf",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000020",
+      "10000206"
+    ],
+    "shareStyle": 2,
+    "vTag": "1740735599613",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-02-28T23:35:00.000Z"
+    },
+    "outSharedNum": 203,
+    "objectId": "VfRlHChEXf",
+    "notationTitle": "周报还在追我？！马斯克向全体政府雇员发邮件：你上周做了什么工作？",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "fUxUQBF8b7",
+    "previousId": "lv14wuq1AW",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

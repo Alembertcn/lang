@@ -9,12 +9,17 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.moji.offline.domain.model.AppLanguage
+import com.moji.offline.feature.discover.DiscoverRoute
+import com.moji.offline.ui.i18n.LocalAppStrings
+import com.moji.offline.ui.i18n.stringsFor
 
 // 图标暂用首字占位，后续替换为设计图标资源
 private enum class MainTab(val label: String) {
@@ -26,27 +31,42 @@ private enum class MainTab(val label: String) {
 
 @Composable
 fun App() {
+    val strings = stringsFor(AppLanguage.CHINESE)
     MaterialTheme {
-        var selectedTab by remember { mutableStateOf(MainTab.Discover) }
-        Scaffold(
-            bottomBar = {
-                NavigationBar {
-                    MainTab.entries.forEach { tab ->
-                        NavigationBarItem(
-                            selected = selectedTab == tab,
-                            onClick = { selectedTab = tab },
-                            icon = { Text(tab.label.take(1)) },
-                            label = { Text(tab.label) },
-                        )
+        CompositionLocalProvider(LocalAppStrings provides strings) {
+            var selectedTab by remember { mutableStateOf(MainTab.Discover) }
+            Scaffold(
+                bottomBar = {
+                    NavigationBar {
+                        MainTab.entries.forEach { tab ->
+                            NavigationBarItem(
+                                selected = selectedTab == tab,
+                                onClick = { selectedTab = tab },
+                                icon = { Text(tab.label.take(1)) },
+                                label = { Text(tab.label) },
+                            )
+                        }
                     }
                 }
-            }
-        ) { padding ->
-            Box(
-                modifier = Modifier.fillMaxSize().padding(padding),
-                contentAlignment = Alignment.Center,
-            ) {
-                Text("${selectedTab.label}（待实现）", style = MaterialTheme.typography.titleMedium)
+            ) { padding ->
+                Box(Modifier.fillMaxSize().padding(padding)) {
+                    when (selectedTab) {
+                        MainTab.Discover -> DiscoverRoute(
+                            onOpenPlan = {},
+                            onOpenReading = { _, _ -> },
+                            onBrowsePlans = {},
+                        )
+                        else -> Box(
+                            Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center,
+                        ) {
+                            Text(
+                                "${selectedTab.label}（待实现）",
+                                style = MaterialTheme.typography.titleMedium,
+                            )
+                        }
+                    }
+                }
             }
         }
     }

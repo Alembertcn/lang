@@ -1,0 +1,137 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-13T05:41:12.203Z",
+      "updatedAt": "2026-10-16T07:30:20.555Z",
+      "title": "晨读",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "ownerIds": [
+        "GJiALasaYI",
+        "vdriBjucaM",
+        "PMf2NZDTwm",
+        "KjKUelL9GU",
+        "KoXijCLUUh",
+        "jyOqsrjkrr",
+        "CJFe5gR5Zf",
+        "3KLiPXqIGB"
+      ],
+      "articleNum": 423,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:00:00.000Z"
+      },
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "subscribedNum": 117210,
+      "isDetailRead": true,
+      "isVIP": false,
+      "type": "audioArticle",
+      "subtitle": "朝読書",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000099"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": true
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "e72cANzo2W"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-06-04T02:00:13.495Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "福山润 | 八音盒（7）",
+    "coverId": "0da241b8-7e12-4483-8c19-0a16b74c396e.jpg",
+    "excerpt": "ふしぎ工房 | 不可思议工房（下） ぐずぐずしていると、老人は冷たく言った。「ご注文がないなら、お帰",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "7a2b44e1-b111-4b32-bd27-a72e10789645.MP3",
+    "audioDuration": 242,
+    "viewedNum": 1938,
+    "commentedNum": 6,
+    "votedNum": 0,
+    "likedNum": 11,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-06-04T01:51:49.170Z",
+    "updatedAt": "2026-10-13T14:34:42.623Z",
+    "analysisStatus": 1,
+    "analysisTime": 1749002413306,
+    "charsNum": 1824,
+    "columnId": "e72cANzo2W",
+    "contentId": "082dghz71z3s7E2BslTpE6",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1",
+      "n1up"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000099",
+      "10000102",
+      "10000101",
+      "10000116",
+      "10000117"
+    ],
+    "shareStyle": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-06-06T01:00:00.000Z"
+    },
+    "vTag": "1749002413495",
+    "outSharedNum": 135,
+    "objectId": "7E2BslTpE6",
+    "notationTitle": "<span class=\"moji-notation\">福山润 | 八音盒（7）</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "晨读",
+      "subtitle": "朝読書",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "isSubscribed": false
+    },
+    "nextId": "IvF1X1YDPl",
+    "previousId": "4aBprAXpzw",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

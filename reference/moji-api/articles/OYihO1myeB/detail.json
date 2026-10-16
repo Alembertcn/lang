@@ -1,0 +1,128 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-04-27T03:31:43.291Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第三课·抉择之夏",
+    "coverId": "07f170c1-a3c8-49bb-8e87-1f32c5480439.jpg",
+    "excerpt": "夏休みの選択 高校生活最後の夏休みを前に、私は大きな悩みを抱えていた。進学するか就職するか決められず",
+    "createdBy": "9r8XOy1RcF",
+    "audioDuration": 124,
+    "viewedNum": 8018,
+    "commentedNum": 27,
+    "votedNum": 0,
+    "likedNum": 84,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 0,
+    "isTrialRead": true,
+    "createdAt": "2025-04-09T08:20:40.815Z",
+    "updatedAt": "2026-10-16T06:12:26.900Z",
+    "analysisStatus": 1,
+    "analysisTime": 1745724703081,
+    "charsNum": 1834,
+    "columnId": "0ovamn9iev",
+    "contentId": "fk9ro6poeldOYihO1myeB",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000080",
+      "10000082",
+      "10000010",
+      "10000009"
+    ],
+    "shareStyle": 2,
+    "vTag": "1745724703291",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-04-11T03:57:33.261Z"
+    },
+    "outSharedNum": 1316,
+    "audioId": "edf8421e-4804-4b60-9ccd-6f2dd6202721.mp3",
+    "objectId": "OYihO1myeB",
+    "notationTitle": "第三课·抉择之夏",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "WG3rYAqfzf",
+    "previousId": "nCTCeuwEmc",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

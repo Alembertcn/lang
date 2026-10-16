@@ -1,0 +1,144 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-02-26T01:11:05.894Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "不用捅鼻子了？AI也能看病！",
+    "coverId": "4178a1b2-a05f-451c-a066-cf788e91e101.png",
+    "excerpt": "インフルエンザにAIを活用した新たな検査 インフルエンザは例年、2月初めのちょうど今の時期にピークを",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "fcb88788-011f-4e95-993a-626ceacd19e2.mp3",
+    "audioDuration": 106,
+    "viewedNum": 1786,
+    "commentedNum": 8,
+    "votedNum": 0,
+    "likedNum": 16,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2024-02-18T06:21:05.788Z",
+    "updatedAt": "2026-10-14T09:25:27.091Z",
+    "analysisStatus": 1,
+    "analysisTime": 1708909865694,
+    "contentId": "rvye6w2d3qiroU9dkQk0k",
+    "notationHtmlSuccess": true,
+    "vTag": "1708909865894",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-02-18T23:35:00.000Z"
+    },
+    "columnId": "G4kGjT2T7y",
+    "outSharedNum": 68,
+    "levelTags": [
+      "N1"
+    ],
+    "readingTags": [
+      "10000019",
+      "10000116",
+      "10000020",
+      "10000023",
+      "10000154",
+      "10000392"
+    ],
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "roU9dkQk0k",
+    "notationTitle": "不用捅鼻子了？AI也能看病！",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "JBMygPBjY5",
+    "previousId": "1D4cjUApvl",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

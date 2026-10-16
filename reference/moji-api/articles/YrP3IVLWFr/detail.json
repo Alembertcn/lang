@@ -1,0 +1,143 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-03-06T01:25:22.621Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "AI是这么用的吗！梅拉尼娅倡议尽快立法对应AI生成的不实淫秽图像",
+    "coverId": "a92e49ed-aedc-4e54-b576-2bd26032d533.png",
+    "excerpt": "メラニア夫人 生成AIの偽の性的画像 対策法案の早期成立訴え アメリカのトランプ大統領の妻、メラニア",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "79a36aff-04f1-4acc-a0c7-442ec5ede4d4.MP3",
+    "audioDuration": 91,
+    "viewedNum": 3272,
+    "commentedNum": 3,
+    "votedNum": 0,
+    "likedNum": 29,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-03-05T07:27:12.308Z",
+    "updatedAt": "2026-10-16T07:30:32.076Z",
+    "analysisStatus": 1,
+    "analysisTime": 1741224322495,
+    "charsNum": 876,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "bd8s0kofvcYrP3IVLWFr",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000020",
+      "10000206",
+      "10000154"
+    ],
+    "shareStyle": 2,
+    "vTag": "1741224322621",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-03-05T23:35:00.000Z"
+    },
+    "outSharedNum": 231,
+    "objectId": "YrP3IVLWFr",
+    "notationTitle": "AI是这么用的吗！梅拉尼娅倡议尽快立法对应AI生成的不实淫秽图像",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "7CXWV0dH0k",
+    "previousId": "XIA2QrsZzE",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

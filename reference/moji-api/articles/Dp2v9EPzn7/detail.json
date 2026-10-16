@@ -1,0 +1,131 @@
+{
+  "1": [
+    {
+      "objectId": "lrVMKTEiK0",
+      "name": "nebula",
+      "username": "6b1TkHZ7mmWWOiNxSk5spBz9v",
+      "vTag": "1695285003702",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP3254487"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-12-18T07:05:39.333Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第一课.旅行交通：“请问动物园怎么走”",
+    "coverId": "ba5ae39a-4306-4808-91e2-907987145508.png",
+    "excerpt": " 李：あのう、すみません、MOJi動物園に 行きたい のですが、どうやって 行きますか。 伊藤：MO",
+    "createdBy": "lrVMKTEiK0",
+    "audioId": "be8a589d-07aa-4324-86c8-e13d31a293f2.MP3",
+    "audioDuration": 48,
+    "viewedNum": 2443,
+    "commentedNum": 2,
+    "votedNum": 0,
+    "likedNum": 11,
+    "collectedNum": 2,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 14,
+    "isTrialRead": false,
+    "createdAt": "2025-12-18T07:04:34.057Z",
+    "updatedAt": "2026-10-16T07:04:33.431Z",
+    "analysisStatus": 1,
+    "analysisTime": 1766041539179,
+    "charsNum": 2685,
+    "columnId": "0ovamn9iev",
+    "contentId": "bop3kn9vkjhDp2v9EPzn7",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5",
+      "N4"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000026",
+      "10000031",
+      "10000030",
+      "10000118"
+    ],
+    "shareStyle": 2,
+    "vTag": "1766041539333",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-30T16:00:00.000Z"
+    },
+    "outSharedNum": 243,
+    "objectId": "Dp2v9EPzn7",
+    "notationTitle": "第一课.旅行交通：“请问动物园怎么走”",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "NCPhpCpUY8",
+    "previousId": "5eSfKbAGed",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

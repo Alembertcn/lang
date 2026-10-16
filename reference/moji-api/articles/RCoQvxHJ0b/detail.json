@@ -1,0 +1,133 @@
+{
+  "1": [
+    {
+      "objectId": "jyOqsrjkrr",
+      "name": "好想食深海大肥🐷",
+      "username": "546669354@qq.com",
+      "email": "546669354@qq.com",
+      "vTag": "1731316981563",
+      "imgVer_a": 8,
+      "imgVer_f": 5,
+      "unionId": "JP308143"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-13T05:41:12.203Z",
+      "updatedAt": "2026-10-16T07:30:20.555Z",
+      "title": "晨读",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "ownerIds": [
+        "GJiALasaYI",
+        "vdriBjucaM",
+        "PMf2NZDTwm",
+        "KjKUelL9GU",
+        "KoXijCLUUh",
+        "jyOqsrjkrr",
+        "CJFe5gR5Zf",
+        "3KLiPXqIGB"
+      ],
+      "articleNum": 423,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:00:00.000Z"
+      },
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "subscribedNum": 117210,
+      "isDetailRead": true,
+      "isVIP": false,
+      "type": "audioArticle",
+      "subtitle": "朝読書",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000099"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": true
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "e72cANzo2W"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2022-11-15T09:11:11.872Z"
+    },
+    "title": "ゆかな | 穿越时空的少女（后篇）",
+    "coverId": "d4754782-7f1c-4d20-80cc-947d1eb9d366",
+    "excerpt": "黒い影が薬品だなのうしろからパッととびだして、廊下へ出るドアの手前の、ついたての向こう側へとびこんだ",
+    "createdBy": "jyOqsrjkrr",
+    "audioId": "90322201-9bc9-49b8-9c96-ef50004ebe61.mp3",
+    "audioDuration": 253,
+    "viewedNum": 2998,
+    "commentedNum": 11,
+    "votedNum": 0,
+    "likedNum": 14,
+    "collectedNum": 29,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 8,
+    "createdAt": "2022-11-15T09:07:47.016Z",
+    "updatedAt": "2026-10-14T02:40:03.823Z",
+    "contentId": "oznas7cgglRCoQvxHJ0b",
+    "notationHtmlSuccess": true,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2022-11-15T23:00:00.000Z"
+    },
+    "vTag": "1668503471872",
+    "columnId": "e72cANzo2W",
+    "outSharedNum": 45,
+    "analysisStatus": 1,
+    "analysisTime": 1682492526369,
+    "levelTags": [
+      "N2",
+      "N3",
+      "nlvall"
+    ],
+    "readingTags": [
+      "10000116",
+      "10000099",
+      "10000101"
+    ],
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "RCoQvxHJ0b",
+    "notationTitle": "<span class=\"moji-notation\"><span class=\"moji-toolkit-org\" n3=\"\" n4=\"\" lemma=\"床\" lemma-t=\"床\">ゆか</span><span class=\"moji-toolkit-org\" lemma=\"だ\" lemma-t=\"\">な</span> | 穿越时空的少女（后篇）</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "晨读",
+      "subtitle": "朝読書",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "isSubscribed": false
+    },
+    "nextId": "7DyU6HOqH0",
+    "previousId": "i3QuP6J7dy",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

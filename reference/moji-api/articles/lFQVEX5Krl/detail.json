@@ -1,0 +1,145 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-02-04T09:16:22.514Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "首例脑机人体试验：可凭意念操控电脑",
+    "coverId": "80081e83-714c-4c99-b074-4596e4d03054.png",
+    "excerpt": "「脳に小型機器を埋め込む臨床試験開始」 マスク氏の企業 アメリカの起業家、イーロン・マスク氏は、自身",
+    "createdBy": "9r8XOy1RcF",
+    "audioId": "7e79e091-ccb7-4203-bce3-9f619719ae73.mp3",
+    "audioDuration": 78,
+    "viewedNum": 1979,
+    "commentedNum": 5,
+    "votedNum": 0,
+    "likedNum": 17,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 12,
+    "isTrialRead": true,
+    "createdAt": "2024-02-01T03:43:35.383Z",
+    "updatedAt": "2026-10-15T04:30:43.056Z",
+    "analysisStatus": 1,
+    "analysisTime": 1707038182384,
+    "contentId": "boajz51xh9ilFQVEX5Krl",
+    "notationHtmlSuccess": true,
+    "vTag": "1707038182514",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-02-01T23:35:00.000Z"
+    },
+    "columnId": "G4kGjT2T7y",
+    "outSharedNum": 83,
+    "levelTags": [
+      "N1"
+    ],
+    "readingTags": [
+      "10000019",
+      "10000116",
+      "10000020",
+      "10000022",
+      "10000023",
+      "10000154",
+      "10000391"
+    ],
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "lFQVEX5Krl",
+    "notationTitle": "首例脑机人体试验：可凭意念操控电脑",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "8s0luhdBFa",
+    "previousId": "NaLMmQGTot",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

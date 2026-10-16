@@ -1,0 +1,132 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "初级|MOJi高频350词速记",
+      "subtitle": "初级|MOJi高频350词速记",
+      "brief": "已完结专栏。最容易忘记的初级单词，一篇文章就能记住！",
+      "coverId": "c3f44db6-8414-4094-8cbc-7d5c89735d32",
+      "captionTeamId": "",
+      "type": "article",
+      "readingTags": [
+        "10000009",
+        "10000080",
+        "10000116"
+      ],
+      "levelTags": [
+        "N5",
+        "N4"
+      ],
+      "powerTags": [],
+      "subscribedNum": 17553,
+      "articleNum": 14,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": true,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "eS9OHwSGX1",
+        "EG9sJdqijH",
+        "jYi9uYHMxJ"
+      ],
+      "createdAt": "2025-11-12T09:23:45.468Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-10-01T10:16:43.000Z"
+      },
+      "objectId": "9rfx7re4yh"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-11-12T10:21:38.567Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "12. 韓国の友達 | 韩国的朋友（下）",
+    "coverId": "24e794b0-b388-4d46-9f27-c25407f60ca0.png",
+    "excerpt": " 金曜日に朝ごはんの後で、紅茶を飲みました。ジミンさんは「おはよう」と言いました。 その後、私たちは",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "7704022c-d706-4c60-a5ba-b9b8039b0d79.MP3",
+    "audioDuration": 118,
+    "viewedNum": 580,
+    "commentedNum": 4,
+    "votedNum": 0,
+    "likedNum": 10,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 9,
+    "isTrialRead": true,
+    "createdAt": "2025-11-05T03:41:27.928Z",
+    "updatedAt": "2026-10-15T11:10:55.611Z",
+    "analysisStatus": 1,
+    "analysisTime": 1762942898420,
+    "charsNum": 1225,
+    "columnId": "9rfx7re4yh",
+    "contentId": "14fnyzplsz4mpJhmNJCF38",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000080",
+      "10000081",
+      "10000001",
+      "10000005",
+      "10000116"
+    ],
+    "shareStyle": 2,
+    "vTag": "1762942898567",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-30T16:00:00.000Z"
+    },
+    "outSharedNum": 180,
+    "objectId": "pJhmNJCF38",
+    "notationTitle": "<span class=\"moji-notation\">12. <ruby><rb>韓国</rb><rp>(</rp><rt roma=\"kankoku\" hiragana=\"かんこく\" lemma=\"韓国\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby n5=\"\"><rb>友達</rb><rp>(</rp><rt roma=\"tomodachi\" hiragana=\"ともだち\" lemma=\"友達\" lemma-t=\"\"></rt><rp>)</rp></ruby> | 韩国的朋友（下）</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "初级|MOJi高频350词速记",
+      "subtitle": "初级|MOJi高频350词速记",
+      "brief": "已完结专栏。最容易忘记的初级单词，一篇文章就能记住！",
+      "coverId": "c3f44db6-8414-4094-8cbc-7d5c89735d32",
+      "isSubscribed": false
+    },
+    "nextId": "AzV28UjkcK",
+    "previousId": "",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

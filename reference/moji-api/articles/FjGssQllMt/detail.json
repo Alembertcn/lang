@@ -1,0 +1,128 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-09-25T09:55:06.055Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "超2万人“孤独死”，日本政府有何对策？",
+    "coverId": "54f8abed-21cd-4e9c-aa45-481177da7a36.png",
+    "excerpt": "「孤立死」去年1年間に2万1000人余 内閣府が初推計 施策検討 孤独や孤立への対策をめぐり、内閣府",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "7de82802-df5f-47f6-a4a8-0611561963ac.mp3",
+    "audioDuration": 74,
+    "viewedNum": 5014,
+    "commentedNum": 13,
+    "votedNum": 0,
+    "likedNum": 25,
+    "collectedNum": 5,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 14,
+    "isTrialRead": false,
+    "createdAt": "2025-04-25T06:18:26.568Z",
+    "updatedAt": "2026-10-16T07:05:47.189Z",
+    "analysisStatus": 1,
+    "analysisTime": 1758794105906,
+    "charsNum": 1852,
+    "columnId": "0ovamn9iev",
+    "contentId": "u3yn3s36o9cFjGssQllMt",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000121",
+      "10000116",
+      "10000022"
+    ],
+    "shareStyle": 2,
+    "vTag": "1758794106055",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-04-27T23:35:00.000Z"
+    },
+    "outSharedNum": 342,
+    "objectId": "FjGssQllMt",
+    "notationTitle": "超2万人“孤独死”，日本政府有何对策？",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "GcoalZHNZj",
+    "previousId": "lsT3yghpoR",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

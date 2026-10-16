@@ -26,3 +26,6 @@ xcuserdata/
 
 # Local secrets
 .env
+
+# Mock media assets (symlink to the fetch workspace; never committed)
+reference/moji-api/oss

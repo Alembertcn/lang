@@ -1,0 +1,128 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-04-28T08:16:50.225Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第五课·早间习惯",
+    "coverId": "8182e4a5-fe6a-4274-8ed5-f3439bddbdc4.jpg",
+    "excerpt": "朝の習慣 私はこの春から、毎朝6時に起きることにした。きっかけは、健康診断で運動不足を指摘された。 ",
+    "createdBy": "9r8XOy1RcF",
+    "audioDuration": 113,
+    "viewedNum": 4797,
+    "commentedNum": 7,
+    "votedNum": 0,
+    "likedNum": 63,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 0,
+    "isTrialRead": true,
+    "createdAt": "2025-04-09T08:29:33.354Z",
+    "updatedAt": "2026-10-16T07:01:40.356Z",
+    "analysisStatus": 1,
+    "analysisTime": 1745828210056,
+    "charsNum": 1531,
+    "columnId": "0ovamn9iev",
+    "contentId": "ejggguhtgcir2pqHeCKIa",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000080",
+      "10000082",
+      "10000010",
+      "10000009"
+    ],
+    "shareStyle": 2,
+    "vTag": "1745828210225",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-04-11T05:52:00.933Z"
+    },
+    "outSharedNum": 915,
+    "audioId": "d973193d-6632-4136-b219-87d84fe13a8d.mp3",
+    "objectId": "r2pqHeCKIa",
+    "notationTitle": "第五课·早间习惯",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "68hZBVu9sE",
+    "previousId": "WG3rYAqfzf",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

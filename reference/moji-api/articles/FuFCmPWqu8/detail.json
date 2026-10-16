@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "lrVMKTEiK0",
+      "name": "nebula",
+      "username": "6b1TkHZ7mmWWOiNxSk5spBz9v",
+      "vTag": "1695285003702",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP3254487"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-09-26T02:07:18.789Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "京阿尼纵火案六周年，事发地举行追悼会",
+    "coverId": "932783c6-a634-43db-8bd0-9b4f5c418285.jpg",
+    "excerpt": "「京アニ」放火事件から6年 スタジオ跡地で追悼式 京都アニメーションのスタジオが放火され、社員36人",
+    "createdBy": "lrVMKTEiK0",
+    "audioId": "8173e049-07fe-4b75-b2cf-34858c0192b3.mp3",
+    "audioDuration": 106,
+    "viewedNum": 396,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 7,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 14,
+    "isTrialRead": false,
+    "createdAt": "2025-09-25T08:08:47.047Z",
+    "updatedAt": "2026-10-14T07:57:28.112Z",
+    "analysisStatus": 1,
+    "analysisTime": 1758852438695,
+    "charsNum": 3161,
+    "columnId": "0ovamn9iev",
+    "contentId": "ainmjtauxkFuFCmPWqu8",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1",
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000020",
+      "10000019",
+      "10000121",
+      "10000116"
+    ],
+    "shareStyle": 2,
+    "vTag": "1758852438789",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-07-20T16:00:00.000Z"
+    },
+    "outSharedNum": 66,
+    "objectId": "FuFCmPWqu8",
+    "notationTitle": "京阿尼纵火案六周年，事发地举行追悼会",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "HzTtu47dYO",
+    "previousId": "kCFdalEiFd",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": true,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

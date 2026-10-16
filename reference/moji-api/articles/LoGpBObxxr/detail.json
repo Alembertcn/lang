@@ -1,0 +1,144 @@
+{
+  "1": [
+    {
+      "objectId": "KjKUelL9GU",
+      "name": "Manabi",
+      "username": "273279385@qq.com",
+      "email": "273279385@qq.com",
+      "vTag": "1683521403378",
+      "imgVer_a": 3,
+      "unionId": "JP36100"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-05-22T08:42:16.909Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "“我家米多到可以卖”的江藤农林相被撤职：小泉进次郎接替",
+    "coverId": "2a377236-b46d-48d1-a622-a98a467d86f1.png",
+    "excerpt": "小泉氏「『コメ担当大臣』だという思いで集中して取り組みたい」 自民党の小泉進次郎前選挙対策委員長は今",
+    "createdBy": "KjKUelL9GU",
+    "audioId": "0f17ef72-f8de-4b3c-a09b-596a626089f4.mp3",
+    "audioDuration": 75,
+    "viewedNum": 2719,
+    "commentedNum": 14,
+    "votedNum": 0,
+    "likedNum": 19,
+    "collectedNum": 2,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-05-22T08:09:17.507Z",
+    "updatedAt": "2026-10-15T23:51:26.382Z",
+    "analysisStatus": 1,
+    "analysisTime": 1747903336806,
+    "charsNum": 770,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "4lctvwf4j8cLoGpBObxxr",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000019",
+      "10000020",
+      "10000022"
+    ],
+    "shareStyle": 2,
+    "vTag": "1747903336909",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-05-22T23:35:00.000Z"
+    },
+    "outSharedNum": 213,
+    "objectId": "LoGpBObxxr",
+    "notationTitle": "“我家米多到可以卖”的江藤农林相被撤职：小泉进次郎接替",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "PNAHqeprJp",
+    "previousId": "1qfW2dEQRK",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

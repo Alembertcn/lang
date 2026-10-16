@@ -1,0 +1,124 @@
+{
+  "1": [
+    {
+      "objectId": "lrVMKTEiK0",
+      "name": "nebula",
+      "username": "6b1TkHZ7mmWWOiNxSk5spBz9v",
+      "vTag": "1695285003702",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP3254487"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-05-25T09:24:56.409Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "DAY2 | N2模拟训练：中篇阅读",
+    "coverId": "1caba91a-b3db-454f-92f8-2ca6d2a59daf.png",
+    "excerpt": "N2模拟训练：中篇阅读 为保证最佳练习效果，首次练习请关闭翻译 次の文章を読んで、後の問いに対する答",
+    "createdBy": "lrVMKTEiK0",
+    "audioDuration": 0,
+    "viewedNum": 437,
+    "commentedNum": 1,
+    "votedNum": 798,
+    "likedNum": 3,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": false,
+    "isPublished": false,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 5,
+    "isTrialRead": true,
+    "createdAt": "2026-03-23T07:19:20.320Z",
+    "updatedAt": "2026-10-13T02:58:48.497Z",
+    "analysisStatus": 1,
+    "analysisTime": 1779701096164,
+    "charsNum": 2511,
+    "columnId": "0ovamn9iev",
+    "contentId": "eh0naop3ax5wZRaB2yFRy",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5",
+      "N4",
+      "N3",
+      "N2",
+      "N1",
+      "n1up"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000010"
+    ],
+    "shareStyle": 2,
+    "vTag": "1779701096409",
+    "outSharedNum": 129,
+    "objectId": "wZRaB2yFRy",
+    "notationTitle": "<span class=\"moji-notation\"><span class=\"moji-toolkit-org\" lemma=\"Ｄ\" lemma-t=\"\">D</span><span class=\"moji-toolkit-org\" lemma=\"Ａ\" lemma-t=\"\">A</span><span class=\"moji-toolkit-org\" lemma=\"Ｙ\" lemma-t=\"\">Y</span><span class=\"moji-toolkit-org\" lemma=\"二\" lemma-t=\"\">2</span> | N2模拟训练：中篇阅读</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

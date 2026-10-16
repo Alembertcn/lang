@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "N2高频200词速记",
+      "subtitle": "N2高频200词速记",
+      "brief": "已完结专栏，共7篇文章，帮助你速记N2高频200词",
+      "coverId": "9e0d014c-0394-4d88-b147-da0be497f8f3",
+      "captionTeamId": "",
+      "type": "article",
+      "readingTags": [
+        "10000009",
+        "10000080"
+      ],
+      "levelTags": [
+        "N2"
+      ],
+      "powerTags": [],
+      "subscribedNum": 13827,
+      "articleNum": 7,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "PMf2NZDTwm",
+        "EG9sJdqijH"
+      ],
+      "createdAt": "2025-11-25T06:16:35.665Z",
+      "updatedAt": "2026-10-16T07:06:46.288Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-09-30T16:00:00.000Z"
+      },
+      "objectId": "crt8hgfmgl"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-11-28T03:40:27.667Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "3.父へのサプライズ | 给爸爸的惊喜",
+    "coverId": "34f5f624-d421-458d-b953-b49b52cb52c3.png",
+    "excerpt": " 私は【息子】として、父の誕生日パーティーの【用意】を【手伝う】ことにしました。 リビングを【片付け",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "126b3b87-8732-4322-b8fb-4be9c9f5bedb.MP3",
+    "audioDuration": 93,
+    "viewedNum": 709,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 4,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 9,
+    "isTrialRead": true,
+    "createdAt": "2025-11-25T07:47:47.053Z",
+    "updatedAt": "2026-10-16T00:01:32.630Z",
+    "analysisStatus": 1,
+    "analysisTime": 1764301227312,
+    "charsNum": 911,
+    "columnId": "crt8hgfmgl",
+    "contentId": "gt1jembk4hnXrE94BbpZV",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000026",
+      "10000027",
+      "10000060"
+    ],
+    "shareStyle": 2,
+    "vTag": "1764301227667",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-30T16:00:00.000Z"
+    },
+    "outSharedNum": 142,
+    "objectId": "XrE94BbpZV",
+    "notationTitle": "<span class=\"moji-notation\"><span class=\"moji-toolkit-org\" lemma=\"三\" lemma-t=\"\">3</span><span class=\"moji-toolkit-org\" lemma=\"．\" lemma-t=\"\">.</span><ruby n5=\"\"><rb>父</rb><rp>(</rp><rt roma=\"chichi\" hiragana=\"ちち\" lemma=\"父\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"へ\" lemma-t=\"\">へ</span><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><span class=\"moji-toolkit-org\" lemma=\"サプライ-supply\" lemma-t=\"サプライ-supply\">サプライズ</span> | 给爸爸的惊喜</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N2高频200词速记",
+      "subtitle": "N2高频200词速记",
+      "brief": "已完结专栏，共7篇文章，帮助你速记N2高频200词",
+      "coverId": "9e0d014c-0394-4d88-b147-da0be497f8f3",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "",
+    "displayTags": [
+      "考试",
+      "生活"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

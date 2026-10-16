@@ -1,0 +1,137 @@
+{
+  "1": [
+    {
+      "objectId": "jyOqsrjkrr",
+      "name": "好想食深海大肥🐷",
+      "username": "546669354@qq.com",
+      "email": "546669354@qq.com",
+      "vTag": "1731316981563",
+      "imgVer_a": 8,
+      "imgVer_f": 5,
+      "unionId": "JP308143"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-13T05:41:12.203Z",
+      "updatedAt": "2026-10-16T07:30:20.555Z",
+      "title": "晨读",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "ownerIds": [
+        "GJiALasaYI",
+        "vdriBjucaM",
+        "PMf2NZDTwm",
+        "KjKUelL9GU",
+        "KoXijCLUUh",
+        "jyOqsrjkrr",
+        "CJFe5gR5Zf",
+        "3KLiPXqIGB"
+      ],
+      "articleNum": 423,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:00:00.000Z"
+      },
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "subscribedNum": 117210,
+      "isDetailRead": true,
+      "isVIP": false,
+      "type": "audioArticle",
+      "subtitle": "朝読書",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000099"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": true
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "e72cANzo2W"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2022-06-29T09:54:23.696Z"
+    },
+    "title": "坂本真绫 | 四月魔女的房间（3）",
+    "coverId": "35b715bd-5fe8-4564-9611-589afabe6032",
+    "excerpt": "見えない犬がやってきました。 床を爪でかく音や息をする気配はすれども、姿はありません。 ホウキ草より",
+    "createdBy": "jyOqsrjkrr",
+    "contentId": "Y4H8YaznFy",
+    "audioId": "9a38b05b-49c2-434c-9f25-3ae705f8cfdf.mp3",
+    "audioDuration": 301,
+    "viewedNum": 1242,
+    "commentedNum": 4,
+    "votedNum": 0,
+    "likedNum": 10,
+    "collectedNum": 20,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "createdAt": "2022-06-29T09:54:23.698Z",
+    "updatedAt": "2026-10-14T02:56:03.085Z",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2022-06-29T23:00:00.000Z"
+    },
+    "columnId": "e72cANzo2W",
+    "outSharedNum": 28,
+    "notationHtmlSuccess": true,
+    "analysisStatus": 1,
+    "analysisTime": 1682331380875,
+    "levelTags": [
+      "N2",
+      "N3",
+      "nlvall"
+    ],
+    "readingTags": [
+      "10000116",
+      "10000099",
+      "10000101",
+      "10000117",
+      "10001230"
+    ],
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "ACL": {
+      "jyOqsrjkrr": {
+        "read": true,
+        "write": true
+      }
+    },
+    "objectId": "Y4H8YaznFy",
+    "notationTitle": "<span class=\"moji-notation\">坂本真绫 | 四月魔女的房间（3）</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "晨读",
+      "subtitle": "朝読書",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "isSubscribed": false
+    },
+    "nextId": "J1ZdWK7xvJ",
+    "previousId": "WdMb4oHPmf",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

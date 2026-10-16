@@ -1,0 +1,127 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "nlvall"
+      ],
+      "powerTags": [],
+      "subscribedNum": 59877,
+      "articleNum": 77,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF"
+      ],
+      "createdAt": "2025-04-09T01:29:51.789Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-06-27T02:00:00.000Z"
+      },
+      "objectId": "0ovamn9iev"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-06-11T06:00:58.582Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "第四课:即时应答-应该回答什么",
+    "coverId": "30075834-a72a-46e7-8275-c7c2f2cdd312.png",
+    "excerpt": " 第四课:即时应答-应该回答什么 准备纸笔，点击页面下方的音频播放按钮开始练习。 第一遍：真题实训 ",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "9228d652-13e8-4a42-ba9c-d46e3eb03f5b.MP3",
+    "audioDuration": 66,
+    "viewedNum": 1395,
+    "commentedNum": 4,
+    "votedNum": 1223,
+    "likedNum": 13,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 9,
+    "isTrialRead": true,
+    "createdAt": "2025-06-10T06:15:18.668Z",
+    "updatedAt": "2026-10-15T21:31:38.477Z",
+    "analysisStatus": 1,
+    "analysisTime": 1749621658400,
+    "charsNum": 1928,
+    "columnId": "0ovamn9iev",
+    "contentId": "belc3nj19nqNyolxWgzod",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000010",
+      "10000009",
+      "10000121"
+    ],
+    "shareStyle": 2,
+    "vTag": "1749621658582",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-06-11T03:36:31.236Z"
+    },
+    "outSharedNum": 205,
+    "objectId": "NyolxWgzod",
+    "notationTitle": "第四课:即时应答-应该回答什么",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "编辑精讲",
+      "subtitle": "编辑精讲",
+      "brief": "编辑精讲",
+      "coverId": "c3e8dde0-6f65-4b2a-8a83-55f7bfa31f56",
+      "isSubscribed": false
+    },
+    "nextId": "7dxCXVaGba",
+    "previousId": "MrYryqUuRN",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

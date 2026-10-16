@@ -1,0 +1,143 @@
+{
+  "1": [
+    {
+      "objectId": "KjKUelL9GU",
+      "name": "Manabi",
+      "username": "273279385@qq.com",
+      "email": "273279385@qq.com",
+      "vTag": "1683521403378",
+      "imgVer_a": 3,
+      "unionId": "JP36100"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-09-25T09:54:14.738Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "外语真的有必要学吗？日本《学习指导要领》启动修订",
+    "coverId": "9f0fc03c-6c4c-4a4b-9bd4-c47b2f55b5a9.PNG",
+    "excerpt": "中教審 学習指導要領の改訂へ 教科ごとに具体的な議論始まる 小中学校や高校で教える内容を定めた学習指",
+    "createdBy": "KjKUelL9GU",
+    "audioId": "38e2cce9-b922-4cb8-b4a8-c38057595c0c.m4a",
+    "audioDuration": 86,
+    "viewedNum": 3659,
+    "commentedNum": 5,
+    "votedNum": 0,
+    "likedNum": 33,
+    "collectedNum": 2,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-09-25T09:54:14.738Z",
+    "updatedAt": "2026-10-14T02:36:20.176Z",
+    "analysisStatus": 1,
+    "analysisTime": 1758794054807,
+    "charsNum": 864,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "lAHtKd6jte",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000019",
+      "10000020",
+      "10000022"
+    ],
+    "shareStyle": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-25T23:35:00.000Z"
+    },
+    "outSharedNum": 299,
+    "objectId": "lAHtKd6jte",
+    "notationTitle": "<span class=\"moji-notation\">外语真的有必要学吗？日本《学习指导要领》启动修订</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "4DEEVWIcTJ",
+    "previousId": "nFW1brImE9",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

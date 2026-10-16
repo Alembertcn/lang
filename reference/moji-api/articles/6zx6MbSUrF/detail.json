@@ -1,0 +1,143 @@
+{
+  "1": [
+    {
+      "objectId": "cRLYHFA9kK",
+      "name": "u650Lg",
+      "username": "nesora@outlook.com",
+      "email": "nesora@outlook.com",
+      "vTag": "1698054003248",
+      "imgVer_a": 3,
+      "imgVer_f": 2,
+      "unionId": "JP20108"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-05T07:15:31.277Z",
+      "updatedAt": "2026-10-16T08:17:27.463Z",
+      "title": "日语新闻听读",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "ownerIds": [
+        "Dzwp116Z5m",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "KjKUelL9GU",
+        "QEuIhfAn81",
+        "UHO4sjUfvb",
+        "rLru1YRyT9",
+        "f3bZKZgziq",
+        "mYuCBSWsAP",
+        "ivRWs0vPW4",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 2765,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:35:00.000Z"
+      },
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "subscribedNum": 234654,
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "NHK",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2"
+      ],
+      "readingTags": [
+        "10000019"
+      ],
+      "isVIP": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "G4kGjT2T7y"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-08-29T09:40:39.422Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "日本警方将引进AI追查犯罪头目",
+    "coverId": "bbdf8b7e-85f0-402e-9a01-87d4b05c1fec.png",
+    "excerpt": "警察庁「匿名・流動型犯罪グループ」首謀者検挙に生成AI導入へ SNSで集めたメンバーなどを実行役とし",
+    "createdBy": "cRLYHFA9kK",
+    "audioId": "e1d71bed-dd16-4595-bf05-67a19eeb4e5c.MP3",
+    "audioDuration": 89,
+    "viewedNum": 2999,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 23,
+    "collectedNum": 2,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-08-29T09:40:39.422Z",
+    "updatedAt": "2026-10-15T04:24:25.554Z",
+    "analysisStatus": 1,
+    "analysisTime": 1756460439574,
+    "charsNum": 923,
+    "columnId": "G4kGjT2T7y",
+    "contentId": "6zx6MbSUrF",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000022",
+      "10000020",
+      "10000019"
+    ],
+    "shareStyle": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-08-31T23:35:00.000Z"
+    },
+    "outSharedNum": 263,
+    "objectId": "6zx6MbSUrF",
+    "notationTitle": "日本警方将引进AI追查犯罪头目",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语新闻听读",
+      "subtitle": "NHK",
+      "brief": "每日更新日语新闻听力内容，帮你熟悉最地道的日语发音! | 完整内容请下载<MOJi阅读>",
+      "coverId": "9a7d91e5-6758-4035-be16-6144ede9b5cc",
+      "isSubscribed": false
+    },
+    "nextId": "ZqNE81kHDR",
+    "previousId": "sey9AMttsu",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}

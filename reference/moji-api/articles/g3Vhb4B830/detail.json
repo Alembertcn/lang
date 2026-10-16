@@ -1,0 +1,132 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "初级|MOJi高频350词速记",
+      "subtitle": "初级|MOJi高频350词速记",
+      "brief": "已完结专栏。最容易忘记的初级单词，一篇文章就能记住！",
+      "coverId": "c3f44db6-8414-4094-8cbc-7d5c89735d32",
+      "captionTeamId": "",
+      "type": "article",
+      "readingTags": [
+        "10000009",
+        "10000080",
+        "10000116"
+      ],
+      "levelTags": [
+        "N5",
+        "N4"
+      ],
+      "powerTags": [],
+      "subscribedNum": 17553,
+      "articleNum": 14,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": true,
+      "isVIP": true,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "eS9OHwSGX1",
+        "EG9sJdqijH",
+        "jYi9uYHMxJ"
+      ],
+      "createdAt": "2025-11-12T09:23:45.468Z",
+      "updatedAt": "2026-10-16T08:15:36.943Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-10-01T10:16:43.000Z"
+      },
+      "objectId": "9rfx7re4yh"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-11-12T10:18:35.092Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "5. 日常買い物と家族時間 | 日常购物与家庭时光（上）",
+    "coverId": "33ac8f4a-cafc-4ba9-92f8-0d0ed46e0276.png",
+    "excerpt": " 私の名前は李です。私は大人で、会社員です。家は駅の近くにあります。 去年、この家を買いました。家は",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "aacbb6ae-af32-4e57-b319-a0e4b601c3b5.MP3",
+    "audioDuration": 110,
+    "viewedNum": 1226,
+    "commentedNum": 3,
+    "votedNum": 0,
+    "likedNum": 10,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 9,
+    "isTrialRead": true,
+    "createdAt": "2025-11-05T02:35:44.214Z",
+    "updatedAt": "2026-10-16T07:51:57.588Z",
+    "analysisStatus": 1,
+    "analysisTime": 1762942714896,
+    "charsNum": 1031,
+    "columnId": "9rfx7re4yh",
+    "contentId": "397htdakppkg3Vhb4B830",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000080",
+      "10000081",
+      "10000001",
+      "10000005",
+      "10000116"
+    ],
+    "shareStyle": 2,
+    "vTag": "1762942715092",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-09-30T16:00:00.000Z"
+    },
+    "outSharedNum": 301,
+    "objectId": "g3Vhb4B830",
+    "notationTitle": "<span class=\"moji-notation\">5. <ruby n3=\"\"><rb>日常</rb><rp>(</rp><rt roma=\"nichijou\" hiragana=\"にちじょう\" lemma=\"日常\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n5=\"\"><rb>買い物</rb><rp>(</rp><rt roma=\"kaimono\" hiragana=\"かいもの\" lemma=\"買い物\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"と\" lemma-t=\"\">と</span><ruby n5=\"\"><rb>家族</rb><rp>(</rp><rt roma=\"kazoku\" hiragana=\"かぞく\" lemma=\"家族\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n5=\"\"><rb>時間</rb><rp>(</rp><rt roma=\"jikan\" hiragana=\"じかん\" lemma=\"時間\" lemma-t=\"\"></rt><rp>)</rp></ruby> | 日常购物与家庭时光（上）</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "初级|MOJi高频350词速记",
+      "subtitle": "初级|MOJi高频350词速记",
+      "brief": "已完结专栏。最容易忘记的初级单词，一篇文章就能记住！",
+      "coverId": "c3f44db6-8414-4094-8cbc-7d5c89735d32",
+      "isSubscribed": false
+    },
+    "nextId": "AzV28UjkcK",
+    "previousId": "",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": true
+  },
+  "code": 200
+}
