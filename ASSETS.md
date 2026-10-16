@@ -10,6 +10,7 @@
 | 代码 / 脚本 / 文档 / 图标 / 阅读引擎 / 文章 JSON | < 3 MB | **进 git** |
 | 词库 `content/mojidict/dictionary.db` | 64 MB | **Release（`assets-v1`）** |
 | 书籍解包树（`composeResources/files/books/{id}/**`） | ~0.5 MB | **生成物，不入库**，用 `unpack_moji_books.py` 从 epub 源 1:1 解包（原版路径，无转换） |
+| 发现页数据/图片（`composeResources/files/find/**`） | ~6 MB | **生成物，不入库**，用 `tools/fetch_find_assets.py` 重建（圈子/文章/计划/专栏封面 + `feed.json`） |
 | 书籍 epub 源（`reference/moji-api/oss/books/**`） | ~1.2 MB | Release 或本地抓取（`fetch_moji_books.py`） |
 | 音频 mp3（`reference/moji-api/oss/article/audio/**`） | 468 MB | 保持本地 mock（.gitignore 已有） |
 | 文章源（`reference/moji-api/articles/**`） | 15 MB | 本地抓取（`fetch_moji_articles.py`） |

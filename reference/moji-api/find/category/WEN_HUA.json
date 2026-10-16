@@ -1,0 +1,425 @@
+{
+  "result": {
+    "hasNext": false,
+    "columnList": [
+      {
+        "title": "杂志屋",
+        "coverId": "6d8a9c82-f1cc-468b-98ea-e52f212373c2",
+        "brief": "（1-2更/周）日本时尚分享·关注流行穿搭|美妆|生活|人物讯息·不拘泥于任何框架~",
+        "articleNum": 342,
+        "isTrash": false,
+        "isVIP": false,
+        "subscribedNum": 144871,
+        "publishedAt": {
+          "__type": "Date",
+          "iso": "2026-10-12T10:00:00.000Z"
+        },
+        "isDetailRead": true,
+        "type": "audioArticle",
+        "subtitle": "雑誌読み",
+        "levelTags": [
+          "N1",
+          "N2",
+          "N3"
+        ],
+        "readingTags": [
+          "10000060"
+        ],
+        "powerTags": [
+          "读解听解"
+        ],
+        "captionTeamId": "",
+        "id": "Io4cKQ1oZB",
+        "objectId": "Io4cKQ1oZB",
+        "createdAt": {
+          "__type": "Date",
+          "iso": "2022-08-15T08:39:38.946Z"
+        },
+        "updatedAt": {
+          "__type": "Date",
+          "iso": "2026-10-16T10:07:36.485Z"
+        },
+        "latestArticles": [
+          {
+            "_id": "fjLmJFiUUa",
+            "title": "（前篇）咱家的猫·再续 | 地震突袭稳如泰山，主子的“大将风度”从何而来？",
+            "coverId": "21b33bf6-ebe2-4cd2-97ef-a12c858b2953.jpeg",
+            "audioId": "c076ef66-8369-48d9-b449-6bc1b625139e.mp3",
+            "isVIP": true,
+            "transHideType": "1",
+            "publishedAt": "2026-10-12T10:00:00.000Z",
+            "objectId": "fjLmJFiUUa"
+          },
+          {
+            "_id": "Tk0PXom0LU",
+            "title": "心疼我但健忘的妻子：她真的好可爱",
+            "coverId": "c6d5e3bc-df30-4d4a-aa28-8e6faf793e86.png",
+            "audioId": "38418bdc-17f4-40b2-b13e-c280abe96489.mp3",
+            "isVIP": true,
+            "transHideType": "1",
+            "publishedAt": "2026-10-05T10:00:00.000Z",
+            "objectId": "Tk0PXom0LU"
+          }
+        ]
+      },
+      {
+        "title": "MOJi百科",
+        "subtitle": "MOJi百科（ひゃっか）",
+        "brief": "教材学不进去？来MOJi百科边玩边学边看吧！超多有趣知识等着你~",
+        "coverId": "0a2d63b6-8eef-40af-909d-9e274cdc54c7",
+        "captionTeamId": "",
+        "type": "article",
+        "readingTags": [
+          "10000060",
+          "10000051"
+        ],
+        "levelTags": [
+          "N3",
+          "N4",
+          "N5"
+        ],
+        "powerTags": [
+          "词汇语法",
+          "读解听解"
+        ],
+        "subscribedNum": 44988,
+        "articleNum": 58,
+        "isDetailRead": false,
+        "isVIP": false,
+        "isTrash": false,
+        "publishedAt": {
+          "__type": "Date",
+          "iso": "2026-10-12T04:00:00.000Z"
+        },
+        "id": "dc1zkhwvxl",
+        "objectId": "dc1zkhwvxl",
+        "createdAt": {
+          "__type": "Date",
+          "iso": "2025-09-04T07:59:19.120Z"
+        },
+        "updatedAt": {
+          "__type": "Date",
+          "iso": "2026-10-16T09:53:56.982Z"
+        },
+        "latestArticles": [
+          {
+            "_id": "brlRkmL1AJ",
+            "title": "商务人士为什么不说“最近好忙”？",
+            "coverId": "7a7ad7a3-273a-4d17-b476-cc39be4a6d41.png",
+            "isVIP": true,
+            "transHideType": "1",
+            "publishedAt": "2026-10-12T04:00:00.000Z",
+            "objectId": "brlRkmL1AJ"
+          },
+          {
+            "_id": "aODE1ikYew",
+            "title": "大坂变成大阪的原因是什么？",
+            "coverId": "98ccf250-280a-4306-9c30-7e11a0932bd0.png",
+            "isVIP": false,
+            "transHideType": "0",
+            "publishedAt": "2026-10-05T04:00:00.000Z",
+            "objectId": "aODE1ikYew"
+          }
+        ]
+      },
+      {
+        "powerTags": [],
+        "title": "留学情报局",
+        "subtitle": "留学情報局",
+        "coverId": "81b85297-c8eb-49ba-956a-1cada559bd3c",
+        "brief": "赴日规划、报考辅导、生活攻略……你所关心的留学信息一网打尽！",
+        "type": "article",
+        "articleNum": 12,
+        "subscribedNum": 79662,
+        "isTrash": false,
+        "isVIP": false,
+        "isDetailRead": false,
+        "isApply": false,
+        "publishedAt": {
+          "__type": "Date",
+          "iso": "2025-12-29T05:00:00.000Z"
+        },
+        "levelTags": [
+          "nlvall"
+        ],
+        "readingTags": [
+          "10000060"
+        ],
+        "captionTeamId": "",
+        "id": "XEJm955dgo",
+        "objectId": "XEJm955dgo",
+        "createdAt": {
+          "__type": "Date",
+          "iso": "2024-03-01T09:16:09.749Z"
+        },
+        "updatedAt": {
+          "__type": "Date",
+          "iso": "2026-10-16T09:45:00.581Z"
+        },
+        "latestArticles": [
+          {
+            "_id": "yM8H8XFI8c",
+            "title": "日本留学进阶：利用好校内外资源，让你的日语、社交、文化理解效率翻倍！",
+            "coverId": "dabcdde5-ae82-45b1-8a81-1f8ef429c9d6.jpg",
+            "isVIP": false,
+            "transHideType": "0",
+            "publishedAt": "2025-12-29T05:00:00.000Z",
+            "objectId": "yM8H8XFI8c"
+          },
+          {
+            "_id": "8135wBE5aW",
+            "title": "如何才能实现留学的“增值”？做好以下5件小事👉",
+            "coverId": "f2c609bb-99b8-4c84-90ac-33f05a1296ae.png",
+            "isVIP": false,
+            "transHideType": "0",
+            "publishedAt": "2025-12-27T10:00:00.000Z",
+            "objectId": "8135wBE5aW"
+          }
+        ]
+      },
+      {
+        "title": "文化之旅",
+        "coverId": "d4dada44-a2cf-4f01-913d-296c376a556a",
+        "brief": "熟读玩味，感受文化之美",
+        "articleNum": 154,
+        "subscribedNum": 149391,
+        "isTrash": false,
+        "isVIP": false,
+        "isDetailRead": true,
+        "publishedAt": {
+          "__type": "Date",
+          "iso": "2025-10-21T10:00:00.000Z"
+        },
+        "type": "article",
+        "subtitle": "文化の旅",
+        "levelTags": [
+          "N1",
+          "N5",
+          "n1up",
+          "N3",
+          "N2",
+          "N4"
+        ],
+        "readingTags": [
+          "10000051"
+        ],
+        "powerTags": [
+          "读解听解"
+        ],
+        "captionTeamId": "",
+        "id": "0orUOfueHR",
+        "objectId": "0orUOfueHR",
+        "createdAt": {
+          "__type": "Date",
+          "iso": "2022-10-24T01:46:56.562Z"
+        },
+        "updatedAt": {
+          "__type": "Date",
+          "iso": "2026-10-16T09:45:00.581Z"
+        },
+        "latestArticles": [
+          {
+            "_id": "sU85dqeVFP",
+            "title": "【MOJi百科特别篇】奥运会的金牌为何不是纯金的",
+            "coverId": "68d9f646-c53e-4f7d-a902-e5d3eaa756cb.jpg",
+            "isVIP": true,
+            "transHideType": "1",
+            "publishedAt": "2025-10-21T10:00:00.000Z",
+            "objectId": "sU85dqeVFP"
+          },
+          {
+            "_id": "7wHAmwEkBa",
+            "title": "【MOJi百科特别篇】铁人三项是如何诞生的？",
+            "coverId": "4e0772a3-b651-4e44-a5e7-4fb037e1bd17.jpg",
+            "isVIP": true,
+            "transHideType": "1",
+            "publishedAt": "2025-10-14T10:00:00.000Z",
+            "objectId": "7wHAmwEkBa"
+          }
+        ]
+      },
+      {
+        "captionTeamId": "",
+        "powerTags": [],
+        "title": "杂文汇",
+        "brief": "各类文章乱炖，只做精品更新",
+        "articleNum": 22,
+        "isTrash": false,
+        "publishedAt": {
+          "__type": "Date",
+          "iso": "2025-06-25T11:00:00.000Z"
+        },
+        "coverId": "bbf2b098-6c29-40f0-9ce1-c1416fb833f6",
+        "subscribedNum": 97084,
+        "type": "article",
+        "subtitle": "雑談番組",
+        "levelTags": [
+          "N1",
+          "N5",
+          "n1up",
+          "N2",
+          "N3",
+          "N4"
+        ],
+        "readingTags": [
+          "10000060"
+        ],
+        "isDetailRead": true,
+        "isVIP": false,
+        "id": "tDEdYepD44",
+        "objectId": "tDEdYepD44",
+        "createdAt": {
+          "__type": "Date",
+          "iso": "2021-09-22T02:27:05.367Z"
+        },
+        "updatedAt": {
+          "__type": "Date",
+          "iso": "2026-10-16T09:45:00.581Z"
+        },
+        "latestArticles": [
+          {
+            "_id": "oHMWM0Gagh",
+            "title": "恭喜你穿越回了五一假期！",
+            "coverId": "01b8e422-207e-4c04-a13c-bc9d1de2b768.jpg",
+            "isVIP": false,
+            "transHideType": "0",
+            "publishedAt": "2025-05-06T08:30:00.000Z",
+            "objectId": "oHMWM0Gagh"
+          },
+          {
+            "_id": "548rvDAIkW",
+            "title": "我的黄金周 | “全世界的躺平主义者，联合起来！”",
+            "coverId": "a535d6cb-ea7e-4c8f-9258-746feb59c614.png",
+            "isVIP": false,
+            "transHideType": "0",
+            "publishedAt": "2024-05-01T04:00:00.000Z",
+            "objectId": "548rvDAIkW"
+          }
+        ]
+      },
+      {
+        "title": "上海交大日语阅读园地",
+        "subtitle": "上海交大日语阅读园地",
+        "coverId": "a2182bc5-2b56-4091-81f3-fea4d8f9e853",
+        "brief": "官方入驻专栏，供学习交流之用。日语阅读是七彩光谱，也是流动的盛宴。",
+        "type": "article",
+        "articleNum": 51,
+        "subscribedNum": 97738,
+        "isTrash": false,
+        "isVIP": false,
+        "isDetailRead": true,
+        "isApply": false,
+        "publishedAt": {
+          "__type": "Date",
+          "iso": "2024-09-13T08:00:00.000Z"
+        },
+        "captionTeamId": "zz2eclIFH9",
+        "levelTags": [
+          "N1",
+          "n1up",
+          "N2",
+          "N3",
+          "N4",
+          "N5"
+        ],
+        "readingTags": [
+          "10000051"
+        ],
+        "powerTags": [
+          "读解听解"
+        ],
+        "id": "Ss5igXESjH",
+        "objectId": "Ss5igXESjH",
+        "createdAt": {
+          "__type": "Date",
+          "iso": "2023-09-22T06:12:34.485Z"
+        },
+        "updatedAt": {
+          "__type": "Date",
+          "iso": "2026-10-16T09:45:00.581Z"
+        },
+        "latestArticles": [
+          {
+            "_id": "00KPXuk5eS",
+            "title": "真人“猪猡”的传说 | 人間「豚」の言い伝え",
+            "coverId": "0395d46e-e791-42c5-95cc-c4fc601c1a21.png",
+            "isVIP": false,
+            "transHideType": "0",
+            "publishedAt": "2024-09-13T08:00:00.000Z",
+            "objectId": "00KPXuk5eS"
+          },
+          {
+            "_id": "duiRf2UNYF",
+            "title": "何谓“白露”？ | 「白露」とは？",
+            "coverId": "b61c22dd-d713-46e9-8e9f-f203fd92dea8.png",
+            "isVIP": false,
+            "transHideType": "0",
+            "publishedAt": "2024-09-11T08:00:00.000Z",
+            "objectId": "duiRf2UNYF"
+          }
+        ]
+      },
+      {
+        "powerTags": [],
+        "title": "MBTI",
+        "subtitle": "MBTI",
+        "coverId": "0933bc11-818d-4912-9fc6-2b3bef0b1314",
+        "brief": "伪科学还是真科学？通往内心的奇妙之旅！",
+        "type": "article",
+        "articleNum": 29,
+        "subscribedNum": 90782,
+        "isTrash": false,
+        "isVIP": false,
+        "isDetailRead": true,
+        "isApply": false,
+        "publishedAt": {
+          "__type": "Date",
+          "iso": "2024-08-23T10:00:00.000Z"
+        },
+        "levelTags": [
+          "N1",
+          "n1up",
+          "N2",
+          "N3",
+          "N4",
+          "N5"
+        ],
+        "readingTags": [
+          "10000075"
+        ],
+        "captionTeamId": "",
+        "id": "37A5alwGHw",
+        "objectId": "37A5alwGHw",
+        "createdAt": {
+          "__type": "Date",
+          "iso": "2023-11-16T09:45:35.421Z"
+        },
+        "updatedAt": {
+          "__type": "Date",
+          "iso": "2026-10-16T09:45:00.581Z"
+        },
+        "latestArticles": [
+          {
+            "_id": "dmnu7auo8e",
+            "title": "你也想在ENFJ的怀里睡大觉？MBTI人际关系篇（11）",
+            "coverId": "a3dc01bc-befa-4096-8c6d-7ab9407da8c4.jpg",
+            "isVIP": true,
+            "transHideType": "1",
+            "publishedAt": "2024-08-23T10:00:00.000Z",
+            "objectId": "dmnu7auo8e"
+          },
+          {
+            "_id": "qUnq2Wt8EJ",
+            "title": "在ENFJ这里，你可以不用努力了…| MBTI16型人格（11）",
+            "coverId": "8074188f-d105-410b-bd5c-8efa8d8b3d19.jpg",
+            "isVIP": false,
+            "transHideType": "0",
+            "publishedAt": "2024-07-26T10:00:00.000Z",
+            "objectId": "qUnq2Wt8EJ"
+          }
+        ]
+      }
+    ]
+  },
+  "code": 200
+}

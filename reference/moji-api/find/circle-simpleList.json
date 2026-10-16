@@ -1,0 +1,62 @@
+{
+  "code": 200,
+  "result": {
+    "list": [
+      {
+        "_id": "beikaoCircle",
+        "title": "JLPT 圈",
+        "iconLight": "icon/mojireadCircle/4o9iqt4buu_light",
+        "iconDark": "icon/mojireadCircle/q6xg36p310_dark",
+        "homeIconDark": "icon/mojireadCircle/j3mjtgc0vn",
+        "homeIconLight": "icon/mojireadCircle/z67i2yc5sr",
+        "iconV2Dark": "icon/mojireadCircle/d36pbyfsm7",
+        "iconV2Light": "icon/mojireadCircle/vzd4n98a41",
+        "objectId": "beikaoCircle"
+      },
+      {
+        "_id": "yuxueCircle",
+        "title": "翻译圈",
+        "iconLight": "icon/mojireadCircle/2l06nldkj4_light",
+        "iconDark": "icon/mojireadCircle/vcxnw0man3_dark",
+        "homeIconDark": "icon/mojireadCircle/z27hc1v8ec",
+        "homeIconLight": "icon/mojireadCircle/qd3j67q3jy",
+        "iconV2Dark": "icon/mojireadCircle/vrl5vtq6s4",
+        "iconV2Light": "icon/mojireadCircle/k9jrhto9oe",
+        "objectId": "yuxueCircle"
+      },
+      {
+        "_id": "wenhuaCircle",
+        "title": "留学圈",
+        "iconLight": "icon/mojireadCircle/alub1zisth_light",
+        "iconDark": "icon/mojireadCircle/e6p5w3u5n9_dark",
+        "homeIconDark": "icon/mojireadCircle/latz2j0cdf",
+        "homeIconLight": "icon/mojireadCircle/1l38r00hfw",
+        "iconV2Dark": "icon/mojireadCircle/l8sy64m1zl",
+        "iconV2Light": "icon/mojireadCircle/cz3wtmfdxy",
+        "objectId": "wenhuaCircle"
+      },
+      {
+        "_id": "diantaiCircle",
+        "title": "ACG 圈",
+        "iconLight": "icon/mojireadCircle/s0p6jszjwd_light",
+        "iconDark": "icon/mojireadCircle/mceub1rfjv_dark",
+        "homeIconDark": "icon/mojireadCircle/ifrozk264i",
+        "homeIconLight": "icon/mojireadCircle/fdis5hqguy",
+        "iconV2Dark": "icon/mojireadCircle/b6p1f1hu5p",
+        "iconV2Light": "icon/mojireadCircle/2rlc3bwy8g",
+        "objectId": "diantaiCircle"
+      },
+      {
+        "_id": "ACGCircle",
+        "title": "深夜圈",
+        "iconLight": "icon/mojireadCircle/a2cfj56xy7_light",
+        "iconDark": "icon/mojireadCircle/0w1ph1vjon_dark",
+        "homeIconDark": "icon/mojireadCircle/s5i7fhlxi1",
+        "homeIconLight": "icon/mojireadCircle/k1wjuj2h58",
+        "iconV2Dark": "icon/mojireadCircle/7pwnoald9v",
+        "iconV2Light": "icon/mojireadCircle/v1h69efgc8",
+        "objectId": "ACGCircle"
+      }
+    ]
+  }
+}

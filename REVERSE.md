@@ -16,7 +16,7 @@
 | 页面 | 原版对应 | 本实现 | 状态 |
 | --- | --- | --- | --- |
 | 底部 4 Tab | `ic_home_*` def/sel 双态图标、品牌粉 #E0325C | `App.kt` | ✅ |
-| 发现页 | `item_tab_article` 卡片规格 + 搜索栏/等级筛选 | `feature/discover/DiscoverScreen.kt` | ✅ 主体（顶部粉色背景/时长栏/圈子入口待补） |
+| 发现页 | `FindFragment`：粉色头图 + 阅读时长/打卡/等级 + 搜索/分类 + 圈子行 + 短文推荐 + 阅读计划 + NOW + 专栏推荐 | `feature/discover/DiscoverScreen.kt` + `data/catalog/FindFeed.kt` | ✅ 高仿完成（NOW 缩略图占位：图片走 stream locator，待破解） |
 | 阅读器书架 | `ReaderLibraryListFragment`（全部/我的/官方 + 3 列网格 + 上传卡位） | `feature/reader/ReaderScreen.kt` | ✅ |
 | 书籍正文阅读器 | `ReaderActivity` + `activity_reader` + `ReaderPageFragment`（ViewPager 主轴 + WebView 显示层 + 目录抽屉 + 页码） | `feature/reader/ReaderBookScreen.kt` + `data/reader/*` | ✅ 首版（逐项对齐中，见 INTEGRATION.md 遗留清单） |
 | 阅读页 ⋮ 设置 / 「析」/ 右下按钮 | `ReaderWebView2` 接口 + `tv_pageInfo` / 浮动按钮 | 部分（析已开；⋮ 菜单、右下按钮待做） | ⏳ |
@@ -56,6 +56,12 @@
 | `reading-histories` | 阅读历史 | `reader/reading-histories.json` |
 | `reading-article-everyDayOne` | 每日一文 | `reader/reading-article-everyDayOne.json` |
 | `tts-voice-actors-fetch` | TTS 音色列表 | `reader/tts-voice-actors-fetch.json` |
+| `circle-simpleList` | 发现页圈子（5 个 + 图标路径） | `find/circle-simpleList.json` |
+| `readingCnt-privateRecmArticles` / `-Columns` | 发现页推荐（短文推荐 / 专栏推荐） | `find/*.json` |
+| `homepage-articles` | 短文推荐编排（首页文章顺序） | `find/homepage-articles.json` |
+| `nanews/list`（REST `/v1/nanews/list`） | NOW 新闻列表 | `find/nanews.list.json` |
+| `clockInDaily`（REST `/v1/clockInDaily`） | 打卡/阅读时长 | `find/clockInDaily.json` |
+| `readingCnt-category` | 专栏推荐分类 tab（考试/时事/生活/文学/娱乐） | `find/category/*.json` |
 
 ### 2.3 OSS 直链（静态资源）
 
@@ -97,6 +103,7 @@ tools/start_media_mock.sh   # :8765 -> reference/moji-api/oss（screen 常驻）
 | 书籍 | OSS 书籍包 → epub | 9 本原版 epub | `fetch_moji_books.py` → `unpack_moji_books.py`（1:1 解包） |
 | 文章 | RPC + 正文 zip + SRT | 170 篇文章（正文/时间轴/翻译/句子/配音表） | `convert_moji_articles.py` → `composeResources/files/articles/` |
 | 音频 | OSS | 178 段 mp3 + 索引 | `fetch_moji_audio.py` |
+| 发现页数据/图片 | RPC + OSS（圈子图标、文章/计划/专栏封面） | `feed.json` + 4 组图片目录 | `tools/fetch_find_assets.py`（生成物 gitignore） |
 
 ### 3.2 阅读器机制（关键结论，证据均来自 base.apk）
 
@@ -125,5 +132,6 @@ tools/start_media_mock.sh   # :8765 -> reference/moji-api/oss（screen 常驻）
 cp env.example .env            # 填 MOJI_ACCOUNT/MOJI_PASSWORD（重抓接口）、QWEN_*（AI）
 tools/fetch_assets.sh          # 词库等外置资产
 python3 tools/fetch_moji_books.py && python3 tools/unpack_moji_books.py
+python3 tools/fetch_moji_find.py && python3 tools/fetch_find_assets.py   # 发现页数据与图片
 ./gradlew :composeApp:assembleDebug
 ```
