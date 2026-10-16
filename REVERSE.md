@@ -16,7 +16,7 @@
 | 页面 | 原版对应 | 本实现 | 状态 |
 | --- | --- | --- | --- |
 | 底部 4 Tab | `ic_home_*` def/sel 双态图标、品牌粉 #E0325C | `App.kt` | ✅ |
-| 发现页 | `FindFragment`：粉色头图 + 阅读时长/打卡/等级 + 搜索/分类 + 圈子行 + 短文推荐 + 阅读计划 + NOW + 专栏推荐 | `feature/discover/DiscoverScreen.kt` + `data/catalog/FindFeed.kt` | ✅ 高仿完成（NOW 缩略图占位：图片走 stream locator，待破解） |
+| 发现页 | `FindFragment` → **只保留「专栏推荐」段**（用户确认范围）：吸顶「发现」栏 + 分类条（专栏推荐/考试/时事/生活/文学/娱乐）+ 专栏卡（封面/标题/2 篇最新文章） | `feature/discover/DiscoverScreen.kt` + `data/catalog/FindFeed.kt` | ✅ 高仿完成（头图/圈子/短文推荐/阅读计划/NOW 段已按用户要求移除；数据与图片仍在 `files/find/`，可随时恢复） |
 | 阅读器书架 | `ReaderLibraryListFragment`（全部/我的/官方 + 3 列网格 + 上传卡位） | `feature/reader/ReaderScreen.kt` | ✅ |
 | 书籍正文阅读器 | `ReaderActivity` + `activity_reader` + `ReaderPageFragment`（ViewPager 主轴 + WebView 显示层 + 目录抽屉 + 页码） | `feature/reader/ReaderBookScreen.kt` + `data/reader/*` | ✅ 首版（逐项对齐中，见 INTEGRATION.md 遗留清单） |
 | 阅读页 ⋮ 设置 / 「析」/ 右下按钮 | `ReaderWebView2` 接口 + `tv_pageInfo` / 浮动按钮 | 部分（析已开；⋮ 菜单、右下按钮待做） | ⏳ |

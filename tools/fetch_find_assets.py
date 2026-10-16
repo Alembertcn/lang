@@ -174,7 +174,7 @@ def main() -> None:
     recm_columns = json.loads(
         (FIND_DIR / "readingCnt-privateRecmColumns.json").read_text(encoding="utf-8")
     )["result"]["columnList"]
-    columns = as_columns(recm_columns, 4)
+    columns = as_columns(recm_columns, 1000)
     print(f"columns(推荐): {len(columns)}")
 
     category_tabs = [("考试", "BEI_KAO"), ("时事", "SHI_SHI"), ("生活", "WEN_HUA"),
@@ -186,7 +186,7 @@ def main() -> None:
             continue
         data = json.loads(path.read_text(encoding="utf-8"))
         cols = data.get("result", data).get("columnList") or []
-        categories.append({"tab": label, "columns": as_columns(cols, 3)})
+        categories.append({"tab": label, "columns": as_columns(cols, 1000)})
     print(f"categories: {len(categories)}")
 
     plan_covers_ok = 0
