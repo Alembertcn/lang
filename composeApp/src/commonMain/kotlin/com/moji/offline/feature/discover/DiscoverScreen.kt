@@ -36,6 +36,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
@@ -52,6 +53,7 @@ import com.moji.offline.resources.find_icon_search
 import com.moji.offline.ui.i18n.AppStrings
 import com.moji.offline.ui.i18n.LocalAppStrings
 import com.moji.offline.ui.interaction.clickableNoRipple
+import com.moji.offline.ui.theme.LocalDarkTheme
 import kotlinx.coroutines.launch
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
@@ -60,15 +62,56 @@ import org.jetbrains.compose.resources.painterResource
 import kotlin.time.Clock
 import kotlin.time.Instant
 
-// Colors sampled from the original Discover ▽ 专栏推荐 strip (see REVERSE.md).
-private val BarPink = Color(0xFFF5E4E9)
-private val TabStripPink = Color(0xFFF2E4E8)
-private val TabUnderlinePink = Color(0xFFCE425D)
-private val TabSelectedText = Color(0xFF3A3A3A)
-private val TabUnselectedText = Color(0xFFACACAC)
-private val MetaGray = Color(0xFF8A8F98)
-private val VipPillBg = Color(0xFFFFF1DC)
-private val VipPillText = Color(0xFFCE8A2E)
+/**
+ * Colors sampled from the original Discover 专栏推荐 section in both themes
+ * (see REVERSE.md). The original has its own theme switch (设置 → 主题) and
+ * adapts the top bar / tab strip to dark: bar #161618, strip = page background
+ * #0E0E11, selected tab #FAFAFA, underline stays pink #CE425D.
+ */
+private data class ColumnsPalette(
+    val barBg: Color,
+    val stripBg: Color,
+    val pageBg: Color,
+    val cardBg: Color,
+    val selectedTab: Color,
+    val unselectedTab: Color,
+    val underline: Color,
+    val title: Color,
+    val meta: Color,
+    val pillBg: Color,
+    val pillText: Color,
+)
+
+@Composable
+private fun columnsPalette(): ColumnsPalette = if (LocalDarkTheme.current) {
+    ColumnsPalette(
+        barBg = Color(0xFF161618),
+        stripBg = Color(0xFF0E0E11),
+        pageBg = Color(0xFF0E0E11),
+        cardBg = Color(0xFF2C2C2F),
+        selectedTab = Color(0xFFFAFAFA),
+        unselectedTab = Color(0xFFA3A3A3),
+        underline = Color(0xFFCE425D),
+        title = Color(0xFFFAFAFA),
+        meta = Color(0xFFACACAC),
+        pillBg = Color(0xFFFCECE0),
+        pillText = Color(0xFFCF9E57),
+    )
+} else {
+    ColumnsPalette(
+        barBg = Color(0xFFF5E4E9),
+        stripBg = Color(0xFFF2E4E8),
+        pageBg = Color(0xFFF8F8F8),
+        cardBg = Color(0xFFFFFFFF),
+        selectedTab = Color(0xFF3A3A3A),
+        unselectedTab = Color(0xFFACACAC),
+        underline = Color(0xFFCE425D),
+        title = Color(0xFF3A3A3A),
+        meta = Color(0xFFA3A3A3),
+        pillBg = Color(0xFFFFF1DC),
+        pillText = Color(0xFFCE8A2E),
+    )
+}
 
 /**
  * Discover tab = the original's 专栏推荐 section only (per user request):
@@ -100,13 +143,14 @@ fun DiscoverRoute(
     }
 
     val scope = rememberCoroutineScope()
+    val palette = columnsPalette()
 
     Column(
         Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
+            .background(palette.pageBg),
     ) {
-        DiscoverTopBar(strings.discoverTitle)
+        DiscoverTopBar(strings.discoverTitle, palette)
         if (tabs.isEmpty()) {
             Spacer(Modifier.fillMaxSize())
         } else {
@@ -117,6 +161,7 @@ fun DiscoverRoute(
             CategoryTabStrip(
                 tabs = tabs,
                 selected = pagerState.currentPage,
+                palette = palette,
                 onSelect = { index -> scope.launch { pagerState.animateScrollToPage(index) } },
             )
             // Per-page scroll state, kept alive like ViewPager's offscreen pages.
@@ -130,6 +175,7 @@ fun DiscoverRoute(
                 ColumnPage(
                     columns = pageColumns.getOrElse(page) { emptyList() },
                     strings = strings,
+                    palette = palette,
                     listState = listStates[page.coerceIn(0, listStates.lastIndex)],
                     onOpenArticle = { id -> onOpenReading("", id) },
                 )
@@ -142,6 +188,7 @@ fun DiscoverRoute(
 private fun ColumnPage(
     columns: List<FindColumn>,
     strings: AppStrings,
+    palette: ColumnsPalette,
     listState: LazyListState,
     onOpenArticle: (String) -> Unit,
 ) {
@@ -155,6 +202,7 @@ private fun ColumnPage(
             ColumnCard(
                 column = columns[index],
                 strings = strings,
+                palette = palette,
                 modifier = Modifier.padding(horizontal = 16.dp),
                 onOpenArticle = onOpenArticle,
             )
@@ -165,21 +213,22 @@ private fun ColumnPage(
 /* --------------------------------------------------------------- top chrome */
 
 @Composable
-private fun DiscoverTopBar(title: String) {
+private fun DiscoverTopBar(title: String, palette: ColumnsPalette) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(BarPink)
+            .background(palette.barBg)
             .statusBarsPadding()
             .height(46.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Spacer(Modifier.weight(1f))
-        Text(title, fontSize = 17.sp, fontWeight = FontWeight.SemiBold, color = TabSelectedText)
+        Text(title, fontSize = 17.sp, fontWeight = FontWeight.SemiBold, color = palette.selectedTab)
         Spacer(Modifier.weight(1f))
         Image(
             painterResource(Res.drawable.find_icon_search),
             contentDescription = null,
+            colorFilter = ColorFilter.tint(palette.selectedTab),
             modifier = Modifier
                 .padding(end = 16.dp)
                 .size(20.dp),
@@ -188,11 +237,16 @@ private fun DiscoverTopBar(title: String) {
 }
 
 @Composable
-private fun CategoryTabStrip(tabs: List<String>, selected: Int, onSelect: (Int) -> Unit) {
+private fun CategoryTabStrip(
+    tabs: List<String>,
+    selected: Int,
+    palette: ColumnsPalette,
+    onSelect: (Int) -> Unit,
+) {
     LazyRow(
         modifier = Modifier
             .fillMaxWidth()
-            .background(TabStripPink),
+            .background(palette.stripBg),
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
         horizontalArrangement = Arrangement.spacedBy(26.dp),
     ) {
@@ -206,7 +260,7 @@ private fun CategoryTabStrip(tabs: List<String>, selected: Int, onSelect: (Int) 
                     tabs[index],
                     fontSize = if (isSelected) 17.sp else 16.sp,
                     fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
-                    color = if (isSelected) TabSelectedText else TabUnselectedText,
+                    color = if (isSelected) palette.selectedTab else palette.unselectedTab,
                 )
                 Spacer(Modifier.height(4.dp))
                 Box(
@@ -214,7 +268,7 @@ private fun CategoryTabStrip(tabs: List<String>, selected: Int, onSelect: (Int) 
                         .width(if (isSelected) 30.dp else 0.dp)
                         .height(3.dp)
                         .clip(RoundedCornerShape(2.dp))
-                        .background(if (isSelected) TabUnderlinePink else Color.Transparent),
+                        .background(if (isSelected) palette.underline else Color.Transparent),
                 )
             }
         }
@@ -227,12 +281,13 @@ private fun CategoryTabStrip(tabs: List<String>, selected: Int, onSelect: (Int) 
 private fun ColumnCard(
     column: FindColumn,
     strings: AppStrings,
+    palette: ColumnsPalette,
     modifier: Modifier = Modifier,
     onOpenArticle: (String) -> Unit,
 ) {
     Surface(
         shape = RoundedCornerShape(10.dp),
-        color = MaterialTheme.colorScheme.surface,
+        color = palette.cardBg,
         shadowElevation = 1.dp,
         modifier = modifier.fillMaxWidth(),
     ) {
@@ -249,7 +304,7 @@ private fun ColumnCard(
                     column.title,
                     fontSize = 17.sp,
                     fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colorScheme.onSurface,
+                    color = palette.title,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.weight(1f),
@@ -262,14 +317,19 @@ private fun ColumnCard(
             }
             column.articles.forEach { article ->
                 Spacer(Modifier.height(14.dp))
-                ColumnArticleRow(article, strings, onOpenArticle)
+                ColumnArticleRow(article, strings, palette, onOpenArticle)
             }
         }
     }
 }
 
 @Composable
-private fun ColumnArticleRow(article: FindColumnArticle, strings: AppStrings, onOpen: (String) -> Unit) {
+private fun ColumnArticleRow(
+    article: FindColumnArticle,
+    strings: AppStrings,
+    palette: ColumnsPalette,
+    onOpen: (String) -> Unit,
+) {
     Row(
         Modifier
             .fillMaxWidth()
@@ -282,22 +342,22 @@ private fun ColumnArticleRow(article: FindColumnArticle, strings: AppStrings, on
                 lineHeight = 23.sp,
                 maxLines = 2,
                 overflow = TextOverflow.Ellipsis,
-                color = MaterialTheme.colorScheme.onSurface,
+                color = palette.title,
             )
             Spacer(Modifier.height(10.dp))
             Row(verticalAlignment = Alignment.CenterVertically) {
                 if (article.vip) {
-                    Surface(shape = RoundedCornerShape(4.dp), color = VipPillBg) {
+                    Surface(shape = RoundedCornerShape(4.dp), color = palette.pillBg) {
                         Text(
                             strings.findVipTrans,
                             fontSize = 10.sp,
-                            color = VipPillText,
+                            color = palette.pillText,
                             modifier = Modifier.padding(horizontal = 5.dp, vertical = 2.dp),
                         )
                     }
                     Spacer(Modifier.width(8.dp))
                 }
-                Text(newsDateLabel(article.timeMs, strings), fontSize = 13.sp, color = MetaGray)
+                Text(newsDateLabel(article.timeMs, strings), fontSize = 13.sp, color = palette.meta)
             }
         }
         Spacer(Modifier.width(12.dp))
