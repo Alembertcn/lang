@@ -31,11 +31,24 @@ MOJi阅读（`com.mojidict.read` v3.4.9）的离线高仿项目，目标技术�
 3. **逆向证据**：APK 清单、组件表、路由表等分析见 `reference/`（含原始
    APK 与两套 split）。
 
+### 已完成：KMP 工程骨架（2026-10-16）
+
+- 技术栈：Kotlin 2.4.21 + Compose Multiplatform 1.11.1 + AGP 8.13.2 +
+  SQLDelight 2.4.1 + Ktor 3.6.0（CIO 引擎）
+- 底部四 Tab（发现 / 学习 / 阅读库 / 我的）+ Material 3 骨架
+- SQLDelight 本地表：收藏 / 阅读历史 / 阅读事件 / 阅读计划 / 打卡 / AI 缓存
+- Android 入口 + iOS `MainViewController` 占位；已在真机（XQ-AT72）安装运行
+
+> 版本选择说明：Compose Multiplatform 1.12.x 依赖的 androidx.compose 1.12
+> 要求 compileSdk 37 与 AGP 9.1+，而本机 Android SDK 最高到 36，故锁定
+> CMP 1.11.1；Ktor 使用 CIO 引擎替代 OkHttp（okhttp 5.5 同样要求 37）。
+> 待本机可安装 SDK 37 后可整体升级。
+
 ### 待办（按开发顺序）
 
-1. KMP + Compose Multiplatform 工程骨架、SQLDelight 数据层接入
-   `dictionary.db`（预置库方案）
-2. 底部四 Tab（发现 / 学习 / 阅读库 / 我的）+ 阅读器 + 词卡 H5 垂直切片
+1. SQLDelight 接入预置词库 `dictionary.db`（prepackaged database 方案）
+   + 词卡 H5（WebView）垂直切片
+2. 阅读器（H5 文章页 + 查词弹窗）与四 Tab 页面实现
 3. 千问 API 接入（长难句分析 / 核心词汇 / AI 摘要 / TTS 发音），
    `env.example` 定义 `QWEN_API_KEY` / `QWEN_MODEL` / `QWEN_TTS_VOICE`
 4. 学习统计、收藏、历史、计划、打卡（纯本地 SQLDelight）

@@ -1,0 +1,91 @@
+-- 本地用户数据（离线版）：收藏 / 阅读历史 / 阅读事件 / 阅读计划 / 打卡 / 生词
+
+CREATE TABLE word_favorite (
+  word_id TEXT NOT NULL PRIMARY KEY,
+  spell TEXT NOT NULL,
+  pron TEXT,
+  excerpt TEXT,
+  created_at INTEGER NOT NULL
+);
+
+CREATE TABLE reading_history (
+  article_id TEXT NOT NULL PRIMARY KEY,
+  title TEXT NOT NULL,
+  cover_url TEXT,
+  last_read_at INTEGER NOT NULL,
+  progress REAL NOT NULL DEFAULT 0
+);
+
+CREATE TABLE reading_event (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  article_id TEXT NOT NULL,
+  column_id TEXT,
+  duration_sec INTEGER NOT NULL,
+  read_at INTEGER NOT NULL
+);
+
+CREATE TABLE read_plan (
+  id TEXT NOT NULL PRIMARY KEY,
+  title TEXT NOT NULL,
+  daily_minutes INTEGER NOT NULL DEFAULT 10,
+  created_at INTEGER NOT NULL,
+  active INTEGER NOT NULL DEFAULT 1
+);
+
+CREATE TABLE check_in (
+  day TEXT NOT NULL PRIMARY KEY,
+  minutes INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE ai_cache (
+  cache_key TEXT NOT NULL PRIMARY KEY,
+  payload TEXT NOT NULL,
+  created_at INTEGER NOT NULL
+);
+
+-- 查询：收藏列表
+selectFavorites:
+SELECT * FROM word_favorite ORDER BY created_at DESC;
+
+-- 查询：最近阅读
+selectRecentHistory:
+SELECT * FROM reading_history ORDER BY last_read_at DESC LIMIT 50;
+
+-- 查询：某天的阅读事件
+selectEventsForDay:
+SELECT * FROM reading_event WHERE read_at >= :start AND read_at < :end;
+
+-- 统计：总阅读时长（秒）
+totalDuration:
+SELECT COALESCE(SUM(duration_sec), 0) FROM reading_event;
+
+-- 统计：按日期聚合（分钟）
+dailyMinutes:
+SELECT read_at, duration_sec FROM reading_event ORDER BY read_at;
+
+upsertFavorite:
+INSERT OR REPLACE INTO word_favorite(word_id, spell, pron, excerpt, created_at)
+VALUES (?, ?, ?, ?, ?);
+
+deleteFavorite:
+DELETE FROM word_favorite WHERE word_id = ?;
+
+upsertHistory:
+INSERT OR REPLACE INTO reading_history(article_id, title, cover_url, last_read_at, progress)
+VALUES (?, ?, ?, ?, ?);
+
+insertEvent:
+INSERT INTO reading_event(article_id, column_id, duration_sec, read_at)
+VALUES (?, ?, ?, ?);
+
+upsertCheckIn:
+INSERT OR REPLACE INTO check_in(day, minutes) VALUES (?, ?);
+
+selectCheckIns:
+SELECT * FROM check_in ORDER BY day DESC;
+
+getAiCache:
+SELECT payload FROM ai_cache WHERE cache_key = ?;
+
+putAiCache:
+INSERT OR REPLACE INTO ai_cache(cache_key, payload, created_at) VALUES (?, ?, ?);
