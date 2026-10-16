@@ -1,0 +1,561 @@
+/* #region theme */
+:root {
+    --custom-font-family: "";
+    --reader-analysis-background: 233, 233, 233;
+    --content-color: #3A3A3A;
+}
+[_t="theme-dark"] {
+    --content-color: #acacac;
+    --reader-analysis-background: 52, 52, 52
+}
+
+
+/* #endregion */
+
+/* #region CSS Reset */
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin        : 0;
+    padding       : 0 !important;
+    vertical-align: baseline;
+}
+
+/* #endregion */
+
+/* #region HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* #endregion */
+
+/* #region ePUB */
+* {
+    writing-mode        : horizontal-tb !important;
+    -webkit-writing-mode: horizontal-tb !important;
+}
+
+html,
+body {
+    vertical-align: baseline;
+    margin        : 0px !important;
+    /* 单页需要设置auto width，否则会出现横向滚动 */
+    width         : auto;
+}
+
+html {
+    -webkit-text-size-adjust      : none;
+    /* Never autoresize text */
+    -webkit-tap-highlight-color   : transparent;
+    /*保证横竖屏切换时，文本内容大小不变*/
+    padding                       : 0 !important;
+}
+
+body {
+    /* -webkit-text-size-adjust   : 100%; */
+    /*保证横竖屏切换时，文本内容大小不变*/
+    /* -webkit-tap-highlight-color: transparent; */
+    /*背景色交给客户端控制*/
+    height : 100%;
+    padding: 0 16px !important;
+    opacity: 0;
+    width: auto !important;
+}
+
+/* #endregion */
+
+/* #region Table */
+table {
+    border-collapse: collapse;
+    border-spacing : 0;
+}
+
+tbody,
+tfoot,
+thead {
+    vertical-align: middle !important;
+}
+
+td,
+th,
+tr {
+    vertical-align: inherit !important;
+}
+
+/* #endregion */
+
+/* #region List */
+dd,
+dir,
+menu,
+ol,
+ul {
+    margin-left: 30px !important;
+}
+
+ol {
+    list-style-type: decimal !important;
+}
+
+li {
+    display: list-item !important;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+    margin-bottom: 0 !important;
+    margin-top   : 0 !important;
+}
+
+/* #endregion */
+
+/* #region Links */
+a {
+    -webkit-touch-callout: none;
+    color                : #E0315B !important;
+}
+
+/* #endregion */
+
+/* #region Disable link callback */
+* {
+    -webkit-user-select: text;
+}
+
+img {
+    -webkit-user-select: none;
+}
+
+p {
+    margin     : 1.3em 0 0 0;
+    line-height: 1.40em !important;
+    text-indent: 1.25em;
+}
+
+b,
+strong,
+th {
+    font-weight: bolder !important;
+}
+
+/* #endregion */
+
+/* #region Forced font overrides */
+code,
+kbd,
+pre,
+samp,
+tt {
+    font-family: monospace, monospace !important;
+    font-size  : 1rem;
+}
+
+button,
+input,
+select,
+textarea {
+    display: inline-block !important;
+}
+
+/*h1, h2, h3, h4, h5, h6 { font-weight: 400!important; }*/
+del,
+s,
+strike {
+    text-decoration: line-through !important;
+}
+
+hr {
+    background-color: rgba(0, 0, 0, .1) !important;
+    border          : none !important;
+    height          : 1px !important;
+}
+
+/* #endregion */
+
+/* #region Sub and Super */
+big {
+    font-size: 1.15rem !important;
+}
+
+small,
+sub,
+sup {
+    font-size: .65rem !important;
+}
+
+sub {
+    vertical-align: sub !important;
+}
+
+sup {
+    font-family   : monospace !important;
+    vertical-align: super !important;
+}
+
+/* #endregion */
+
+/* #region iBooks like */
+a {
+    text-decoration: none;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+@page {
+    margin: 0 0 !important;
+}
+
+table,
+ol,
+il {
+    text-align: -webkit-auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align    : -webkit-auto;
+    text-rendering: optimizelegibility;
+}
+
+/* allow breaking of words on headers and anchors as they tend to be larger font size or contain longer words */
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    word-break     : break-word !important;
+    -webkit-hyphens: none !important;
+    hyphens        : none !important;
+}
+
+/* #endregion */
+
+/* #region Ted */
+img,
+svg,
+audio,
+video {
+    /*max-height       : 95% !important;*/
+    /*max-width        : 100% !important;*/
+    max-height: 95vh;
+    box-sizing       : border-box;
+    object-fit       : contain;
+    page-break-inside: avoid;
+}
+
+/* #endregion */
+
+/* Divs are also used to size images so make sure the authors get what they intended */
+/* which is for the images boxed in them to be completely visible on screen */
+div {
+    max-width: 100%;
+}
+
+aside[epub|type~="footnote"] {
+    display: none !important;
+}
+
+ruby>rt,
+ruby>rp {
+    -webkit-user-select: none;
+}
+
+* {
+    -webkit-font-smoothing: subpixel-antialiased
+}
+
+/* #region Font classes */
+h1 {
+    font-size  : 2rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size  : 1.5rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size  : 1.17rem;
+    line-height: 1.2;
+}
+
+h4 {
+    font-size  : 1rem;
+    line-height: 1.2;
+}
+
+h5 {
+    font-size  : 0.83rem;
+    line-height: 1.2;
+}
+
+h6 {
+    font-size  : 0.67rem;
+    line-height: 1.2;
+}
+
+/* 重要样式需要加!important，否则会被书本自带样式覆盖 */
+body {
+    word-break     : break-word !important;
+    -webkit-hyphens: auto !important;
+    hyphens        : auto !important;
+    font-family    : var(--custom-font-family), PingFangSC-Regular, PingFang SC, Helvetica Neue, Arial, Helvetica, sans-serif !important;
+    color          : var(--content-color) !important;
+    font-size      : calc(16px * var(--font-size)) !important;
+    font-weight    : 400;
+}
+
+body[f_m='2'] {
+    line-height: calc(30px * var(--font-size));
+}
+
+/* p,
+span,
+div {
+    line-height: 1.5 !important;
+} */
+
+/*p > img {*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*}*/
+/*p[moji-id]:has(img) {*/
+/*    max-height: 100%;*/
+/*    overflow: hidden;*/
+/*}*/
+
+@media only screen and (min-device-width: 600px) {
+    body {
+        -webkit-hyphens: none !important;
+        hyphens        : none !important;
+        padding:0 32px !important;
+    }
+    p,span,div{
+        line-height:2.33 !important;
+        color: inherit;
+    }
+}
+@media only screen and (max-device-width: 599px) {
+    body {
+        padding: 0 16px !important; /* 重置 padding 到默认值 */
+    }
+    p,span,div{
+        line-height: 2.146 !important;
+        color: inherit;
+    }
+}
+
+@media only screen and (max-device-width: 360px) {
+  [platform="android"] .newpagestyle_A p[moji-id],
+  [platform="android"] .newpagestyle p[moji-id] {
+    display: inline-block;
+    line-height: 2 !important;
+  }
+}
+
+/* #endregion */
+
+/* #region 点击查词 */
+body .on-click-word {
+    border-radius   : 5px;
+    background-color: #E0315B80;
+}
+
+ruby,
+ruby rb,
+ruby span,
+.moji-toolkit-org,
+span[a-token] {
+    border-radius     : 5px;
+    transition        : background-color 0.2s linear;
+    -webkit-transition: background-color 0.2s linear;
+}
+
+/* #endregion */
+
+/* #region 注音样式 */
+ruby {
+    /*display       : inline-flex;*/
+    /*flex-direction: column-reverse;*/
+    text-align    : center;
+    border-radius : 5px;
+}
+
+ruby>rt,
+ruby>rp {
+    -webkit-user-select: none;
+}
+
+ruby rt,
+ruby>rt::before {
+    -webkit-touch-callout: none;
+    -webkit-user-select  : none;
+    user-select          : none;
+}
+
+ruby rt {
+    font-size: 0.5em !important;
+    /*transform: scale(0.9) translateY(0.125em);*/
+}
+
+ruby>rt::before {
+    content    : attr(data-rt);
+    font-size  : 1em !important;
+    font-weight: 400;
+    color      : var(--content-color);
+}
+
+ruby>rt *, ruby > rt *::after {
+    border-bottom: unset !important;
+}
+/* #endregion */
+
+/* #region highlight */
+.highlight-mengshou-wrap {
+    border-bottom: unset !important;
+    position: relative;
+    text-decoration-line: underline;
+    text-decoration-color: #FF5252;
+    text-decoration-style: dashed;
+    /*text-decoration-thickness: from-font;*/
+}
+rt .highlight-mengshou-wrap {
+    text-decoration: none !important;
+}
+.highlight-mengshou-wrap::after {
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0px;*/
+    /*content:'';*/
+    /*border-bottom: 1px dashed #FF5252;*/
+}
+/* #endregion */
+/*.reader-analysis {*/
+/*    display: inline-block;*/
+/*}*/
+.reader-analysis::before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    content: "析";
+    text-indent: 0;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    line-height: 20px;
+    color: var(--analysis-color);
+    background: rgba(var(--reader-analysis-background), 1);
+    transition: background 200ms;
+    margin-left: 2px;
+    text-align-last: center;
+    /* transition:  background-color 2s; */
+}
+.reader-analysis.active::before {
+    background: rgba(var(--reader-analysis-background), 0.2);
+}
+.no-analysis-paragraph-button .reader-analysis {
+    visibility: hidden !important;
+}
+
+/*书籍特殊处理*/
+.h-indent-1em, .h-indent-4em, .h-indent-5em, .h-indent-6em {
+   text-indent: unset !important;
+}

@@ -73,6 +73,7 @@ private sealed class ShelfItem {
 fun ReaderRoute(
     onOpenColumn: (String) -> Unit = {},
     onOpenArticle: (planId: String, topicId: String) -> Unit = { _, _ -> },
+    onOpenBook: (ReaderBook) -> Unit = {},
 ) {
     val strings = LocalAppStrings.current
     val colors = MaterialTheme.colorScheme
@@ -148,7 +149,7 @@ fun ReaderRoute(
                         is ShelfItem.Book -> BookTile(
                             book = item.book,
                             onClick = {
-                                scope.launch { snackbar.showSnackbar(strings.readerBookUnavailable) }
+                                onOpenBook(item.book)
                             },
                         )
                     }

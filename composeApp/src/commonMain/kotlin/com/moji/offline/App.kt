@@ -28,6 +28,8 @@ import androidx.compose.ui.unit.sp
 import com.moji.offline.domain.model.AppLanguage
 import com.moji.offline.domain.model.ThemeMode
 import com.moji.offline.feature.discover.DiscoverRoute
+import com.moji.offline.data.catalog.ReaderBook
+import com.moji.offline.feature.reader.ReaderBookRoute
 import com.moji.offline.feature.reader.ReaderRoute
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_home_find_def
@@ -67,27 +69,35 @@ fun App() {
     MojiTheme(themeMode = ThemeMode.SYSTEM) {
         CompositionLocalProvider(LocalAppStrings provides strings) {
             var selectedTab by remember { mutableStateOf(MainTab.Discover) }
-            Scaffold(
-                bottomBar = {
-                    MojiBottomBar(selectedTab) { selectedTab = it }
-                },
-            ) { padding ->
-                Box(Modifier.fillMaxSize().padding(padding)) {
-                    when (selectedTab) {
-                        MainTab.Discover -> DiscoverRoute(
-                            onOpenPlan = {},
-                            onOpenReading = { _, _ -> },
-                            onBrowsePlans = {},
-                        )
-                        MainTab.Reader -> ReaderRoute()
-                        else -> Box(
-                            Modifier.fillMaxSize(),
-                            contentAlignment = Alignment.Center,
-                        ) {
-                            Text(
-                                "${selectedTab.label}（待实现）",
-                                style = MaterialTheme.typography.titleMedium,
+            var openBook by remember { mutableStateOf<ReaderBook?>(null) }
+            val book = openBook
+            if (book != null) {
+                // The original reader is a separate Activity on top of the tabs —
+                // same here: full screen, bottom bar hidden.
+                ReaderBookRoute(book = book, onBack = { openBook = null })
+            } else {
+                Scaffold(
+                    bottomBar = {
+                        MojiBottomBar(selectedTab) { selectedTab = it }
+                    },
+                ) { padding ->
+                    Box(Modifier.fillMaxSize().padding(padding)) {
+                        when (selectedTab) {
+                            MainTab.Discover -> DiscoverRoute(
+                                onOpenPlan = {},
+                                onOpenReading = { _, _ -> },
+                                onBrowsePlans = {},
                             )
+                            MainTab.Reader -> ReaderRoute(onOpenBook = { openBook = it })
+                            else -> Box(
+                                Modifier.fillMaxSize(),
+                                contentAlignment = Alignment.Center,
+                            ) {
+                                Text(
+                                    "${selectedTab.label}（待实现）",
+                                    style = MaterialTheme.typography.titleMedium,
+                                )
+                            }
                         }
                     }
                 }

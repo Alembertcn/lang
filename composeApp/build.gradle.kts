@@ -98,6 +98,10 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.json)
+
+            // Loopback book server (原版路径: NanoHTTPD equivalent for both platforms)
+            implementation(libs.ktor.server.core)
+            implementation(libs.ktor.server.cio)
         }
         androidMain.dependencies {
             implementation(compose.preview)
