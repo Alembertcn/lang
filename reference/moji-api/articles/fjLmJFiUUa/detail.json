@@ -1,0 +1,132 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "4y5lwWaufC",
+        "KjKUelL9GU",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ"
+      ],
+      "title": "杂志屋",
+      "coverId": "6d8a9c82-f1cc-468b-98ea-e52f212373c2",
+      "brief": "（1-2更/周）日本时尚分享·关注流行穿搭|美妆|生活|人物讯息·不拘泥于任何框架~",
+      "articleNum": 342,
+      "isTrash": false,
+      "isVIP": false,
+      "subscribedNum": 144871,
+      "createdAt": "2022-08-15T08:39:38.946Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-12T10:00:00.000Z"
+      },
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "雑誌読み",
+      "levelTags": [
+        "N1",
+        "N2",
+        "N3"
+      ],
+      "readingTags": [
+        "10000060"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "Io4cKQ1oZB"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-07-22T09:26:05.605Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "（前篇）咱家的猫·再续 | 地震突袭稳如泰山，主子的“大将风度”从何而来？",
+    "coverId": "21b33bf6-ebe2-4cd2-97ef-a12c858b2953.jpeg",
+    "excerpt": "続々·家の猫の話（前篇） さっき、まあまあな揺れの地震がありました。 山梨県の富士五湖近辺が震源だそ",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "c076ef66-8369-48d9-b449-6bc1b625139e.mp3",
+    "audioDuration": 142,
+    "viewedNum": 613,
+    "commentedNum": 4,
+    "votedNum": 0,
+    "likedNum": 3,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-07-17T08:42:00.234Z",
+    "updatedAt": "2026-10-16T10:18:44.897Z",
+    "analysisStatus": 1,
+    "analysisTime": 1784712365488,
+    "charsNum": 1569,
+    "columnId": "Io4cKQ1oZB",
+    "contentId": "hfmk594t52ufjLmJFiUUa",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000060",
+      "10000063",
+      "10000116"
+    ],
+    "shareStyle": 2,
+    "vTag": "1784712365605",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-12T10:00:00.000Z"
+    },
+    "outSharedNum": 52,
+    "objectId": "fjLmJFiUUa",
+    "notationTitle": "<span class=\"moji-notation\">（前篇）咱家的猫·再续 | 地震突袭稳如泰山，主子的“大将风度”从何而来？</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "杂志屋",
+      "subtitle": "雑誌読み",
+      "brief": "（1-2更/周）日本时尚分享·关注流行穿搭|美妆|生活|人物讯息·不拘泥于任何框架~",
+      "coverId": "6d8a9c82-f1cc-468b-98ea-e52f212373c2",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "Tk0PXom0LU",
+    "displayTags": [
+      "生活"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

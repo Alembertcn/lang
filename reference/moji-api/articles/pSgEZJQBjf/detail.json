@@ -1,0 +1,136 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "DGG4EuSHJ9",
+        "vdriBjucaM",
+        "4y5lwWaufC",
+        "KoXijCLUUh",
+        "CJFe5gR5Zf",
+        "jYi9uYHMxJ",
+        "mYuCBSWsAP"
+      ],
+      "title": "作文大赏",
+      "coverId": "8a0a13e3-9191-48c0-b28d-d3490a7867bf",
+      "brief": "各类作文比赛佳作✰ 来看看获奖的他们都是怎么写的！",
+      "articleNum": 228,
+      "isTrash": false,
+      "isVIP": false,
+      "subscribedNum": 132596,
+      "createdAt": "2022-10-20T03:08:24.313Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-16T02:00:00.000Z"
+      },
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "作文大賞",
+      "levelTags": [
+        "N1",
+        "N2"
+      ],
+      "readingTags": [
+        "10000033",
+        "10000093"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "词汇语法",
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "2WDSeu1k8R"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-10-15T10:01:35.978Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "我的三番叟体验 | ぼくらの三ばそう",
+    "coverId": "de9c61dc-490e-4014-8df8-770adf02072f.png",
+    "excerpt": "ぼくらの三ばそう 阅读难度：N4~N3 半田市立宮池小学校3年 絹川 頼将 「エイ！ヤーホイッ！」み",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "5f0ce3ae-2e06-4c87-970f-d5142b019d02.mp3",
+    "audioDuration": 195,
+    "viewedNum": 164,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 1,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-10-15T01:27:43.630Z",
+    "updatedAt": "2026-10-16T10:44:26.689Z",
+    "analysisStatus": 1,
+    "analysisTime": 1792058495846,
+    "charsNum": 1935,
+    "columnId": "2WDSeu1k8R",
+    "contentId": "s3dyhto5sbfpSgEZJQBjf",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3",
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000038",
+      "10000033",
+      "10000121"
+    ],
+    "shareStyle": 2,
+    "vTag": "1792058495978",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-16T02:00:00.000Z"
+    },
+    "outSharedNum": 16,
+    "objectId": "pSgEZJQBjf",
+    "notationTitle": "<span class=\"moji-notation\">我的三番叟体验 | <span class=\"moji-toolkit-org\" lemma=\"僕-代名詞\" lemma-t=\"\">ぼく</span><span class=\"moji-toolkit-org\" n2=\"\" n5=\"\" lemma=\"等\" lemma-t=\"\">ら</span><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby><rb>三</rb><rp>(</rp><rt roma=\"san\" hiragana=\"さん\" lemma=\"三\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"把\" lemma-t=\"\">ば</span><span class=\"moji-toolkit-org\" lemma=\"そう-様態\" lemma-t=\"\">そう</span></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "作文大赏",
+      "subtitle": "作文大賞",
+      "brief": "各类作文比赛佳作✰ 来看看获奖的他们都是怎么写的！",
+      "coverId": "8a0a13e3-9191-48c0-b28d-d3490a7867bf",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "rzjPsQVq1f",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

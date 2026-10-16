@@ -1,0 +1,143 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "jYi9uYHMxJ",
+        "lrVMKTEiK0",
+        "rLru1YRyT9",
+        "OnWUlm8FTT",
+        "eS9OHwSGX1",
+        "vdriBjucaM",
+        "FoKmMabUEn",
+        "cRLYHFA9kK",
+        "kBACa9dW2v",
+        "VAXWdT4ggf",
+        "mCN9B1o8xR"
+      ],
+      "title": "翻译备考",
+      "coverId": "0a7facc1-101f-4a68-8ae7-0239200f550b",
+      "brief": "翻译考试备考专栏，适用于考研、CATTI、专四专八等。",
+      "articleNum": 202,
+      "subscribedNum": 54988,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-03-13T07:55:07.567Z",
+      "updatedAt": "2026-10-16T10:35:37.526Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-08-25T03:00:00.000Z"
+      },
+      "type": "audioArticle",
+      "subtitle": "翻訳備考",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000089",
+        "10000009"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "d5T09XtC9i"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-08-19T07:12:38.756Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "翻译常见表达拆解|“大力支持”“策划推出”怎么翻？",
+    "coverId": "74863cb7-dcd1-424c-baaf-04530617eade.png",
+    "excerpt": "8月11日，沈阳故宫博物院策划推出“典藏山河——沈阳故宫博物院建院百年百件文物展”，以百件文物回望博",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 953,
+    "commentedNum": 2,
+    "votedNum": 0,
+    "likedNum": 4,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-08-18T09:35:31.286Z",
+    "updatedAt": "2026-10-16T09:43:30.046Z",
+    "analysisStatus": 1,
+    "analysisTime": 1787123558478,
+    "charsNum": 1056,
+    "columnId": "d5T09XtC9i",
+    "contentId": "5fg64jsbyv79Wx6AUtdHZ",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1",
+      "n1up"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000089",
+      "10000092",
+      "10000090",
+      "10000091",
+      "10000009",
+      "10000011",
+      "10000012"
+    ],
+    "shareStyle": 1,
+    "vTag": "1787123558756",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-08-25T03:00:00.000Z"
+    },
+    "outSharedNum": 48,
+    "objectId": "9Wx6AUtdHZ",
+    "notationTitle": "翻译常见表达拆解|“大力支持”“策划推出”怎么翻？",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "翻译备考",
+      "subtitle": "翻訳備考",
+      "brief": "翻译考试备考专栏，适用于考研、CATTI、专四专八等。",
+      "coverId": "0a7facc1-101f-4a68-8ae7-0239200f550b",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "zJfgCzqNHV",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

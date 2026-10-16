@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "EXo0LZSm1b",
+        "DGG4EuSHJ9",
+        "vdriBjucaM",
+        "cRLYHFA9kK",
+        "PMf2NZDTwm",
+        "jYi9uYHMxJ",
+        "VAXWdT4ggf",
+        "f3bZKZgziq"
+      ],
+      "title": "N2阅读真题精析",
+      "subtitle": "N2読解解説",
+      "coverId": "168ada84-6ee1-4394-951a-820a7fc4b888",
+      "brief": "JLPT阅读真题训练、全文精析、词句讲解，一网打尽！",
+      "type": "article",
+      "articleNum": 25,
+      "subscribedNum": 55506,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2024-03-04T02:47:27.385Z",
+      "updatedAt": "2026-10-16T09:45:00.590Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-07-06T16:00:00.000Z"
+      },
+      "levelTags": [
+        "N2"
+      ],
+      "readingTags": [
+        "10000080"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "R9lv1Nac5A"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-11-21T01:42:56.165Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "【2020.12】倾诉能解决问题？叙述的魔力",
+    "coverId": "74a41154-addb-4a78-a5de-3f74d8067895.jpg",
+    "excerpt": "真题：2020年12月N2 問題13 人からよく相談される人というのは、じっくり相手の話に耳を傾けて",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 12893,
+    "commentedNum": 6,
+    "votedNum": 3405,
+    "likedNum": 28,
+    "collectedNum": 7,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 16,
+    "isTrialRead": true,
+    "createdAt": "2025-06-30T07:36:47.216Z",
+    "updatedAt": "2026-10-16T10:40:01.147Z",
+    "analysisStatus": 1,
+    "analysisTime": 1763689375946,
+    "charsNum": 3237,
+    "columnId": "R9lv1Nac5A",
+    "contentId": "yamw22bhsbjsNlGeEQLBJ",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000017",
+      "10000010",
+      "10000009"
+    ],
+    "shareStyle": 2,
+    "vTag": "1763689376165",
+    "outSharedNum": 327,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-07-06T16:00:00.000Z"
+    },
+    "objectId": "sNlGeEQLBJ",
+    "notationTitle": "【2020.12】倾诉能解决问题？叙述的魔力",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N2阅读真题精析",
+      "subtitle": "N2読解解説",
+      "brief": "JLPT阅读真题训练、全文精析、词句讲解，一网打尽！",
+      "coverId": "168ada84-6ee1-4394-951a-820a7fc4b888",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "CMg3zTWID3",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

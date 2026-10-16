@@ -1,0 +1,131 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "日语简易新闻听读",
+      "subtitle": "简易NHK",
+      "brief": "每周二、周三更新亚撒西日语听力内容，帮你熟悉最地道、最适合初中级学习者的日语听读内容！",
+      "coverId": "fbe7b93e-ccce-4021-913a-952f50e1a90d",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000019",
+        "10000116"
+      ],
+      "levelTags": [
+        "N4",
+        "N5",
+        "N3"
+      ],
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "subscribedNum": 79515,
+      "articleNum": 196,
+      "opts": {
+        "levelTagsApplyInArticles": true,
+        "readingTagsApplyInArticles": true
+      },
+      "isDetailRead": true,
+      "isVIP": false,
+      "isTrash": false,
+      "ownerIds": [
+        "jYi9uYHMxJ",
+        "KjKUelL9GU"
+      ],
+      "createdAt": "2025-04-11T09:15:13.035Z",
+      "updatedAt": "2026-10-16T10:34:07.950Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:30:00.000Z"
+      },
+      "objectId": "yxie5eybw9"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-10-08T09:32:29.491Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "亚撒西新闻：东京地铁开展实验，站内就能知道车厢是否拥挤",
+    "coverId": "7980a4ea-4863-420d-a078-9dc910d20dd3.png",
+    "excerpt": " 東京メトロ 混んでいるかどうか駅の中でわかるようにする実験 👉点击单词查询释义 地下鉄の東京メト",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "26b497bd-02f1-4974-a4a7-dc4d860214d1.mp3",
+    "audioDuration": 76,
+    "viewedNum": 1768,
+    "commentedNum": 6,
+    "votedNum": 0,
+    "likedNum": 12,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 16,
+    "isTrialRead": false,
+    "createdAt": "2026-10-08T09:32:29.491Z",
+    "updatedAt": "2026-10-16T10:41:27.764Z",
+    "analysisStatus": 1,
+    "analysisTime": 1791451949572,
+    "charsNum": 732,
+    "columnId": "yxie5eybw9",
+    "contentId": "7RhbUy55qD",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N4",
+      "N5",
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000116"
+    ],
+    "shareStyle": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-08T23:30:00.000Z"
+    },
+    "outSharedNum": 172,
+    "objectId": "7RhbUy55qD",
+    "notationTitle": "亚撒西新闻：东京地铁开展实验，站内就能知道车厢是否拥挤",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语简易新闻听读",
+      "subtitle": "简易NHK",
+      "brief": "每周二、周三更新亚撒西日语听力内容，帮你熟悉最地道、最适合初中级学习者的日语听读内容！",
+      "coverId": "fbe7b93e-ccce-4021-913a-952f50e1a90d",
+      "isSubscribed": false
+    },
+    "nextId": "shNksmplL9",
+    "previousId": "QINDxOrNrj",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

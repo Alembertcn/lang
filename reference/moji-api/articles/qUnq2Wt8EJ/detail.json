@@ -1,0 +1,129 @@
+{
+  "1": [
+    {
+      "objectId": "CJFe5gR5Zf",
+      "name": "Timi",
+      "username": "Z2MkC0XbjTREhtrY0vDt5VdNE",
+      "vTag": "1735176181904",
+      "imgVer_a": 3,
+      "imgVer_f": 1,
+      "unionId": "JP3019827"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "vdriBjucaM",
+        "CJFe5gR5Zf",
+        "KoXijCLUUh",
+        "QEuIhfAn81",
+        "VAXWdT4ggf"
+      ],
+      "title": "MBTI",
+      "subtitle": "MBTI",
+      "coverId": "0933bc11-818d-4912-9fc6-2b3bef0b1314",
+      "brief": "伪科学还是真科学？通往内心的奇妙之旅！",
+      "type": "article",
+      "articleNum": 29,
+      "subscribedNum": 90781,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-11-16T09:45:35.421Z",
+      "updatedAt": "2026-10-16T10:34:34.571Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2024-08-23T10:00:00.000Z"
+      },
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2",
+        "N3",
+        "N4",
+        "N5"
+      ],
+      "readingTags": [
+        "10000075"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "37A5alwGHw"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-07-26T10:08:57.663Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "在ENFJ这里，你可以不用努力了…| MBTI16型人格（11）",
+    "coverId": "8074188f-d105-410b-bd5c-8efa8d8b3d19.jpg",
+    "excerpt": " ENFJの性格を簡単にまとめると、他者を応援し理想に向けて背中を押す主人公タイプです。 共感力とコ",
+    "createdBy": "CJFe5gR5Zf",
+    "audioDuration": 0,
+    "viewedNum": 2761,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 19,
+    "collectedNum": 8,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 3,
+    "isTrialRead": false,
+    "createdAt": "2024-07-26T09:58:53.206Z",
+    "updatedAt": "2026-10-16T08:03:31.086Z",
+    "analysisStatus": 1,
+    "analysisTime": 1721988537481,
+    "columnId": "37A5alwGHw",
+    "contentId": "m739pj34uuqUnq2Wt8EJ",
+    "levelTags": [
+      "nlvall"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000079"
+    ],
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-07-26T10:00:00.000Z"
+    },
+    "vTag": "1721988537663",
+    "outSharedNum": 47,
+    "clockedInNum": 380,
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "qUnq2Wt8EJ",
+    "notationTitle": "在ENFJ这里，你可以不用努力了…| MBTI16型人格（11）",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "MBTI",
+      "subtitle": "MBTI",
+      "brief": "伪科学还是真科学？通往内心的奇妙之旅！",
+      "coverId": "0933bc11-818d-4912-9fc6-2b3bef0b1314",
+      "isSubscribed": false
+    },
+    "nextId": "dmnu7auo8e",
+    "previousId": "kX2nZX8yp5",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

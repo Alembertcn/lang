@@ -1,0 +1,136 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "BypDOPpmqQ",
+        "F2h5AoylFO",
+        "GJiALasaYI",
+        "4y5lwWaufC",
+        "vdriBjucaM",
+        "JYrF7UepQI",
+        "Rs2zHkTgGD",
+        "KjKUelL9GU",
+        "jYi9uYHMxJ",
+        "UHO4sjUfvb",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF",
+        "CJFe5gR5Zf",
+        "FbLG0Ew5tZ",
+        "kapowKdXtB"
+      ],
+      "title": "轻松一下",
+      "coverId": "886afe15-95a4-47f9-b605-4cb8e06e7ee1",
+      "brief": "搞笑短片、爆笑节目，让你在轻松愉悦中提高日语听力和口语水平。",
+      "type": "videoArticle",
+      "articleNum": 72,
+      "subscribedNum": 57683,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-05-29T09:30:01.179Z",
+      "updatedAt": "2026-10-16T09:45:00.581Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2024-05-01T04:00:00.000Z"
+      },
+      "subtitle": "ゆる時間",
+      "levelTags": [
+        "N4",
+        "N5"
+      ],
+      "readingTags": [
+        "10000107"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "lf93F6ioB3"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-11-12T09:42:11.567Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "天海祐希 | 开始接触歌剧是因为声音大？",
+    "coverId": "96434927-52f1-4cfe-9f0f-b27e73704966.jpeg",
+    "excerpt": " 子供の頃ミュージカルとか宝塚とか … との出会えて何なんですか 幼児園の先生に 祐里ちゃんは声が大",
+    "createdBy": "jYi9uYHMxJ",
+    "videoId": "798b82c7-9277-4634-aa08-30428f3086a0.mp4",
+    "audioDuration": 0,
+    "viewedNum": 1393,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 7,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 5,
+    "isTrialRead": false,
+    "createdAt": "2024-11-12T09:42:11.567Z",
+    "updatedAt": "2026-10-16T09:42:37.841Z",
+    "analysisStatus": 1,
+    "analysisTime": 1731404531787,
+    "charsNum": 1622,
+    "columnId": "lf93F6ioB3",
+    "contentId": "hF7nRfCbuT",
+    "jpCharsNum": 0,
+    "levelTags": [
+      "nlvall"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000111",
+      "10000113"
+    ],
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-11-15T02:00:00.000Z"
+    },
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "outSharedNum": 20,
+    "objectId": "hF7nRfCbuT",
+    "notationTitle": "<span class=\"moji-notation\"><ruby><rb>天海</rb><rp>(</rp><rt roma=\"amagai\" hiragana=\"あまがい\" lemma=\"アマガイ\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>祐希</rb><rp>(</rp><rt roma=\"yuuki\" hiragana=\"ゆうき\" lemma=\"ユウキ\" lemma-t=\"\"></rt><rp>)</rp></ruby> | 开始接触歌剧是因为声音大？</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "轻松一下",
+      "subtitle": "ゆる時間",
+      "brief": "搞笑短片、爆笑节目，让你在轻松愉悦中提高日语听力和口语水平。",
+      "coverId": "886afe15-95a4-47f9-b605-4cb8e06e7ee1",
+      "isSubscribed": false
+    },
+    "nextId": "UcADWDGS3U",
+    "previousId": "EcDHXhWGlv",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

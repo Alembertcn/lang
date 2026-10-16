@@ -1,0 +1,132 @@
+{
+  "1": [
+    {
+      "objectId": "PMf2NZDTwm",
+      "name": "小mo",
+      "username": "9wuo9qTgGb8uzrC5jo2ZYvynO",
+      "vTag": "1715676002629",
+      "imgVer_a": 1,
+      "unionId": "JP3775020"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "EXo0LZSm1b",
+        "DGG4EuSHJ9",
+        "vdriBjucaM",
+        "cRLYHFA9kK",
+        "PMf2NZDTwm",
+        "jYi9uYHMxJ",
+        "CJFe5gR5Zf",
+        "VAXWdT4ggf",
+        "f3bZKZgziq",
+        "3KLiPXqIGB"
+      ],
+      "title": "N1阅读真题精析",
+      "subtitle": "N1読解解説",
+      "coverId": "e5c17df6-fe7e-4af1-97a1-9ca203696768",
+      "brief": "JLPT阅读真题训练、全文精析、词句讲解，一网打尽！",
+      "type": "article",
+      "articleNum": 21,
+      "subscribedNum": 30888,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2024-03-04T02:39:05.051Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-06-29T16:00:00.000Z"
+      },
+      "levelTags": [
+        "N1"
+      ],
+      "readingTags": [
+        "10000080"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "KSIxxkQ0B4"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-11-21T01:36:20.199Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "【2023.12】社交媒体带来的人际关系真的能长久吗？",
+    "coverId": "972b66ed-41cd-48d1-a559-6720a88f7521.jpg",
+    "excerpt": "真题：2023年12月N1 問題12 SNS（注1）を含むリアルタイムウェブ（注2）の本質は、時間と",
+    "createdBy": "PMf2NZDTwm",
+    "audioDuration": 0,
+    "viewedNum": 4944,
+    "commentedNum": 8,
+    "votedNum": 2231,
+    "likedNum": 17,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 18,
+    "isTrialRead": true,
+    "createdAt": "2025-06-23T07:41:06.895Z",
+    "updatedAt": "2026-10-16T09:10:46.570Z",
+    "analysisStatus": 1,
+    "analysisTime": 1763688979977,
+    "charsNum": 3062,
+    "columnId": "KSIxxkQ0B4",
+    "contentId": "s5obm3sr3zmCcRnHxqadn",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000017",
+      "10000010",
+      "10000009"
+    ],
+    "shareStyle": 2,
+    "vTag": "1763688980199",
+    "outSharedNum": 171,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-06-29T16:00:00.000Z"
+    },
+    "objectId": "CcRnHxqadn",
+    "notationTitle": "【2023.12】社交媒体带来的人际关系真的能长久吗？",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N1阅读真题精析",
+      "subtitle": "N1読解解説",
+      "brief": "JLPT阅读真题训练、全文精析、词句讲解，一网打尽！",
+      "coverId": "e5c17df6-fe7e-4af1-97a1-9ca203696768",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "QIUNzMt2g8",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

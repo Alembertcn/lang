@@ -1,0 +1,136 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "LSNrUxRviS",
+        "cRLYHFA9kK",
+        "VAXWdT4ggf",
+        "KjKUelL9GU",
+        "Dzwp116Z5m",
+        "lrVMKTEiK0",
+        "FoKmMabUEn",
+        "KoXijCLUUh",
+        "CJFe5gR5Zf",
+        "FbLG0Ew5tZ"
+      ],
+      "title": "翻译研修",
+      "coverId": "06016b17-af57-4a43-b85e-d9e2fb6bda50",
+      "brief": "MOJi内部翻译过程公开，一起来学翻译吧！",
+      "articleNum": 43,
+      "subscribedNum": 41588,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2022-12-29T07:12:04.387Z",
+      "updatedAt": "2026-10-16T10:35:52.049Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2024-11-29T23:00:00.000Z"
+      },
+      "type": "article",
+      "subtitle": "翻訳研修",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000089"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "翻译备考"
+      ],
+      "objectId": "K7EGQpjcig"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-05-15T02:52:22.633Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "读得要窒息了？！手把手带你“拆”长句！",
+    "coverId": "9a7cb14e-02f4-4a11-b6f4-be5ecdb4b0b5.png",
+    "excerpt": " 新闻文本翻译策略 新闻属于应用类文本，翻译策略需考虑到新闻的特点，需强调译文的准确性、客观性和可读",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 7684,
+    "commentedNum": 2,
+    "votedNum": 0,
+    "likedNum": 70,
+    "collectedNum": 3,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 13,
+    "isTrialRead": true,
+    "createdAt": "2024-12-03T07:37:12.024Z",
+    "updatedAt": "2026-10-16T06:12:36.308Z",
+    "analysisStatus": 1,
+    "analysisTime": 1747277541980,
+    "charsNum": 3158,
+    "columnId": "K7EGQpjcig",
+    "contentId": "zm5o9nqscrnF2tAzkQ0Gy",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1",
+      "n1up"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000089",
+      "10000091"
+    ],
+    "shareStyle": 1,
+    "vTag": "1747277542633",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-11-29T23:00:00.000Z"
+    },
+    "outSharedNum": 185,
+    "freeTrans": 2,
+    "objectId": "F2tAzkQ0Gy",
+    "notationTitle": "读得要窒息了？！手把手带你“拆”长句！",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "翻译研修",
+      "subtitle": "翻訳研修",
+      "brief": "MOJi内部翻译过程公开，一起来学翻译吧！",
+      "coverId": "06016b17-af57-4a43-b85e-d9e2fb6bda50",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "H3EQn3aBe9",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

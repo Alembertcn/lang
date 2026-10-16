@@ -1,0 +1,134 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "BypDOPpmqQ",
+        "F2h5AoylFO",
+        "GJiALasaYI",
+        "4y5lwWaufC",
+        "vdriBjucaM",
+        "JYrF7UepQI",
+        "KjKUelL9GU",
+        "Rs2zHkTgGD",
+        "jYi9uYHMxJ",
+        "FbLG0Ew5tZ"
+      ],
+      "title": "名人演讲",
+      "coverId": "a6ea934e-5c51-43ff-af36-5e7c2f10de4a",
+      "brief": "名人演讲、TED演讲合集，促进思想、知识和文化的传播。",
+      "type": "videoArticle",
+      "articleNum": 20,
+      "subscribedNum": 57975,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-05-29T08:44:46.913Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-02-28T09:54:34.045Z"
+      },
+      "subtitle": "スピーチ",
+      "showInMain": true,
+      "levelTags": [
+        "N1",
+        "N2"
+      ],
+      "readingTags": [
+        "10000070"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "objectId": "skua4SqzT3"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-03-03T08:10:54.215Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "小室淑惠 | 拒绝长时间劳动",
+    "coverId": "3253ae03-2d2d-4ac5-a082-27d93befc93b.png",
+    "excerpt": " 今のままでいくと、日本はこんなふうになります。 まず、介護。親の介護なんかする時間ないんだ。 じゃ",
+    "createdBy": "jYi9uYHMxJ",
+    "videoId": "470ed012-6eb2-4fee-ba08-12080dcf7787.mp4",
+    "audioDuration": 0,
+    "viewedNum": 1839,
+    "commentedNum": 5,
+    "votedNum": 0,
+    "likedNum": 11,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 5,
+    "isTrialRead": false,
+    "createdAt": "2025-02-28T09:50:35.800Z",
+    "updatedAt": "2026-10-16T10:14:21.711Z",
+    "analysisStatus": 1,
+    "analysisTime": 1740989453965,
+    "charsNum": 1456,
+    "columnId": "skua4SqzT3",
+    "contentId": "5x2q2l7sibjhXVNcnV6gs",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000107",
+      "10000072",
+      "10000070"
+    ],
+    "shareStyle": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-02-28T09:50:40.210Z"
+    },
+    "outSharedNum": 94,
+    "vTag": "1740989454215",
+    "objectId": "hXVNcnV6gs",
+    "notationTitle": "<span class=\"moji-notation\"><ruby><rb>小室</rb><rp>(</rp><rt roma=\"komuro\" hiragana=\"こむろ\" lemma=\"コムロ\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>淑</rb><rp>(</rp><rt roma=\"shuku\" hiragana=\"しゅく\" lemma=\"シュク\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>惠</rb><rp>(</rp><rt roma=\"megumi\" hiragana=\"めぐみ\" lemma=\"メグミ\" lemma-t=\"\"></rt><rp>)</rp></ruby> | 拒绝长时间劳动</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "名人演讲",
+      "subtitle": "スピーチ",
+      "brief": "名人演讲、TED演讲合集，促进思想、知识和文化的传播。",
+      "coverId": "a6ea934e-5c51-43ff-af36-5e7c2f10de4a",
+      "isSubscribed": false
+    },
+    "nextId": "qsqpUGlMri",
+    "previousId": "HWbO518bRU",
+    "displayTags": [
+      "娱乐"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

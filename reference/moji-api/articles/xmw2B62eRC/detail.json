@@ -1,0 +1,128 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "读解原典",
+      "subtitle": "读解原典",
+      "brief": "溯源JLPT阅读真题出处，共读知识经典",
+      "coverId": "7ae6c8b6-1ca3-4b80-8e81-63b804010954",
+      "captionTeamId": "",
+      "type": "article",
+      "readingTags": [
+        "10000009"
+      ],
+      "levelTags": [
+        "N2",
+        "N1",
+        "N3"
+      ],
+      "powerTags": [
+        "读解听解"
+      ],
+      "subscribedNum": 18587,
+      "articleNum": 20,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": false,
+      "isTrash": false,
+      "ownerIds": [
+        "lrVMKTEiK0",
+        "PMf2NZDTwm",
+        "jYi9uYHMxJ"
+      ],
+      "createdAt": "2025-12-25T03:29:00.087Z",
+      "updatedAt": "2026-10-16T10:35:29.536Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-07-01T08:00:00.000Z"
+      },
+      "objectId": "j5f0uhhegm"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-06-17T03:07:30.954Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "旅行为什么越来越难“上头”？ | 旅行目的の多様化",
+    "coverId": "9b1167b8-6cb6-4b11-99ba-a4e7d98d7501.png",
+    "excerpt": " 旅行为什么越来越难“上头”？ | 旅行目的の多様化 文章难度：N2 従来、旅行業にとって顧客を喜ば",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "712dcb96-0a36-4e13-9dcb-314f1ad8bddd.mp3",
+    "audioDuration": 103,
+    "viewedNum": 1535,
+    "commentedNum": 2,
+    "votedNum": 0,
+    "likedNum": 4,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 8,
+    "isTrialRead": false,
+    "createdAt": "2026-06-17T03:07:30.955Z",
+    "updatedAt": "2026-10-16T07:58:21.520Z",
+    "analysisStatus": 1,
+    "analysisTime": 1781665651129,
+    "charsNum": 925,
+    "columnId": "j5f0uhhegm",
+    "contentId": "xmw2B62eRC",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000009",
+      "10000017"
+    ],
+    "shareStyle": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-06-24T08:00:00.000Z"
+    },
+    "outSharedNum": 128,
+    "objectId": "xmw2B62eRC",
+    "notationTitle": "<span class=\"moji-notation\">旅行为什么越来越难“上头”？ | <ruby n5=\"\"><rb>旅行</rb><rp>(</rp><rt roma=\"ryokou\" hiragana=\"りょこう\" lemma=\"旅行\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n3=\"\" n4=\"\"><rb>目的</rb><rp>(</rp><rt roma=\"mokuteki\" hiragana=\"もくてき\" lemma=\"目的\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby n1=\"\"><rb>多様</rb><rp>(</rp><rt roma=\"tayou\" hiragana=\"たよう\" lemma=\"多様\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n3=\"\"><rb>化</rb><rp>(</rp><rt roma=\"ka\" hiragana=\"か\" lemma=\"化\" lemma-t=\"\"></rt><rp>)</rp></ruby></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "读解原典",
+      "subtitle": "读解原典",
+      "brief": "溯源JLPT阅读真题出处，共读知识经典",
+      "coverId": "7ae6c8b6-1ca3-4b80-8e81-63b804010954",
+      "isSubscribed": false
+    },
+    "nextId": "sqLCTldtHW",
+    "previousId": "98dSdBpUl0",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

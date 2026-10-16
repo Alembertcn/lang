@@ -1,0 +1,132 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "4y5lwWaufC",
+        "KjKUelL9GU",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ"
+      ],
+      "title": "杂志屋",
+      "coverId": "6d8a9c82-f1cc-468b-98ea-e52f212373c2",
+      "brief": "（1-2更/周）日本时尚分享·关注流行穿搭|美妆|生活|人物讯息·不拘泥于任何框架~",
+      "articleNum": 342,
+      "isTrash": false,
+      "isVIP": false,
+      "subscribedNum": 144871,
+      "createdAt": "2022-08-15T08:39:38.946Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-12T10:00:00.000Z"
+      },
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "雑誌読み",
+      "levelTags": [
+        "N1",
+        "N2",
+        "N3"
+      ],
+      "readingTags": [
+        "10000060"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "Io4cKQ1oZB"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-09-30T08:44:23.011Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "心疼我但健忘的妻子：她真的好可爱",
+    "coverId": "c6d5e3bc-df30-4d4a-aa28-8e6faf793e86.png",
+    "excerpt": "妻は、僕の試合結果をほとんど覚えていない 彼女と出会って8年目になる。 けれど彼女は僕の試合結果をほ",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "38418bdc-17f4-40b2-b13e-c280abe96489.mp3",
+    "audioDuration": 161,
+    "viewedNum": 1087,
+    "commentedNum": 2,
+    "votedNum": 0,
+    "likedNum": 8,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-07-17T07:17:19.810Z",
+    "updatedAt": "2026-10-16T10:40:09.168Z",
+    "analysisStatus": 1,
+    "analysisTime": 1790757862922,
+    "charsNum": 1810,
+    "columnId": "Io4cKQ1oZB",
+    "contentId": "6avvmkckqacTk0PXom0LU",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000060",
+      "10000066",
+      "10000116"
+    ],
+    "shareStyle": 2,
+    "vTag": "1790757863011",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-05T10:00:00.000Z"
+    },
+    "outSharedNum": 90,
+    "objectId": "Tk0PXom0LU",
+    "notationTitle": "心疼我但健忘的妻子：她真的好可爱",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "杂志屋",
+      "subtitle": "雑誌読み",
+      "brief": "（1-2更/周）日本时尚分享·关注流行穿搭|美妆|生活|人物讯息·不拘泥于任何框架~",
+      "coverId": "6d8a9c82-f1cc-468b-98ea-e52f212373c2",
+      "isSubscribed": false
+    },
+    "nextId": "fjLmJFiUUa",
+    "previousId": "tSHgC0dcIO",
+    "displayTags": [
+      "生活"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

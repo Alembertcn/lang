@@ -1,0 +1,133 @@
+{
+  "1": [
+    {
+      "objectId": "lrVMKTEiK0",
+      "name": "nebula",
+      "username": "6b1TkHZ7mmWWOiNxSk5spBz9v",
+      "vTag": "1695285003702",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP3254487"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-05-19T02:20:34.018Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "title": "日本文学选读",
+      "brief": "日本文学片段选读，完整内容请移步MOJi阅读器~",
+      "ownerIds": [
+        "vdriBjucaM",
+        "lrVMKTEiK0",
+        "BypDOPpmqQ"
+      ],
+      "articleNum": 85,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-06-04T11:00:00.000Z"
+      },
+      "coverId": "80b2120a-eee8-4544-9c15-7f845e540f9a",
+      "subscribedNum": 109332,
+      "isDetailRead": true,
+      "type": "article",
+      "subtitle": "日本文学",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000093"
+      ],
+      "isVIP": false,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "objectId": "N0W92GGOUX"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-06-03T08:37:23.643Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "既然已经来到这世上，就只能活着 | 《伦敦塔》夏目漱石",
+    "coverId": "175064e3-9741-4614-aaf7-fdf1220ea2dc.png",
+    "excerpt": " 选读片段： また想像して見る。 生れて来た以上は、生きねばならぬ。 あえて死を怖るるとは云わず、た",
+    "createdBy": "lrVMKTEiK0",
+    "audioDuration": 0,
+    "viewedNum": 11788,
+    "commentedNum": 11,
+    "votedNum": 0,
+    "likedNum": 39,
+    "collectedNum": 2,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-06-03T08:31:51.700Z",
+    "updatedAt": "2026-10-16T10:10:07.873Z",
+    "analysisStatus": 1,
+    "analysisTime": 1748939843521,
+    "charsNum": 651,
+    "columnId": "N0W92GGOUX",
+    "contentId": "ibq3pgeqtnqr5fKdwy0pO",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "n1up",
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000093",
+      "10000096",
+      "10000089",
+      "10000092",
+      "10000009",
+      "10000012"
+    ],
+    "shareStyle": 2,
+    "vTag": "1748939843643",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-06-04T11:00:00.000Z"
+    },
+    "outSharedNum": 339,
+    "objectId": "r5fKdwy0pO",
+    "notationTitle": "<span class=\"moji-notation\">既然已经来到这世上，就只能活着 | 《伦敦塔》<ruby><rb>夏目</rb><rp>(</rp><rt roma=\"natsume\" hiragana=\"なつめ\" lemma=\"ナツメ\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>漱石</rb><rp>(</rp><rt roma=\"souseki\" hiragana=\"そうせき\" lemma=\"ソウセキ\" lemma-t=\"\"></rt><rp>)</rp></ruby></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日本文学选读",
+      "subtitle": "日本文学",
+      "brief": "日本文学片段选读，完整内容请移步MOJi阅读器~",
+      "coverId": "80b2120a-eee8-4544-9c15-7f845e540f9a",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "HrQTDAYZFl",
+    "displayTags": [
+      "考试",
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

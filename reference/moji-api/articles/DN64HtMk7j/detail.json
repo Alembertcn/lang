@@ -1,0 +1,133 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "DGG4EuSHJ9",
+        "jYi9uYHMxJ",
+        "cRLYHFA9kK",
+        "lrVMKTEiK0",
+        "VAXWdT4ggf"
+      ],
+      "title": "解词解字",
+      "coverId": "87582bc7-481c-4f6b-85b3-54649380bb25",
+      "brief": "邂逅教科书中可能没有的表达。周三15:00更新",
+      "isTrash": false,
+      "articleNum": 366,
+      "subscribedNum": 119419,
+      "createdAt": "2022-06-24T06:36:46.742Z",
+      "updatedAt": "2026-10-16T10:35:31.659Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-07-08T07:00:00.000Z"
+      },
+      "isVIP": false,
+      "type": "article",
+      "subtitle": "言葉解き",
+      "levelTags": [
+        "N1",
+        "N2"
+      ],
+      "readingTags": [
+        "10000080",
+        "10000089"
+      ],
+      "isDetailRead": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "词汇语法"
+      ],
+      "captionTeamId": "",
+      "objectId": "vONjwx3hsa"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-07-06T08:46:36.708Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "现充、家里蹲的日语怎么说？",
+    "coverId": "7dd86101-2d8d-4211-b735-670dcc979ce4.jpg",
+    "excerpt": " ①リア充 MOJi释义： 现充 日语词源/背景： 最早诞生于日本 2ch 论坛，原本是线上网友用来",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 2074,
+    "commentedNum": 4,
+    "votedNum": 0,
+    "likedNum": 26,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 16,
+    "isTrialRead": false,
+    "createdAt": "2026-07-06T08:27:18.988Z",
+    "updatedAt": "2026-10-16T10:43:15.861Z",
+    "analysisStatus": 1,
+    "analysisTime": 1783327596592,
+    "charsNum": 767,
+    "columnId": "vONjwx3hsa",
+    "contentId": "jgvtg9n5czDN64HtMk7j",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000096",
+      "10000093",
+      "10000017",
+      "10000009"
+    ],
+    "shareStyle": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-07-08T07:00:00.000Z"
+    },
+    "vTag": "1783327596708",
+    "outSharedNum": 156,
+    "objectId": "DN64HtMk7j",
+    "notationTitle": "<span class=\"moji-notation\">现充、家里蹲的日语怎么说？</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "解词解字",
+      "subtitle": "言葉解き",
+      "brief": "邂逅教科书中可能没有的表达。周三15:00更新",
+      "coverId": "87582bc7-481c-4f6b-85b3-54649380bb25",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "ABzINKm70b",
+    "displayTags": [
+      "考试",
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

@@ -1,0 +1,131 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "EXo0LZSm1b",
+        "GJiALasaYI",
+        "vdriBjucaM",
+        "jYi9uYHMxJ",
+        "VAXWdT4ggf",
+        "CJFe5gR5Zf"
+      ],
+      "title": "留学情报局",
+      "subtitle": "留学情報局",
+      "coverId": "81b85297-c8eb-49ba-956a-1cada559bd3c",
+      "brief": "赴日规划、报考辅导、生活攻略……你所关心的留学信息一网打尽！",
+      "type": "article",
+      "articleNum": 12,
+      "subscribedNum": 79661,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": false,
+      "isApply": false,
+      "createdAt": "2024-03-01T09:16:09.749Z",
+      "updatedAt": "2026-10-16T10:35:23.913Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-12-29T05:00:00.000Z"
+      },
+      "levelTags": [
+        "nlvall"
+      ],
+      "readingTags": [
+        "10000060"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": true,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "XEJm955dgo"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-12-27T07:44:59.096Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "如何才能实现留学的“增值”？做好以下5件小事👉",
+    "coverId": "f2c609bb-99b8-4c84-90ac-33f05a1296ae.png",
+    "excerpt": " ：留学的意义是什么？ ：读了大学部之后是回国发展还是继续深造考大学院？考完大学院之后呢？ ：在日本",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 603,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 1,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-12-27T07:38:18.206Z",
+    "updatedAt": "2026-10-15T08:57:53.970Z",
+    "analysisStatus": 1,
+    "analysisTime": 1766821498895,
+    "charsNum": 2941,
+    "columnId": "XEJm955dgo",
+    "contentId": "0l4szwqxug3k8135wBE5aW",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "nlvall",
+      "N1",
+      "N2",
+      "N5",
+      "N4",
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10001349",
+      "10001350",
+      "10001348"
+    ],
+    "shareStyle": 2,
+    "vTag": "1766821499096",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-12-27T10:00:00.000Z"
+    },
+    "outSharedNum": 12,
+    "objectId": "8135wBE5aW",
+    "notationTitle": "如何才能实现留学的“增值”？做好以下5件小事👉",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "留学情报局",
+      "subtitle": "留学情報局",
+      "brief": "赴日规划、报考辅导、生活攻略……你所关心的留学信息一网打尽！",
+      "coverId": "81b85297-c8eb-49ba-956a-1cada559bd3c",
+      "isSubscribed": false
+    },
+    "nextId": "yM8H8XFI8c",
+    "previousId": "3lE9YAPN4i",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

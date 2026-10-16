@@ -1,0 +1,139 @@
+{
+  "1": [
+    {
+      "objectId": "QEuIhfAn81",
+      "name": "Kataori",
+      "username": "fanwenjie@shareintelli.com",
+      "email": "fanwenjie@shareintelli.com",
+      "vTag": "1721014203143",
+      "imgVer_a": 1,
+      "unionId": "JP3890678"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "4y5lwWaufC",
+        "EG9sJdqijH",
+        "QEuIhfAn81",
+        "cRLYHFA9kK",
+        "rLru1YRyT9",
+        "vdriBjucaM",
+        "CJFe5gR5Zf",
+        "FbLG0Ew5tZ"
+      ],
+      "title": "MOJi会话",
+      "subtitle": "MOJi会话",
+      "coverId": "4862b439-d03a-47a0-a58c-35b4000f7c1f",
+      "brief": "1更/周|日常会话、例句收录\nMOJi会話App正式上线🎉日语口语24h陪练，二次元角色任你选！",
+      "type": "audioArticle",
+      "articleNum": 168,
+      "subscribedNum": 168261,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-07-31T01:55:29.632Z",
+      "updatedAt": "2026-10-16T10:42:05.449Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-12T16:00:00.000Z"
+      },
+      "levelTags": [
+        "N2",
+        "N3",
+        "N1"
+      ],
+      "readingTags": [
+        "10000026"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "口语交流"
+      ],
+      "captionTeamId": "",
+      "objectId": "cPwVNA28cP"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-07-14T06:40:47.388Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "买本村上春树的书 | 本を探す",
+    "coverId": "c4b0752a-7dfa-48cb-a1e1-db097ad47323.png",
+    "excerpt": "本篇听读难度预估：N4-N3 王: ちょっと伺いたいんですが、村上春樹の『1Q84』はどこですか。 ",
+    "createdBy": "QEuIhfAn81",
+    "audioId": "9a56ab44-11e1-479d-85a9-fc2cf2af29db.mp3",
+    "audioDuration": 50,
+    "viewedNum": 859,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 9,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-07-07T07:28:37.487Z",
+    "updatedAt": "2026-10-16T10:44:24.096Z",
+    "analysisStatus": 1,
+    "analysisTime": 1784011247256,
+    "charsNum": 643,
+    "columnId": "cPwVNA28cP",
+    "contentId": "c0xpbx2mytco2htjo7xjj",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3",
+      "N4"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000026",
+      "10000118",
+      "10000027"
+    ],
+    "shareStyle": 2,
+    "vTag": "1784011247388",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-12T16:00:00.000Z"
+    },
+    "outSharedNum": 86,
+    "objectId": "o2htjo7xjj",
+    "notationTitle": "<span class=\"moji-notation\">买本村上春树的书 | <ruby n5=\"\"><rb>本</rb><rp>(</rp><rt roma=\"hon\" hiragana=\"ほん\" lemma=\"本\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"を\" lemma-t=\"\">を</span><ruby n4=\"\" n5=\"\"><rb>探す</rb><rp>(</rp><rt roma=\"sagasu\" hiragana=\"さがす\" lemma=\"探す\" lemma-t=\"\"></rt><rp>)</rp></ruby></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "MOJi会话",
+      "subtitle": "MOJi会话",
+      "brief": "1更/周|日常会话、例句收录\nMOJi会話App正式上线🎉日语口语24h陪练，二次元角色任你选！",
+      "coverId": "4862b439-d03a-47a0-a58c-35b4000f7c1f",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "TpOR41gNOt",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

@@ -1,0 +1,131 @@
+{
+  "1": [
+    {
+      "objectId": "ji5PAcQ0tB",
+      "name": "浪花字幕组",
+      "username": "tSpcPbfVEac8r0jVjRQtdgNJK",
+      "vTag": "1687686902482",
+      "imgVer_a": 1,
+      "unionId": "JP3160016"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "ji5PAcQ0tB",
+        "BypDOPpmqQ",
+        "4y5lwWaufC",
+        "UHO4sjUfvb",
+        "vdriBjucaM"
+      ],
+      "title": "浪花字幕组",
+      "coverId": "3e51d328-d056-4e2f-8bd2-31e722879340",
+      "brief": "浪花字幕组官⽅⼊驻专栏，仅作学习视频分享用途。以听说为起点，翻译为媒介，连接100万日语学习者。",
+      "type": "videoArticle",
+      "articleNum": 25,
+      "subscribedNum": 40041,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-06-25T09:52:53.445Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "captionTeamId": "pTEsZoE4ke",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2024-09-18T07:09:02.000Z"
+      },
+      "subtitle": "浪花番組",
+      "showInMain": true,
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000070",
+        "10000107"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "objectId": "erZxPoncao"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-02-21T02:32:01.651Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "本田真凛退役记者会完整版",
+    "coverId": "a46271f4-5199-4c85-a150-18a6a83cc379.jpg",
+    "excerpt": " それでは まず始めに 本田真凜本人より皆様へ 現役引退のご報告と 多くのご支援に対しての感謝の意を",
+    "createdBy": "ji5PAcQ0tB",
+    "videoId": "8a3b924b-e352-4d13-853d-a15fcaaf5300.mp4",
+    "audioDuration": 0,
+    "viewedNum": 4578,
+    "commentedNum": 3,
+    "votedNum": 0,
+    "likedNum": 11,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 5,
+    "isTrialRead": false,
+    "createdAt": "2024-02-21T02:32:01.651Z",
+    "updatedAt": "2026-10-16T02:47:09.645Z",
+    "analysisStatus": 1,
+    "analysisTime": 1708482722038,
+    "contentId": "sqMCXaojAW",
+    "notationHtmlSuccess": true,
+    "columnId": "erZxPoncao",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-02-21T02:33:16.000Z"
+    },
+    "outSharedNum": 49,
+    "levelTags": [
+      "N1",
+      "n1up"
+    ],
+    "readingTags": [
+      "10000070",
+      "10000071",
+      "10001034",
+      "10001040"
+    ],
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "sqMCXaojAW",
+    "notationTitle": "本田真凛退役记者会完整版",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "浪花字幕组",
+      "subtitle": "浪花番組",
+      "brief": "浪花字幕组官⽅⼊驻专栏，仅作学习视频分享用途。以听说为起点，翻译为媒介，连接100万日语学习者。",
+      "coverId": "3e51d328-d056-4e2f-8bd2-31e722879340",
+      "isSubscribed": false
+    },
+    "nextId": "7AtwFhWwK6",
+    "previousId": "GNR8ZEl2ak",
+    "displayTags": [
+      "娱乐"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

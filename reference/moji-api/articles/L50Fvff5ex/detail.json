@@ -1,0 +1,133 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "早安日语",
+      "subtitle": "早安日本语",
+      "brief": "适合刚背完五十音的入门宝宝哟~",
+      "coverId": "ead4116d-7eb2-42da-a998-a124ad61d1cc",
+      "type": "audioArticle",
+      "subscribedNum": 86144,
+      "articleNum": 189,
+      "isDetailRead": true,
+      "isTrash": false,
+      "isVIP": false,
+      "ownerIds": [
+        "KjKUelL9GU",
+        "jYi9uYHMxJ",
+        "CJFe5gR5Zf"
+      ],
+      "readingTags": [
+        "10000080"
+      ],
+      "levelTags": [
+        "N5",
+        "N4"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": true,
+        "readingTagsApplyInArticles": true
+      },
+      "createdAt": "2024-11-15T02:38:03.092Z",
+      "updatedAt": "2026-10-16T10:34:14.675Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-12T23:00:00.000Z"
+      },
+      "powerTags": [
+        "词汇语法",
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "8aaappdvs3"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-08-20T07:52:24.020Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "生活烦恼：“本田会不会揍我一顿啊😱”",
+    "coverId": "7a537103-5913-49ef-88ed-0fa109747132.png",
+    "excerpt": "大切な誕生日プレゼントをなくしました（弄丢了重要的生日礼物） 遇到不懂的单词可以点击弹出释义~ 右下",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "8260afac-606c-40a6-814c-fe132e9e10a6.mp3",
+    "audioDuration": 85,
+    "viewedNum": 725,
+    "commentedNum": 1,
+    "votedNum": 198,
+    "likedNum": 10,
+    "collectedNum": 2,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-07-30T08:50:49.482Z",
+    "updatedAt": "2026-10-16T10:34:42.587Z",
+    "analysisStatus": 1,
+    "analysisTime": 1787212343768,
+    "charsNum": 2677,
+    "columnId": "8aaappdvs3",
+    "contentId": "u023el93kL50Fvff5ex",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5",
+      "N4"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000080",
+      "10000001",
+      "10000002",
+      "10000116",
+      "10000010"
+    ],
+    "shareStyle": 2,
+    "vTag": "1787212344020",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-12T23:00:00.000Z"
+    },
+    "outSharedNum": 84,
+    "objectId": "L50Fvff5ex",
+    "notationTitle": "生活烦恼：“本田会不会揍我一顿啊😱”",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "早安日语",
+      "subtitle": "早安日本语",
+      "brief": "适合刚背完五十音的入门宝宝哟~",
+      "coverId": "ead4116d-7eb2-42da-a998-a124ad61d1cc",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "8asamhADpe",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

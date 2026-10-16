@@ -1,0 +1,149 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "4y5lwWaufC",
+        "UHO4sjUfvb",
+        "vdriBjucaM",
+        "DGG4EuSHJ9",
+        "lrVMKTEiK0",
+        "jYi9uYHMxJ",
+        "EXo0LZSm1b",
+        "PMf2NZDTwm",
+        "GG1KGGSQf4",
+        "c0arudwlpk",
+        "jyOqsrjkrr",
+        "VAXWdT4ggf",
+        "lQlm0klaiP",
+        "9r8XOy1RcF",
+        "HL9pLUKMGZ",
+        "3KLiPXqIGB"
+      ],
+      "title": "学习备考",
+      "coverId": "8432a9b3-8fa8-42da-9d82-e6efcb02c69e",
+      "brief": "考试资讯、学习方法以及资源整理……陪你一起散步",
+      "articleNum": 126,
+      "isTrash": false,
+      "isVIP": false,
+      "subscribedNum": 99449,
+      "createdAt": "2022-08-11T08:14:47.877Z",
+      "updatedAt": "2026-10-16T10:34:26.398Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-09T07:15:00.000Z"
+      },
+      "type": "article",
+      "subtitle": "受験対策",
+      "levelTags": [
+        "N5",
+        "N4",
+        "N3",
+        "N2",
+        "n1up",
+        "N1"
+      ],
+      "readingTags": [
+        "10000009"
+      ],
+      "isDetailRead": true,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": true
+      },
+      "captionTeamId": "",
+      "powerTags": [
+        "翻译备考",
+        "词汇语法",
+        "读解听解",
+        "口语交流"
+      ],
+      "objectId": "JrvOf4zWa9"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-10-09T07:10:57.448Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "2027考研预报名今天开启！超详细报名流程来了，建议收藏！",
+    "coverId": "b41e6fff-77a8-47c8-9558-fb3a8bf41c04.jpeg",
+    "excerpt": " 想利用碎片时间练练题、看看自己的正确率，可以来试试 MOJi考研日语·3天拉分营，5.9元跟着宵寒",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 714,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 4,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-10-09T07:07:31.132Z",
+    "updatedAt": "2026-10-16T08:02:30.298Z",
+    "analysisStatus": 1,
+    "analysisTime": 1791529857268,
+    "charsNum": 2520,
+    "columnId": "JrvOf4zWa9",
+    "contentId": "xh3q646fqjXQV03zcgp2",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2",
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000009",
+      "10000012",
+      "10000017"
+    ],
+    "shareStyle": 2,
+    "vTag": "1791529857448",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-09T07:15:00.000Z"
+    },
+    "outSharedNum": 26,
+    "objectId": "XQV03zcgp2",
+    "notationTitle": "2027考研预报名今天开启！超详细报名流程来了，建议收藏！",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "学习备考",
+      "subtitle": "受験対策",
+      "brief": "考试资讯、学习方法以及资源整理……陪你一起散步",
+      "coverId": "8432a9b3-8fa8-42da-9d82-e6efcb02c69e",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "MjRpSzG1N3",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

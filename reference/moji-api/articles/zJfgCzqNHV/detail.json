@@ -1,0 +1,143 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "jYi9uYHMxJ",
+        "lrVMKTEiK0",
+        "rLru1YRyT9",
+        "OnWUlm8FTT",
+        "eS9OHwSGX1",
+        "vdriBjucaM",
+        "FoKmMabUEn",
+        "cRLYHFA9kK",
+        "kBACa9dW2v",
+        "VAXWdT4ggf",
+        "mCN9B1o8xR"
+      ],
+      "title": "翻译备考",
+      "coverId": "0a7facc1-101f-4a68-8ae7-0239200f550b",
+      "brief": "翻译考试备考专栏，适用于考研、CATTI、专四专八等。",
+      "articleNum": 202,
+      "subscribedNum": 54988,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-03-13T07:55:07.567Z",
+      "updatedAt": "2026-10-16T10:35:37.526Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-08-25T03:00:00.000Z"
+      },
+      "type": "audioArticle",
+      "subtitle": "翻訳備考",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000089",
+        "10000009"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "翻译备考"
+      ],
+      "captionTeamId": "",
+      "objectId": "d5T09XtC9i"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-08-19T07:12:06.802Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "翻译常见表达拆解|“零配件”“个性化定制”怎么翻？",
+    "coverId": "3d5b6286-bb7c-4526-8be3-0f11a3661cfd.png",
+    "excerpt": "近日，山东省青岛市首家机器人6S体验店开业，吸引众多消费者前来参观体验。 📌备考 CATTI 时，",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 519,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 4,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-08-18T08:59:24.171Z",
+    "updatedAt": "2026-10-16T08:06:27.518Z",
+    "analysisStatus": 1,
+    "analysisTime": 1787123526578,
+    "charsNum": 1054,
+    "columnId": "d5T09XtC9i",
+    "contentId": "f0o0hil4qwwzJfgCzqNHV",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1",
+      "n1up"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000089",
+      "10000092",
+      "10000090",
+      "10000091",
+      "10000009",
+      "10000011",
+      "10000012"
+    ],
+    "shareStyle": 1,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-08-20T03:00:00.000Z"
+    },
+    "vTag": "1787123526802",
+    "outSharedNum": 33,
+    "objectId": "zJfgCzqNHV",
+    "notationTitle": "翻译常见表达拆解|“零配件”“个性化定制”怎么翻？",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "翻译备考",
+      "subtitle": "翻訳備考",
+      "brief": "翻译考试备考专栏，适用于考研、CATTI、专四专八等。",
+      "coverId": "0a7facc1-101f-4a68-8ae7-0239200f550b",
+      "isSubscribed": false
+    },
+    "nextId": "9Wx6AUtdHZ",
+    "previousId": "09iP2hceJr",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

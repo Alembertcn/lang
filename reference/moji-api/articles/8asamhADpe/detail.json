@@ -1,0 +1,133 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "早安日语",
+      "subtitle": "早安日本语",
+      "brief": "适合刚背完五十音的入门宝宝哟~",
+      "coverId": "ead4116d-7eb2-42da-a998-a124ad61d1cc",
+      "type": "audioArticle",
+      "subscribedNum": 86144,
+      "articleNum": 189,
+      "isDetailRead": true,
+      "isTrash": false,
+      "isVIP": false,
+      "ownerIds": [
+        "KjKUelL9GU",
+        "jYi9uYHMxJ",
+        "CJFe5gR5Zf"
+      ],
+      "readingTags": [
+        "10000080"
+      ],
+      "levelTags": [
+        "N5",
+        "N4"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": true,
+        "readingTagsApplyInArticles": true
+      },
+      "createdAt": "2024-11-15T02:38:03.092Z",
+      "updatedAt": "2026-10-16T10:34:14.675Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-12T23:00:00.000Z"
+      },
+      "powerTags": [
+        "词汇语法",
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "8aaappdvs3"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-08-21T08:21:03.965Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "成长考验：“为什么要逼我做不喜欢的事情😠”",
+    "coverId": "8e335bb0-162d-4001-a5c4-f86bdb3d8241.png",
+    "excerpt": "父とけんかしてしまいました（和父亲吵架了） 遇到不懂的单词可以点击弹出释义~ 右下角还可以调整播放速",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "363be006-213d-4760-af23-bb2eba2d63be.mp3",
+    "audioDuration": 73,
+    "viewedNum": 974,
+    "commentedNum": 0,
+    "votedNum": 250,
+    "likedNum": 8,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-07-29T09:55:44.173Z",
+    "updatedAt": "2026-10-16T10:13:03.494Z",
+    "analysisStatus": 1,
+    "analysisTime": 1787300463755,
+    "charsNum": 3000,
+    "columnId": "8aaappdvs3",
+    "contentId": "9n9vbpf6znk8asamhADpe",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5",
+      "N4"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000080",
+      "10000116",
+      "10000010",
+      "10000001",
+      "10000002"
+    ],
+    "shareStyle": 2,
+    "vTag": "1787300463965",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-05T23:00:00.000Z"
+    },
+    "outSharedNum": 76,
+    "objectId": "8asamhADpe",
+    "notationTitle": "成长考验：“为什么要逼我做不喜欢的事情😠”",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "早安日语",
+      "subtitle": "早安日本语",
+      "brief": "适合刚背完五十音的入门宝宝哟~",
+      "coverId": "ead4116d-7eb2-42da-a998-a124ad61d1cc",
+      "isSubscribed": false
+    },
+    "nextId": "L50Fvff5ex",
+    "previousId": "H91mAp7CYH",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

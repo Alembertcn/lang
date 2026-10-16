@@ -1,0 +1,142 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "BypDOPpmqQ",
+        "F2h5AoylFO",
+        "GJiALasaYI",
+        "4y5lwWaufC",
+        "vdriBjucaM",
+        "JYrF7UepQI",
+        "KjKUelL9GU",
+        "Rs2zHkTgGD",
+        "jYi9uYHMxJ",
+        "9r8XOy1RcF",
+        "FbLG0Ew5tZ",
+        "kapowKdXtB"
+      ],
+      "title": "每日新闻",
+      "coverId": "276ff820-53d9-4c72-bb83-c993606ff5c4",
+      "brief": "精选中日双语新闻，给你带来最地道的口语学习体验。",
+      "type": "videoArticle",
+      "articleNum": 131,
+      "subscribedNum": 132708,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-05-29T03:24:26.643Z",
+      "updatedAt": "2026-10-16T10:35:40.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-07-17T06:50:11.000Z"
+      },
+      "subtitle": "毎日新聞",
+      "levelTags": [
+        "nlvall"
+      ],
+      "readingTags": [
+        "10000107",
+        "10000019"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "口语交流"
+      ],
+      "captionTeamId": "",
+      "objectId": "vkU1FXNBpi"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-07-17T06:50:05.585Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "农协你得协农啊！恼！专心搞钱搞权的日本农协连老本行都干不好了：“农协无用论”抬头",
+    "coverId": "3b79f251-1cb2-41dd-988f-2d51024284d8.jpg",
+    "excerpt": "今日小泉農水大臣の姿は茨城県に JAの組合員との意見交換を行いました 今、あまりに急激に（コメの価格",
+    "createdBy": "jYi9uYHMxJ",
+    "videoId": "eda0179f-7668-4f3f-b56c-7abb663cacd5.mp4",
+    "audioDuration": 0,
+    "viewedNum": 10781,
+    "commentedNum": 7,
+    "votedNum": 0,
+    "likedNum": 24,
+    "collectedNum": 2,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 5,
+    "isTrialRead": false,
+    "createdAt": "2025-07-16T10:00:36.532Z",
+    "updatedAt": "2026-10-16T09:45:28.050Z",
+    "analysisStatus": 1,
+    "analysisTime": 1752735005337,
+    "charsNum": 2354,
+    "columnId": "vkU1FXNBpi",
+    "contentId": "pwr525l40feGtgDETQkw",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000107",
+      "10000108",
+      "10000019",
+      "10000022"
+    ],
+    "shareStyle": 2,
+    "vTag": "1752735005585",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-07-17T06:50:11.000Z"
+    },
+    "outSharedNum": 269,
+    "objectId": "eGtgDETQkw",
+    "notationTitle": "农协你得协农啊！恼！专心搞钱搞权的日本农协连老本行都干不好了：“农协无用论”抬头",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "每日新闻",
+      "subtitle": "毎日新聞",
+      "brief": "精选中日双语新闻，给你带来最地道的口语学习体验。",
+      "coverId": "276ff820-53d9-4c72-bb83-c993606ff5c4",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "VRWpLVKkE1",
+    "displayTags": [
+      "时事",
+      "娱乐"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

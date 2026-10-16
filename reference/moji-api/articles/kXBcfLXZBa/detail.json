@@ -1,0 +1,135 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "4y5lwWaufC",
+        "vdriBjucaM",
+        "iNAGs5Alfz",
+        "EG9sJdqijH",
+        "KjKUelL9GU",
+        "jYi9uYHMxJ",
+        "VAXWdT4ggf",
+        "FbLG0Ew5tZ"
+      ],
+      "title": "昔话百选",
+      "coverId": "59724220-de19-4ba0-a4ae-aa44ba3b8ab5",
+      "brief": "1更/周 | 民间、童话、传说、奇闻轶事 | 趣味提升、单词理解",
+      "articleNum": 266,
+      "subscribedNum": 114625,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "createdAt": "2022-11-17T06:24:07.443Z",
+      "updatedAt": "2026-10-16T10:34:16.411Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-12T10:00:00.000Z"
+      },
+      "type": "audioArticle",
+      "subtitle": "昔話百選",
+      "levelTags": [
+        "N4",
+        "N5"
+      ],
+      "readingTags": [
+        "10000099"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "A9K89QnCuC"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-09-21T06:07:14.318Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "初级系列：用眼睛冒出的火花开枪",
+    "coverId": "48287d25-e91b-43cb-a1a5-f61936afd7a4.png",
+    "excerpt": " 👉 点击单词查询释义 ほら吹き男爵 目からの火花で鉄砲を わがはいは、ミュンヒハウゼン男爵。 み",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "a48f2713-178f-4210-ae65-c3a505478bfb.mp3",
+    "audioDuration": 217,
+    "viewedNum": 448,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 7,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 16,
+    "isTrialRead": false,
+    "createdAt": "2026-08-03T07:25:34.375Z",
+    "updatedAt": "2026-10-16T10:42:44.712Z",
+    "analysisStatus": 1,
+    "analysisTime": 1789970834158,
+    "charsNum": 1374,
+    "columnId": "A9K89QnCuC",
+    "contentId": "34p8f6w700vkXBcfLXZBa",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000099",
+      "10000100",
+      "10000104"
+    ],
+    "shareStyle": 2,
+    "vTag": "1789970834318",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-12T10:00:00.000Z"
+    },
+    "outSharedNum": 37,
+    "objectId": "kXBcfLXZBa",
+    "notationTitle": "初级系列：用眼睛冒出的火花开枪",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "昔话百选",
+      "subtitle": "昔話百選",
+      "brief": "1更/周 | 民间、童话、传说、奇闻轶事 | 趣味提升、单词理解",
+      "coverId": "59724220-de19-4ba0-a4ae-aa44ba3b8ab5",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "TWr00qnHUS",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

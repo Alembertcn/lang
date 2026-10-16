@@ -1,0 +1,135 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "4y5lwWaufC",
+        "vdriBjucaM",
+        "iNAGs5Alfz",
+        "EG9sJdqijH",
+        "KjKUelL9GU",
+        "jYi9uYHMxJ",
+        "VAXWdT4ggf",
+        "FbLG0Ew5tZ"
+      ],
+      "title": "昔话百选",
+      "coverId": "59724220-de19-4ba0-a4ae-aa44ba3b8ab5",
+      "brief": "1更/周 | 民间、童话、传说、奇闻轶事 | 趣味提升、单词理解",
+      "articleNum": 266,
+      "subscribedNum": 114625,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "createdAt": "2022-11-17T06:24:07.443Z",
+      "updatedAt": "2026-10-16T10:34:16.411Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-12T10:00:00.000Z"
+      },
+      "type": "audioArticle",
+      "subtitle": "昔話百選",
+      "levelTags": [
+        "N4",
+        "N5"
+      ],
+      "readingTags": [
+        "10000099"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "A9K89QnCuC"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-09-21T07:43:20.704Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "初级系列：乱起名字的老爷爷",
+    "coverId": "79e5f050-2c99-41f1-9872-595c045ec0ee.png",
+    "excerpt": " 👉 点击单词查询释义 だんなさまの中のだんなさま むかし、女の子がお手伝いさんになるために町へ行",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "dd046b6f-4d3e-4e87-9a05-2f7ab85619c8.mp3",
+    "audioDuration": 220,
+    "viewedNum": 576,
+    "commentedNum": 2,
+    "votedNum": 0,
+    "likedNum": 5,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 16,
+    "isTrialRead": false,
+    "createdAt": "2026-07-30T09:49:15.105Z",
+    "updatedAt": "2026-10-16T10:13:42.316Z",
+    "analysisStatus": 1,
+    "analysisTime": 1789976600539,
+    "charsNum": 1851,
+    "columnId": "A9K89QnCuC",
+    "contentId": "unq3172i2yTWr00qnHUS",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000116",
+      "10000099",
+      "10000100",
+      "10001140"
+    ],
+    "shareStyle": 2,
+    "vTag": "1789976600704",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-05T10:00:00.000Z"
+    },
+    "outSharedNum": 46,
+    "objectId": "TWr00qnHUS",
+    "notationTitle": "初级系列：乱起名字的老爷爷",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "昔话百选",
+      "subtitle": "昔話百選",
+      "brief": "1更/周 | 民间、童话、传说、奇闻轶事 | 趣味提升、单词理解",
+      "coverId": "59724220-de19-4ba0-a4ae-aa44ba3b8ab5",
+      "isSubscribed": false
+    },
+    "nextId": "kXBcfLXZBa",
+    "previousId": "wU0COU4rpS",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

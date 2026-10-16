@@ -1,0 +1,136 @@
+{
+  "1": [
+    {
+      "objectId": "cRLYHFA9kK",
+      "name": "u650Lg",
+      "username": "nesora@outlook.com",
+      "email": "nesora@outlook.com",
+      "vTag": "1698054003248",
+      "imgVer_a": 3,
+      "imgVer_f": 2,
+      "unionId": "JP20108"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "LSNrUxRviS",
+        "cRLYHFA9kK",
+        "VAXWdT4ggf",
+        "KjKUelL9GU",
+        "Dzwp116Z5m",
+        "lrVMKTEiK0",
+        "FoKmMabUEn",
+        "KoXijCLUUh",
+        "CJFe5gR5Zf",
+        "FbLG0Ew5tZ"
+      ],
+      "title": "翻译研修",
+      "coverId": "06016b17-af57-4a43-b85e-d9e2fb6bda50",
+      "brief": "MOJi内部翻译过程公开，一起来学翻译吧！",
+      "articleNum": 43,
+      "subscribedNum": 41588,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2022-12-29T07:12:04.387Z",
+      "updatedAt": "2026-10-16T10:35:52.049Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2024-11-29T23:00:00.000Z"
+      },
+      "type": "article",
+      "subtitle": "翻訳研修",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000089"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "翻译备考"
+      ],
+      "objectId": "K7EGQpjcig"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-10-29T02:46:02.891Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "带着目的去翻译，别让译文成无头苍蝇！",
+    "coverId": "8f2b3a37-bb02-4bd3-a3ec-b55e4498d0b6.png",
+    "excerpt": " 翻译目的论 翻译目的论（スコポス理論）是由德国翻译学者汉斯·弗米尔提出的一个翻译理论，强调翻译的目",
+    "createdBy": "cRLYHFA9kK",
+    "audioDuration": 0,
+    "viewedNum": 4488,
+    "commentedNum": 3,
+    "votedNum": 0,
+    "likedNum": 39,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 13,
+    "isTrialRead": true,
+    "createdAt": "2024-08-29T08:58:58.910Z",
+    "updatedAt": "2026-10-16T07:40:20.106Z",
+    "analysisStatus": 1,
+    "analysisTime": 1730169960806,
+    "columnId": "K7EGQpjcig",
+    "contentId": "o4t4q75d74hH3EQn3aBe9",
+    "levelTags": [
+      "nlvall"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000089",
+      "10000091"
+    ],
+    "vTag": "1730169962891",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-08-31T09:00:00.000Z"
+    },
+    "outSharedNum": 82,
+    "charsNum": 2791,
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "H3EQn3aBe9",
+    "notationTitle": "带着目的去翻译，别让译文成无头苍蝇！",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "翻译研修",
+      "subtitle": "翻訳研修",
+      "brief": "MOJi内部翻译过程公开，一起来学翻译吧！",
+      "coverId": "06016b17-af57-4a43-b85e-d9e2fb6bda50",
+      "isSubscribed": false
+    },
+    "nextId": "F2tAzkQ0Gy",
+    "previousId": "lCitduO0Z4",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

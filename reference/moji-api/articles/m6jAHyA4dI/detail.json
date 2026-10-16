@@ -1,0 +1,124 @@
+{
+  "1": [
+    {
+      "objectId": "VAXWdT4ggf",
+      "name": "小君君",
+      "username": "3201841319@qq.com",
+      "email": "3201841319@qq.com",
+      "vTag": "1645701241786",
+      "unionId": "JP152378"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2022-02-23T06:41:44.910Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "title": "N1语法",
+      "brief": "新完全掌握语法详解，配套练习，随时答疑（已更新完毕）",
+      "ownerIds": [
+        "VAXWdT4ggf",
+        "vdriBjucaM"
+      ],
+      "articleNum": 134,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2022-07-14T00:00:00.000Z"
+      },
+      "coverId": "7d34a582-5b51-4f3b-ab84-24206b124450",
+      "subscribedNum": 64962,
+      "isDetailRead": true,
+      "isVIP": false,
+      "type": "article",
+      "subtitle": "N1文法",
+      "levelTags": [
+        "N1"
+      ],
+      "readingTags": [
+        "10000009"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "词汇语法"
+      ],
+      "objectId": "VFsBmBNpJ2"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2022-07-12T03:02:47.406Z"
+    },
+    "title": "第1~20课综合练习Ⅱ",
+    "coverId": "c7608b26-798d-446f-bdfc-8bc55539a4d0",
+    "excerpt": " 持续更新，记得上车↓ 语法词条↓ 有不懂的地方欢迎在评论区留言讨论！ ヾ(✿ﾟ▽ﾟ)ノ MOJiT",
+    "createdBy": "VAXWdT4ggf",
+    "contentId": "m6jAHyA4dI",
+    "audioId": "",
+    "audioDuration": 0,
+    "viewedNum": 5906,
+    "commentedNum": 14,
+    "votedNum": 12306,
+    "likedNum": 18,
+    "collectedNum": 13,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "createdAt": "2022-07-12T03:02:47.408Z",
+    "updatedAt": "2026-10-15T20:31:37.787Z",
+    "columnId": "VFsBmBNpJ2",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2022-07-13T01:00:00.000Z"
+    },
+    "outSharedNum": 76,
+    "notationHtmlSuccess": true,
+    "level": 1,
+    "analysisStatus": 1,
+    "analysisTime": 1682331396612,
+    "levelTags": [
+      "N1"
+    ],
+    "readingTags": [
+      "10000009",
+      "10000010",
+      "10000132"
+    ],
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "ACL": {
+      "VAXWdT4ggf": {
+        "read": true,
+        "write": true
+      }
+    },
+    "objectId": "m6jAHyA4dI",
+    "notationTitle": "第1~20课综合练习Ⅱ",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N1语法",
+      "subtitle": "N1文法",
+      "brief": "新完全掌握语法详解，配套练习，随时答疑（已更新完毕）",
+      "coverId": "7d34a582-5b51-4f3b-ab84-24206b124450",
+      "isSubscribed": false
+    },
+    "nextId": "1tmYBrtR0z",
+    "previousId": "1bkupSlopt",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

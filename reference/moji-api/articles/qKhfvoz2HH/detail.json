@@ -1,0 +1,129 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "VAXWdT4ggf",
+        "mCN9B1o8xR"
+      ],
+      "title": "編集手帳",
+      "coverId": "6876e0af-c17f-4bfa-af34-8a82276e9cd9",
+      "brief": "知名声优倾情献声 | 完整内容请下载<MOJi阅读> | 不定期周三19:00更新 | ",
+      "articleNum": 56,
+      "isTrash": false,
+      "isVIP": false,
+      "subscribedNum": 55733,
+      "createdAt": "2022-09-21T06:05:33.772Z",
+      "updatedAt": "2026-10-16T10:34:57.183Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2024-05-16T08:00:00.000Z"
+      },
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "編集手帳",
+      "levelTags": [
+        "n1up",
+        "N1"
+      ],
+      "readingTags": [
+        "10000093"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "objectId": "SrHJAGBNle"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-03-20T08:34:19.466Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "小栗有以 | 爱因斯坦“一生中最大的错误”：站在巨人之肩，错失物理之巅？",
+    "coverId": "b71526c0-10e1-480f-960e-cf48aad1bb03.jpg",
+    "excerpt": "人知れず近所に住む少女の算数の宿題を手伝っていたり、アインシュタインには心温まる逸話も多い。「生涯最",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "d49aed9b-1091-4ef2-a28d-9de105f88289.MP3",
+    "audioDuration": 107,
+    "viewedNum": 4779,
+    "commentedNum": 6,
+    "votedNum": 0,
+    "likedNum": 26,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 8,
+    "isTrialRead": false,
+    "createdAt": "2024-03-19T03:29:06.655Z",
+    "updatedAt": "2026-10-16T09:39:43.993Z",
+    "analysisStatus": 1,
+    "analysisTime": 1710923659376,
+    "contentId": "7akly5xd9amqKhfvoz2HH",
+    "notationHtmlSuccess": true,
+    "vTag": "1710923659466",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-03-21T08:00:00.000Z"
+    },
+    "columnId": "SrHJAGBNle",
+    "outSharedNum": 93,
+    "levelTags": [
+      "N1",
+      "n1up"
+    ],
+    "readingTags": [
+      "10000116",
+      "10000093",
+      "10000117",
+      "10000096",
+      "10001201"
+    ],
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "qKhfvoz2HH",
+    "notationTitle": "<span class=\"moji-notation\">小栗有以 | 爱因斯坦“一生中最大的错误”：站在巨人之肩，错失物理之巅？</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "編集手帳",
+      "subtitle": "編集手帳",
+      "brief": "知名声优倾情献声 | 完整内容请下载<MOJi阅读> | 不定期周三19:00更新 | ",
+      "coverId": "6876e0af-c17f-4bfa-af34-8a82276e9cd9",
+      "isSubscribed": false
+    },
+    "nextId": "x5pLnTmf3h",
+    "previousId": "2Is5dsdOrl",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

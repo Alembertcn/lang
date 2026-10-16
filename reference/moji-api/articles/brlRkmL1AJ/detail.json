@@ -1,0 +1,128 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "MOJi百科",
+      "subtitle": "MOJi百科（ひゃっか）",
+      "brief": "教材学不进去？来MOJi百科边玩边学边看吧！超多有趣知识等着你~",
+      "coverId": "0a2d63b6-8eef-40af-909d-9e274cdc54c7",
+      "captionTeamId": "",
+      "type": "article",
+      "readingTags": [
+        "10000060",
+        "10000051"
+      ],
+      "levelTags": [
+        "N3",
+        "N4",
+        "N5"
+      ],
+      "powerTags": [
+        "词汇语法",
+        "读解听解"
+      ],
+      "subscribedNum": 44987,
+      "articleNum": 58,
+      "opts": {
+        "levelTagsApplyInArticles": true,
+        "readingTagsApplyInArticles": false
+      },
+      "isDetailRead": false,
+      "isVIP": false,
+      "isTrash": false,
+      "ownerIds": [
+        "KjKUelL9GU",
+        "jYi9uYHMxJ"
+      ],
+      "createdAt": "2025-09-04T07:59:19.120Z",
+      "updatedAt": "2026-10-16T10:34:20.394Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-12T04:00:00.000Z"
+      },
+      "objectId": "dc1zkhwvxl"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-07-06T06:09:35.726Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "商务人士为什么不说“最近好忙”？",
+    "coverId": "7a7ad7a3-273a-4d17-b476-cc39be4a6d41.png",
+    "excerpt": "ビジネスマンが「最近忙しい」と言わない理由とは？ ビジネスマンの世界では、忙しい人は仕事ができる人と",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 445,
+    "commentedNum": 2,
+    "votedNum": 0,
+    "likedNum": 1,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-05-27T07:48:18.976Z",
+    "updatedAt": "2026-10-16T10:29:11.906Z",
+    "analysisStatus": 1,
+    "analysisTime": 1783318175659,
+    "charsNum": 909,
+    "columnId": "dc1zkhwvxl",
+    "contentId": "iwqlzjz1yfobrlRkmL1AJ",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3",
+      "N4",
+      "N5"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10001344"
+    ],
+    "shareStyle": 2,
+    "vTag": "1783318175726",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-12T04:00:00.000Z"
+    },
+    "outSharedNum": 58,
+    "objectId": "brlRkmL1AJ",
+    "notationTitle": "商务人士为什么不说“最近好忙”？",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "MOJi百科",
+      "subtitle": "MOJi百科（ひゃっか）",
+      "brief": "教材学不进去？来MOJi百科边玩边学边看吧！超多有趣知识等着你~",
+      "coverId": "0a2d63b6-8eef-40af-909d-9e274cdc54c7",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "aODE1ikYew",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

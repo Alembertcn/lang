@@ -58,8 +58,9 @@
 | `tts-voice-actors-fetch` | TTS 音色列表 | `reader/tts-voice-actors-fetch.json` |
 | `circle-simpleList` | 发现页圈子（5 个 + 图标路径） | `find/circle-simpleList.json` |
 | `readingCnt-privateRecmArticles` / `-Columns` | 发现页推荐（短文推荐 / 专栏推荐） | `find/*.json` |
-| `homepage-articles` | 短文推荐编排（首页文章顺序） | `find/homepage-articles.json` |
-| `nanews/list`（REST `/v1/nanews/list`） | NOW 新闻列表 | `find/nanews.list.json` |
+| `homepage-articles` | 首页列表项 → 本地文件的编排（发现页正文共用 `articles/{id}/`） | `find/homepage-articles.json` |
+| `nanews/list`（REST `/v1/nanews/list`） | 新闻列表 | `find/nanews.list.json` |
+| `GET /v1/nanews/{objectId}?isNlt=true`（REST） | 新闻详情；`isPolling=true` 时要轮询到 `notationHtmlLevels` 出现 | `find/news/{id}/detail.json` |
 | `clockInDaily`（REST `/v1/clockInDaily`） | 打卡/阅读时长 | `find/clockInDaily.json` |
 | `readingCnt-category` | 专栏推荐分类 tab（考试/时事/生活/文学/娱乐） | `find/category/*.json` |
 
@@ -72,6 +73,7 @@
 | `/books/{objectId}/{contentId}.zip` | 书籍包（外包 zip → 真 epub） | `fetch_moji_books.py` |
 | `/books/{objectId}/{coverId}` | 书籍封面 | `fetch_moji_covers.py` |
 | `/article/audio/{audioId}` | 文章音频 | `fetch_moji_audio.py`（audio-index.json 建索引） |
+| `/nanews/{objectId}-notation-{level}.zip` | 新闻注音正文（解出 `body.html`；`level` 优先 `n3n4n5`） | `fetch_moji_find_articles.py` |
 
 ### 2.4 运行时接口（app 内部）
 
@@ -84,11 +86,24 @@
 
 ### 2.5 本地 mock
 
+**接口数据**已经全量落盘在 `reference/moji-api/`（每个接口 ↔ 一份响应的对照表见
+`reference/moji-api/接口说明.md` 文末「本地缓存 ↔ 线上地址」）。模块实现按类型二选一：
+
+- **纯数据**（发现页、阅读库、文章精读）：`convert_moji_articles.py` /
+  `fetch_find_assets.py` 打包进 `composeResources`，离线可用；
+- **要跑协议 / JS**（阅读引擎、词卡 H5、音频）：本机 HTTP 服务兜底，app 侧 base URL
+  指向 `127.0.0.1`（书籍走 `BookServer`，媒体走下面的静态服务）。
+
+**静态资源**（`oss/` 与线上同构，472 MB，gitignore）：
+
 ```bash
 tools/start_media_mock.sh   # :8765 -> reference/moji-api/oss（screen 常驻）
                             # adb reverse 18080 -> 8765（手机端）
 # local.properties: MOCK_MEDIA_BASE=http://127.0.0.1:18080
 ```
+
+新增模块的固定动作见 `PLAN.md`「高仿工作流」：先定位接口 → 抓取落盘 → 同步接口文档
+→ 按缓存实现 → 同一页对照验收。
 
 ## 三、逆向还原（资产与机制）
 
@@ -104,6 +119,7 @@ tools/start_media_mock.sh   # :8765 -> reference/moji-api/oss（screen 常驻）
 | 文章 | RPC + 正文 zip + SRT | 170 篇文章（正文/时间轴/翻译/句子/配音表） | `convert_moji_articles.py` → `composeResources/files/articles/` |
 | 音频 | OSS | 178 段 mp3 + 索引 | `fetch_moji_audio.py` |
 | 发现页数据/图片 | RPC + OSS（圈子图标、文章/计划/专栏封面） | `feed.json` + 4 组图片目录 | `tools/fetch_find_assets.py`（生成物 gitignore） |
+| 发现页正文 / 新闻 | RPC + 正文 zip + OSS 注音 zip | 94 篇首页文章 + 20 条新闻正文 | `tools/fetch_moji_find_articles.py` → `articles/{id}/`、`find/news/{id}/` |
 
 ### 3.2 阅读器机制（关键结论，证据均来自 base.apk）
 
@@ -133,5 +149,6 @@ cp env.example .env            # 填 MOJI_ACCOUNT/MOJI_PASSWORD（重抓接口�
 tools/fetch_assets.sh          # 词库等外置资产
 python3 tools/fetch_moji_books.py && python3 tools/unpack_moji_books.py
 python3 tools/fetch_moji_find.py && python3 tools/fetch_find_assets.py   # 发现页数据与图片
+python3 tools/fetch_moji_find_articles.py                               # 发现页正文 + 新闻
 ./gradlew :composeApp:assembleDebug
 ```

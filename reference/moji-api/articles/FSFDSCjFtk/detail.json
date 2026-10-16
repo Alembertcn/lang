@@ -1,0 +1,136 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "DGG4EuSHJ9",
+        "vdriBjucaM",
+        "4y5lwWaufC",
+        "KoXijCLUUh",
+        "CJFe5gR5Zf",
+        "jYi9uYHMxJ",
+        "mYuCBSWsAP"
+      ],
+      "title": "作文大赏",
+      "coverId": "8a0a13e3-9191-48c0-b28d-d3490a7867bf",
+      "brief": "各类作文比赛佳作✰ 来看看获奖的他们都是怎么写的！",
+      "articleNum": 228,
+      "isTrash": false,
+      "isVIP": false,
+      "subscribedNum": 132596,
+      "createdAt": "2022-10-20T03:08:24.313Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-16T02:00:00.000Z"
+      },
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "作文大賞",
+      "levelTags": [
+        "N1",
+        "N2"
+      ],
+      "readingTags": [
+        "10000033",
+        "10000093"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "词汇语法",
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "2WDSeu1k8R"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-10-08T10:16:47.952Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "愿消世间求医之难 | 私の伝えたいこと",
+    "coverId": "ae6e4ca7-0270-4ee8-b29b-e746c147e321.png",
+    "excerpt": "私の伝えたいこと 阅读难度：N3 東海市立加木屋中学校1年 鶴田 咲笑 「将来は医者になって世界中の",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "3f2b3825-bd7d-42ae-92b8-0497dea73de3.mp3",
+    "audioDuration": 171,
+    "viewedNum": 1071,
+    "commentedNum": 4,
+    "votedNum": 0,
+    "likedNum": 19,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-10-08T07:09:39.798Z",
+    "updatedAt": "2026-10-16T09:44:27.660Z",
+    "analysisStatus": 1,
+    "analysisTime": 1791454607853,
+    "charsNum": 1763,
+    "columnId": "2WDSeu1k8R",
+    "contentId": "4dt10vm5ba1FSFDSCjFtk",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000102",
+      "10000099",
+      "10000116",
+      "10000121"
+    ],
+    "shareStyle": 2,
+    "vTag": "1791454607952",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-09T02:00:00.000Z"
+    },
+    "outSharedNum": 108,
+    "objectId": "FSFDSCjFtk",
+    "notationTitle": "<span class=\"moji-notation\">愿消世间求医之难 | <ruby><rb>私</rb><rp>(</rp><rt roma=\"watakushi\" hiragana=\"わたくし\" lemma=\"私-代名詞\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby n5=\"\"><rb>伝え</rb><rp>(</rp><rt roma=\"tsutae\" hiragana=\"つたえ\" lemma=\"伝える\" lemma-t=\"伝える\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"たい\" lemma-t=\"\">たい</span><span class=\"moji-toolkit-org\" n4=\"\" lemma=\"事\" lemma-t=\"\">こと</span></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "作文大赏",
+      "subtitle": "作文大賞",
+      "brief": "各类作文比赛佳作✰ 来看看获奖的他们都是怎么写的！",
+      "coverId": "8a0a13e3-9191-48c0-b28d-d3490a7867bf",
+      "isSubscribed": false
+    },
+    "nextId": "rzjPsQVq1f",
+    "previousId": "uqHnjbz2TG",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

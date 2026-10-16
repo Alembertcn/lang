@@ -1,0 +1,136 @@
+{
+  "1": [
+    {
+      "objectId": "PMf2NZDTwm",
+      "name": "小mo",
+      "username": "9wuo9qTgGb8uzrC5jo2ZYvynO",
+      "vTag": "1715676002629",
+      "imgVer_a": 1,
+      "unionId": "JP3775020"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-07-13T05:41:12.203Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "title": "晨读",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "ownerIds": [
+        "GJiALasaYI",
+        "vdriBjucaM",
+        "PMf2NZDTwm",
+        "KjKUelL9GU",
+        "KoXijCLUUh",
+        "jyOqsrjkrr",
+        "CJFe5gR5Zf",
+        "3KLiPXqIGB"
+      ],
+      "articleNum": 423,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:00:00.000Z"
+      },
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "subscribedNum": 117214,
+      "isDetailRead": true,
+      "isVIP": false,
+      "type": "audioArticle",
+      "subtitle": "朝読書",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000099"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": true
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "e72cANzo2W"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-08-20T02:36:08.366Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "石田彰 | セロ弾きのゴーシュ（9）",
+    "coverId": "8bcbb104-1193-414d-9b85-ee1cd41f5d01.jpg",
+    "excerpt": "阅读难度：N2 セロ弾きのゴーシュ 大提琴手高修 （9） 「わたしもいっしょについて行きます。どこの",
+    "createdBy": "PMf2NZDTwm",
+    "audioDuration": 253,
+    "viewedNum": 428,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 4,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-02-26T07:41:23.090Z",
+    "updatedAt": "2026-10-16T10:36:35.825Z",
+    "analysisStatus": 1,
+    "analysisTime": 1787193368268,
+    "charsNum": 2011,
+    "columnId": "e72cANzo2W",
+    "contentId": "kumszigmp3bpcajL0zPxA",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1",
+      "N2",
+      "nlvall"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000117",
+      "10000099",
+      "10000100"
+    ],
+    "shareStyle": 2,
+    "audioId": "ac5fd236-b2eb-4372-ad66-7ea59fb4ff2a.mp3",
+    "vTag": "1787193368366",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-08T23:00:00.000Z"
+    },
+    "outSharedNum": 24,
+    "objectId": "pcajL0zPxA",
+    "notationTitle": "<span class=\"moji-notation\"><ruby><rb>石田</rb><rp>(</rp><rt roma=\"ishida\" hiragana=\"いしだ\" lemma=\"イシダ\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>彰</rb><rp>(</rp><rt roma=\"akira\" hiragana=\"あきら\" lemma=\"アキラ\" lemma-t=\"\"></rt><rp>)</rp></ruby> | <span class=\"moji-toolkit-org\" lemma=\"チェロ-cello\" lemma-t=\"チェロ-cello\">セロ</span><ruby><rb>弾き</rb><rp>(</rp><rt roma=\"biki\" hiragana=\"びき\" lemma=\"弾き\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><span class=\"moji-toolkit-org\" lemma=\"ゴーシュ-gauche\" lemma-t=\"gauche\">ゴーシュ</span><span class=\"moji-toolkit-org\" lemma=\"（\" lemma-t=\"\">（</span><span class=\"moji-toolkit-org\" lemma=\"九\" lemma-t=\"\">9</span><span class=\"moji-toolkit-org\" lemma=\"）\" lemma-t=\"\">）</span></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "晨读",
+      "subtitle": "朝読書",
+      "brief": "小说、名著、广播剧应有尽有，搭配朗读音频，阅读能力UP！",
+      "coverId": "9d7be9ec-feff-4c54-be29-3e63aacdc392",
+      "isSubscribed": false
+    },
+    "nextId": "QGzUINLmIh",
+    "previousId": "dHXLgWt4GE",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

@@ -1,0 +1,129 @@
+{
+  "1": [
+    {
+      "objectId": "mCN9B1o8xR",
+      "name": "はるのせい",
+      "username": "fengqingqing08@outlook.com",
+      "email": "fengqingqing08@outlook.com",
+      "vTag": "1686105304042",
+      "imgVer_a": 1,
+      "imgVer_f": 1,
+      "unionId": "JP3129463"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "VAXWdT4ggf",
+        "mCN9B1o8xR"
+      ],
+      "title": "編集手帳",
+      "coverId": "6876e0af-c17f-4bfa-af34-8a82276e9cd9",
+      "brief": "知名声优倾情献声 | 完整内容请下载<MOJi阅读> | 不定期周三19:00更新 | ",
+      "articleNum": 56,
+      "isTrash": false,
+      "isVIP": false,
+      "subscribedNum": 55733,
+      "createdAt": "2022-09-21T06:05:33.772Z",
+      "updatedAt": "2026-10-16T10:34:57.183Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2024-05-16T08:00:00.000Z"
+      },
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "編集手帳",
+      "levelTags": [
+        "n1up",
+        "N1"
+      ],
+      "readingTags": [
+        "10000093"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "objectId": "SrHJAGBNle"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-05-16T15:05:25.160Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "飯田里穂｜疫情之下：一切不再“理所应当”，但隧道尽头终有光",
+    "coverId": "71870ac4-0648-47cd-818f-3c34b29977a2.jpeg",
+    "excerpt": " ラジオの寄席で聞いたことがある。「お客さん方、『あたぼう』の語源を知ってるかい？ほう、ご存じない。",
+    "createdBy": "mCN9B1o8xR",
+    "audioId": "e5454077-6863-40b5-a4ac-766f5c91d251.mp3",
+    "audioDuration": 119,
+    "viewedNum": 7717,
+    "commentedNum": 5,
+    "votedNum": 0,
+    "likedNum": 18,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 5,
+    "isTrialRead": false,
+    "createdAt": "2024-05-14T02:58:42.651Z",
+    "updatedAt": "2026-10-16T08:55:50.307Z",
+    "analysisStatus": 1,
+    "analysisTime": 1715871925024,
+    "columnId": "SrHJAGBNle",
+    "contentId": "4vubtszd7lpx5pLnTmf3h",
+    "levelTags": [
+      "n1up",
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000093",
+      "10000116",
+      "10000117"
+    ],
+    "vTag": "1715871925160",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-05-16T08:00:00.000Z"
+    },
+    "outSharedNum": 124,
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "x5pLnTmf3h",
+    "notationTitle": "飯田里穂｜疫情之下：一切不再“理所应当”，但隧道尽头终有光",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "編集手帳",
+      "subtitle": "編集手帳",
+      "brief": "知名声优倾情献声 | 完整内容请下载<MOJi阅读> | 不定期周三19:00更新 | ",
+      "coverId": "6876e0af-c17f-4bfa-af34-8a82276e9cd9",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "qKhfvoz2HH",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

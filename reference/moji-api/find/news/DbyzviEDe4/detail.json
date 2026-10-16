@@ -1,0 +1,29 @@
+{
+  "_id": "DbyzviEDe4",
+  "objectId": "DbyzviEDe4",
+  "title": "トヨタ 30年までに全車種をSDVに",
+  "topic": "时事",
+  "excerpt": "トヨタ自動車は2030年までに世界で展開する全約50車種をソフトウェアで車の性能や機能を高める車両に変えていく方針を明らかにした。独自に開発したソフトを載せた車を広げて、定額課金によって車の購入後も",
+  "collectedNum": 0,
+  "commentedNum": 0,
+  "date": 1792143960000,
+  "isAlert": false,
+  "isAttention": true,
+  "likedNum": 0,
+  "outSharedNum": 0,
+  "pictures": [
+    "0398a17a4cdd67bab0cba6d42071be82428eafca_0"
+  ],
+  "reportedNum": 0,
+  "status": "audited",
+  "viewedNum": 0,
+  "createdAt": "2026-10-16T10:00:03.303Z",
+  "updatedAt": "2026-10-16T10:45:12.125Z",
+  "notationTitle": "<span class=\"moji-toolkit-org\"  lemma=\"豊田\" lemma-t=\"\">トヨタ</span><span class=\"moji-toolkit-org\"  lemma=\"三\" lemma-t=\"\">3</span><span class=\"moji-toolkit-org\"  lemma=\"ゼロ-zero\" lemma-t=\"\">0</span><ruby n5><rb>年</rb><rp>(</rp><rt roma=\"nen\" hiragana=\"ねん\" lemma=\"年\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\"  lemma=\"まで\" lemma-t=\"\">まで</span><span class=\"moji-toolkit-org\"  lemma=\"に\" lemma-t=\"\">に</span><ruby n3><rb>全</rb><rp>(</rp><rt roma=\"zen\" hiragana=\"ぜん\" lemma=\"全\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby ><rb>車種</rb><rp>(</rp><rt roma=\"shashu\" hiragana=\"しゃしゅ\" lemma=\"車種\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\"  lemma=\"を\" lemma-t=\"\">を</span><span class=\"moji-toolkit-org\"  lemma=\"Ｓ\" lemma-t=\"\">S</span><span class=\"moji-toolkit-org\"  lemma=\"Ｄ\" lemma-t=\"\">D</span><span class=\"moji-toolkit-org\"  lemma=\"Ｖ\" lemma-t=\"\">V</span><span class=\"moji-toolkit-org\"  lemma=\"に\" lemma-t=\"\">に</span>",
+  "notationHtmlLevels": [
+    "n1",
+    "n2",
+    "n3n4n5"
+  ],
+  "brief": "丰田16日宣布，计划到2030年将全球约50款车型全部升级为搭载自研软件“Arene”的软件定义汽车，通过定额订阅在购车后持续创收。丰田2025年已推出首款SDV“RAV4”，并拟向其他厂商提供该软件。公司目标是将新车销售以外的营业利润从2025年度提升约四成至3万亿日元，加速从“一锤子买卖”向持续收费模式转型。\n\nトヨタ自動車は16日、2030年までに世界で展開する全約50車種を、自社開発ソフト「アリーン」を搭載したSDVに転換する方針を明らかにした。定額課金により購入後も継続収益を得るビジネスを強化する。25年には初のSDV「RAV4」を発売済みで、他社への提供も検討。新車販売以外の営業利益を30年度までに25年度比約4割増の3兆円に引き上げ、売り切り型からの転換を図る。"
+}

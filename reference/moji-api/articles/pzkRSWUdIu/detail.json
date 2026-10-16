@@ -1,0 +1,128 @@
+{
+  "1": [
+    {
+      "objectId": "KjKUelL9GU",
+      "name": "Manabi",
+      "username": "273279385@qq.com",
+      "email": "273279385@qq.com",
+      "vTag": "1683521403378",
+      "imgVer_a": 3,
+      "unionId": "JP36100"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-06-28T02:17:21.676Z",
+      "updatedAt": "2026-10-16T10:35:54.159Z",
+      "title": "ACG创作论",
+      "brief": "动画漫画杂谈、经典推荐",
+      "ownerIds": [
+        "vdriBjucaM",
+        "KjKUelL9GU"
+      ],
+      "articleNum": 5,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2022-10-10T03:04:45.000Z"
+      },
+      "coverId": "1ec7a6be-c752-4167-b9b4-c455fdb29c14",
+      "subscribedNum": 56350,
+      "type": "article",
+      "subtitle": "創作論",
+      "levelTags": [
+        "N1",
+        "N2"
+      ],
+      "readingTags": [
+        "10000041"
+      ],
+      "isDetailRead": false,
+      "isVIP": false,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "4YImnONV5m"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "isTrash": false,
+    "title": "【游戏日语】昆虫篇",
+    "coverId": "mVPgiwV9GY",
+    "excerpt": "~无人岛移居指南~ -悄悄地~接近，捕捉 昆虫 - 听在岛的不同地方也可以看到昆虫的踪影。随着季节的",
+    "createdBy": "KjKUelL9GU",
+    "createdAt": "2021-04-26T08:26:03.227Z",
+    "updatedAt": "2026-10-16T09:39:27.454Z",
+    "viewedNum": 7049,
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-12-03T07:50:27.204Z"
+    },
+    "isShared": true,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-12-03T07:49:39.000Z"
+    },
+    "audioDuration": 0,
+    "contentId": "zg90pkfruwpzkRSWUdIu",
+    "coverHidden": false,
+    "commentedNum": 7,
+    "notationHtmlSuccess": true,
+    "analysisStatus": 1,
+    "analysisTime": 1733212227156,
+    "levelTags": [
+      "N5",
+      "N4"
+    ],
+    "readingTags": [
+      "10000041",
+      "10000046"
+    ],
+    "charsNum": 247,
+    "columnId": "4YImnONV5m",
+    "processScore": 12,
+    "recommendUrls": [
+      null
+    ],
+    "vTag": "1733212227204",
+    "isPublished": true,
+    "isVIP": false,
+    "transHideType": "0",
+    "likedNum": 8,
+    "outSharedNum": 67,
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "ACL": {
+      "lQlm0klaiP": {
+        "read": true,
+        "write": true
+      }
+    },
+    "objectId": "pzkRSWUdIu",
+    "notationTitle": "<span class=\"moji-notation\">【游戏日语】<ruby n2=\"\"><rb>昆虫</rb><rp>(</rp><rt roma=\"konchuu\" hiragana=\"こんちゅう\" lemma=\"昆虫\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n2=\"\"><rb>篇</rb><rp>(</rp><rt roma=\"hen\" hiragana=\"へん\" lemma=\"編\" lemma-t=\"編\"></rt><rp>)</rp></ruby></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "ACG创作论",
+      "subtitle": "創作論",
+      "brief": "动画漫画杂谈、经典推荐",
+      "coverId": "1ec7a6be-c752-4167-b9b4-c455fdb29c14",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "nQSfegrw3s",
+    "displayTags": [
+      "娱乐"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

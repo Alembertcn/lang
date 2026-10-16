@@ -1,0 +1,131 @@
+{
+  "1": [
+    {
+      "objectId": "lrVMKTEiK0",
+      "name": "nebula",
+      "username": "6b1TkHZ7mmWWOiNxSk5spBz9v",
+      "vTag": "1695285003702",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP3254487"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "GJiALasaYI",
+        "vdriBjucaM",
+        "lrVMKTEiK0"
+      ],
+      "title": "灵点怪谈",
+      "coverId": "9455f3e8-7ebb-46e9-9a19-76131c94ff92",
+      "brief": "周二/六0:00更新 | 温暖被窝的一丝凉意——嘘…小心床底。",
+      "articleNum": 114,
+      "isTrash": false,
+      "isVIP": false,
+      "subscribedNum": 76059,
+      "createdAt": "2022-09-07T02:35:08.631Z",
+      "updatedAt": "2026-10-16T10:34:55.566Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2024-10-14T16:00:00.000Z"
+      },
+      "isDetailRead": true,
+      "type": "audioArticle",
+      "subtitle": "霊時怪談",
+      "levelTags": [
+        "N1",
+        "N2"
+      ],
+      "readingTags": [
+        "10000099"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "i4S9BTqB20"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-10-14T09:49:24.095Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "听说过鬼吹灯，可你听说过鬼亮灯吗……？",
+    "coverId": "fa63aeae-9e6a-4818-b1f9-904f4df50090.webp",
+    "excerpt": "事の始まりは先々月くらいになります。 母方の実家は結構な田舎で、訳あって私はそこで一人暮らしをしてい",
+    "createdBy": "lrVMKTEiK0",
+    "audioId": "d81ee16b-6527-4b69-b62d-49251c589439.mp3",
+    "audioDuration": 356,
+    "viewedNum": 10806,
+    "commentedNum": 39,
+    "votedNum": 0,
+    "likedNum": 37,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2024-10-12T09:31:56.024Z",
+    "updatedAt": "2026-10-16T09:40:14.607Z",
+    "analysisStatus": 1,
+    "analysisTime": 1728899363866,
+    "charsNum": 2818,
+    "columnId": "i4S9BTqB20",
+    "contentId": "efa50d2z87osiB0WsrSJL",
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3",
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000099",
+      "10000103",
+      "10000116",
+      "10000121",
+      "10000119"
+    ],
+    "vTag": "1728899364094",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-10-14T16:00:00.000Z"
+    },
+    "outSharedNum": 192,
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "siB0WsrSJL",
+    "notationTitle": "听说过鬼吹灯，可你听说过鬼亮灯吗……？",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "灵点怪谈",
+      "subtitle": "霊時怪談",
+      "brief": "周二/六0:00更新 | 温暖被窝的一丝凉意——嘘…小心床底。",
+      "coverId": "9455f3e8-7ebb-46e9-9a19-76131c94ff92",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "Hd9RNS7Fk1",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

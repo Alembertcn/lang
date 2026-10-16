@@ -1,0 +1,140 @@
+{
+  "1": [
+    {
+      "objectId": "lrVMKTEiK0",
+      "name": "nebula",
+      "username": "6b1TkHZ7mmWWOiNxSk5spBz9v",
+      "vTag": "1695285003702",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP3254487"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-09-22T02:27:05.367Z",
+      "updatedAt": "2026-10-16T10:35:43.092Z",
+      "title": "杂文汇",
+      "brief": "各类文章乱炖，只做精品更新",
+      "ownerIds": [
+        "vdriBjucaM",
+        "VAXWdT4ggf",
+        "KjKUelL9GU",
+        "CJFe5gR5Zf",
+        "lrVMKTEiK0",
+        "Dzwp116Z5m",
+        "EXo0LZSm1b",
+        "cRLYHFA9kK",
+        "FbLG0Ew5tZ",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 22,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-06-25T11:00:00.000Z"
+      },
+      "coverId": "bbf2b098-6c29-40f0-9ce1-c1416fb833f6",
+      "subscribedNum": 97083,
+      "type": "article",
+      "subtitle": "雑談番組",
+      "levelTags": [
+        "N1",
+        "N5",
+        "n1up",
+        "N2",
+        "N3",
+        "N4"
+      ],
+      "readingTags": [
+        "10000060"
+      ],
+      "isDetailRead": true,
+      "isVIP": false,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "objectId": "tDEdYepD44"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-05-06T08:24:29.574Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "恭喜你穿越回了五一假期！",
+    "coverId": "01b8e422-207e-4c04-a13c-bc9d1de2b768.jpg",
+    "excerpt": "MOJi小编在去年的五一黄金周曾如是写到： 「全世界の寝そべり主義者よ、団結せよ！」 这样的躺平精神",
+    "createdBy": "lrVMKTEiK0",
+    "audioDuration": 0,
+    "viewedNum": 3330,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 16,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 16,
+    "isTrialRead": false,
+    "createdAt": "2025-04-30T05:38:47.552Z",
+    "updatedAt": "2026-10-16T00:12:58.240Z",
+    "analysisStatus": 1,
+    "analysisTime": 1746519869471,
+    "charsNum": 1263,
+    "columnId": "tDEdYepD44",
+    "contentId": "myrpgl3qn9oHMWM0Gagh",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N5",
+      "N4",
+      "N3",
+      "N2",
+      "n1up",
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000060",
+      "10000065"
+    ],
+    "shareStyle": 2,
+    "vTag": "1746519869574",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-05-06T08:30:00.000Z"
+    },
+    "outSharedNum": 86,
+    "objectId": "oHMWM0Gagh",
+    "notationTitle": "恭喜你穿越回了五一假期！",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "杂文汇",
+      "subtitle": "雑談番組",
+      "brief": "各类文章乱炖，只做精品更新",
+      "coverId": "bbf2b098-6c29-40f0-9ce1-c1416fb833f6",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "548rvDAIkW",
+    "displayTags": [
+      "生活"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

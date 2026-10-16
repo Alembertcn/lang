@@ -1,0 +1,132 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "cRLYHFA9kK",
+        "vdriBjucaM",
+        "jYi9uYHMxJ",
+        "KoXijCLUUh",
+        "VAXWdT4ggf"
+      ],
+      "title": "文字研究",
+      "subtitle": "字词句研究所",
+      "coverId": "c3f7a834-18e6-43e8-bfab-70433691cf2b",
+      "brief": "专供日语字、词、句的语源、读法、写法、用法。适用于每一位日语学习者。每周三10:00更新",
+      "type": "article",
+      "articleNum": 30,
+      "subscribedNum": 62107,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-11-17T02:44:29.470Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-12-23T10:00:00.000Z"
+      },
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000080"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "词汇语法"
+      ],
+      "captionTeamId": "",
+      "objectId": "vJM4haqGxP"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-12-23T09:54:32.862Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "为什么“し”可以是si也可以是shi？一篇让你看懂日语罗马字的轻松小指南",
+    "coverId": "0c84b81c-d164-4c52-844f-2dbc8924382b.jpg",
+    "excerpt": "在学习日语的路上，不知道你是否也曾有过这样的好奇：为什么日语的罗马字好像有好几副“面孔”呢？ 比如：",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 1732,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 17,
+    "collectedNum": 4,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 7,
+    "isTrialRead": false,
+    "createdAt": "2025-09-11T08:01:50.165Z",
+    "updatedAt": "2026-10-16T01:10:46.898Z",
+    "analysisStatus": 1,
+    "analysisTime": 1766483672758,
+    "charsNum": 1000,
+    "columnId": "vJM4haqGxP",
+    "contentId": "nradlwcktwfPiZExDiOla",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "nlvall"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000080",
+      "10000083",
+      "10000001",
+      "10000002"
+    ],
+    "shareStyle": 2,
+    "vTag": "1766483672862",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-12-23T10:00:00.000Z"
+    },
+    "outSharedNum": 116,
+    "objectId": "PiZExDiOla",
+    "notationTitle": "<span class=\"moji-notation\"><ruby><rb>为什</rb><rp>(</rp><rt roma=\"\" hiragana=\"\" lemma=\"\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>么</rb><rp>(</rp><rt roma=\"\" hiragana=\"\" lemma=\"\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"“\" lemma-t=\"\">“</span><span class=\"moji-toolkit-org\" lemma=\"為る\" lemma-t=\"\">し</span><span class=\"moji-toolkit-org\" lemma=\"”\" lemma-t=\"\">”</span><ruby><rb>可</rb><rp>(</rp><rt roma=\"ka\" hiragana=\"か\" lemma=\"可\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>以是</rb><rp>(</rp><rt roma=\"\" hiragana=\"\" lemma=\"\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"Ｓ\" lemma-t=\"\">s</span><span class=\"moji-toolkit-org\" lemma=\"Ｉ\" lemma-t=\"\">i</span><ruby><rb>也可</rb><rp>(</rp><rt roma=\"\" hiragana=\"\" lemma=\"\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>以是</rb><rp>(</rp><rt roma=\"\" hiragana=\"\" lemma=\"\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"Ｓ\" lemma-t=\"\">s</span><span class=\"moji-toolkit-org\" lemma=\"Ｈ\" lemma-t=\"\">h</span><span class=\"moji-toolkit-org\" lemma=\"Ｉ\" lemma-t=\"\">i</span><span class=\"moji-toolkit-org\" lemma=\"？\" lemma-t=\"\">？</span><ruby><rb>一</rb><rp>(</rp><rt roma=\"ichi\" hiragana=\"いち\" lemma=\"一\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n2=\"\"><rb>篇</rb><rp>(</rp><rt roma=\"hen\" hiragana=\"へん\" lemma=\"編\" lemma-t=\"編\"></rt><rp>)</rp></ruby><ruby><rb>让你</rb><rp>(</rp><rt roma=\"\" hiragana=\"\" lemma=\"\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>看</rb><rp>(</rp><rt roma=\"kan\" hiragana=\"かん\" lemma=\"看\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>懂日</rb><rp>(</rp><rt roma=\"\" hiragana=\"\" lemma=\"\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>语罗</rb><rp>(</rp><rt roma=\"\" hiragana=\"\" lemma=\"\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>马字</rb><rp>(</rp><rt roma=\"\" hiragana=\"\" lemma=\"\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n1=\"\" n3=\"\"><rb>的</rb><rp>(</rp><rt roma=\"teki\" hiragana=\"てき\" lemma=\"的\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>轻松</rb><rp>(</rp><rt roma=\"\" hiragana=\"\" lemma=\"\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>小</rb><rp>(</rp><rt roma=\"shou\" hiragana=\"しょう\" lemma=\"小\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>指南</rb><rp>(</rp><rt roma=\"shinan\" hiragana=\"しなん\" lemma=\"指南\" lemma-t=\"\"></rt><rp>)</rp></ruby></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "文字研究",
+      "subtitle": "字词句研究所",
+      "brief": "专供日语字、词、句的语源、读法、写法、用法。适用于每一位日语学习者。每周三10:00更新",
+      "coverId": "c3f7a834-18e6-43e8-bfab-70433691cf2b",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "Echyhgqaur",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

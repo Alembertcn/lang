@@ -1,0 +1,142 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "BypDOPpmqQ",
+        "F2h5AoylFO",
+        "GJiALasaYI",
+        "4y5lwWaufC",
+        "vdriBjucaM",
+        "JYrF7UepQI",
+        "KjKUelL9GU",
+        "Rs2zHkTgGD",
+        "jYi9uYHMxJ",
+        "9r8XOy1RcF",
+        "FbLG0Ew5tZ",
+        "kapowKdXtB"
+      ],
+      "title": "每日新闻",
+      "coverId": "276ff820-53d9-4c72-bb83-c993606ff5c4",
+      "brief": "精选中日双语新闻，给你带来最地道的口语学习体验。",
+      "type": "videoArticle",
+      "articleNum": 131,
+      "subscribedNum": 132708,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-05-29T03:24:26.643Z",
+      "updatedAt": "2026-10-16T10:35:40.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-07-17T06:50:11.000Z"
+      },
+      "subtitle": "毎日新聞",
+      "levelTags": [
+        "nlvall"
+      ],
+      "readingTags": [
+        "10000107",
+        "10000019"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "口语交流"
+      ],
+      "captionTeamId": "",
+      "objectId": "vkU1FXNBpi"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-07-15T03:54:52.725Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "全是混子！少子老龄化+终身雇佣制=高薪咸鱼扎堆💀专家建议让他们出去兼职搞副业",
+    "coverId": "32992cf2-2b68-4e0d-9569-94085fbd1e4f.jpg",
+    "excerpt": "少子高齢化による労働力不足が深刻化する中 ミドルシニア層の雇用を巡る対応が揺れています 少子高齢化な",
+    "createdBy": "jYi9uYHMxJ",
+    "videoId": "01031cb2-d30b-4251-88da-0a9d6df8bb0b.mp4",
+    "audioDuration": 0,
+    "viewedNum": 6310,
+    "commentedNum": 16,
+    "votedNum": 0,
+    "likedNum": 17,
+    "collectedNum": 4,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 5,
+    "isTrialRead": false,
+    "createdAt": "2025-07-15T03:05:59.890Z",
+    "updatedAt": "2026-10-16T08:14:57.362Z",
+    "analysisStatus": 1,
+    "analysisTime": 1752551692514,
+    "charsNum": 2995,
+    "columnId": "vkU1FXNBpi",
+    "contentId": "q3jggzairyoVRWpLVKkE1",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000107",
+      "10000108",
+      "10000022",
+      "10000019"
+    ],
+    "shareStyle": 2,
+    "vTag": "1752551692725",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-07-15T07:44:16.341Z"
+    },
+    "outSharedNum": 268,
+    "objectId": "VRWpLVKkE1",
+    "notationTitle": "全是混子！少子老龄化+终身雇佣制=高薪咸鱼扎堆💀专家建议让他们出去兼职搞副业",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "每日新闻",
+      "subtitle": "毎日新聞",
+      "brief": "精选中日双语新闻，给你带来最地道的口语学习体验。",
+      "coverId": "276ff820-53d9-4c72-bb83-c993606ff5c4",
+      "isSubscribed": false
+    },
+    "nextId": "eGtgDETQkw",
+    "previousId": "mB5GglACfg",
+    "displayTags": [
+      "时事",
+      "娱乐"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

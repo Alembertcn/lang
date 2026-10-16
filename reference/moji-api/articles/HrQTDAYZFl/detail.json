@@ -1,0 +1,131 @@
+{
+  "1": [
+    {
+      "objectId": "lrVMKTEiK0",
+      "name": "nebula",
+      "username": "6b1TkHZ7mmWWOiNxSk5spBz9v",
+      "vTag": "1695285003702",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP3254487"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-05-19T02:20:34.018Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "title": "日本文学选读",
+      "brief": "日本文学片段选读，完整内容请移步MOJi阅读器~",
+      "ownerIds": [
+        "vdriBjucaM",
+        "lrVMKTEiK0",
+        "BypDOPpmqQ"
+      ],
+      "articleNum": 85,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-06-04T11:00:00.000Z"
+      },
+      "coverId": "80b2120a-eee8-4544-9c15-7f845e540f9a",
+      "subscribedNum": 109332,
+      "isDetailRead": true,
+      "type": "article",
+      "subtitle": "日本文学",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000093"
+      ],
+      "isVIP": false,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "objectId": "N0W92GGOUX"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-04-15T02:53:10.626Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "没有钱是多么可怕凄惨的地狱 | 《斜阳》太宰治",
+    "coverId": "1a5c76f7-a386-4610-b9df-f3a79c29501b.png",
+    "excerpt": " 选读片段 もしお母さまが意地悪でケチケチして、私たちを叱って、 そうして、こっそりご自分だけのお金",
+    "createdBy": "lrVMKTEiK0",
+    "audioDuration": 0,
+    "viewedNum": 7576,
+    "commentedNum": 20,
+    "votedNum": 0,
+    "likedNum": 41,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2025-04-15T02:52:53.312Z",
+    "updatedAt": "2026-10-16T10:09:53.464Z",
+    "analysisStatus": 1,
+    "analysisTime": 1744685590468,
+    "charsNum": 657,
+    "columnId": "N0W92GGOUX",
+    "contentId": "m3wm0p0fakoHrQTDAYZFl",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "n1up"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000093",
+      "10000095",
+      "10000094",
+      "10000089",
+      "10000092"
+    ],
+    "shareStyle": 2,
+    "vTag": "1744685590626",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-04-16T11:00:00.000Z"
+    },
+    "outSharedNum": 381,
+    "objectId": "HrQTDAYZFl",
+    "notationTitle": "<span class=\"moji-notation\">没有钱是多么可怕凄惨的地狱 | 《斜阳》<ruby><rb>太宰</rb><rp>(</rp><rt roma=\"dazai\" hiragana=\"だざい\" lemma=\"ダザイ\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>治</rb><rp>(</rp><rt roma=\"osamu\" hiragana=\"おさむ\" lemma=\"オサム\" lemma-t=\"\"></rt><rp>)</rp></ruby></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日本文学选读",
+      "subtitle": "日本文学",
+      "brief": "日本文学片段选读，完整内容请移步MOJi阅读器~",
+      "coverId": "80b2120a-eee8-4544-9c15-7f845e540f9a",
+      "isSubscribed": false
+    },
+    "nextId": "r5fKdwy0pO",
+    "previousId": "0GYCdoY8Cz",
+    "displayTags": [
+      "考试",
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

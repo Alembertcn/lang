@@ -1,0 +1,133 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "jYi9uYHMxJ",
+        "PMf2NZDTwm",
+        "KoXijCLUUh",
+        "VAXWdT4ggf"
+      ],
+      "title": "语法辨析",
+      "subtitle": "语法辨析",
+      "coverId": "392b6db1-a8c5-4784-a403-768d7e9ef46d",
+      "brief": "N1-N5易混易错语法点串讲，每个月周二16:00更新",
+      "type": "article",
+      "articleNum": 62,
+      "subscribedNum": 152195,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-08-29T06:29:29.570Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-13T08:00:00.000Z"
+      },
+      "levelTags": [
+        "N1",
+        "N2",
+        "N3",
+        "n1up",
+        "N5",
+        "N4"
+      ],
+      "readingTags": [
+        "10000080"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "词汇语法"
+      ],
+      "captionTeamId": "",
+      "objectId": "SAtVYHfYI1"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-09-29T08:52:39.450Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "一遇到“如果”就纠结？「と・たら・ば・なら」这样区分",
+    "coverId": "bf4f5228-136e-4a38-b069-6727d0ac8604.jpg",
+    "excerpt": " 正式开始之前，我们先来看一道题： 大家可能会觉得这道题有些复杂， 别急，学完今天的语法辨析，就会发",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 726,
+    "commentedNum": 0,
+    "votedNum": 1144,
+    "likedNum": 14,
+    "collectedNum": 5,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 14,
+    "isTrialRead": false,
+    "createdAt": "2026-09-29T07:56:05.136Z",
+    "updatedAt": "2026-10-16T10:41:00.696Z",
+    "analysisStatus": 1,
+    "analysisTime": 1790671959240,
+    "charsNum": 4342,
+    "columnId": "SAtVYHfYI1",
+    "contentId": "8nolt9grefwuZnsWkABMs",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3",
+      "N2",
+      "nlvall"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000082",
+      "10000010"
+    ],
+    "shareStyle": 2,
+    "vTag": "1790671959450",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-08T08:04:44.413Z"
+    },
+    "outSharedNum": 87,
+    "objectId": "uZnsWkABMs",
+    "notationTitle": "<span class=\"moji-notation\">一遇到“如果”就纠结？「<span class=\"moji-toolkit-org\" lemma=\"と\" lemma-t=\"\">と</span><span class=\"moji-toolkit-org\" lemma=\"・\" lemma-t=\"\">・</span><span class=\"moji-toolkit-org\" lemma=\"た\" lemma-t=\"\">たら</span><span class=\"moji-toolkit-org\" lemma=\"・\" lemma-t=\"\">・</span><span class=\"moji-toolkit-org\" lemma=\"ば\" lemma-t=\"\">ば</span><span class=\"moji-toolkit-org\" lemma=\"・\" lemma-t=\"\">・</span><span class=\"moji-toolkit-org\" lemma=\"だ\" lemma-t=\"\">なら</span>」这样区分</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "语法辨析",
+      "subtitle": "语法辨析",
+      "brief": "N1-N5易混易错语法点串讲，每个月周二16:00更新",
+      "coverId": "392b6db1-a8c5-4784-a403-768d7e9ef46d",
+      "isSubscribed": false
+    },
+    "nextId": "bM7CdQHja8",
+    "previousId": "7AH4ytZb71",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

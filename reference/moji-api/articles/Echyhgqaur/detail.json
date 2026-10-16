@@ -1,0 +1,137 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "cRLYHFA9kK",
+        "vdriBjucaM",
+        "jYi9uYHMxJ",
+        "KoXijCLUUh",
+        "VAXWdT4ggf"
+      ],
+      "title": "文字研究",
+      "subtitle": "字词句研究所",
+      "coverId": "c3f7a834-18e6-43e8-bfab-70433691cf2b",
+      "brief": "专供日语字、词、句的语源、读法、写法、用法。适用于每一位日语学习者。每周三10:00更新",
+      "type": "article",
+      "articleNum": 30,
+      "subscribedNum": 62107,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-11-17T02:44:29.470Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-12-23T10:00:00.000Z"
+      },
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000080"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "词汇语法"
+      ],
+      "captionTeamId": "",
+      "objectId": "vJM4haqGxP"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-12-18T07:38:41.794Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "「にほん」和「にっぽん」都正确！为何「日本」有两种读音？",
+    "coverId": "255eb9a4-95f5-4c72-bc6f-e06e0e18b143.jpg",
+    "excerpt": "「にほん」と「にっぽん」どっちが正しい？ 日本の読み方は「にほん」と「にっぽん」のどちらでも間違って",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 5376,
+    "commentedNum": 20,
+    "votedNum": 0,
+    "likedNum": 39,
+    "collectedNum": 2,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 8,
+    "isTrialRead": false,
+    "createdAt": "2024-10-30T06:41:12.384Z",
+    "updatedAt": "2026-10-16T08:03:24.880Z",
+    "analysisStatus": 1,
+    "analysisTime": 1734507521615,
+    "charsNum": 2557,
+    "columnId": "vJM4haqGxP",
+    "contentId": "ls176e6cuztEchyhgqaur",
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N1",
+      "n1up"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000080",
+      "10000083",
+      "10000081",
+      "10000051",
+      "10000059",
+      "10000053"
+    ],
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-11-06T02:00:00.000Z"
+    },
+    "outSharedNum": 199,
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "vTag": "1734507521794",
+    "objectId": "Echyhgqaur",
+    "notationTitle": "<span class=\"moji-notation\">「<span class=\"moji-toolkit-org\" n5=\"\" lemma=\"日本\" lemma-t=\"\">にほん</span>」<ruby><rb>和</rb><rp>(</rp><rt roma=\"wa\" hiragana=\"わ\" lemma=\"和\" lemma-t=\"\"></rt><rp>)</rp></ruby>「<span class=\"moji-toolkit-org\" n5=\"\" lemma=\"日本\" lemma-t=\"\">にっぽん</span>」都正确！为何「<ruby n5=\"\"><rb>日本</rb><rp>(</rp><rt roma=\"nihon\" hiragana=\"にほん\" lemma=\"日本\" lemma-t=\"\"></rt><rp>)</rp></ruby>」有两种读音？</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "文字研究",
+      "subtitle": "字词句研究所",
+      "brief": "专供日语字、词、句的语源、读法、写法、用法。适用于每一位日语学习者。每周三10:00更新",
+      "coverId": "c3f7a834-18e6-43e8-bfab-70433691cf2b",
+      "isSubscribed": false
+    },
+    "nextId": "PiZExDiOla",
+    "previousId": "wAMsBUJmxX",
+    "displayTags": [
+      "考试",
+      "生活"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

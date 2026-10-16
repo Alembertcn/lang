@@ -1,0 +1,131 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "EXo0LZSm1b",
+        "4y5lwWaufC",
+        "vdriBjucaM",
+        "VAXWdT4ggf",
+        "9r8XOy1RcF"
+      ],
+      "title": "上海交大日语阅读园地",
+      "subtitle": "上海交大日语阅读园地",
+      "coverId": "a2182bc5-2b56-4091-81f3-fea4d8f9e853",
+      "brief": "官方入驻专栏，供学习交流之用。日语阅读是七彩光谱，也是流动的盛宴。",
+      "type": "article",
+      "articleNum": 51,
+      "subscribedNum": 97738,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-09-22T06:12:34.485Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2024-09-13T08:00:00.000Z"
+      },
+      "captionTeamId": "zz2eclIFH9",
+      "levelTags": [
+        "N1",
+        "n1up",
+        "N2",
+        "N3",
+        "N4",
+        "N5"
+      ],
+      "readingTags": [
+        "10000051"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "objectId": "Ss5igXESjH"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-01-02T08:21:37.991Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "何谓“白露”？ | 「白露」とは？",
+    "coverId": "b61c22dd-d713-46e9-8e9f-f203fd92dea8.png",
+    "excerpt": "白露とは露が降り、白く輝くように見える頃という意味で、毎年9月7日頃～9月22日頃にあたる。 夜の気",
+    "createdBy": "9r8XOy1RcF",
+    "audioDuration": 0,
+    "viewedNum": 5043,
+    "commentedNum": 2,
+    "votedNum": 0,
+    "likedNum": 27,
+    "collectedNum": 6,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2024-09-11T07:17:51.938Z",
+    "updatedAt": "2026-10-16T05:50:25.982Z",
+    "analysisStatus": 1,
+    "analysisTime": 1735806097899,
+    "columnId": "Ss5igXESjH",
+    "contentId": "xirwoftoxsduiRf2UNYF",
+    "levelTags": [
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000054"
+    ],
+    "vTag": "1735806097991",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-09-11T08:00:00.000Z"
+    },
+    "outSharedNum": 160,
+    "shareStyle": 2,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "charsNum": 725,
+    "objectId": "duiRf2UNYF",
+    "notationTitle": "<span class=\"moji-notation\">何谓“白露”？ | 「<ruby><rb>白露</rb><rp>(</rp><rt roma=\"hakuro\" hiragana=\"はくろ\" lemma=\"白露\" lemma-t=\"\"></rt><rp>)</rp></ruby>」<span class=\"moji-toolkit-org\" lemma=\"と\" lemma-t=\"\">と</span><span class=\"moji-toolkit-org\" lemma=\"は\" lemma-t=\"\">は</span><span class=\"moji-toolkit-org\" lemma=\"？\" lemma-t=\"\">？</span></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "上海交大日语阅读园地",
+      "subtitle": "上海交大日语阅读园地",
+      "brief": "官方入驻专栏，供学习交流之用。日语阅读是七彩光谱，也是流动的盛宴。",
+      "coverId": "a2182bc5-2b56-4091-81f3-fea4d8f9e853",
+      "isSubscribed": false
+    },
+    "nextId": "00KPXuk5eS",
+    "previousId": "Yo7nT8vjdm",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

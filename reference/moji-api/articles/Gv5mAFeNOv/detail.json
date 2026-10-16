@@ -1,0 +1,137 @@
+{
+  "1": [
+    {
+      "objectId": "QEuIhfAn81",
+      "name": "Kataori",
+      "username": "fanwenjie@shareintelli.com",
+      "email": "fanwenjie@shareintelli.com",
+      "vTag": "1721014203143",
+      "imgVer_a": 1,
+      "unionId": "JP3890678"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "QEuIhfAn81",
+        "rLru1YRyT9",
+        "vdriBjucaM",
+        "EG9sJdqijH",
+        "DGG4EuSHJ9",
+        "cRLYHFA9kK",
+        "FbLG0Ew5tZ"
+      ],
+      "title": "留学会话",
+      "subtitle": "留学会話",
+      "coverId": "f8c55d21-a78f-4b84-b35c-8637cc7fbf55",
+      "brief": "每周五11：00更新\nMOJi会話App正式上线🎉日语口语24h陪练，会员登陆就送！",
+      "type": "audioArticle",
+      "articleNum": 98,
+      "subscribedNum": 94002,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2024-03-01T02:43:45.500Z",
+      "updatedAt": "2026-10-16T10:33:52.753Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-16T03:00:00.000Z"
+      },
+      "levelTags": [
+        "N1",
+        "N2",
+        "N3"
+      ],
+      "readingTags": [
+        "10000026"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": true
+      },
+      "powerTags": [
+        "读解听解",
+        "口语交流"
+      ],
+      "captionTeamId": "",
+      "objectId": "diIJZVcI18"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-09-16T10:18:21.753Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "今天吃西餐 | 洋食レストランの注文",
+    "coverId": "b9fd7521-f3ce-41fc-a958-b6b26476b174.png",
+    "excerpt": "本篇听读难度预估：N3~N4 お客さん: すみません、注文をお願いします。 ウェイター: はい、承り",
+    "createdBy": "QEuIhfAn81",
+    "audioId": "55f4cd27-f9bf-489b-8972-d07a1df29aca.mp3",
+    "audioDuration": 96,
+    "viewedNum": 1223,
+    "commentedNum": 4,
+    "votedNum": 0,
+    "likedNum": 11,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-09-16T04:36:44.067Z",
+    "updatedAt": "2026-10-16T10:23:03.572Z",
+    "analysisStatus": 1,
+    "analysisTime": 1789553901658,
+    "charsNum": 1006,
+    "columnId": "diIJZVcI18",
+    "contentId": "knbfc0scxnrGv5mAFeNOv",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3",
+      "N4"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000026",
+      "10000030"
+    ],
+    "shareStyle": 2,
+    "vTag": "1789553901753",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-09T03:00:00.000Z"
+    },
+    "outSharedNum": 94,
+    "objectId": "Gv5mAFeNOv",
+    "notationTitle": "<span class=\"moji-notation\">今天吃西餐 | <ruby n3=\"\" n5=\"\"><rb>洋食</rb><rp>(</rp><rt roma=\"youshoku\" hiragana=\"ようしょく\" lemma=\"洋食\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"レストラン-restaurant\" lemma-t=\"restaurant\">レストラン</span><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby n3=\"\"><rb>注文</rb><rp>(</rp><rt roma=\"chuumon\" hiragana=\"ちゅうもん\" lemma=\"注文\" lemma-t=\"\"></rt><rp>)</rp></ruby></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "留学会话",
+      "subtitle": "留学会話",
+      "brief": "每周五11：00更新\nMOJi会話App正式上线🎉日语口语24h陪练，会员登陆就送！",
+      "coverId": "f8c55d21-a78f-4b84-b35c-8637cc7fbf55",
+      "isSubscribed": false
+    },
+    "nextId": "vtKmEcxNul",
+    "previousId": "CejXrTVTpN",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

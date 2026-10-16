@@ -1,0 +1,137 @@
+{
+  "1": [
+    {
+      "objectId": "F2h5AoylFO",
+      "name": "Mason",
+      "username": "0D3z4ngYg8Oz1awpCqpa4c53o",
+      "vTag": "1653466747448",
+      "imgVer_a": 1,
+      "imgVer_f": 1,
+      "unionId": "JP2297019"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "BypDOPpmqQ",
+        "F2h5AoylFO",
+        "GJiALasaYI",
+        "4y5lwWaufC",
+        "vdriBjucaM",
+        "JYrF7UepQI",
+        "Rs2zHkTgGD",
+        "KjKUelL9GU",
+        "jYi9uYHMxJ",
+        "UHO4sjUfvb",
+        "EXo0LZSm1b",
+        "9r8XOy1RcF",
+        "CJFe5gR5Zf",
+        "FbLG0Ew5tZ",
+        "kapowKdXtB"
+      ],
+      "title": "轻松一下",
+      "coverId": "886afe15-95a4-47f9-b605-4cb8e06e7ee1",
+      "brief": "搞笑短片、爆笑节目，让你在轻松愉悦中提高日语听力和口语水平。",
+      "type": "videoArticle",
+      "articleNum": 72,
+      "subscribedNum": 57683,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-05-29T09:30:01.179Z",
+      "updatedAt": "2026-10-16T09:45:00.581Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2024-05-01T04:00:00.000Z"
+      },
+      "subtitle": "ゆる時間",
+      "levelTags": [
+        "N4",
+        "N5"
+      ],
+      "readingTags": [
+        "10000107"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "lf93F6ioB3"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-11-18T08:43:05.808Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "Ado | 文化祭的遗憾是没能在舞台上表演",
+    "coverId": "8841cac0-4a00-470c-9f25-e04b1845dcd2.png",
+    "excerpt": " 「初夏」という曲は17歳ぐらいには存在しておりまして 高校生ぐらいの時から作詞・作曲することはあっ",
+    "createdBy": "F2h5AoylFO",
+    "videoId": "aaa1e63b-1135-4185-aeaa-77990b1fba83.mp4",
+    "audioDuration": 0,
+    "viewedNum": 2562,
+    "commentedNum": 4,
+    "votedNum": 0,
+    "likedNum": 3,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 5,
+    "isTrialRead": false,
+    "createdAt": "2024-11-18T08:43:05.809Z",
+    "updatedAt": "2026-10-16T05:35:46.283Z",
+    "analysisStatus": 1,
+    "analysisTime": 1731919386204,
+    "charsNum": 1443,
+    "columnId": "lf93F6ioB3",
+    "contentId": "UcADWDGS3U",
+    "jpCharsNum": 0,
+    "levelTags": [
+      "nlvall"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000006",
+      "10000110"
+    ],
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-11-19T08:00:00.000Z"
+    },
+    "outSharedNum": 64,
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "UcADWDGS3U",
+    "notationTitle": "<span class=\"moji-notation\"><span class=\"moji-toolkit-org\" lemma=\"Ａ\" lemma-t=\"\">A</span><span class=\"moji-toolkit-org\" lemma=\"Ｄ\" lemma-t=\"\">d</span><span class=\"moji-toolkit-org\" lemma=\"Ｏ\" lemma-t=\"\">o</span> | 文化祭的遗憾是没能在舞台上表演</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "轻松一下",
+      "subtitle": "ゆる時間",
+      "brief": "搞笑短片、爆笑节目，让你在轻松愉悦中提高日语听力和口语水平。",
+      "coverId": "886afe15-95a4-47f9-b605-4cb8e06e7ee1",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "hF7nRfCbuT",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

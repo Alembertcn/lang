@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "EXo0LZSm1b",
+        "DGG4EuSHJ9",
+        "vdriBjucaM",
+        "PMf2NZDTwm",
+        "cRLYHFA9kK",
+        "jYi9uYHMxJ",
+        "VAXWdT4ggf",
+        "f3bZKZgziq"
+      ],
+      "title": "N3阅读真题精析",
+      "subtitle": "N3読解解説",
+      "coverId": "85f022eb-8a01-4063-b5ee-0a981f5e6d84",
+      "brief": "JLPT阅读真题训练、全文精析、词句讲解，一网打尽！",
+      "type": "article",
+      "articleNum": 22,
+      "subscribedNum": 47563,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2024-03-04T02:48:31.710Z",
+      "updatedAt": "2026-10-16T09:45:00.590Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-07-14T06:00:00.000Z"
+      },
+      "levelTags": [
+        "N3"
+      ],
+      "readingTags": [
+        "10000080"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "BDjzgUFWwe"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-08-07T05:32:49.859Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "【阅读真题精析】2015年12月",
+    "coverId": "a5df1b25-0b29-4c0e-8a92-cbde368db2d0.jpg",
+    "excerpt": "真题：2015年12月N3 問題5（1） 子供のころ、両親や祖父母からお年玉をもらうことは、お正月の",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 7241,
+    "commentedNum": 12,
+    "votedNum": 4520,
+    "likedNum": 15,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 18,
+    "isTrialRead": true,
+    "createdAt": "2025-07-30T08:32:52.185Z",
+    "updatedAt": "2026-10-16T09:01:02.574Z",
+    "analysisStatus": 1,
+    "analysisTime": 1754544769656,
+    "charsNum": 2269,
+    "columnId": "BDjzgUFWwe",
+    "contentId": "l2wpa9136iUSdkVskWRC",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000017",
+      "10000010",
+      "10000009"
+    ],
+    "shareStyle": 2,
+    "vTag": "1754544769859",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-08-04T06:00:00.000Z"
+    },
+    "outSharedNum": 278,
+    "objectId": "USdkVskWRC",
+    "notationTitle": "【阅读真题精析】2015年12月",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N3阅读真题精析",
+      "subtitle": "N3読解解説",
+      "brief": "JLPT阅读真题训练、全文精析、词句讲解，一网打尽！",
+      "coverId": "85f022eb-8a01-4063-b5ee-0a981f5e6d84",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "3ApFF2NkzD",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

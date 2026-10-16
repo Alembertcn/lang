@@ -1,0 +1,138 @@
+{
+  "1": [
+    {
+      "objectId": "QEuIhfAn81",
+      "name": "Kataori",
+      "username": "fanwenjie@shareintelli.com",
+      "email": "fanwenjie@shareintelli.com",
+      "vTag": "1721014203143",
+      "imgVer_a": 1,
+      "unionId": "JP3890678"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "QEuIhfAn81",
+        "rLru1YRyT9",
+        "vdriBjucaM",
+        "EG9sJdqijH",
+        "DGG4EuSHJ9",
+        "cRLYHFA9kK",
+        "FbLG0Ew5tZ"
+      ],
+      "title": "留学会话",
+      "subtitle": "留学会話",
+      "coverId": "f8c55d21-a78f-4b84-b35c-8637cc7fbf55",
+      "brief": "每周五11：00更新\nMOJi会話App正式上线🎉日语口语24h陪练，会员登陆就送！",
+      "type": "audioArticle",
+      "articleNum": 98,
+      "subscribedNum": 94002,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2024-03-01T02:43:45.500Z",
+      "updatedAt": "2026-10-16T10:33:52.753Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-16T03:00:00.000Z"
+      },
+      "levelTags": [
+        "N1",
+        "N2",
+        "N3"
+      ],
+      "readingTags": [
+        "10000026"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": true
+      },
+      "powerTags": [
+        "读解听解",
+        "口语交流"
+      ],
+      "captionTeamId": "",
+      "objectId": "diIJZVcI18"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-10-08T01:16:48.000Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "要好好遵守交通规则 | ルール違反",
+    "coverId": "80c71448-b476-4190-ae94-1fdc3df3e5c3.png",
+    "excerpt": " 本篇听读难度预估：N5~N4 警察：そこの二人乗りをしている自転車、止まりなさい。 王：どうしたん",
+    "createdBy": "QEuIhfAn81",
+    "audioId": "3d3f241a-97e7-46c1-aa62-3053abaf724a.mp3",
+    "audioDuration": 34,
+    "viewedNum": 138,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 1,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-09-22T06:13:38.344Z",
+    "updatedAt": "2026-10-16T10:44:29.995Z",
+    "analysisStatus": 1,
+    "analysisTime": 1791422207918,
+    "charsNum": 565,
+    "columnId": "diIJZVcI18",
+    "contentId": "hae4976btovtKmEcxNul",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N4",
+      "N5"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000026",
+      "10000027",
+      "10000030"
+    ],
+    "shareStyle": 2,
+    "vTag": "1791422208000",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-16T03:00:00.000Z"
+    },
+    "outSharedNum": 23,
+    "objectId": "vtKmEcxNul",
+    "notationTitle": "<span class=\"moji-notation\">要好好遵守交通规则 | <span class=\"moji-toolkit-org\" lemma=\"ルール-rule\" lemma-t=\"rule\">ルール</span><ruby n3=\"\"><rb>違反</rb><rp>(</rp><rt roma=\"ihan\" hiragana=\"いはん\" lemma=\"違反\" lemma-t=\"\"></rt><rp>)</rp></ruby></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "留学会话",
+      "subtitle": "留学会話",
+      "brief": "每周五11：00更新\nMOJi会話App正式上线🎉日语口语24h陪练，会员登陆就送！",
+      "coverId": "f8c55d21-a78f-4b84-b35c-8637cc7fbf55",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "Gv5mAFeNOv",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

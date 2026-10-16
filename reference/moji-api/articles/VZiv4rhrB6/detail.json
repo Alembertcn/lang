@@ -1,0 +1,124 @@
+{
+  "1": [
+    {
+      "objectId": "vdriBjucaM",
+      "name": "花野",
+      "username": "hananoruka@163.com",
+      "email": "hananoruka@163.com",
+      "vTag": "1741228743331",
+      "imgVer_a": 5,
+      "imgVer_f": 3,
+      "unionId": "JP2505772"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-09-26T09:51:10.427Z",
+      "updatedAt": "2026-10-16T10:34:53.813Z",
+      "title": "N2语法",
+      "brief": "摘自新完全掌握，一篇文章一个语法点",
+      "ownerIds": [
+        "lQlm0klaiP",
+        "vdriBjucaM"
+      ],
+      "articleNum": 182,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2022-10-11T00:30:00.000Z"
+      },
+      "coverId": "d9e8112d-025e-4d72-9ee6-3fc0cbff6fde",
+      "subscribedNum": 88756,
+      "type": "article",
+      "subtitle": "N2文法",
+      "levelTags": [
+        "N2"
+      ],
+      "readingTags": [
+        "10000009"
+      ],
+      "isDetailRead": false,
+      "isVIP": false,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "词汇语法"
+      ],
+      "objectId": "vbOacCKRxh"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2022-10-10T03:44:53.629Z"
+    },
+    "title": "第1~26课 综合小测Ⅲ 【完结】",
+    "coverId": "d2796845-f7dc-498a-928a-aec438f869b0",
+    "excerpt": "🌸始めましょう‼🌸 (✿・u・) 语法词条合集↓ N1-N5词汇科学背，历年真题持续刷 超好用的",
+    "createdBy": "vdriBjucaM",
+    "audioId": "",
+    "audioDuration": 0,
+    "viewedNum": 31865,
+    "commentedNum": 61,
+    "votedNum": 33962,
+    "likedNum": 63,
+    "collectedNum": 69,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 9,
+    "createdAt": "2022-10-10T03:44:35.213Z",
+    "updatedAt": "2026-10-16T06:42:19.246Z",
+    "contentId": "3vi7ejgeiv6VZiv4rhrB6",
+    "notationHtmlSuccess": true,
+    "vTag": "1665373493629",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2022-10-11T00:30:00.000Z"
+    },
+    "columnId": "vbOacCKRxh",
+    "outSharedNum": 279,
+    "level": 2,
+    "analysisStatus": 1,
+    "analysisTime": 1682492502409,
+    "levelTags": [
+      "N2"
+    ],
+    "readingTags": [
+      "10000009",
+      "10000010",
+      "10000132"
+    ],
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "VZiv4rhrB6",
+    "notationTitle": "<span class=\"moji-notation\">第1~26课 综合小测Ⅲ 【完结】</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N2语法",
+      "subtitle": "N2文法",
+      "brief": "摘自新完全掌握，一篇文章一个语法点",
+      "coverId": "d9e8112d-025e-4d72-9ee6-3fc0cbff6fde",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "q8rc3BWDcr",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

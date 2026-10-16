@@ -1,0 +1,132 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "EXo0LZSm1b",
+        "DGG4EuSHJ9",
+        "vdriBjucaM",
+        "cRLYHFA9kK",
+        "PMf2NZDTwm",
+        "jYi9uYHMxJ",
+        "CJFe5gR5Zf",
+        "VAXWdT4ggf",
+        "f3bZKZgziq"
+      ],
+      "title": "N4-N5阅读真题精析",
+      "subtitle": "N4-N5読解解説",
+      "coverId": "0178b41e-0772-4574-b045-0209bd435498",
+      "brief": "JLPT阅读真题训练、全文精析、词句讲解，一网打尽！",
+      "type": "article",
+      "articleNum": 22,
+      "subscribedNum": 63680,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2024-03-04T02:49:14.014Z",
+      "updatedAt": "2026-10-16T09:45:00.581Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-08-18T06:00:00.000Z"
+      },
+      "levelTags": [
+        "N4",
+        "N5"
+      ],
+      "readingTags": [
+        "10000080"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "IFzRyd6o7o"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-07-21T07:17:28.291Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "【阅读真题精析】2010年7月",
+    "coverId": "ee921f39-62a5-4bfa-8d84-110b26f76605.jpg",
+    "excerpt": "真题：2010年7月N4 問題4（1）、问题6 ◆ つぎの文章を読んで、質問に答えてください。答えは",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 3181,
+    "commentedNum": 3,
+    "votedNum": 2085,
+    "likedNum": 13,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 18,
+    "isTrialRead": false,
+    "createdAt": "2025-07-18T09:52:53.507Z",
+    "updatedAt": "2026-10-16T09:36:17.895Z",
+    "analysisStatus": 1,
+    "analysisTime": 1753082248199,
+    "charsNum": 1515,
+    "columnId": "IFzRyd6o7o",
+    "contentId": "gu0h4o89bj74LMMRhjRYb",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N4"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000010",
+      "10000009",
+      "10000017"
+    ],
+    "shareStyle": 2,
+    "vTag": "1753082248291",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-07-28T06:00:00.000Z"
+    },
+    "outSharedNum": 156,
+    "objectId": "4LMMRhjRYb",
+    "notationTitle": "【阅读真题精析】2010年7月",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N4-N5阅读真题精析",
+      "subtitle": "N4-N5読解解説",
+      "brief": "JLPT阅读真题训练、全文精析、词句讲解，一网打尽！",
+      "coverId": "0178b41e-0772-4574-b045-0209bd435498",
+      "isSubscribed": false
+    },
+    "nextId": "OAGK51vXm8",
+    "previousId": "HrD3lhZf4l",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

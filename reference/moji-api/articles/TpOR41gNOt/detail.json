@@ -1,0 +1,138 @@
+{
+  "1": [
+    {
+      "objectId": "QEuIhfAn81",
+      "name": "Kataori",
+      "username": "fanwenjie@shareintelli.com",
+      "email": "fanwenjie@shareintelli.com",
+      "vTag": "1721014203143",
+      "imgVer_a": 1,
+      "unionId": "JP3890678"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "4y5lwWaufC",
+        "EG9sJdqijH",
+        "QEuIhfAn81",
+        "cRLYHFA9kK",
+        "rLru1YRyT9",
+        "vdriBjucaM",
+        "CJFe5gR5Zf",
+        "FbLG0Ew5tZ"
+      ],
+      "title": "MOJi会话",
+      "subtitle": "MOJi会话",
+      "coverId": "4862b439-d03a-47a0-a58c-35b4000f7c1f",
+      "brief": "1更/周|日常会话、例句收录\nMOJi会話App正式上线🎉日语口语24h陪练，二次元角色任你选！",
+      "type": "audioArticle",
+      "articleNum": 168,
+      "subscribedNum": 168261,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-07-31T01:55:29.632Z",
+      "updatedAt": "2026-10-16T10:42:05.449Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-12T16:00:00.000Z"
+      },
+      "levelTags": [
+        "N2",
+        "N3",
+        "N1"
+      ],
+      "readingTags": [
+        "10000026"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解",
+        "口语交流"
+      ],
+      "captionTeamId": "",
+      "objectId": "cPwVNA28cP"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-10-09T03:24:52.815Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "绣球花原来这么多花语 | 紫陽花の花言葉",
+    "coverId": "954fc6f0-a31a-4946-8a16-f63a5e9a8e2c.png",
+    "excerpt": "本篇听读难度预估：N3 春樹: 紫陽花の花言葉の一つに「移り気」や「心変わり」というものがある。 結",
+    "createdBy": "QEuIhfAn81",
+    "audioId": "d3c68124-1de4-4523-acea-0cb1406419f3.mp3",
+    "audioDuration": 139,
+    "viewedNum": 1323,
+    "commentedNum": 2,
+    "votedNum": 0,
+    "likedNum": 15,
+    "collectedNum": 0,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "1",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2026-09-28T07:02:49.877Z",
+    "updatedAt": "2026-10-16T09:35:57.499Z",
+    "analysisStatus": 1,
+    "analysisTime": 1791516292400,
+    "charsNum": 1714,
+    "columnId": "cPwVNA28cP",
+    "contentId": "dkt7bzlp9iTpOR41gNOt",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2",
+      "N3"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000027",
+      "10000026"
+    ],
+    "shareStyle": 2,
+    "vTag": "1791516292815",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-09-29T02:00:00.000Z"
+    },
+    "outSharedNum": 120,
+    "objectId": "TpOR41gNOt",
+    "notationTitle": "<span class=\"moji-notation\">绣球花原来这么多花语 | <ruby><rb>紫陽花</rb><rp>(</rp><rt roma=\"ajisai\" hiragana=\"あじさい\" lemma=\"紫陽花\" lemma-t=\"\"></rt><rp>)</rp></ruby><span class=\"moji-toolkit-org\" lemma=\"の\" lemma-t=\"\">の</span><ruby><rb>花言葉</rb><rp>(</rp><rt roma=\"hanakotoba\" hiragana=\"はなことば\" lemma=\"花言葉\" lemma-t=\"\"></rt><rp>)</rp></ruby></span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "MOJi会话",
+      "subtitle": "MOJi会话",
+      "brief": "1更/周|日常会话、例句收录\nMOJi会話App正式上线🎉日语口语24h陪练，二次元角色任你选！",
+      "coverId": "4862b439-d03a-47a0-a58c-35b4000f7c1f",
+      "isSubscribed": false
+    },
+    "nextId": "o2htjo7xjj",
+    "previousId": "MulaSlYdtJ",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

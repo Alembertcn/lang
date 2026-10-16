@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "objectId": "PMf2NZDTwm",
+      "name": "小mo",
+      "username": "9wuo9qTgGb8uzrC5jo2ZYvynO",
+      "vTag": "1715676002629",
+      "imgVer_a": 1,
+      "unionId": "JP3775020"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "EXo0LZSm1b",
+        "DGG4EuSHJ9",
+        "vdriBjucaM",
+        "cRLYHFA9kK",
+        "PMf2NZDTwm",
+        "jYi9uYHMxJ",
+        "VAXWdT4ggf",
+        "f3bZKZgziq"
+      ],
+      "title": "N2阅读真题精析",
+      "subtitle": "N2読解解説",
+      "coverId": "168ada84-6ee1-4394-951a-820a7fc4b888",
+      "brief": "JLPT阅读真题训练、全文精析、词句讲解，一网打尽！",
+      "type": "article",
+      "articleNum": 25,
+      "subscribedNum": 55506,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2024-03-04T02:47:27.385Z",
+      "updatedAt": "2026-10-16T09:45:00.590Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-07-06T16:00:00.000Z"
+      },
+      "levelTags": [
+        "N2"
+      ],
+      "readingTags": [
+        "10000080"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "R9lv1Nac5A"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-11-24T01:23:41.323Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "【2021.12】旅行的魔力：为何要离开熟悉之地",
+    "coverId": "9b239c6f-2555-4bf7-9211-6930d2bc5eea.png",
+    "excerpt": "真题：2021年12月N2 問題13 ネットワーク（注1）につながったコンピュータには「オフライン状",
+    "createdBy": "PMf2NZDTwm",
+    "audioDuration": 0,
+    "viewedNum": 5180,
+    "commentedNum": 7,
+    "votedNum": 2333,
+    "likedNum": 13,
+    "collectedNum": 2,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": true,
+    "transHideType": "2",
+    "processScore": 13,
+    "isTrialRead": true,
+    "createdAt": "2025-05-14T07:51:47.918Z",
+    "updatedAt": "2026-10-16T06:35:56.555Z",
+    "analysisStatus": 1,
+    "analysisTime": 1763947421052,
+    "charsNum": 3951,
+    "columnId": "R9lv1Nac5A",
+    "contentId": "7gcjdyyusrbCMg3zTWID3",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N2"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000009",
+      "10000017",
+      "10000010"
+    ],
+    "shareStyle": 2,
+    "outSharedNum": 272,
+    "vTag": "1763947421323",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-06-01T16:00:00.000Z"
+    },
+    "objectId": "CMg3zTWID3",
+    "notationTitle": "【2021.12】旅行的魔力：为何要离开熟悉之地",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "N2阅读真题精析",
+      "subtitle": "N2読解解説",
+      "brief": "JLPT阅读真题训练、全文精析、词句讲解，一网打尽！",
+      "coverId": "168ada84-6ee1-4394-951a-820a7fc4b888",
+      "isSubscribed": false
+    },
+    "nextId": "sNlGeEQLBJ",
+    "previousId": "NKK0Nigc56",
+    "displayTags": [
+      "考试"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

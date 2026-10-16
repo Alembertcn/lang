@@ -1,0 +1,124 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "EXo0LZSm1b",
+        "GJiALasaYI",
+        "vdriBjucaM",
+        "jYi9uYHMxJ",
+        "VAXWdT4ggf",
+        "CJFe5gR5Zf"
+      ],
+      "title": "留学情报局",
+      "subtitle": "留学情報局",
+      "coverId": "81b85297-c8eb-49ba-956a-1cada559bd3c",
+      "brief": "赴日规划、报考辅导、生活攻略……你所关心的留学信息一网打尽！",
+      "type": "article",
+      "articleNum": 12,
+      "subscribedNum": 79661,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": false,
+      "isApply": false,
+      "createdAt": "2024-03-01T09:16:09.749Z",
+      "updatedAt": "2026-10-16T10:35:23.913Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-12-29T05:00:00.000Z"
+      },
+      "levelTags": [
+        "nlvall"
+      ],
+      "readingTags": [
+        "10000060"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": true,
+        "readingTagsApplyInArticles": false
+      },
+      "captionTeamId": "",
+      "objectId": "XEJm955dgo"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2025-12-25T06:09:32.624Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "日本留学进阶：利用好校内外资源，让你的日语、社交、文化理解效率翻倍！",
+    "coverId": "dabcdde5-ae82-45b1-8a81-1f8ef429c9d6.jpg",
+    "excerpt": "留学日本，你准备好“闯关”了吗？ 留学日本是一段充满机遇的旅程，初来乍到时，许多同学会面临语言障碍、",
+    "createdBy": "jYi9uYHMxJ",
+    "audioDuration": 0,
+    "viewedNum": 1811,
+    "commentedNum": 0,
+    "votedNum": 0,
+    "likedNum": 2,
+    "collectedNum": 2,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 8,
+    "isTrialRead": false,
+    "createdAt": "2025-12-25T05:52:29.834Z",
+    "updatedAt": "2026-10-16T09:48:26.929Z",
+    "analysisStatus": 1,
+    "analysisTime": 1766642972272,
+    "charsNum": 3366,
+    "columnId": "XEJm955dgo",
+    "contentId": "1t476i9ceuayM8H8XFI8c",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "nlvall"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10001348"
+    ],
+    "shareStyle": 1,
+    "vTag": "1766642972624",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-12-29T05:00:00.000Z"
+    },
+    "outSharedNum": 17,
+    "objectId": "yM8H8XFI8c",
+    "notationTitle": "<span class=\"moji-notation\">日本留学进阶：利用好校内外资源，让你的日语、<ruby n1=\"\"><rb>社交</rb><rp>(</rp><rt roma=\"shakou\" hiragana=\"しゃこう\" lemma=\"社交\" lemma-t=\"\"></rt><rp>)</rp></ruby>、文化理解效率翻倍！</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "留学情报局",
+      "subtitle": "留学情報局",
+      "brief": "赴日规划、报考辅导、生活攻略……你所关心的留学信息一网打尽！",
+      "coverId": "81b85297-c8eb-49ba-956a-1cada559bd3c",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "8135wBE5aW",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

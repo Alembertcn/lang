@@ -1,0 +1,135 @@
+{
+  "1": [
+    {
+      "objectId": "9r8XOy1RcF",
+      "name": "ジ！",
+      "username": "linc.dosth@gmail.com",
+      "email": "linc.dosth@gmail.com",
+      "imgVer_a": 1,
+      "unionId": "JP39660"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2021-09-22T02:27:05.367Z",
+      "updatedAt": "2026-10-16T10:35:43.092Z",
+      "title": "杂文汇",
+      "brief": "各类文章乱炖，只做精品更新",
+      "ownerIds": [
+        "vdriBjucaM",
+        "VAXWdT4ggf",
+        "KjKUelL9GU",
+        "CJFe5gR5Zf",
+        "lrVMKTEiK0",
+        "Dzwp116Z5m",
+        "EXo0LZSm1b",
+        "cRLYHFA9kK",
+        "FbLG0Ew5tZ",
+        "9r8XOy1RcF"
+      ],
+      "articleNum": 22,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-06-25T11:00:00.000Z"
+      },
+      "coverId": "bbf2b098-6c29-40f0-9ce1-c1416fb833f6",
+      "subscribedNum": 97083,
+      "type": "article",
+      "subtitle": "雑談番組",
+      "levelTags": [
+        "N1",
+        "N5",
+        "n1up",
+        "N2",
+        "N3",
+        "N4"
+      ],
+      "readingTags": [
+        "10000060"
+      ],
+      "isDetailRead": true,
+      "isVIP": false,
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "objectId": "tDEdYepD44"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-04-30T11:08:36.807Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "我的黄金周 | “全世界的躺平主义者，联合起来！”",
+    "coverId": "a535d6cb-ea7e-4c8f-9258-746feb59c614.png",
+    "excerpt": "松本哉氏は、『寝そべり主義者宣言』日本語版の〈解説を兼ねた序文〉で、以下のように書いている。 〈ちな",
+    "createdBy": "9r8XOy1RcF",
+    "audioDuration": 0,
+    "viewedNum": 5143,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 25,
+    "collectedNum": 8,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 12,
+    "isTrialRead": false,
+    "createdAt": "2024-04-26T02:12:41.561Z",
+    "updatedAt": "2026-10-16T09:03:15.609Z",
+    "analysisStatus": 1,
+    "analysisTime": 1714475316664,
+    "columnId": "tDEdYepD44",
+    "contentId": "3tscxzj0p0w548rvDAIkW",
+    "levelTags": [
+      "nlvall",
+      "N2",
+      "N1",
+      "n1up"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000060"
+    ],
+    "vTag": "1714475316807",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-05-01T04:00:00.000Z"
+    },
+    "outSharedNum": 89,
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "548rvDAIkW",
+    "notationTitle": "<span class=\"moji-notation\"><ruby n1=\"\"><rb>我</rb><rp>(</rp><rt roma=\"ware\" hiragana=\"われ\" lemma=\"我\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby n1=\"\" n3=\"\"><rb>的</rb><rp>(</rp><rt roma=\"teki\" hiragana=\"てき\" lemma=\"的\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>黄金</rb><rp>(</rp><rt roma=\"ougon\" hiragana=\"おうごん\" lemma=\"黄金\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>周</rb><rp>(</rp><rt roma=\"shuu\" hiragana=\"しゅう\" lemma=\"シュウ\" lemma-t=\"\"></rt><rp>)</rp></ruby> | “全世界的躺平主义者，联合起来！”</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "杂文汇",
+      "subtitle": "雑談番組",
+      "brief": "各类文章乱炖，只做精品更新",
+      "coverId": "bbf2b098-6c29-40f0-9ce1-c1416fb833f6",
+      "isSubscribed": false
+    },
+    "nextId": "oHMWM0Gagh",
+    "previousId": "PZxAENz5is",
+    "displayTags": [
+      "生活"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

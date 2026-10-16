@@ -1,0 +1,133 @@
+{
+  "1": [
+    {
+      "objectId": "jYi9uYHMxJ",
+      "name": "Minami",
+      "username": "CfJKudhJHgxHDxETKmzJam5CB",
+      "vTag": "1721898603258",
+      "imgVer_a": 1,
+      "unionId": "JP3910401"
+    }
+  ],
+  "211": [
+    {
+      "title": "日语简易新闻听读",
+      "subtitle": "简易NHK",
+      "brief": "每周二、周三更新亚撒西日语听力内容，帮你熟悉最地道、最适合初中级学习者的日语听读内容！",
+      "coverId": "fbe7b93e-ccce-4021-913a-952f50e1a90d",
+      "captionTeamId": "",
+      "type": "audioArticle",
+      "readingTags": [
+        "10000019",
+        "10000116"
+      ],
+      "levelTags": [
+        "N4",
+        "N5",
+        "N3"
+      ],
+      "powerTags": [
+        "读解听解",
+        "翻译备考"
+      ],
+      "subscribedNum": 79515,
+      "articleNum": 196,
+      "opts": {
+        "levelTagsApplyInArticles": true,
+        "readingTagsApplyInArticles": true
+      },
+      "isDetailRead": true,
+      "isVIP": false,
+      "isTrash": false,
+      "ownerIds": [
+        "jYi9uYHMxJ",
+        "KjKUelL9GU"
+      ],
+      "createdAt": "2025-04-11T09:15:13.035Z",
+      "updatedAt": "2026-10-16T10:34:07.950Z",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2026-10-15T23:30:00.000Z"
+      },
+      "objectId": "yxie5eybw9"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2026-10-13T06:21:24.437Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "亚撒西新闻：多家企业客户信息被盗",
+    "coverId": "f1814062-eef6-473e-b1dd-c65267f79bf9.png",
+    "excerpt": " 会社のコンピューターから客の情報が盗まれる被害が続いている 👉点击单词查询释义 会社のコンピュー",
+    "createdBy": "jYi9uYHMxJ",
+    "audioId": "28c6c9b3-203f-4856-88ea-872a0e48ca22.mp3",
+    "audioDuration": 69,
+    "viewedNum": 828,
+    "commentedNum": 1,
+    "votedNum": 0,
+    "likedNum": 13,
+    "collectedNum": 1,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 16,
+    "isTrialRead": false,
+    "createdAt": "2026-10-12T04:08:32.224Z",
+    "updatedAt": "2026-10-16T10:09:31.445Z",
+    "analysisStatus": 1,
+    "analysisTime": 1791872484360,
+    "charsNum": 661,
+    "columnId": "yxie5eybw9",
+    "contentId": "xzrhl39f1tgshNksmplL9",
+    "freeTransNum": 2,
+    "jpCharsNum": 0,
+    "levelTags": [
+      "N3",
+      "N4",
+      "N5"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000019",
+      "10000116",
+      "10000022"
+    ],
+    "shareStyle": 2,
+    "vTag": "1791872484437",
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2026-10-12T23:30:00.000Z"
+    },
+    "outSharedNum": 118,
+    "objectId": "shNksmplL9",
+    "notationTitle": "亚撒西新闻：多家企业客户信息被盗",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "日语简易新闻听读",
+      "subtitle": "简易NHK",
+      "brief": "每周二、周三更新亚撒西日语听力内容，帮你熟悉最地道、最适合初中级学习者的日语听读内容！",
+      "coverId": "fbe7b93e-ccce-4021-913a-952f50e1a90d",
+      "isSubscribed": false
+    },
+    "nextId": "mzkOUtJmnq",
+    "previousId": "7RhbUy55qD",
+    "displayTags": [
+      "时事"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

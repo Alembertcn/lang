@@ -1,0 +1,127 @@
+{
+  "1": [
+    {
+      "objectId": "ji5PAcQ0tB",
+      "name": "浪花字幕组",
+      "username": "tSpcPbfVEac8r0jVjRQtdgNJK",
+      "vTag": "1687686902482",
+      "imgVer_a": 1,
+      "unionId": "JP3160016"
+    }
+  ],
+  "211": [
+    {
+      "ownerIds": [
+        "ji5PAcQ0tB",
+        "BypDOPpmqQ",
+        "4y5lwWaufC",
+        "UHO4sjUfvb",
+        "vdriBjucaM"
+      ],
+      "title": "浪花字幕组",
+      "coverId": "3e51d328-d056-4e2f-8bd2-31e722879340",
+      "brief": "浪花字幕组官⽅⼊驻专栏，仅作学习视频分享用途。以听说为起点，翻译为媒介，连接100万日语学习者。",
+      "type": "videoArticle",
+      "articleNum": 25,
+      "subscribedNum": 40041,
+      "isTrash": false,
+      "isVIP": false,
+      "isDetailRead": true,
+      "isApply": false,
+      "createdAt": "2023-06-25T09:52:53.445Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "captionTeamId": "pTEsZoE4ke",
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2024-09-18T07:09:02.000Z"
+      },
+      "subtitle": "浪花番組",
+      "showInMain": true,
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000070",
+        "10000107"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "objectId": "erZxPoncao"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2024-09-20T06:57:15.090Z"
+    },
+    "recommendUrls": [
+      ""
+    ],
+    "title": "上野千鹤子东大演讲（片段） | 女孩们请大胆探索未知世界",
+    "coverId": "0ef4f7be-7b80-459b-8b5c-b0abab3edf46.png",
+    "excerpt": "あなたたちはがんばれば報われると思って ここまで来たはずです ですが 冒頭で不正入試に触れたとおり ",
+    "createdBy": "ji5PAcQ0tB",
+    "videoId": "4a060a98-78ee-44f1-878c-b62d5c6498f1.mp4",
+    "audioDuration": 0,
+    "viewedNum": 5105,
+    "commentedNum": 4,
+    "votedNum": 0,
+    "likedNum": 59,
+    "collectedNum": 6,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": true,
+    "isVIP": false,
+    "transHideType": "0",
+    "processScore": 5,
+    "isTrialRead": false,
+    "createdAt": "2024-09-18T07:02:20.835Z",
+    "updatedAt": "2026-10-16T08:06:06.352Z",
+    "analysisStatus": 1,
+    "analysisTime": 1726815434896,
+    "columnId": "erZxPoncao",
+    "contentId": "ofxaf2jwa0e7AtwFhWwK6",
+    "levelTags": [
+      "N1",
+      "n1up"
+    ],
+    "notationHtmlSuccess": true,
+    "readingTags": [
+      "10000072"
+    ],
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2024-09-18T07:09:02.000Z"
+    },
+    "outSharedNum": 157,
+    "vTag": "1726815435090",
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "objectId": "7AtwFhWwK6",
+    "notationTitle": "<span class=\"moji-notation\">上野千鹤子东大演讲（片段） | 女孩们请大胆探索未知世界</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "浪花字幕组",
+      "subtitle": "浪花番組",
+      "brief": "浪花字幕组官⽅⼊驻专栏，仅作学习视频分享用途。以听说为起点，翻译为媒介，连接100万日语学习者。",
+      "coverId": "3e51d328-d056-4e2f-8bd2-31e722879340",
+      "isSubscribed": false
+    },
+    "nextId": "",
+    "previousId": "sqMCXaojAW",
+    "displayTags": [],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}

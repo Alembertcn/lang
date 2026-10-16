@@ -8,7 +8,7 @@ UI 与资源按逆向原版还原。应用包名 `com.moji.offline`。
 
 | 模块 | 状态 | 说明 |
 | --- | --- | --- |
-| 逆向资产 | ✅ | 词库（44 万词条）、H5 页面、原版图标、接口数据（19 计划 / 205 文章 / 178 音频） |
+| 逆向资产 | ✅ | 词库（44 万词条）、H5 页面、原版图标、接口数据（19 计划 / 299 文章 / 20 新闻 / 178 音频 / 9 本书） |
 | KMP 工程 | ✅ | Kotlin 2.4.21 + CMP 1.11.1 + SQLDelight + Ktor；真机（XQ-AT72）跑通 |
 | 数据管线 | ✅ | 抓取 → 转换 → 打包（170 篇真实文章：SRT 时间轴 + 原文 + 中文翻译） |
 | 发现页 | ✅ 高仿完成 | 按确认范围只保留原版「专栏推荐」：吸顶发现栏 + 分类条（6 tab）+ 专栏卡列表；数据=本地 find 抓取，图片打包见 `tools/fetch_find_assets.py` |
@@ -59,12 +59,17 @@ moji-offline/
 
 ### reference/moji-api（接口数据工作区）
 
+高仿的**数据来源**：每个接口的响应都在这里落盘，模块实现直接读缓存（对照表见
+`reference/moji-api/接口说明.md` 文末「本地缓存 ↔ 线上地址」）。
+
 | 路径 | 内容 |
 | --- | --- |
-| `接口说明.md` | MOJi 阅读计划 / 文章 / 音频接口的逆向说明（抓取脚本的依据） |
+| `接口说明.md` | 计划 / 文章 / 录音 / 阅读器 / 发现接口的逆向说明（抓取脚本的规格书） |
 | `responses/` | 计划接口原始响应（readPlan list / mine / detail） |
 | `articles/{objectId}/` | 每篇文章：`detail.json` + `body.html`（含 SRT 时间轴 / 注音 / 翻译） |
-| `oss/` | mock 静态服务根（`article/audio/*.mp3`）；**软链指向抓取工作区，不入库** |
+| `reader/` | 阅读器 / 书架 / 专栏响应（`books-incFetch-v2`、`columns/{id}/*` 等） |
+| `find/` | 发现页响应（推荐文章/专栏、圈子、分类、新闻列表）+ `find/news/{id}/` 新闻正文 |
+| `oss/` | mock 静态服务根，与线上同构（`article/audio/*.mp3` 178 段、`books/*` 9 本）；**不入库** |
 | `audio-index.json` | 文章 → 音频文件映射（含真实时长） |
 | `catalog.txt` | 计划与文章标题总览 |
 
@@ -74,8 +79,13 @@ moji-offline/
 | --- | --- |
 | `fetch_moji_plans.py` | 登录并拉取计划目录（需 `.env` 配置 MOJI 账号） |
 | `fetch_moji_articles.py` | 拉取全部文章正文（detail + body.html） |
+| `fetch_moji_find.py` | 拉取发现页响应（推荐 / 圈子 / 分类 / 新闻列表 / 打卡） |
+| `fetch_moji_find_articles.py` | 拉取发现页首页正文（94 篇）+ 20 条新闻正文（OSS 注音 zip） |
 | `fetch_moji_audio.py` | 下载文章录音到 mock OSS 树，生成 `audio-index.json` |
-| `fetch_moji_covers.py` / `fetch_moji_reader.py` | 书架 / 封面素材（可选） |
+| `fetch_moji_covers.py` / `fetch_moji_reader.py` | 书架 / 封面素材 |
+| `fetch_moji_books.py` / `unpack_moji_books.py` | 下载书籍 epub 源 / 1:1 解包到 `composeResources/files/books/` |
+| `fetch_find_assets.py` | 把发现页数据 + 图片打包成 `composeResources/files/find/`（生成物） |
+| `fetch_assets.sh` | 拉取 Release 外置资产（词库 / epub 源），见 `ASSETS.md` |
 | `convert_moji_articles.py` | `body.html` → 打包 JSON（SRT 时间轴 + 原文 + 翻译） |
 | `start_media_mock.sh` | 启动常驻媒体 mock（screen）+ adb reverse 端口转发 |
 | `mojidict-export/` | 词库逆向与导出（zip 密码 / Realm key / 表结构，见其 README） |
@@ -84,16 +94,22 @@ moji-offline/
 
 ```bash
 # 1) 抓取（.env 配好 MOJI_ACCOUNT / MOJI_PASSWORD）
-python3 tools/fetch_moji_plans.py      # 计划目录
-python3 tools/fetch_moji_articles.py   # 文章正文
-python3 tools/fetch_moji_audio.py      # 录音 → mock OSS 树
+python3 tools/fetch_moji_plans.py             # 计划目录
+python3 tools/fetch_moji_articles.py          # 文章正文
+python3 tools/fetch_moji_audio.py             # 录音 → mock OSS 树
+python3 tools/fetch_moji_find.py              # 发现页响应
+python3 tools/fetch_moji_find_articles.py     # 发现页正文 + 新闻正文
 
 # 2) 转换（生成打包数据）
 python3 tools/convert_moji_articles.py # → composeApp/.../files/articles/
+python3 tools/fetch_find_assets.py     # → composeApp/.../files/find/
 
 # 3) 重建
 ./gradlew :composeApp:assembleDebug
 ```
+
+新增模块的固定动作（定位接口 → 抓取落盘 → 同步接口文档 → 按缓存实现 → 同一页对照）
+见 [PLAN.md](PLAN.md)「高仿工作流」。
 
 数据模型对齐原版：**一篇文章 = 一条连续音频 + 逐句 SRT 时间轴**，
 播放器按时间轴做句子跟随高亮（与 MOJi 的 SRT 模型一致）。

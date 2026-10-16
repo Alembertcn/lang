@@ -1,0 +1,134 @@
+{
+  "1": [
+    {
+      "objectId": "GJiALasaYI",
+      "name": "-KuroNaur.",
+      "username": "1102922373@qq.com",
+      "email": "1102922373@qq.com",
+      "vTag": "1715063704150",
+      "imgVer_a": 5,
+      "imgVer_f": 1,
+      "unionId": "JP2293417"
+    }
+  ],
+  "211": [
+    {
+      "createdAt": "2022-03-30T09:24:26.802Z",
+      "updatedAt": "2026-10-16T10:42:05.457Z",
+      "title": "夜读",
+      "brief": "夜晚已至，和声优们一起，体会每篇短文里与众不同的世界。",
+      "ownerIds": [
+        "KoXijCLUUh",
+        "GJiALasaYI",
+        "vdriBjucaM",
+        "3KLiPXqIGB"
+      ],
+      "articleNum": 207,
+      "isTrash": false,
+      "publishedAt": {
+        "__type": "Date",
+        "iso": "2025-06-12T13:30:00.000Z"
+      },
+      "coverId": "bcca4029-82b4-4cd8-88fa-7a1b857e88b3",
+      "subscribedNum": 92554,
+      "isDetailRead": true,
+      "isVIP": false,
+      "type": "audioArticle",
+      "subtitle": "夜読書",
+      "levelTags": [
+        "N1",
+        "n1up"
+      ],
+      "readingTags": [
+        "10000099"
+      ],
+      "opts": {
+        "levelTagsApplyInArticles": false,
+        "readingTagsApplyInArticles": false
+      },
+      "powerTags": [
+        "读解听解"
+      ],
+      "captionTeamId": "",
+      "objectId": "O0lzjbJxTm"
+    }
+  ],
+  "400": [],
+  "notationHtmlSuccess": true,
+  "result": {
+    "contentUpdatedAt": {
+      "__type": "Date",
+      "iso": "2022-06-14T09:46:30.809Z"
+    },
+    "title": "竹中直人 | 妻子常走的散步之路",
+    "coverId": "85a337c4-a664-4877-8e15-20c1828166b5",
+    "excerpt": " 一年前、妻をがんで亡くした。 妻は活動的な人だった。 地元の人たちとテニスをしたり、お茶会や、能の",
+    "createdBy": "GJiALasaYI",
+    "contentId": "16551999906426ABKuiv6Ot",
+    "audioId": "b02c44a5-c3a7-4ebe-b7bf-9cb664c66680.mp3",
+    "audioDuration": 418,
+    "viewedNum": 10003,
+    "commentedNum": 49,
+    "votedNum": 0,
+    "likedNum": 186,
+    "collectedNum": 100,
+    "isTrash": false,
+    "isShared": true,
+    "isPublished": true,
+    "coverHidden": false,
+    "createdAt": "2022-06-07T07:11:20.040Z",
+    "updatedAt": "2026-10-16T10:33:45.949Z",
+    "vTag": "1655199990809",
+    "columnId": "O0lzjbJxTm",
+    "outSharedNum": 695,
+    "notationHtmlSuccess": true,
+    "analysisStatus": 1,
+    "analysisTime": 1682492353237,
+    "levelTags": [
+      "nlvall"
+    ],
+    "readingTags": [
+      "10000116",
+      "10000099",
+      "10000102",
+      "10000117",
+      "10001246"
+    ],
+    "shareStyle": 1,
+    "freeTransNum": 2,
+    "freeTrans": 2,
+    "publishedAt": {
+      "__type": "Date",
+      "iso": "2025-06-06T13:30:00.000Z"
+    },
+    "isVIP": true,
+    "transHideType": "1",
+    "ACL": {
+      "GJiALasaYI": {
+        "read": true,
+        "write": true
+      }
+    },
+    "objectId": "6ABKuiv6Ot",
+    "notationTitle": "<span class=\"moji-notation\"><ruby><rb>竹中</rb><rp>(</rp><rt roma=\"takenaka\" hiragana=\"たけなか\" lemma=\"タケナカ\" lemma-t=\"\"></rt><rp>)</rp></ruby><ruby><rb>直人</rb><rp>(</rp><rt roma=\"naoto\" hiragana=\"なおと\" lemma=\"ナオト\" lemma-t=\"\"></rt><rp>)</rp></ruby> | 妻子常走的散步之路</span>",
+    "isLiked": false,
+    "isReported": false,
+    "bookMarkId": "",
+    "column": {
+      "title": "夜读",
+      "subtitle": "夜読書",
+      "brief": "夜晚已至，和声优们一起，体会每篇短文里与众不同的世界。",
+      "coverId": "bcca4029-82b4-4cd8-88fa-7a1b857e88b3",
+      "isSubscribed": false
+    },
+    "nextId": "tA7cIEVQBC",
+    "previousId": "D8HAfgMj9F",
+    "displayTags": [
+      "文学"
+    ],
+    "isReadSuc": false,
+    "hasExercise": false,
+    "hasReadPlan": false
+  },
+  "code": 200
+}
