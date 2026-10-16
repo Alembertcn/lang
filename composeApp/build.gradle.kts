@@ -1,6 +1,51 @@
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
+// ---------- .env → Secrets.kt 注入 ----------
+// 本地配置放项目根目录 .env（从 env.example 复制），构建时生成 Kotlin 常量。
+val envValues: Map<String, String> = run {
+    val f = rootProject.file(".env")
+    if (!f.exists()) {
+        emptyMap()
+    } else {
+        f.readLines()
+            .map { it.trim() }
+            .filter { it.isNotEmpty() && !it.startsWith("#") && it.contains("=") }
+            .associate {
+                val i = it.indexOf('=')
+                it.substring(0, i).trim() to it.substring(i + 1).trim()
+            }
+    }
+}
+
+val generateSecrets by tasks.registering {
+    val outDir = layout.buildDirectory.dir("generated/mojiSecrets")
+    outputs.dir(outDir)
+    inputs.properties(envValues)
+    doLast {
+        val dir = outDir.get().asFile
+        dir.mkdirs()
+        fun esc(s: String) = s.replace("\\", "\\\\").replace("\"", "\\\"")
+        val body = buildString {
+            appendLine("package com.moji.offline.config")
+            appendLine()
+            appendLine("// 由 gradle 从项目根目录 .env 生成；修改 .env 后重新构建即可。")
+            appendLine("object Secrets {")
+            appendLine("    const val QWEN_API_KEY: String = \"${esc(envValues["QWEN_API_KEY"] ?: "")}\"")
+            appendLine("    const val QWEN_MODEL: String = \"${esc(envValues["QWEN_MODEL"] ?: "qwen-plus")}\"")
+            appendLine("    const val QWEN_BASE_URL: String = \"${esc(envValues["QWEN_BASE_URL"] ?: "https://dashscope.aliyuncs.com/compatible-mode/v1")}\"")
+            appendLine("    const val QWEN_TTS_MODEL: String = \"${esc(envValues["QWEN_TTS_MODEL"] ?: "qwen-tts")}\"")
+            appendLine("    const val QWEN_TTS_VOICE: String = \"${esc(envValues["QWEN_TTS_VOICE"] ?: "Cherry")}\"")
+            appendLine("    const val QWEN_TTS_BASE_URL: String = \"${esc(envValues["QWEN_TTS_BASE_URL"] ?: "https://dashscope.aliyuncs.com/api/v1")}\"")
+            appendLine("    const val CONTENT_BASE_URL: String = \"${esc(envValues["CONTENT_BASE_URL"] ?: "")}\"")
+            appendLine("}")
+            appendLine()
+            appendLine("val hasQwenKey: Boolean get() = Secrets.QWEN_API_KEY.isNotBlank()")
+        }
+        dir.resolve("Secrets.kt").writeText(body)
+    }
+}
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
@@ -18,8 +63,8 @@ kotlin {
         }
     }
 
+    // iosX64（Intel 模拟器）已被 Compose Multiplatform 1.11 停止支持
     listOf(
-        iosX64(),
         iosArm64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
@@ -30,6 +75,9 @@ kotlin {
     }
 
     sourceSets {
+        commonMain {
+            kotlin.srcDir(generateSecrets)
+        }
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)

@@ -42,7 +42,27 @@ MOJi阅读（`com.mojidict.read` v3.4.9）的离线高仿项目，目标技术�
 > 版本选择说明：Compose Multiplatform 1.12.x 依赖的 androidx.compose 1.12
 > 要求 compileSdk 37 与 AGP 9.1+，而本机 Android SDK 最高到 36，故锁定
 > CMP 1.11.1；Ktor 使用 CIO 引擎替代 OkHttp（okhttp 5.5 同样要求 37）。
-> 待本机可安装 SDK 37 后可整体升级。
+> 待本机可安装 SDK 37 后可整体升级。另：CMP 1.11 已停止发布 iosX64
+> （Intel 模拟器）构建，故 iOS 目标只保留 iosArm64 / iosSimulatorArm64。
+
+## 本地配置（.env）
+
+复制模板并填写（`.env` 已被 .gitignore 忽略，不会入库）：
+
+```bash
+cp env.example .env
+```
+
+| 变量 | 说明 |
+| --- | --- |
+| `QWEN_API_KEY` | 必填，千问（阿里云百炼 / DashScope）API Key |
+| `QWEN_MODEL` | 文本模型，默认 `qwen-plus`（可换 qwen-max / qwen-turbo） |
+| `QWEN_BASE_URL` | OpenAI 兼容接口地址，默认 DashScope compatible-mode |
+| `QWEN_TTS_MODEL` / `QWEN_TTS_VOICE` / `QWEN_TTS_BASE_URL` | 发音（TTS）配置 |
+| `CONTENT_BASE_URL` | 可选，文章/专栏清单的 GitHub Pages 地址，留空只用内置内容 |
+
+构建时 gradle 会读取 `.env` 并生成 `com.moji.offline.config.Secrets`
+常量（改完 `.env` 重新构建即可生效）。
 
 ### 待办（按开发顺序）
 
