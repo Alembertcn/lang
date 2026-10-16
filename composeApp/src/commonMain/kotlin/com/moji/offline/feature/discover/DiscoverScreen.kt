@@ -16,8 +16,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -84,17 +86,19 @@ fun DiscoverRoute(
 ) {
     val strings = LocalAppStrings.current
     var feed by remember { mutableStateOf(FindFeed()) }
-    var tab by remember { mutableStateOf(0) }
     LaunchedEffect(Unit) { feed = FindFeedStore.feed() }
 
     val tabs = remember(feed, strings) {
         listOf(strings.findColumnRecommend) + feed.categories.map { it.tab }
     }
-    val columns = remember(feed, tab) {
-        if (tab == 0) feed.columns else feed.categories.getOrNull(tab - 1)?.columns.orEmpty()
+    // One page per tab, mirroring the original ViewPager.
+    val pageColumns = remember(feed) {
+        buildList {
+            add(feed.columns)
+            feed.categories.forEach { add(it.columns) }
+        }
     }
 
-    val listState = rememberLazyListState()
     val scope = rememberCoroutineScope()
 
     Column(
@@ -103,28 +107,57 @@ fun DiscoverRoute(
             .background(MaterialTheme.colorScheme.background),
     ) {
         DiscoverTopBar(strings.discoverTitle)
-        CategoryTabStrip(
-            tabs = tabs,
-            selected = tab,
-            onSelect = { index ->
-                tab = index
-                scope.launch { listState.scrollToItem(0) }
-            },
-        )
-        LazyColumn(
-            state = listState,
-            modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(top = 12.dp, bottom = 24.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-        ) {
-            items(count = columns.size, key = { index -> columns[index].id.ifEmpty { "col$index" } }) { index ->
-                ColumnCard(
-                    column = columns[index],
+        if (tabs.isEmpty()) {
+            Spacer(Modifier.fillMaxSize())
+        } else {
+            // ViewPager semantics: swipe left/right to switch categories; the tab
+            // strip follows the pager and taps animate the pager (same as the
+            // original Discover ViewPager + tab strip pair).
+            val pagerState = rememberPagerState(pageCount = { tabs.size })
+            CategoryTabStrip(
+                tabs = tabs,
+                selected = pagerState.currentPage,
+                onSelect = { index -> scope.launch { pagerState.animateScrollToPage(index) } },
+            )
+            // Per-page scroll state, kept alive like ViewPager's offscreen pages.
+            val listStates = remember(tabs.size) { List(tabs.size) { LazyListState() } }
+            HorizontalPager(
+                state = pagerState,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f),
+            ) { page ->
+                ColumnPage(
+                    columns = pageColumns.getOrElse(page) { emptyList() },
                     strings = strings,
-                    modifier = Modifier.padding(horizontal = 16.dp),
+                    listState = listStates[page.coerceIn(0, listStates.lastIndex)],
                     onOpenArticle = { id -> onOpenReading("", id) },
                 )
             }
+        }
+    }
+}
+
+@Composable
+private fun ColumnPage(
+    columns: List<FindColumn>,
+    strings: AppStrings,
+    listState: LazyListState,
+    onOpenArticle: (String) -> Unit,
+) {
+    LazyColumn(
+        state = listState,
+        modifier = Modifier.fillMaxSize(),
+        contentPadding = PaddingValues(top = 12.dp, bottom = 24.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+    ) {
+        items(count = columns.size, key = { index -> columns[index].id.ifEmpty { "col$index" } }) { index ->
+            ColumnCard(
+                column = columns[index],
+                strings = strings,
+                modifier = Modifier.padding(horizontal = 16.dp),
+                onOpenArticle = onOpenArticle,
+            )
         }
     }
 }
