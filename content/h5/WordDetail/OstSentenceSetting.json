@@ -1,0 +1,41 @@
+{
+  "settings": [
+    {
+      "type": "pageConfig",
+      "data": {
+        "bottomSpace": 55,
+        "platform": "android"
+      }
+    },
+    {
+      "type": "displayContent",
+      "data": {
+        "pageType": "voiceSentence",
+        "voiceSentence": {
+          "title": "",
+          "translation": "",
+          "objectID": "",
+          "coverUrl": "",
+          "srcType": 0,
+          "srcTitle": "",
+          "excerpt": "",
+          "author": {
+            "portrait": "",
+            "title": "",
+            "sign": "",
+            "id": ""
+          }
+        }
+      }
+    },
+    {
+      "type": "updateFurigana",
+      "data": {
+        "furiganaType": "hira",
+        "mapping": {
+
+        }
+      }
+    }
+  ]
+}

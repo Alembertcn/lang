@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# KMP / Gradle build output
+.gradle/
+build/
+*/build/
+**/build/
+.kotlin/
+local.properties
+
+# Xcode / iOS build output
+iosApp/build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# IDE / system
+.idea/
+.DS_Store
+*.iml
+
+# Temp
+*.log
+*.tmp

@@ -1,0 +1,38 @@
+{
+  "settings": [
+    {
+      "type": "pageConfig",
+      "data": {
+        "bottomSpace": 55,
+        "platform": "android"
+      }
+    },
+    {
+      "type": "displayContent",
+      "data": {
+        "pageType": "example",
+        "example": {
+          "title": "",
+          "knowledgeID": "",
+          "excerpt": "",
+          "objectID": "",
+          "exampleID": "",
+          "translation": "",
+          "bindingWord": {
+            "title": "",
+            "id": "",
+            "subTitle": ""
+          }
+        }
+      }
+    },
+    {
+      "type": "updateFurigana",
+      "data": {
+        "furiganaType": "hira",
+        "mapping": {
+        }
+      }
+    }
+  ]
+}

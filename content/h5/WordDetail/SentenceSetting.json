@@ -1,0 +1,46 @@
+{
+  "settings": [
+    {
+      "type": "pageConfig",
+      "data": {
+        "bottomSpace": 55,
+        "platform": "android",
+        "useJpFont": true,
+        "preferredLanguage": "preferredLanguageValue",
+        "voiceIcon": "standard",
+        "isMOJiRead": true,
+        "isPro": true
+      }
+    },
+    {
+      "type": "displayContent",
+      "data": {
+        "pageType": "sentence",
+        "sentence": {
+          "title": "",
+          "translation": "",
+          "objectID": "",
+          "coverUrl": "",
+          "srcType": 0,
+          "srcTitle": "",
+          "excerpt": "",
+          "author": {
+            "portrait": "",
+            "title": "",
+            "sign": "",
+            "id": ""
+          }
+        }
+      }
+    },
+    {
+      "type": "updateFurigana",
+      "data": {
+        "furiganaType": "hira",
+        "mapping": {
+
+        }
+      }
+    }
+  ]
+}

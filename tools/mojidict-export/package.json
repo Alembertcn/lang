@@ -1,0 +1,14 @@
+{
+  "name": "mojidict-export",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Export MOJi offline dictionary (Realm) to SQLite",
+  "main": "export_mojidict.js",
+  "scripts": {
+    "export": "node export_mojidict.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0",
+    "realm": "12.15.0"
+  }
+}

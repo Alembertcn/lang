@@ -1,0 +1,72 @@
+{
+  "settings": [
+    {
+      "type": "pageConfig",
+      "data": {
+        "bottomSpace": 55,
+        "platform": "android",
+        "useJpFont": true,
+        "preferredLanguage": "preferredLanguageValue",
+        "voiceIcon": "standard",
+        "isMOJiRead": true,
+        "isPro": true
+      }
+    },
+    {
+      "type": "updateWordConfig",
+      "data": {
+
+      }
+    },
+    {
+      "type": "displayContent",
+      "data": {
+        "pageType": "word",
+        "word": {
+          "title": "",
+          "partsOfSpeech": [
+            "",
+            ""
+          ],
+          "knowledgeID": "",
+          "pron": "",
+          "tags": "",
+          "accent": "",
+          "detailsList": [
+            {
+              "detailsID": "",
+              "knowledgeID": "",
+              "title": "",
+              "subdetails": [
+                {
+                  "subdetailsID": "",
+                  "detailsID": "",
+                  "knowledgeID": "",
+                  "title": "",
+                  "examples": [
+                    {
+                      "exampleID": "",
+                      "subdetailsID": "",
+                      "knowledgeID": "",
+                      "title": "",
+                      "translation": "",
+                      "showFav": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "updateFurigana",
+      "data": {
+        "furiganaType": "hira",
+        "mapping": {
+        }
+      }
+    }
+  ]
+}
