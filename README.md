@@ -53,6 +53,7 @@ moji-offline/
 │   └── moji-api/                           # 接口数据工作区（见下）
 ├── tools/                                  # 工具链（见下）
 ├── PLAN.md                                 # 计划与进度
+├── REVERSE.md                              # 逆向还原 / 页面仿造 / 接口总览
 └── env.example                             # 本地配置模板
 ```
 
