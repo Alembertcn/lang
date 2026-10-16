@@ -1,0 +1,29 @@
+{
+  "result": [
+    {
+      "voiceId": "f002",
+      "name": "七海",
+      "status": 1,
+      "url": "http://oss.mojidict.com/tts_v2/9057e2e0a12e81e55f1fb9123e5ae006%23f002.mp3"
+    },
+    {
+      "voiceId": "m001",
+      "name": "恵太",
+      "status": 1,
+      "url": "http://oss.mojidict.com/tts_v2/9057e2e0a12e81e55f1fb9123e5ae006%23m001.mp3"
+    },
+    {
+      "voiceId": "f004",
+      "name": "葵",
+      "status": 1,
+      "url": "http://oss.mojidict.com/tts_v2/9057e2e0a12e81e55f1fb9123e5ae006%23f004.mp3"
+    },
+    {
+      "voiceId": "m002",
+      "name": "直樹",
+      "status": 1,
+      "url": "http://oss.mojidict.com/tts_v2/9057e2e0a12e81e55f1fb9123e5ae006%23m002.mp3"
+    }
+  ],
+  "code": 200
+}

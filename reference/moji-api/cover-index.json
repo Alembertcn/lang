@@ -1,0 +1,96 @@
+{
+  "cdn": "https://oss.mojidict.com",
+  "mockRoot": "reference/moji-api/oss",
+  "items": [
+    {
+      "objectId": "Y3zM5QJ7am",
+      "title": "注文の多い料理店",
+      "coverId": "cover_1669855997525",
+      "ossKey": "books/Y3zM5QJ7am/cover_1669855997525",
+      "url": "https://oss.mojidict.com/books/Y3zM5QJ7am/cover_1669855997525",
+      "file": "oss/books/Y3zM5QJ7am/cover_1669855997525",
+      "bytes": 268869,
+      "contentType": "image/jpeg"
+    },
+    {
+      "objectId": "TTuL0zprVc",
+      "title": "刺青",
+      "coverId": "cover_1669856109098",
+      "ossKey": "books/TTuL0zprVc/cover_1669856109098",
+      "url": "https://oss.mojidict.com/books/TTuL0zprVc/cover_1669856109098",
+      "file": "oss/books/TTuL0zprVc/cover_1669856109098",
+      "bytes": 329809,
+      "contentType": "image/jpeg"
+    },
+    {
+      "objectId": "zslEMOcXxQ",
+      "title": "羅生門",
+      "coverId": "cover_1669856144933",
+      "ossKey": "books/zslEMOcXxQ/cover_1669856144933",
+      "url": "https://oss.mojidict.com/books/zslEMOcXxQ/cover_1669856144933",
+      "file": "oss/books/zslEMOcXxQ/cover_1669856144933",
+      "bytes": 221102,
+      "contentType": "image/jpeg"
+    },
+    {
+      "objectId": "dpMzzJgA2c",
+      "title": "蜘蛛の糸",
+      "coverId": "cover_1669856165812",
+      "ossKey": "books/dpMzzJgA2c/cover_1669856165812",
+      "url": "https://oss.mojidict.com/books/dpMzzJgA2c/cover_1669856165812",
+      "file": "oss/books/dpMzzJgA2c/cover_1669856165812",
+      "bytes": 195337,
+      "contentType": "image/jpeg"
+    },
+    {
+      "objectId": "ZOzfrfA8DP",
+      "title": "よだかの星",
+      "coverId": "cover_1669856189619",
+      "ossKey": "books/ZOzfrfA8DP/cover_1669856189619",
+      "url": "https://oss.mojidict.com/books/ZOzfrfA8DP/cover_1669856189619",
+      "file": "oss/books/ZOzfrfA8DP/cover_1669856189619",
+      "bytes": 321821,
+      "contentType": "image/jpeg"
+    },
+    {
+      "objectId": "y5TRbDGjlw",
+      "title": "藪の中",
+      "coverId": "cover_1669856238505",
+      "ossKey": "books/y5TRbDGjlw/cover_1669856238505",
+      "url": "https://oss.mojidict.com/books/y5TRbDGjlw/cover_1669856238505",
+      "file": "oss/books/y5TRbDGjlw/cover_1669856238505",
+      "bytes": 385027,
+      "contentType": "image/jpeg"
+    },
+    {
+      "objectId": "VGNuUHo1Fa",
+      "title": "高瀬舟",
+      "coverId": "cover_1669856258102",
+      "ossKey": "books/VGNuUHo1Fa/cover_1669856258102",
+      "url": "https://oss.mojidict.com/books/VGNuUHo1Fa/cover_1669856258102",
+      "file": "oss/books/VGNuUHo1Fa/cover_1669856258102",
+      "bytes": 147904,
+      "contentType": "image/jpeg"
+    },
+    {
+      "objectId": "p8q8qDrD4D",
+      "title": "走れメロス",
+      "coverId": "cover_1669856275101",
+      "ossKey": "books/p8q8qDrD4D/cover_1669856275101",
+      "url": "https://oss.mojidict.com/books/p8q8qDrD4D/cover_1669856275101",
+      "file": "oss/books/p8q8qDrD4D/cover_1669856275101",
+      "bytes": 292523,
+      "contentType": "image/jpeg"
+    },
+    {
+      "objectId": "kSAx4MD6J8",
+      "title": "うたかたの記",
+      "coverId": "cover_1669856292240",
+      "ossKey": "books/kSAx4MD6J8/cover_1669856292240",
+      "url": "https://oss.mojidict.com/books/kSAx4MD6J8/cover_1669856292240",
+      "file": "oss/books/kSAx4MD6J8/cover_1669856292240",
+      "bytes": 245541,
+      "contentType": "image/jpeg"
+    }
+  ]
+}

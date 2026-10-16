@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import com.moji.offline.domain.model.AppLanguage
 import com.moji.offline.domain.model.ThemeMode
 import com.moji.offline.feature.discover.DiscoverRoute
+import com.moji.offline.feature.reader.ReaderRoute
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_home_find_def
 import com.moji.offline.resources.ic_home_find_sel
@@ -78,6 +79,7 @@ fun App() {
                             onOpenReading = { _, _ -> },
                             onBrowsePlans = {},
                         )
+                        MainTab.Reader -> ReaderRoute()
                         else -> Box(
                             Modifier.fillMaxSize(),
                             contentAlignment = Alignment.Center,

@@ -1,0 +1,85 @@
+{
+  "result": [
+    {
+      "title": "吾輩は猫である",
+      "authorName": "夏目漱石",
+      "updatedAt": "2026-10-16T06:22:27.736Z",
+      "createdAt": "2023-04-12T03:49:40.746Z",
+      "usedNum": 10806,
+      "objectId": "789"
+    },
+    {
+      "title": "人間失格",
+      "authorName": "太宰治",
+      "updatedAt": "2026-10-16T02:15:01.673Z",
+      "createdAt": "2023-04-12T03:49:40.746Z",
+      "usedNum": 7634,
+      "objectId": "301"
+    },
+    {
+      "title": "銀河鉄道の夜",
+      "authorName": "宮沢賢治",
+      "updatedAt": "2026-10-15T15:13:48.058Z",
+      "createdAt": "2023-04-12T03:49:40.746Z",
+      "usedNum": 5111,
+      "objectId": "456"
+    },
+    {
+      "title": "こころ",
+      "authorName": "夏目漱石",
+      "updatedAt": "2026-10-15T15:13:44.984Z",
+      "createdAt": "2023-04-12T03:49:40.746Z",
+      "usedNum": 4272,
+      "objectId": "773"
+    },
+    {
+      "title": "人生",
+      "authorName": "夏目漱石",
+      "updatedAt": "2026-10-15T14:23:53.097Z",
+      "createdAt": "2023-04-12T03:49:40.746Z",
+      "usedNum": 3053,
+      "objectId": "767"
+    },
+    {
+      "title": "山月記",
+      "authorName": "中島敦",
+      "updatedAt": "2026-10-15T14:23:55.124Z",
+      "createdAt": "2023-04-12T03:49:40.746Z",
+      "usedNum": 2851,
+      "objectId": "624"
+    },
+    {
+      "title": "地獄変",
+      "authorName": "芥川竜之介",
+      "updatedAt": "2026-10-15T22:41:54.242Z",
+      "createdAt": "2023-04-12T03:49:40.746Z",
+      "usedNum": 2349,
+      "objectId": "60"
+    },
+    {
+      "title": "坊っちゃん",
+      "authorName": "夏目漱石",
+      "updatedAt": "2026-10-12T12:03:42.929Z",
+      "createdAt": "2023-04-12T03:49:40.746Z",
+      "usedNum": 2211,
+      "objectId": "752"
+    },
+    {
+      "title": "二百十日",
+      "authorName": "夏目漱石",
+      "updatedAt": "2026-10-06T17:53:37.272Z",
+      "createdAt": "2023-04-12T03:49:40.746Z",
+      "usedNum": 2083,
+      "objectId": "751"
+    },
+    {
+      "title": "あさましきもの",
+      "authorName": "太宰治",
+      "updatedAt": "2026-10-15T10:27:35.929Z",
+      "createdAt": "2023-04-12T03:49:40.746Z",
+      "usedNum": 1733,
+      "objectId": "240"
+    }
+  ],
+  "code": 200
+}
