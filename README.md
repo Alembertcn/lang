@@ -1,92 +1,143 @@
 # moji-offline
 
-MOJi阅读（`com.mojidict.read` v3.4.9）的离线高仿项目，目标技术栈
-**Kotlin Multiplatform + Compose Multiplatform**（iOS / Android 双端），
-定位「离线优先 + 按需联网」。
+MOJi阅读（`com.mojidict.read` v3.4.9）的离线高仿：**Kotlin Multiplatform +
+Compose Multiplatform** 双端（Android / iOS），定位「离线优先 + 按需联网」，
+UI 与资源按逆向原版还原。应用包名 `com.moji.offline`。
 
 ## 当前进度
 
-### 已完成：逆向与数据资产（2026-10-16）
+| 模块 | 状态 | 说明 |
+| --- | --- | --- |
+| 逆向资产 | ✅ | 词库（44 万词条）、H5 页面、原版图标、接口数据（19 计划 / 205 文章 / 178 音频） |
+| KMP 工程 | ✅ | Kotlin 2.4.21 + CMP 1.11.1 + SQLDelight + Ktor；真机（XQ-AT72）跑通 |
+| 数据管线 | ✅ | 抓取 → 转换 → 打包（170 篇真实文章：SRT 时间轴 + 原文 + 中文翻译） |
+| 发现页 | ✅ 主体 | 原版结构：搜索栏 / 等级筛选 / 文章卡片（原版 `item_tab_article` 规格）+ 真实数据 |
+| 底部 Tab | ✅ | 原版 `ic_home_*` def/sel 双态图标、品牌粉 #E0325C、10sp 文字 |
+| 媒体 mock | ✅ 基建 | 常驻服务 + adb reverse + 网络安全配置 + 一键脚本；播放器代码待同步 |
+| 阅读页 + 播放器 | ⏳ | 待从原型项目移植（"下载一次缓存后本地播放"方案已验证） |
+| 发现页剩余视觉 | ⏳ | 顶部粉色背景、阅读时长/等级信息栏、圈子入口、大卡片 |
+| 词库查词 | ⏳ | SQLDelight 接入 `dictionary.db` + 词卡 H5 |
+| AI 能力 | ⏳ | 千问：长难句分析 / 核心词汇 / AI 摘要 / TTS 发音 |
 
-1. **词库提取**：从 `base.apk` 的 `assets/Database/zh-CN_ja/core-mojiread-sc-20241009.zip`
-   逆向出 zip 密码与 Realm 结构，导出为 SQLite：
-   - `content/mojidict/dictionary.db`（64 MB，4 张表）：
+阶段表与完成标准见 [PLAN.md](PLAN.md)。
 
-     | 表 | 行数 | 说明 |
-     | --- | --- | --- |
-     | wort | 95,412 | 词条：spell 词形 / pron 读音 / accent 声调 / excerpt 释义 |
-     | details | 96,290 | 释义分组：part_of_speech 词性 / jita 自他 / katuyou 活用 |
-     | subdetails | 155,297 | 逐条释义：title 释义文本 / context 语境 / conjunctions 接续 |
-     | example | 96,688 | 例句：title 原文 / src 出处 / notation_title 注音 |
-
-   - 提取工具与完整逆向记录见 `tools/mojidict-export/`。
-
-2. **H5 资产提取**：`content/h5/` 共 73 个文件（1.7 MB）
-   - `web/mojiread/`：12 个内容页（article、articleText、sentenceAna、
-     question、aiSummary、note 等），词卡与文章渲染复用
-   - `WordDetail/`：词卡 H5 的 JSON schema 与示例（word / example 两类页面）
-   - `h5hybrid/`：H5 页面依赖的 JS/CSS/图片（Vue、jquery、highlighter 等）
-   - `anaRead/`：辅助阅读的示例数据（分词格式 + 重点词汇格式）
-
-3. **逆向证据**：APK 清单、组件表、路由表等分析见 `reference/`（含原始
-   APK 与两套 split）。
-
-### 已完成：KMP 工程骨架（2026-10-16）
-
-- 技术栈：Kotlin 2.4.21 + Compose Multiplatform 1.11.1 + AGP 8.13.2 +
-  SQLDelight 2.4.1 + Ktor 3.6.0（CIO 引擎）
-- 底部四 Tab（发现 / 学习 / 阅读库 / 我的）+ Material 3 骨架
-- SQLDelight 本地表：收藏 / 阅读历史 / 阅读事件 / 阅读计划 / 打卡 / AI 缓存
-- Android 入口 + iOS `MainViewController` 占位；已在真机（XQ-AT72）安装运行
-
-> 版本选择说明：Compose Multiplatform 1.12.x 依赖的 androidx.compose 1.12
-> 要求 compileSdk 37 与 AGP 9.1+，而本机 Android SDK 最高到 36，故锁定
-> CMP 1.11.1；Ktor 使用 CIO 引擎替代 OkHttp（okhttp 5.5 同样要求 37）。
-> 待本机可安装 SDK 37 后可整体升级。另：CMP 1.11 已停止发布 iosX64
-> （Intel 模拟器）构建，故 iOS 目标只保留 iosArm64 / iosSimulatorArm64。
-
-## 本地配置（.env）
-
-复制模板并填写（`.env` 已被 .gitignore 忽略，不会入库）：
+## 快速开始
 
 ```bash
-cp env.example .env
+# 环境：JDK 17 + Android SDK（compileSdk 36）
+./gradlew :composeApp:assembleDebug
+adb install -r composeApp/build/outputs/apk/debug/composeApp-debug.apk
+
+# 媒体 mock（听音频需要）：常驻服务 + USB 端口转发
+tools/start_media_mock.sh
 ```
-
-| 变量 | 说明 |
-| --- | --- |
-| `QWEN_API_KEY` | 必填，千问（阿里云百炼 / DashScope）API Key |
-| `QWEN_MODEL` | 文本模型，默认 `qwen-plus`（可换 qwen-max / qwen-turbo） |
-| `QWEN_BASE_URL` | OpenAI 兼容接口地址，默认 DashScope compatible-mode |
-| `QWEN_TTS_MODEL` / `QWEN_TTS_VOICE` / `QWEN_TTS_BASE_URL` | 发音（TTS）配置 |
-| `CONTENT_BASE_URL` | 可选，文章/专栏清单的 GitHub Pages 地址，留空只用内置内容 |
-
-构建时 gradle 会读取 `.env` 并生成 `com.moji.offline.config.Secrets`
-常量（改完 `.env` 重新构建即可生效）。
-
-### 待办（按开发顺序）
-
-1. SQLDelight 接入预置词库 `dictionary.db`（prepackaged database 方案）
-   + 词卡 H5（WebView）垂直切片
-2. 阅读器（H5 文章页 + 查词弹窗）与四 Tab 页面实现
-3. 千问 API 接入（长难句分析 / 核心词汇 / AI 摘要 / TTS 发音），
-   `env.example` 定义 `QWEN_API_KEY` / `QWEN_MODEL` / `QWEN_TTS_VOICE`
-4. 学习统计、收藏、历史、计划、打卡（纯本地 SQLDelight）
-5. 内容更新通道（GitHub Pages 静态 JSON + 本地缓存）
 
 ## 目录结构
 
 ```text
 moji-offline/
-├── content/                  # 一次性获取的数据资产（git 管理）
-│   ├── mojidict/dictionary.db
-│   └── h5/                   # 从 APK 提取的 H5 资源
-├── reference/                # 逆向输入（APK、split、解出的 realm）
-├── tools/mojidict-export/    # 词库导出工具（含逆向记录）
-└── README.md
+├── composeApp/
+│   └── src/commonMain/
+│       ├── kotlin/com/moji/offline/        # 源码（feature/discover 等）
+│       └── composeResources/
+│           ├── drawable/                   # 原版图标（ic_find_* / ic_home_*，提取自 APK）
+│           └── files/articles/             # 170 篇真实文章 JSON + index（打包进 app）
+├── content/                                # 一次性逆向资产（git 管理）
+│   ├── mojidict/dictionary.db              # 词库（95,412 词条 / 44.3 万行 / 4 表）
+│   └── h5/                                 # H5 页面资产（词卡 / 文章渲染复用）
+├── reference/
+│   ├── moji-read/                          # 官方 APK（base + split）与参考素材
+│   ├── dict/                               # 从 APK 解出的 Realm 词库源
+│   └── moji-api/                           # 接口数据工作区（见下）
+├── tools/                                  # 工具链（见下）
+├── PLAN.md                                 # 计划与进度
+└── env.example                             # 本地配置模板
 ```
+
+### reference/moji-api（接口数据工作区）
+
+| 路径 | 内容 |
+| --- | --- |
+| `接口说明.md` | MOJi 阅读计划 / 文章 / 音频接口的逆向说明（抓取脚本的依据） |
+| `responses/` | 计划接口原始响应（readPlan list / mine / detail） |
+| `articles/{objectId}/` | 每篇文章：`detail.json` + `body.html`（含 SRT 时间轴 / 注音 / 翻译） |
+| `oss/` | mock 静态服务根（`article/audio/*.mp3`）；**软链指向抓取工作区，不入库** |
+| `audio-index.json` | 文章 → 音频文件映射（含真实时长） |
+| `catalog.txt` | 计划与文章标题总览 |
+
+### tools（工具链）
+
+| 工具 | 用途 |
+| --- | --- |
+| `fetch_moji_plans.py` | 登录并拉取计划目录（需 `.env` 配置 MOJI 账号） |
+| `fetch_moji_articles.py` | 拉取全部文章正文（detail + body.html） |
+| `fetch_moji_audio.py` | 下载文章录音到 mock OSS 树，生成 `audio-index.json` |
+| `fetch_moji_covers.py` / `fetch_moji_reader.py` | 书架 / 封面素材（可选） |
+| `convert_moji_articles.py` | `body.html` → 打包 JSON（SRT 时间轴 + 原文 + 翻译） |
+| `start_media_mock.sh` | 启动常驻媒体 mock（screen）+ adb reverse 端口转发 |
+| `mojidict-export/` | 词库逆向与导出（zip 密码 / Realm key / 表结构，见其 README） |
+
+## 数据管线（新增文章 / 录音的标准流程）
+
+```bash
+# 1) 抓取（.env 配好 MOJI_ACCOUNT / MOJI_PASSWORD）
+python3 tools/fetch_moji_plans.py      # 计划目录
+python3 tools/fetch_moji_articles.py   # 文章正文
+python3 tools/fetch_moji_audio.py      # 录音 → mock OSS 树
+
+# 2) 转换（生成打包数据）
+python3 tools/convert_moji_articles.py # → composeApp/.../files/articles/
+
+# 3) 重建
+./gradlew :composeApp:assembleDebug
+```
+
+数据模型对齐原版：**一篇文章 = 一条连续音频 + 逐句 SRT 时间轴**，
+播放器按时间轴做句子跟随高亮（与 MOJi 的 SRT 模型一致）。
+
+## 媒体 mock（音频为什么不打包）
+
+完整音频集约 468 MB，不适合进安装包；开发 / 演示由本地 mock 提供
+（路径结构与线上 `oss.mojidict.com` 一致）：
+
+```bash
+tools/start_media_mock.sh
+# 电脑：0.0.0.0:8765 静态服务 reference/moji-api/oss
+# 手机：127.0.0.1:18080 → 电脑 8765（adb reverse，走 USB，不受 Wi-Fi / VPN 影响）
+```
+
+- app 侧读取 `local.properties` 的 `MOCK_MEDIA_BASE`（构建时注入；
+  例：`MOCK_MEDIA_BASE=http://127.0.0.1:18080`）；
+- targetSdk 35 默认禁明文 HTTP，已用
+  `composeApp/src/androidMain/res/xml/network_security_config.xml`
+  仅放行 `127.0.0.1 / localhost / 10.0.2.2 / 局域网地址`；
+- mock 服务用 `screen` 常驻：`screen -r moji-mock` 查看日志，
+  `screen -S moji-mock -X quit` 停止。
+
+## 本地配置（.env）
+
+```bash
+cp env.example .env   # 按需填写
+```
+
+| 变量 | 说明 |
+| --- | --- |
+| `QWEN_*` | 千问（DashScope）AI 能力：分析 / 摘要 / TTS（字段见 env.example） |
+| `MOJI_ACCOUNT` / `MOJI_PASSWORD` / `MOJI_COUNTRY_CODE` | 仅重新抓取接口数据时需要 |
+
+构建时 gradle 读取 `.env` 并生成 `com.moji.offline.config.Secrets`。
+
+## 技术栈与版本锁定
+
+Kotlin 2.4.21 · Compose Multiplatform 1.11.1 · AGP 8.13.2 · SQLDelight 2.4.1 ·
+Ktor 3.6.0（CIO 引擎）
+
+> 已知约束：CMP 1.12 需要 compileSdk 37 与 AGP 9.1+（本机 SDK 最高 36）；
+> CMP 1.11 已停止发布 iosX64 构建，iOS 目标为 iosArm64 / iosSimulatorArm64。
 
 ## 说明与边界
 
-- 本项目仅用于个人学习与研究，资源不用于商用分发。
-- 词库与 H5 资源逆向自官方 APK，版权归 MoJi 及其权利人所有。
+- 仅用于个人学习与研究；词库 / H5 / 音频等资源版权归 MoJi 及其权利人所有，
+  不用于商用分发；
+- UI 规格与图标均提取自官方 APK（`item_tab_article`、`ic_home_*` 等）用于对照还原；
+- 原型参考项目：`出海/Demo/moji-offline`（移植来源与数据抓取工作区）。
