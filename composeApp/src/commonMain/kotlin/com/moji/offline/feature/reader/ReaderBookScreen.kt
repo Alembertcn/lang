@@ -204,7 +204,11 @@ private fun ChapterPage(
                                     "\"analysisColor\":\"$analysisFg\"," +
                                     "\"contentColor\":\"$contentColor\"," +
                                     "\"furiganaType\":2,\"fontSize\":1," +
-                                    "\"analysisParagraphButton\":false" +
+                                    // Original reader shows the 「析」 paragraph
+                                    // markers; they also occupy inline space on the
+                                    // last line of a paragraph, which affects line
+                                    // wrapping / pagination parity.
+                                    "\"analysisParagraphButton\":true" +
                                     if (dark) ",\"themeName\":\"theme-dark\"}" else "}"
                                 controller.evaluateJs(
                                     "javascript:Main('$info', '$platformName', '', '')",
@@ -214,7 +218,21 @@ private fun ChapterPage(
                                 // The engine sends Int.MAX_VALUE while it is
                                 // measured at zero width (offscreen pages);
                                 // ignore anything outside the sane range.
-                                payload.toIntOrNull()?.takeIf { it in 1..2000 }?.let { totalPages = it }
+                                payload.toIntOrNull()?.takeIf { it in 1..2000 }?.let { engineCount ->
+                                    // Chrome stretches CSS columns when the
+                                    // container is not an exact multiple of the
+                                    // page step, while the engine (and the
+                                    // original reader) assume step == clientWidth.
+                                    // Snap the container onto the exact grid and
+                                    // use the real column count.
+                                    controller.evaluateJsWithResult(snapGridJs(engineCount)) { raw ->
+                                        val n = Regex("\"n\":(\\d+)")
+                                            .find(raw.replace("\\\"", "\""))
+                                            ?.groupValues?.get(1)?.toIntOrNull()
+                                        totalPages = n?.takeIf { it in 1..2000 } ?: engineCount
+                                        println("[MojiGeo] snap engine=$engineCount $raw")
+                                    }
+                                }
                             }
                             else -> Unit
                         }
@@ -244,8 +262,59 @@ private fun ChapterPage(
                 controller.scrollWebViewTo(x)
             }
         }
+
+        // Geometry probe (temporary, [MojiGeo]): dump the real column geometry
+        // whenever the pager settles, so alignment fixes are based on facts.
+        LaunchedEffect(pagerState) {
+            snapshotFlow { pagerState.isScrollInProgress to pagerState.currentPage }
+                .collect { (inProgress, page) ->
+                    if (!inProgress) {
+                        controller.evaluateJsWithResult(GEO_JS) { raw ->
+                            println("[MojiGeo] page=$page nativeStep=$step $raw")
+                        }
+                    }
+                }
+        }
     }
 }
+
+private const val GEO_JS =
+    "(function(){var b=document.body;var cs=getComputedStyle(b);" +
+        "var sx=window.scrollX||document.documentElement.scrollLeft||0;" +
+        "var cw=document.documentElement.clientWidth;" +
+        "var sw=document.documentElement.scrollWidth;" +
+        "var els=document.querySelectorAll('p,div,h1,h2,h3,h4,h5,h6,img,section');" +
+        "var seen={},lefts=[];" +
+        "for(var i=0;i<els.length;i++){var r=els[i].getBoundingClientRect();" +
+        "if(r.width<2&&r.height<2)continue;" +
+        "var k=Math.round(r.left+sx);if(!(k in seen)){seen[k]=1;lefts.push(k);}}" +
+        "lefts.sort(function(a,b){return a-b});" +
+        "var diffs=[];for(var i=1;i<lefts.length;i++){var d=lefts[i]-lefts[i-1];if(d>40)diffs.push(d);}" +
+        "diffs.sort(function(a,b){return a-b});" +
+        "var step=diffs.length?diffs[Math.floor(diffs.length/2)]:0;" +
+        "return JSON.stringify({cw:cw,sw:sw,sx:Math.round(sx)," +
+        "padL:parseFloat(cs.paddingLeft)||0,padR:parseFloat(cs.paddingRight)||0," +
+        "colW:parseFloat(cs.columnWidth)||0,colGap:parseFloat(cs.columnGap)||0," +
+        "lefts:lefts.slice(0,8),step:step,dpr:window.devicePixelRatio});})()"
+
+/**
+ * The engine lays text out as CSS columns and assumes one page step equals
+ * `document.documentElement.clientWidth`. Chrome only honours that when the
+ * scrolling container is an exact multiple of the step — otherwise it stretches
+ * the columns (step becomes `columnWidth + columnGap` > clientWidth) and page
+ * boundaries stop matching the native pager. This snaps the container width onto
+ * the exact grid and returns the true column count (measured on that grid).
+ */
+private fun snapGridJs(engineCount: Int): String =
+    "(function(){" +
+        "var d=document.documentElement;var cw=d.clientWidth;" +
+        // Narrow the container to one step so the columns overflow it and
+        // scrollWidth reports the true content extent (N * cw - gap).
+        "d.style.width=cw+'px';" +
+        "var sw=d.scrollWidth;" +
+        "var n=Math.max(1,Math.round(sw/cw));" +
+        "d.style.width=(n*cw)+'px';" +
+        "return JSON.stringify({cw:cw,sw:sw,n:n});})()"
 
 @Composable
 private fun ReaderBarIcon(icon: ReaderBarIcon, onClick: () -> Unit) {
