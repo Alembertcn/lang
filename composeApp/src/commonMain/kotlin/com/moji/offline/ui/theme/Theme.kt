@@ -12,7 +12,8 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import com.moji.offline.domain.model.ThemeMode
 
-val MojiPink = Color(0xFFFF4D6A)
+/** Brand pink sampled from the original APK tab icons (ic_home_find_sel). */
+val MojiPink = Color(0xFFE0325C)
 val MojiPage = Color(0xFFF3F4F6)
 
 /** Resolved app theme (respects [ThemeMode], not just the system setting). */
