@@ -2,6 +2,8 @@ package com.moji.offline.feature.article
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
@@ -48,6 +50,7 @@ import com.moji.offline.data.article.ArticleMeta
 import com.moji.offline.data.article.ArticlePlayer
 import com.moji.offline.data.article.CollectedSentences
 import com.moji.offline.data.audio.SpeechEngine
+import com.moji.offline.data.audio.openTtsVoiceInstaller
 import com.moji.offline.data.reader.BookServer
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_article_auxiliary
@@ -115,6 +118,7 @@ fun ArticleDetailRoute(
     var showSettings by remember(articleId) { mutableStateOf(false) }
     var showShadowing by remember(articleId) { mutableStateOf(false) }
     var notice by remember(articleId) { mutableStateOf<String?>(null) }
+    var voiceMissing by remember(articleId) { mutableStateOf(false) }
     val clipboard = LocalClipboardManager.current
     val speech = remember { SpeechEngine() }
 
@@ -197,7 +201,10 @@ fun ArticleDetailRoute(
                         menuWord = null
                         when (action) {
                             // 朗读只读这个单词（本地 TTS），不播整篇文章。
-                            ArticleMenuAction.READ -> speech.speak(selected.speakAs)
+                            ArticleMenuAction.READ -> {
+                                val ok = speech.speak(selected.speakAs)
+                                if (!ok) voiceMissing = true
+                            }
                             ArticleMenuAction.COPY -> {
                                 clipboard.setText(AnnotatedString(selected.surface))
                                 notice = "已复制"
@@ -236,6 +243,59 @@ fun ArticleDetailRoute(
     }
     if (showSettings) ArticleSettingsSheet(onDismiss = { showSettings = false })
     if (showShadowing) ShadowingSheet(onDismiss = { showShadowing = false })
+    if (voiceMissing) {
+        val colors = MaterialTheme.colorScheme
+        val source = remember { MutableInteractionSource() }
+        Box(
+            Modifier
+                .fillMaxSize()
+                .background(Color(0x66000000))
+                .clickable(interactionSource = source, indication = null) { voiceMissing = false },
+            contentAlignment = Alignment.Center,
+        ) {
+            Column(
+                Modifier
+                    .width(300.dp)
+                    .clip(RoundedCornerShape(16.dp))
+                    .background(colors.surface)
+                    .clickable(interactionSource = source, indication = null) {}
+                    .padding(20.dp),
+            ) {
+                Text("缺少日语语音", color = colors.onSurface, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    "本机文字转语音没有安装日语语音包，朗读会退回中文读音。安装后再点朗读即可。",
+                    color = colors.onSurface.copy(alpha = 0.6f),
+                    fontSize = 13.sp,
+                )
+                Spacer(Modifier.height(16.dp))
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                    Text(
+                        "取消",
+                        color = colors.onSurface.copy(alpha = 0.6f),
+                        fontSize = 14.sp,
+                        modifier = Modifier
+                            .clickableNoRipple { voiceMissing = false }
+                            .padding(horizontal = 12.dp, vertical = 6.dp),
+                    )
+                    Text(
+                        "去安装",
+                        color = ArticleTitle,
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(14.dp))
+                            .background(SeekPlayed)
+                            .clickableNoRipple {
+                                voiceMissing = false
+                                openTtsVoiceInstaller()
+                            }
+                            .padding(horizontal = 14.dp, vertical = 6.dp),
+                    )
+                }
+            }
+        }
+    }
     detailWord?.let { word ->
         WordDetailSheet(
             word = word,

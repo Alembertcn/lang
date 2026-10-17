@@ -8,16 +8,20 @@ import platform.AVFAudio.AVSpeechBoundary
 actual class SpeechEngine actual constructor() {
     private val synth = AVSpeechSynthesizer()
 
-    actual fun speak(text: String) {
+    actual fun speak(text: String): Boolean {
         val value = text.trim()
-        if (value.isEmpty()) return
+        if (value.isEmpty()) return false
         synth.stopSpeakingAtBoundary(AVSpeechBoundary.AVSpeechBoundaryImmediate)
         val utterance = AVSpeechUtterance(string = value)
-        AVSpeechSynthesisVoice.voiceWithLanguage("ja-JP")?.let { utterance.voice = it }
+        val voice = AVSpeechSynthesisVoice.voiceWithLanguage("ja-JP") ?: return false
+        utterance.voice = voice
         synth.speakUtterance(utterance)
+        return true
     }
 
     actual fun stop() {
         synth.stopSpeakingAtBoundary(AVSpeechBoundary.AVSpeechBoundaryImmediate)
     }
 }
+
+actual fun openTtsVoiceInstaller(): Boolean = false
