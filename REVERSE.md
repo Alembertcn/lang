@@ -119,6 +119,10 @@ tools/start_media_mock.sh   # :8765 -> reference/moji-api/oss（screen 常驻）
 | 播放条 | `layout_audio_player_manager`：14sp 时间、2dp seek、70x38 精听胶囊、36/40/36 传输键、24dp 六边形设置 + 速度角标 | `ArticleAudioBar`（同尺寸）；音频来自 `MOCK_MEDIA_BASE/article/audio/{audioId}` |
 | 全局播放面板 | `activity_main.xml`：`AudioPlayerControllerView`（64dp、16dp 上圆角、白/#1C1C1E、translationZ 20dp）位于 `fl_main_container` 与 55dp `tb_main_bottom_bar` 之间（`layout_above` 链，内容区被顶起）；`layout_audio_player_controller`：关闭 44dp / 封面 44dp r8 / 标题 16sp / 24dp 环形进度+播放键 / 列表 44dp | `App.kt` 的 Scaffold bottomBar（`GlobalMiniPlayer`）+ `ArticlePlayer` 应用级会话；点面板回到文章、播放位置保持 |
 | 播放跟随 | H5 `MOJiArticleAudioProcess()` 从 `.moji-article-srt p` 读 `srt-start/srt-end` 组成时间轴，回传 `ArticleJsInterface.getSRTData`；native 按播放位置调 `window.setHightLightSRT(i)`，H5 给当前句加 `--active`（`color: var(--color-primary)` = #E0315B）并回调 `Api.smoothScrollTo(offsetTop)`；`setAudioStatus('1'|'0')` 控制点句跳转（`onClickSRT`） | `ArticlePlayer.setTimeline` 解析时间轴；ticker 计算 `highlightIndex` → 注入 `setHightLightSRT`；`smoothScrollTo` 映射为 `window.scrollTo`；点句 `seekToIndex` |
+| 单词菜单 | `popup_article_action_mode`：`#3A3A3A` 圆角 16、66dp 高、5 个 24dp 图标 + 12sp 文案（朗读 / 复制 / 查词 / AI / 收藏）；Android 由 `ArticleWebView` 的 action mode 触发，H5 点词走 `clickContent` | 注入 click/selectionchange → `ArticleJsInterface.showMenu(text, rect)`；原生 `ArticleActionMenu` 定位在词上方；朗读=定位该句并播放，复制=剪贴板，收藏=会话收藏，查词/AI 待接各自模块 |
+| 精听跟读 | `ArticleIntensiveActivity` + `RecordingButtonContainer`（逐句听、录音、回放） | `ShadowingSheet`：当前 SRT 句、听句、录音（MediaRecorder + 运行时权限）、回放我的读音、上一句/下一句 |
+| 播放设置 | `layout_audio_player_setting`：循环（无 / 单句 / 全文）+ 倍速 0.6–1.4 | `ArticleSettingsSheet` + `ArticlePlayer.loopMode`（句尾回跳）/`changeSpeed` |
+| 播放列表 | `dialog_audio_player_list` | `ArticleQueueDialog`（当前单曲，后续接专栏队列） |
 
 资源由 `tools/build_article_assets.py` 生成（gitignore）：
 `files/article_h5/`（原版 H5 + Noto Sans JP）、`files/article_detail/{id}.{json,html}`（299 篇）。

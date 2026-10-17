@@ -57,13 +57,38 @@ object ArticlePlayer {
     var highlightIndex by mutableStateOf(-1)
         private set
 
-    /** `[startMs, endMs]` per sentence, from the H5's `getSRTData` payload. */
-    private var timeline: List<Pair<Long, Long>> = emptyList()
+    /** Sentences from the H5's `getSRTData` payload (SRT timeline). */
+    var sentences: List<SrtSentence> by mutableStateOf(emptyList())
+        private set
+
+    enum class LoopMode { NONE, SENTENCE, ARTICLE }
+
+    var loopMode by mutableStateOf(LoopMode.NONE)
+        private set
 
     init {
         player.onCompletion = {
-            playing = false
-            positionMs = durationMs
+            when (loopMode) {
+                LoopMode.SENTENCE -> {
+                    val entry = sentences.getOrNull(highlightIndex)
+                    if (entry != null) {
+                        positionMs = entry.startMs
+                        player.seekTo(entry.startMs)
+                        player.play()
+                    } else {
+                        playing = false
+                    }
+                }
+                LoopMode.ARTICLE -> {
+                    positionMs = 0L
+                    player.seekTo(0L)
+                    player.play()
+                }
+                LoopMode.NONE -> {
+                    playing = false
+                    positionMs = durationMs
+                }
+            }
         }
         scope.launch {
             while (true) {
@@ -123,13 +148,14 @@ object ArticlePlayer {
 
     /** SRT callback from the H5 (array of {startTime,endTime} in seconds). */
     fun setTimeline(json: String) {
-        timeline = runCatching {
+        sentences = runCatching {
             val array = Json.parseToJsonElement(json) as JsonArray
             array.map { element ->
                 val obj = element.jsonObject
                 val start = seconds(obj["startTime"] as? JsonPrimitive)
                 val end = seconds(obj["endTime"] as? JsonPrimitive)
-                start to end
+                val text = (obj["contentText"] as? JsonPrimitive)?.contentOrNull.orEmpty()
+                SrtSentence(start, end, text)
             }
         }.getOrDefault(emptyList())
         highlightIndex = -1
@@ -138,10 +164,25 @@ object ArticlePlayer {
 
     /** Sentence tap (`ArticleJsInterface.onClickSRT`) seeks to that sentence. */
     fun seekToIndex(index: Int) {
-        val entry = timeline.getOrNull(index) ?: return
-        positionMs = entry.first
-        player.seekTo(entry.first)
+        val entry = sentences.getOrNull(index) ?: return
+        positionMs = entry.startMs
+        player.seekTo(entry.startMs)
         highlightIndex = index
+    }
+
+    /** 朗读 from the word/sentence menu: jump to the sentence holding [text]. */
+    fun seekToText(text: String): Boolean {
+        val needle = text.trim()
+        if (needle.isEmpty()) return false
+        val index = sentences.indexOfFirst { it.text.replace(" ", "").contains(needle.replace(" ", "")) }
+        if (index < 0) return false
+        seekToIndex(index)
+        if (!playing) toggle()
+        return true
+    }
+
+    fun changeLoopMode(mode: LoopMode) {
+        loopMode = mode
     }
 
     fun changeSpeed(value: Float) {
@@ -160,13 +201,13 @@ object ArticlePlayer {
         loaded = false
         positionMs = 0L
         durationMs = 0L
-        timeline = emptyList()
+        sentences = emptyList()
         highlightIndex = -1
     }
 
     private fun syncHighlight() {
-        if (timeline.isEmpty()) return
-        val index = timeline.indexOfLast { positionMs >= it.first }
+        if (sentences.isEmpty()) return
+        val index = sentences.indexOfLast { positionMs >= it.startMs }
         if (index >= 0 && index != highlightIndex) highlightIndex = index
     }
 
@@ -181,3 +222,5 @@ object ArticlePlayer {
         return "$base/article/audio/${meta.audioId}"
     }
 }
+
+data class SrtSentence(val startMs: Long, val endMs: Long, val text: String)

@@ -57,7 +57,7 @@ import org.jetbrains.compose.resources.painterResource
  *  shortened rather than covered.
  */
 @Composable
-fun GlobalMiniPlayer(onOpenArticle: (String) -> Unit) {
+fun GlobalMiniPlayer(onOpenArticle: (String) -> Unit, onOpenQueue: () -> Unit) {
     val meta = ArticlePlayer.meta ?: return
     val dark = LocalDarkTheme.current
     val shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp)
@@ -130,7 +130,7 @@ fun GlobalMiniPlayer(onOpenArticle: (String) -> Unit) {
             contentDescription = "播放列表",
             modifier = Modifier
                 .size(44.dp)
-                .clickableNoRipple { onOpenArticle(meta.id) }
+                .clickableNoRipple(onClick = onOpenQueue)
                 .padding(10.dp),
         )
         Spacer(Modifier.width(6.dp))

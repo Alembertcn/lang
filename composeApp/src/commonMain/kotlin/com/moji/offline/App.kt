@@ -39,6 +39,7 @@ import com.moji.offline.data.article.ArticlePlayer
 import com.moji.offline.feature.reader.ReaderBookRoute
 import com.moji.offline.feature.reader.ReaderRoute
 import com.moji.offline.feature.article.GlobalMiniPlayer
+import com.moji.offline.feature.article.ArticleQueueDialog
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_home_find_def
 import com.moji.offline.resources.ic_home_find_sel
@@ -79,6 +80,7 @@ fun App() {
             var selectedTab by remember { mutableStateOf(MainTab.Discover) }
             var openBook by remember { mutableStateOf<ReaderBook?>(null) }
             var openArticle by remember { mutableStateOf<String?>(null) }
+            var showQueue by remember { mutableStateOf(false) }
             val book = openBook
             val article = openArticle
             if (article != null) {
@@ -101,7 +103,10 @@ fun App() {
                                 enter = slideInVertically { it } + fadeIn(),
                                 exit = slideOutVertically { it } + fadeOut(),
                             ) {
-                                GlobalMiniPlayer(onOpenArticle = { openArticle = it })
+                                GlobalMiniPlayer(
+                                    onOpenArticle = { openArticle = it },
+                                    onOpenQueue = { showQueue = true },
+                                )
                             }
                             MojiBottomBar(selectedTab) { selectedTab = it }
                         }
@@ -130,6 +135,12 @@ fun App() {
                         }
                     }
                 }
+            }
+            if (showQueue) {
+                ArticleQueueDialog(
+                    onOpenArticle = { openArticle = it },
+                    onDismiss = { showQueue = false },
+                )
             }
         }
     }

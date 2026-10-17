@@ -3,6 +3,8 @@
     <!-- Needed even for the loopback book server (bind/accept), plus the
          content-update channel and the Qwen APIs. -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 跟读：录一遍自己的读音再回放（原版 ArticleIntensiveActivity）。 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:label="MOJi离线"

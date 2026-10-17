@@ -36,6 +36,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -44,6 +46,7 @@ import com.moji.offline.config.Secrets
 import com.moji.offline.data.article.ArticleCatalog
 import com.moji.offline.data.article.ArticleMeta
 import com.moji.offline.data.article.ArticlePlayer
+import com.moji.offline.data.article.CollectedSentences
 import com.moji.offline.data.reader.BookServer
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_article_auxiliary
@@ -61,6 +64,10 @@ import com.moji.offline.ui.PlatformBackHandler
 import com.moji.offline.ui.webview.ComposeHtmlView
 import com.moji.offline.ui.webview.WebViewController
 import kotlinx.coroutines.delay
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.float
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import org.jetbrains.compose.resources.painterResource
@@ -97,6 +104,19 @@ fun ArticleDetailRoute(
     var body by remember(articleId) { mutableStateOf<String?>(null) }
     var pageUrl by remember(articleId) { mutableStateOf<String?>(null) }
     var failure by remember(articleId) { mutableStateOf<String?>(null) }
+    var menuText by remember(articleId) { mutableStateOf<String?>(null) }
+    var menuTop by remember(articleId) { mutableStateOf(0f) }
+    var showSettings by remember(articleId) { mutableStateOf(false) }
+    var showShadowing by remember(articleId) { mutableStateOf(false) }
+    var notice by remember(articleId) { mutableStateOf<String?>(null) }
+    val clipboard = LocalClipboardManager.current
+
+    LaunchedEffect(notice) {
+        if (notice != null) {
+            delay(1600)
+            notice = null
+        }
+    }
 
     LaunchedEffect(articleId) {
         val port = runCatching { BookServer.ensureStarted() }.getOrNull()
@@ -142,12 +162,63 @@ fun ArticleDetailRoute(
                         body = html,
                         pageUrl = url,
                         onToggleAudio = { ArticlePlayer.toggle() },
+                        onSelection = { text, top ->
+                            menuText = text
+                            menuTop = top
+                        },
                     )
+            }
+            val selected = menuText
+            if (selected != null) {
+                ArticleActionMenu(
+                    anchorTop = menuTop.dp,
+                    onDismiss = { menuText = null },
+                    onAction = { action ->
+                        menuText = null
+                        when (action) {
+                            ArticleMenuAction.READ -> {
+                                if (!ArticlePlayer.seekToText(selected)) notice = "这一句没有时间轴"
+                            }
+                            ArticleMenuAction.COPY -> {
+                                clipboard.setText(AnnotatedString(selected))
+                                notice = "已复制"
+                            }
+                            ArticleMenuAction.LOOKUP ->
+                                notice = "查词：「${selected.take(12)}」· 词库模块接入后可用"
+                            ArticleMenuAction.AI -> notice = "AI 分析待接入（P10）"
+                            ArticleMenuAction.COLLECT -> {
+                                CollectedSentences.add(selected)
+                                notice = "已收藏"
+                            }
+                        }
+                    },
+                )
+            }
+            notice?.let { text ->
+                Text(
+                    text,
+                    modifier = Modifier
+                        .align(Alignment.BottomCenter)
+                        .padding(bottom = 12.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(Color(0xCC000000))
+                        .padding(horizontal = 14.dp, vertical = 8.dp),
+                    color = Color.White,
+                    fontSize = 13.sp,
+                )
             }
         }
         val m = meta
-        if (m != null) ArticleAudioBar(meta = m)
+        if (m != null) {
+            ArticleAudioBar(
+                meta = m,
+                onOpenSettings = { showSettings = true },
+                onOpenShadowing = { showShadowing = true },
+            )
+        }
     }
+    if (showSettings) ArticleSettingsSheet(onDismiss = { showSettings = false })
+    if (showShadowing) ShadowingSheet(onDismiss = { showShadowing = false })
 }
 
 /** `activity_base_detail`: MojiToolbar 44dp + the column title at 48dp. */
@@ -227,6 +298,7 @@ private fun ArticleH5(
     body: String,
     pageUrl: String,
     onToggleAudio: () -> Unit,
+    onSelection: (String, Float) -> Unit,
 ) {
     val controller = remember(meta.id) { WebViewController() }
     var stickyTools by remember(meta.id) { mutableStateOf(false) }
@@ -260,6 +332,16 @@ private fun ArticleH5(
                 "smoothScrollTo" -> {
                     val top = payload.toFloatOrNull() ?: 0f
                     controller.evaluateJs("window.scrollTo({top:$top,behavior:'smooth'})")
+                }
+                // Text selection -> popup_article_action_mode.
+                "showMenu" -> {
+                    val parts = payload.split('\u0001')
+                    val text = parts.getOrNull(0).orEmpty()
+                    val top = runCatching {
+                        Json.parseToJsonElement(parts.getOrNull(1).orEmpty())
+                            .jsonObject["top"]!!.jsonPrimitive.float
+                    }.getOrDefault(0f)
+                    if (text.isNotBlank()) onSelection(text, top)
                 }
                 // Original ArticleDetailFragment.coordinateToolbox(): the native
                 // 56dp toolbox shows only while scrolling up past the H5 tools
@@ -368,6 +450,35 @@ private fun articleInjection(meta: ArticleMeta, body: String, coverUrl: String):
         append("__lastY=__y;")
         append("}catch(e){}};")
         append("window.addEventListener('scroll',__send,{passive:true});__send();")
+        // Text selection -> native popup_article_action_mode.
+        append("var __selT;")
+        append("document.addEventListener('selectionchange',function(){")
+        append("clearTimeout(__selT);")
+        append("__selT=setTimeout(function(){try{")
+        append("var __s=window.getSelection();var __tx=__s?__s.toString().trim():'';")
+        append("if(!__tx)return;")
+        append("var __r=__s.getRangeAt(0).getBoundingClientRect();")
+        append("window.ArticleJsInterface.showMenu(__tx,JSON.stringify({top:__r.top,bottom:__r.bottom,left:__r.left,right:__r.right}));")
+        append("}catch(e){}},60);")
+        append("},true);")
+        // Word tap: the H5's own handler forwards the word via clickContent;
+        // capture the rect here so the native menu can anchor to the word.
+        append("function __wordOf(__n){")
+        append("try{")
+        append("if(__n.nodeName==='RUBY'){var __b=__n.querySelector('rb');return __b?__b.textContent:'';}")
+        append("if(__n.nodeName==='RB')return __n.textContent;")
+        append("if(__n.nodeName==='RT'){var __p=__n.parentNode;var __r2=__p&&__p.querySelector?__p.querySelector('rb'):null;return __r2?__r2.textContent:'';}")
+        append("if(__n.nodeName==='SPAN'&&__n.className&&(''+__n.className).indexOf('moji-toolkit-org')>=0)return __n.innerText;")
+        append("}catch(e){}")
+        append("return '';}")
+        append("var __ct=document.getElementById('article-content');")
+        append("__ct&&__ct.addEventListener('click',function(e){")
+        append("try{")
+        append("var __w=__wordOf(e.target);")
+        append("if(!__w||__w.length>12)return;")
+        append("var __rr=e.target.getBoundingClientRect();")
+        append("window.ArticleJsInterface.showMenu(__w,JSON.stringify({top:__rr.top,bottom:__rr.bottom,left:__rr.left,right:__rr.right}));")
+        append("}catch(e){}},true);")
         append("}catch(e){console.error('MojiInject',e&&e.message)}})();")
     }
 }
@@ -394,13 +505,16 @@ private fun jsString(value: String): String = buildString {
  * 70x38 listen-read pill, 36/40/36 transport, 24dp hexagon settings + speed.
  */
 @Composable
-private fun ArticleAudioBar(meta: ArticleMeta) {
+private fun ArticleAudioBar(
+    meta: ArticleMeta,
+    onOpenSettings: () -> Unit,
+    onOpenShadowing: () -> Unit,
+) {
     val dark = MaterialTheme.colorScheme.surface.luminance() < 0.5f
     val bg = if (dark) DarkBarBg else BarBg
     val fg = if (dark) DarkBarFg else ArticleTitle
     val sub = if (dark) Color(0xFF8B8787) else SubGray
 
-    var showSpeed by remember(meta.id) { mutableStateOf(false) }
     val durationMs = ArticlePlayer.durationMs
     val positionMs = ArticlePlayer.positionMs
     val loaded = ArticlePlayer.loaded
@@ -450,7 +564,8 @@ private fun ArticleAudioBar(meta: ArticleMeta) {
                     .width(70.dp)
                     .height(38.dp)
                     .clip(RoundedCornerShape(16.dp))
-                    .background(PillBg),
+                    .background(PillBg)
+                    .clickableNoRipple(onClick = onOpenShadowing),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center,
             ) {
@@ -504,7 +619,7 @@ private fun ArticleAudioBar(meta: ArticleMeta) {
                     .align(Alignment.CenterEnd)
                     .padding(end = 28.dp)
                     .size(40.dp)
-                    .clickableNoRipple { showSpeed = !showSpeed },
+                    .clickableNoRipple(onClick = onOpenSettings),
                 contentAlignment = Alignment.Center,
             ) {
                 Image(
@@ -518,28 +633,6 @@ private fun ArticleAudioBar(meta: ArticleMeta) {
                     fontSize = 10.sp,
                     color = fg,
                 )
-            }
-        }
-        if (showSpeed) {
-            Row(
-                Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 4.dp),
-                horizontalArrangement = Arrangement.spacedBy(10.dp),
-            ) {
-                listOf(0.6f, 0.8f, 1.0f, 1.2f, 1.4f).forEach { value ->
-                    val selected = speed == value
-                    Text(
-                        "${formatSpeed(value)}x",
-                        modifier = Modifier
-                            .clip(RoundedCornerShape(14.dp))
-                            .background(if (selected) SeekPlayed else PillBg)
-                            .clickableNoRipple {
-                                ArticlePlayer.changeSpeed(value)
-                            }
-                            .padding(horizontal = 12.dp, vertical = 6.dp),
-                        color = if (selected) Color.White else fg,
-                        fontSize = 14.sp,
-                    )
-                }
             }
         }
     }
