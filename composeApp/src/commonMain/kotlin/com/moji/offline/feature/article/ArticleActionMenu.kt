@@ -29,7 +29,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_browser_collect_night
-import com.moji.offline.resources.ic_common_ai
 import com.moji.offline.resources.ic_common_copy
 import com.moji.offline.resources.ic_find_search_dark
 import com.moji.offline.resources.ic_voice_high_white
@@ -38,15 +37,16 @@ import org.jetbrains.compose.resources.painterResource
 
 /**
  * Text action popup — port of `popup_article_action_mode` (base.apk 3.4.9):
- * a #3A3A3A rounded-16 bar, 66dp tall, five 24dp icon + 12sp label items
- * (朗读 / 复制 / 查词 / AI / 收藏), anchored above the selection.
+ * a #3A3A3A rounded-16 bar, 66dp tall, 24dp icon + 12sp label items.
+ *
+ * The offline build keeps the four actions the product needs for a word:
+ * 复制 / 朗读 / 收藏 / 详情 (user-confirmed scope; 查词与 AI 暂不出现).
  */
 enum class ArticleMenuAction(val label: String, val icon: DrawableResource) {
-    READ("朗读", Res.drawable.ic_voice_high_white),
     COPY("复制", Res.drawable.ic_common_copy),
-    LOOKUP("查词", Res.drawable.ic_find_search_dark),
-    AI("AI", Res.drawable.ic_common_ai),
+    READ("朗读", Res.drawable.ic_voice_high_white),
     COLLECT("收藏", Res.drawable.ic_browser_collect_night),
+    DETAIL("详情", Res.drawable.ic_find_search_dark),
 }
 
 @Composable

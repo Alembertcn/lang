@@ -47,6 +47,7 @@ import com.moji.offline.data.article.ArticleCatalog
 import com.moji.offline.data.article.ArticleMeta
 import com.moji.offline.data.article.ArticlePlayer
 import com.moji.offline.data.article.CollectedSentences
+import com.moji.offline.data.audio.SpeechEngine
 import com.moji.offline.data.reader.BookServer
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_article_auxiliary
@@ -61,10 +62,13 @@ import com.moji.offline.resources.ic_player_prev_unable
 import com.moji.offline.resources.ic_player_set
 import com.moji.offline.ui.interaction.clickableNoRipple
 import com.moji.offline.ui.PlatformBackHandler
+import com.moji.offline.ui.theme.LocalDarkTheme
 import com.moji.offline.ui.webview.ComposeHtmlView
 import com.moji.offline.ui.webview.WebViewController
 import kotlinx.coroutines.delay
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.float
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
@@ -105,12 +109,18 @@ fun ArticleDetailRoute(
     var body by remember(articleId) { mutableStateOf<String?>(null) }
     var pageUrl by remember(articleId) { mutableStateOf<String?>(null) }
     var failure by remember(articleId) { mutableStateOf<String?>(null) }
-    var menuText by remember(articleId) { mutableStateOf<String?>(null) }
+    var menuWord by remember(articleId) { mutableStateOf<WordInfo?>(null) }
+    var detailWord by remember(articleId) { mutableStateOf<WordInfo?>(null) }
     var menuTop by remember(articleId) { mutableStateOf(0f) }
     var showSettings by remember(articleId) { mutableStateOf(false) }
     var showShadowing by remember(articleId) { mutableStateOf(false) }
     var notice by remember(articleId) { mutableStateOf<String?>(null) }
     val clipboard = LocalClipboardManager.current
+    val speech = remember { SpeechEngine() }
+
+    DisposableEffect(articleId) {
+        onDispose { speech.stop() }
+    }
 
     LaunchedEffect(notice) {
         if (notice != null) {
@@ -172,34 +182,31 @@ fun ArticleDetailRoute(
                         body = html,
                         pageUrl = url,
                         onToggleAudio = { ArticlePlayer.toggle() },
-                        onSelection = { text, top ->
-                            menuText = text
+                        onSelection = { word, top ->
+                            menuWord = word
                             menuTop = top
                         },
                     )
             }
-            val selected = menuText
+            val selected = menuWord
             if (selected != null) {
                 ArticleActionMenu(
                     anchorTop = menuTop.dp,
-                    onDismiss = { menuText = null },
+                    onDismiss = { menuWord = null },
                     onAction = { action ->
-                        menuText = null
+                        menuWord = null
                         when (action) {
-                            ArticleMenuAction.READ -> {
-                                if (!ArticlePlayer.seekToText(selected)) notice = "这一句没有时间轴"
-                            }
+                            // 朗读只读这个单词（本地 TTS），不播整篇文章。
+                            ArticleMenuAction.READ -> speech.speak(selected.speakAs)
                             ArticleMenuAction.COPY -> {
-                                clipboard.setText(AnnotatedString(selected))
+                                clipboard.setText(AnnotatedString(selected.surface))
                                 notice = "已复制"
                             }
-                            ArticleMenuAction.LOOKUP ->
-                                notice = "查词：「${selected.take(12)}」· 词库模块接入后可用"
-                            ArticleMenuAction.AI -> notice = "AI 分析待接入（P10）"
                             ArticleMenuAction.COLLECT -> {
-                                CollectedSentences.add(selected)
+                                CollectedSentences.add(selected.surface)
                                 notice = "已收藏"
                             }
+                            ArticleMenuAction.DETAIL -> detailWord = selected
                         }
                     },
                 )
@@ -229,6 +236,15 @@ fun ArticleDetailRoute(
     }
     if (showSettings) ArticleSettingsSheet(onDismiss = { showSettings = false })
     if (showShadowing) ShadowingSheet(onDismiss = { showShadowing = false })
+    detailWord?.let { word ->
+        WordDetailSheet(
+            word = word,
+            sentence = ArticlePlayer.sentences.firstOrNull { it.text.contains(word.surface) }?.text,
+            card = if (LocalDarkTheme.current) Color(0xFF1C1C1E) else Color.White,
+            fg = if (LocalDarkTheme.current) Color(0xFFF2F2F2) else ArticleTitle,
+            onDismiss = { detailWord = null },
+        )
+    }
 }
 
 /** `activity_base_detail`: MojiToolbar 44dp + the column title at 48dp. */
@@ -308,7 +324,7 @@ private fun ArticleH5(
     body: String,
     pageUrl: String,
     onToggleAudio: () -> Unit,
-    onSelection: (String, Float) -> Unit,
+    onSelection: (WordInfo, Float) -> Unit,
 ) {
     val controller = remember(meta.id) { WebViewController() }
     var stickyTools by remember(meta.id) { mutableStateOf(false) }
@@ -350,12 +366,13 @@ private fun ArticleH5(
                 // Text selection -> popup_article_action_mode.
                 "showMenu" -> {
                     val parts = payload.split('\u0001')
-                    val text = parts.getOrNull(0).orEmpty()
+                    val raw = parts.getOrNull(0).orEmpty()
                     val top = runCatching {
                         Json.parseToJsonElement(parts.getOrNull(1).orEmpty())
                             .jsonObject["top"]!!.jsonPrimitive.float
                     }.getOrDefault(0f)
-                    if (text.isNotBlank()) onSelection(text, top)
+                    val word = parseWordInfo(raw)
+                    if (word.surface.isNotBlank()) onSelection(word, top)
                 }
                 // Original ArticleDetailFragment.coordinateToolbox(): the native
                 // 56dp toolbox shows only while scrolling up past the H5 tools
@@ -477,26 +494,39 @@ private fun articleInjection(
         append("var __s=window.getSelection();var __tx=__s?__s.toString().trim():'';")
         append("if(!__tx)return;")
         append("var __r=__s.getRangeAt(0).getBoundingClientRect();")
-        append("window.ArticleJsInterface.showMenu(__tx,JSON.stringify({top:__r.top,bottom:__r.bottom,left:__r.left,right:__r.right}));")
+        append("window.ArticleJsInterface.showMenu(JSON.stringify({surface:__tx}),JSON.stringify({top:__r.top,bottom:__r.bottom,left:__r.left,right:__r.right}));")
         append("}catch(e){}},60);")
         append("},true);")
         // Word tap: the H5's own handler forwards the word via clickContent;
         // capture the rect here so the native menu can anchor to the word.
-        append("function __wordOf(__n){")
+        // Word info mirrors the ruby data the original uses: surface + kana +
+        // dictionary (lemma) form, so 朗读 speaks the word, not the sentence.
+        append("function __wordInfo(__n){var o={surface:'',reading:'',lemma:''};")
         append("try{")
-        append("if(__n.nodeName==='RUBY'){var __b=__n.querySelector('rb');return __b?__b.textContent:'';}")
-        append("if(__n.nodeName==='RB')return __n.textContent;")
-        append("if(__n.nodeName==='RT'){var __p=__n.parentNode;var __r2=__p&&__p.querySelector?__p.querySelector('rb'):null;return __r2?__r2.textContent:'';}")
-        append("if(__n.nodeName==='SPAN'&&__n.className&&(''+__n.className).indexOf('moji-toolkit-org')>=0)return __n.innerText;")
+        append("if(__n.nodeName==='RUBY'){var __b=__n.querySelector('rb'),__t=__n.querySelector('rt');")
+        append("o.surface=__b?__b.textContent:'';")
+        append("o.reading=__t?(__t.getAttribute('hiragana')||''):'';")
+        append("o.lemma=__t?(__t.getAttribute('lemma')||''):'';}")
+        append("else if(__n.nodeName==='RB'){var __p=__n.parentNode,__t2=__p&&__p.querySelector?__p.querySelector('rt'):null;")
+        append("o.surface=__n.textContent;")
+        append("o.reading=__t2?(__t2.getAttribute('hiragana')||''):'';")
+        append("o.lemma=__t2?(__t2.getAttribute('lemma')||''):'';}")
+        append("else if(__n.nodeName==='RT'){var __p2=__n.parentNode,__b2=__p2&&__p2.querySelector?__p2.querySelector('rb'):null;")
+        append("o.surface=__b2?__b2.textContent:'';")
+        append("o.reading=__n.getAttribute('hiragana')||'';")
+        append("o.lemma=__n.getAttribute('lemma')||'';}")
+        append("else if(__n.nodeName==='SPAN'&&__n.className&&(''+__n.className).indexOf('moji-toolkit-org')>=0){")
+        append("o.surface=__n.innerText;o.lemma=__n.getAttribute('lemma')||'';}")
         append("}catch(e){}")
-        append("return '';}")
+        append("if(!o.lemma)o.lemma=o.surface;")
+        append("return o;}")
         append("var __ct=document.getElementById('article-content');")
         append("__ct&&__ct.addEventListener('click',function(e){")
         append("try{")
-        append("var __w=__wordOf(e.target);")
-        append("if(!__w||__w.length>12)return;")
+        append("var __wi=__wordInfo(e.target);")
+        append("if(!__wi||!__wi.surface||__wi.surface.length>12)return;")
         append("var __rr=e.target.getBoundingClientRect();")
-        append("window.ArticleJsInterface.showMenu(__w,JSON.stringify({top:__rr.top,bottom:__rr.bottom,left:__rr.left,right:__rr.right}));")
+        append("window.ArticleJsInterface.showMenu(JSON.stringify(__wi),JSON.stringify({top:__rr.top,bottom:__rr.bottom,left:__rr.left,right:__rr.right}));")
         append("}catch(e){}},true);")
         // The captured body embeds absolute https://oss.mojidict.com/article/
         // images URLs. Rewrite their origin to the loopback mock (mirrored by
@@ -537,6 +567,20 @@ private fun jsString(value: String): String = buildString {
         }
     }
     append('"')
+}
+
+/** `{surface, reading, lemma}` from the injected script; plain text fallback. */
+private fun parseWordInfo(raw: String): WordInfo {
+    val trimmed = raw.trim()
+    if (!trimmed.startsWith("{")) return WordInfo(trimmed)
+    val obj = runCatching { Json.parseToJsonElement(trimmed).jsonObject }.getOrNull()
+        ?: return WordInfo(trimmed)
+    fun str(key: String) = (obj[key] as? JsonPrimitive)?.contentOrNull.orEmpty()
+    return WordInfo(
+        surface = str("surface").ifBlank { trimmed },
+        reading = str("reading"),
+        lemma = str("lemma"),
+    )
 }
 
 /**

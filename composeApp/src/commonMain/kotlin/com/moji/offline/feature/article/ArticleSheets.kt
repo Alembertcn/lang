@@ -222,6 +222,80 @@ private fun formatClock(ms: Long): String {
     return "${total / 60}:${(total % 60).toString().padStart(2, '0')}"
 }
 
+/** Bottom sheet with a scrim (same shape as the playback settings panel). */
+@Composable
+private fun Overlay(card: Color, fg: Color, onDismiss: () -> Unit, content: @Composable () -> Unit) {
+    val source = remember { MutableInteractionSource() }
+    Box(Modifier.fillMaxSize()) {
+        Box(
+            Modifier
+                .fillMaxSize()
+                .background(Color(0x66000000))
+                .clickable(interactionSource = source, indication = null, onClick = onDismiss),
+        )
+        Column(
+            Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
+                .background(card)
+                .navigationBarsPadding()
+                .padding(horizontal = 20.dp, vertical = 16.dp),
+        ) {
+            content()
+        }
+    }
+}
+
+/** Word tapped in the article: surface form + ruby reading + dictionary form. */
+data class WordInfo(
+    val surface: String,
+    val reading: String = "",
+    val lemma: String = "",
+) {
+    /** What TTS should say (dictionary form when the ruby provides it). */
+    val speakAs: String get() = lemma.ifBlank { surface }
+}
+
+/**
+ * 详情 for a tapped word. The full dictionary card (释义/例句) ships with the
+ * 词库 module (P8); until then show what the article itself knows: the surface
+ * form, its furigana and the sentence it came from.
+ */
+@Composable
+fun WordDetailSheet(
+    word: WordInfo,
+    sentence: String?,
+    card: Color,
+    fg: Color,
+    onDismiss: () -> Unit,
+) {
+    Overlay(card, fg, onDismiss) {
+        Text(word.surface, color = fg, fontSize = 24.sp, fontWeight = FontWeight.Bold)
+        if (word.reading.isNotBlank()) {
+            Spacer(Modifier.height(4.dp))
+            Text(word.reading, color = fg.copy(alpha = 0.5f), fontSize = 14.sp)
+        }
+        if (word.lemma.isNotBlank() && word.lemma != word.surface) {
+            Spacer(Modifier.height(4.dp))
+            Text("原形：${word.lemma}", color = fg.copy(alpha = 0.5f), fontSize = 13.sp)
+        }
+        if (!sentence.isNullOrBlank()) {
+            Spacer(Modifier.height(14.dp))
+            Text("原文", color = fg.copy(alpha = 0.4f), fontSize = 12.sp)
+            Spacer(Modifier.height(4.dp))
+            Text(sentence, color = fg, fontSize = 15.sp)
+        }
+        Spacer(Modifier.height(14.dp))
+        Text(
+            "释义与例句将在词库模块（P8）接入后显示",
+            color = fg.copy(alpha = 0.4f),
+            fontSize = 12.sp,
+        )
+        Spacer(Modifier.height(16.dp))
+    }
+}
+
 /**
  * 精听跟读 — `ArticleIntensiveActivity` reduced to the part that works offline:
  * listen to the current SRT sentence, record one take, replay it, move between
