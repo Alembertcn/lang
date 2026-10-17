@@ -61,6 +61,15 @@ object ArticlePlayer {
     var sentences: List<SrtSentence> by mutableStateOf(emptyList())
         private set
 
+    /** Play queue (plan chapters / column articles), like MOJi's playlist. */
+    var queue: List<ArticleMeta> by mutableStateOf(emptyList())
+        private set
+
+    var queueIndex by mutableStateOf(-1)
+        private set
+
+    private var autoPlayWhenLoaded = false
+
     enum class LoopMode { NONE, SENTENCE, ARTICLE }
 
     var loopMode by mutableStateOf(LoopMode.NONE)
@@ -88,8 +97,13 @@ object ArticlePlayer {
                     player.play()
                 }
                 LoopMode.NONE -> {
-                    playing = false
-                    positionMs = durationMs
+                    // MOJi's playlist advances to the next audio work.
+                    if (queueIndex in 0 until queue.lastIndex) {
+                        playAt(queueIndex + 1)
+                    } else {
+                        playing = false
+                        positionMs = durationMs
+                    }
                 }
             }
         }
@@ -105,6 +119,38 @@ object ArticlePlayer {
                 }
             }
         }
+    }
+
+    /** Sets the queue [items] and starts on [startId]'s entry. */
+    fun setQueue(items: List<ArticleMeta>, startId: String) {
+        if (items.isEmpty()) return
+        queue = items
+        val index = items.indexOfFirst { it.id == startId }.coerceAtLeast(0)
+        queueIndex = index
+        val wasVisible = visible
+        setTrack(items[index])
+        if (wasVisible) visible = true
+    }
+
+    /** Switches to the queue entry at [index] and keeps playing. */
+    fun playAt(index: Int) {
+        val item = queue.getOrNull(index) ?: return
+        queueIndex = index
+        autoPlayWhenLoaded = true
+        setTrack(item)
+        visible = true
+        if (loaded) {
+            player.play()
+            playing = true
+        }
+    }
+
+    fun nextTrack() {
+        if (queueIndex >= 0 && queueIndex < queue.lastIndex) playAt(queueIndex + 1)
+    }
+
+    fun previousTrack() {
+        if (queueIndex > 0) playAt(queueIndex - 1)
     }
 
     /** Prepares [next] unless it is already the current track. */
@@ -127,6 +173,11 @@ object ArticlePlayer {
                 val reported = player.load(url)
                 if (reported > 0) durationMs = reported
                 loaded = true
+                if (autoPlayWhenLoaded) {
+                    autoPlayWhenLoaded = false
+                    player.play()
+                    playing = true
+                }
             }
         }
     }
@@ -217,6 +268,9 @@ object ArticlePlayer {
         positionMs = 0L
         durationMs = 0L
         sentences = emptyList()
+        queue = emptyList()
+        queueIndex = -1
+        autoPlayWhenLoaded = false
         highlightIndex = -1
         loopSentenceIndex = -1
     }

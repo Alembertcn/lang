@@ -97,6 +97,7 @@ private val DarkBarFg = Color(0xFFF2F2F2)
 @Composable
 fun ArticleDetailRoute(
     articleId: String,
+    queueIds: List<String> = emptyList(),
     onBack: () -> Unit,
 ) {
     PlatformBackHandler(enabled = true, onBack = onBack)
@@ -144,8 +145,17 @@ fun ArticleDetailRoute(
         val url = pageUrl
         // Hands the track to the app-scoped session: leaving the article keeps
         // playing and the global mini player appears above the tabs.
-        LaunchedEffect(current) {
-            current?.let(ArticlePlayer::setTrack)
+        LaunchedEffect(current, queueIds) {
+            val entry = current ?: return@LaunchedEffect
+            // Plan chapters / column articles form the playback queue
+            // (MOJi's `dialog_audio_player_list`).
+            val items = if (queueIds.size > 1) {
+                queueIds.mapNotNull { ArticleCatalog.meta(it) }
+            } else {
+                emptyList()
+            }
+            val effective = if (items.any { it.id == articleId }) items else listOf(entry)
+            ArticlePlayer.setQueue(effective, articleId)
         }
         // The original article H5 is a white page; the WebView itself stays
         // transparent so the reader can share it, so paint the page here.

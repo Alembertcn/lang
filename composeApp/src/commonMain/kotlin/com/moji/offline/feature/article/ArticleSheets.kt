@@ -16,6 +16,8 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -130,10 +132,15 @@ private fun LoopOption(label: String, selected: Boolean, onClick: () -> Unit) {
 private fun formatSpeed(speed: Float): String =
     if (speed % 1f == 0f) speed.toInt().toString() else speed.toString()
 
-/** `dialog_audio_player_list`: the session currently holds one track. */
+/**
+ * `dialog_audio_player_list` — the plan/column playback queue. The current
+ * track is highlighted; tapping another entry switches the session and keeps
+ * playing (MOJi advances the same way at the end of a work).
+ */
 @Composable
 fun ArticleQueueDialog(onOpenArticle: (String) -> Unit, onDismiss: () -> Unit) {
-    val meta = ArticlePlayer.meta ?: return
+    val queue = ArticlePlayer.queue
+    val current = ArticlePlayer.meta ?: return
     val surface = MaterialTheme.colorScheme.surface
     val fg = MaterialTheme.colorScheme.onSurface
     Box(Modifier.fillMaxSize()) {
@@ -149,33 +156,70 @@ fun ArticleQueueDialog(onOpenArticle: (String) -> Unit, onDismiss: () -> Unit) {
         ) {
             Text("播放列表", color = fg, fontSize = 16.sp, fontWeight = FontWeight.Bold)
             Spacer(Modifier.height(12.dp))
-            Row(
-                Modifier
-                    .fillMaxWidth()
-                    .clickableNoRipple {
-                        onOpenArticle(meta.id)
-                        onDismiss()
-                    },
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Box(
+            if (queue.isEmpty()) {
+                Row(
                     Modifier
-                        .size(40.dp)
-                        .clip(RoundedCornerShape(8.dp))
-                        .background(Color(0xFFE9ECF2)),
-                )
-                Text(
-                    meta.title,
-                    modifier = Modifier.weight(1f).padding(start = 12.dp),
-                    color = Color(0xFFE0315B),
-                    fontSize = 15.sp,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
+                        .fillMaxWidth()
+                        .clickableNoRipple {
+                            onOpenArticle(current.id)
+                            onDismiss()
+                        },
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(
+                        current.title,
+                        modifier = Modifier.weight(1f),
+                        color = Color(0xFFE0315B),
+                        fontSize = 15.sp,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                }
+            } else {
+                LazyColumn(Modifier.height(320.dp)) {
+                    itemsIndexed(queue) { index, item ->
+                        val active = item.id == current.id
+                        Row(
+                            Modifier
+                                .fillMaxWidth()
+                                .clickableNoRipple {
+                                    ArticlePlayer.playAt(index)
+                                    onDismiss()
+                                }
+                                .padding(vertical = 10.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            Text(
+                                "${index + 1}",
+                                modifier = Modifier.width(24.dp),
+                                color = if (active) Color(0xFFE0315B) else fg.copy(alpha = 0.35f),
+                                fontSize = 13.sp,
+                            )
+                            Text(
+                                item.title,
+                                modifier = Modifier.weight(1f),
+                                color = if (active) Color(0xFFE0315B) else fg,
+                                fontSize = 15.sp,
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
+                            )
+                            Text(
+                                formatClock(item.audioDuration * 1000L),
+                                color = fg.copy(alpha = 0.35f),
+                                fontSize = 12.sp,
+                            )
+                        }
+                    }
+                }
             }
             Spacer(Modifier.height(16.dp))
         }
     }
+}
+
+private fun formatClock(ms: Long): String {
+    val total = (ms / 1000).coerceAtLeast(0)
+    return "${total / 60}:${(total % 60).toString().padStart(2, '0')}"
 }
 
 /**

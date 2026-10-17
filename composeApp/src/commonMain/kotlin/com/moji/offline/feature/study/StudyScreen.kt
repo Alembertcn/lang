@@ -68,7 +68,7 @@ private val StudyTrack = Color(0xFFEDEDED)
  * subscriptions.
  */
 @Composable
-fun StudyRoute(onOpenArticle: (String) -> Unit) {
+fun StudyRoute(onOpenArticle: (String, List<String>) -> Unit) {
     var data by remember { mutableStateOf<StudyData?>(null) }
     var feed by remember { mutableStateOf<List<FindColumn>>(emptyList()) }
     var tab by remember { mutableStateOf(0) }
@@ -132,15 +132,16 @@ fun StudyRoute(onOpenArticle: (String) -> Unit) {
     }
 
     openPlan?.let { plan ->
+        val ids = plan.chapters.flatMap { c -> c.articles.map { it.id } }
         PlanSheet(plan = plan, card = card, fg = fg, onDismiss = { openPlan = null }) { id ->
             openPlan = null
-            onOpenArticle(id)
+            onOpenArticle(id, ids)
         }
     }
     openColumn?.let { column ->
         ColumnSheet(column = column, card = card, fg = fg, onDismiss = { openColumn = null }) { id ->
             openColumn = null
-            onOpenArticle(id)
+            onOpenArticle(id, column.articles.map { it.id })
         }
     }
 }

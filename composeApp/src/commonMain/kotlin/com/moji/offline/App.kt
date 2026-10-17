@@ -81,13 +81,18 @@ fun App() {
             var selectedTab by remember { mutableStateOf(MainTab.Discover) }
             var openBook by remember { mutableStateOf<ReaderBook?>(null) }
             var openArticle by remember { mutableStateOf<String?>(null) }
+            var articleQueue by remember { mutableStateOf<List<String>>(emptyList()) }
             var showQueue by remember { mutableStateOf(false) }
             val book = openBook
             val article = openArticle
             if (article != null) {
                 // ArticleActivity is a separate full-screen Activity in the
                 // original app: tabs and bottom bar are hidden here too.
-                ArticleDetailRoute(articleId = article, onBack = { openArticle = null })
+                ArticleDetailRoute(
+                    articleId = article,
+                    queueIds = articleQueue,
+                    onBack = { openArticle = null },
+                )
             } else if (book != null) {
                 // The original reader is a separate Activity on top of the tabs —
                 // same here: full screen, bottom bar hidden.
@@ -119,12 +124,20 @@ fun App() {
                                 onOpenPlan = {},
                                 // Discover passes "" as the plan id for article taps.
                                 onOpenReading = { planId, articleId ->
-                                    if (planId.isBlank()) openArticle = articleId
+                                    if (planId.isBlank()) {
+                                        articleQueue = listOf(articleId)
+                                        openArticle = articleId
+                                    }
                                 },
                                 onBrowsePlans = {},
                             )
                             MainTab.Reader -> ReaderRoute(onOpenBook = { openBook = it })
-                            MainTab.Study -> StudyRoute(onOpenArticle = { openArticle = it })
+                            MainTab.Study -> StudyRoute(
+                                onOpenArticle = { id, ids ->
+                                    articleQueue = ids.ifEmpty { listOf(id) }
+                                    openArticle = id
+                                },
+                            )
                             else -> Box(
                                 Modifier.fillMaxSize(),
                                 contentAlignment = Alignment.Center,

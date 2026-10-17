@@ -113,6 +113,15 @@ fun GlobalMiniPlayer(onOpenArticle: (String) -> Unit, onOpenQueue: () -> Unit) {
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.size(44.dp),
                     )
+                } else {
+                    // Plan articles without a bundled cover: keep a stable
+                    // glyph instead of an empty white square.
+                    Text(
+                        meta.title.take(1),
+                        color = if (dark) Color(0xFF8B8787) else Color(0xFF9AA0A6),
+                        fontSize = 16.sp,
+                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                    )
                 }
             }
             Text(
