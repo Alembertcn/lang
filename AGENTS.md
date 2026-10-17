@@ -22,6 +22,23 @@ XHTML。**禁止**任何形式的内容转换/重写（改 CSS 除外须先确�
 `moji-id`、禁止把引擎脚本内联进章节 HTML。机制细节与验收以
 `content/engine/INTEGRATION.md` 为准；换方案必须先向用户列出选项与代价。
 
+## 零之三、所有接口一律走本地 mock（2026-10-17，用户要求）
+
+app 运行时的**所有**接口与资源都必须来自本机 mock，**禁止直连原版接口或 CDN**：
+
+1. 代码里不得出现 `https://api.mojidict.com`、`https://oss.mojidict.com` 等原版
+   域名去发请求（注释/文档除外）；已有数据一律先抓取落盘到 `reference/moji-api/`。
+2. 供给方式二选一：页面/书籍/接口 JSON 走 `BookServer`（回环 HTTP，对位原版
+   NanoHTTPD）；音频与图片走 `MOCK_MEDIA_BASE`（`tools/start_media_mock.sh` +
+   `adb reverse`，根目录 `reference/moji-api/oss`）。能打包的优先打包进
+   `composeResources`。
+3. 正文 HTML 里的绝对 OSS 图片 URL，在**运行时**改写为本机 mock（只改 DOM，
+   不改文件）；未配置 mock 时置空，绝不回落到原版 CDN。
+4. 新增接口的验收必须包含「原版域名零请求」检查：看 mock 服务日志 / 抓包，
+   确认请求只到 `127.0.0.1`；同时确认 mock 关闭时不产生外网请求。
+5. 确需联网的能力（如千问 AI）默认关闭，启用前必须向用户说明并取得确认，
+   且不得混入「高仿接口」的数据路径。
+
 ## 一、逆向资产要挖三层（缺一不可）
 
 对任何要还原的功能，按顺序回答三个问题：

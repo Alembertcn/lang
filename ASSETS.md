@@ -14,6 +14,7 @@
 | 文章详情页资源（`composeResources/files/article_h5/**`、`article_detail/**`） | ~22 MB | **生成物，不入库**，用 `tools/build_article_assets.py` 从 `content/h5` + `reference/moji-api` 1:1 重建（原版 H5 + 299 篇 body.html + Noto 字体） |
 | 书籍 epub 源（`reference/moji-api/oss/books/**`） | ~1.2 MB | Release 或本地抓取（`fetch_moji_books.py`） |
 | 音频 mp3（`reference/moji-api/oss/article/audio/**`） | 468 MB | 保持本地 mock（.gitignore 已有） |
+| 文章图片（`reference/moji-api/oss/article/images/**`） | 47 MB | 本地 mock 镜像（`fetch_moji_article_images.py`，.gitignore 已有） |
 | 文章源（`reference/moji-api/articles/**`） | 15 MB | 本地抓取（`fetch_moji_articles.py`） |
 
 ## 首次发布（仓库建好后，二选一）

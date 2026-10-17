@@ -169,6 +169,9 @@ private class ArticleJsBridge(
     @JavascriptInterface fun clickSRT(index: Int) = dispatch("clickSRT", index)
     @JavascriptInterface fun setTransSwitchBtnHidden(hidden: Boolean) = dispatch("setTransSwitchBtnHidden", hidden)
     @JavascriptInterface fun showMenu(text: String?, rect: String?) = dispatch("showMenu", text, rect)
+    @JavascriptInterface fun debugLog(message: String?) {
+        Log.d("MojiArticle", "diag=$message")
+    }
 }
 
 /** Mirrors the original app's ReaderJsInterface surface used by Bridge.js. */

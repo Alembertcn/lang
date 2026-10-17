@@ -83,6 +83,7 @@ moji-offline/
 | `fetch_moji_find.py` | 拉取发现页响应（推荐 / 圈子 / 分类 / 新闻列表 / 打卡） |
 | `fetch_moji_find_articles.py` | 拉取发现页首页正文（94 篇）+ 20 条新闻正文（OSS 注音 zip） |
 | `fetch_moji_audio.py` | 下载文章录音到 mock OSS 树，生成 `audio-index.json` |
+| `fetch_moji_article_images.py` | 把文章封面与正文插图镜像到 mock OSS 树（771 张，约 47 MB），供运行时改写使用 |
 | `fetch_moji_covers.py` / `fetch_moji_reader.py` | 书架 / 封面素材 |
 | `fetch_moji_books.py` / `unpack_moji_books.py` | 下载书籍 epub 源 / 1:1 解包到 `composeResources/files/books/` |
 | `fetch_find_assets.py` | 把发现页数据 + 图片打包成 `composeResources/files/find/`（生成物） |

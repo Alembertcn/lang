@@ -313,11 +313,14 @@ private fun ArticleH5(
     val controller = remember(meta.id) { WebViewController() }
     var stickyTools by remember(meta.id) { mutableStateOf(false) }
     val server = remember { runCatching { BookServer.baseUrl }.getOrDefault("") }
+    val mockMedia = remember { Secrets.MOCK_MEDIA_BASE.trimEnd('/') }
     val coverUrl = remember(meta.id) {
         when {
             meta.coverFile.isNotBlank() -> "$server/article-cover/${meta.coverFile}"
-            meta.coverId.isNotBlank() ->
-                "https://oss.mojidict.com/article/images/${meta.coverId}?x-oss-process=style/article"
+            // Never hit oss.mojidict.com directly: the mirror lives under the
+            // local mock (tools/fetch_moji_article_images.py).
+            meta.coverId.isNotBlank() && mockMedia.isNotBlank() ->
+                "$mockMedia/article/images/${meta.coverId}"
             else -> ""
         }
     }
@@ -329,7 +332,8 @@ private fun ArticleH5(
         modifier = Modifier.fillMaxSize(),
         onMessage = { method, payload ->
             when (method) {
-                "onJsLoaded" -> controller.evaluateJs(articleInjection(meta, body, coverUrl))
+                "onJsLoaded" ->
+                    controller.evaluateJs(articleInjection(meta, body, coverUrl, mockMedia))
                 // Pink play button in the H5 header (ArticleWebView.b.changeAudioStatus).
                 "changeAudioStatus" -> onToggleAudio()
                 // The H5 hands over the SRT timeline after rendering
@@ -404,7 +408,12 @@ private fun ArticleH5(
     }
 }
 
-private fun articleInjection(meta: ArticleMeta, body: String, coverUrl: String): String {
+private fun articleInjection(
+    meta: ArticleMeta,
+    body: String,
+    coverUrl: String,
+    mockMedia: String,
+): String {
     val options = buildJsonObject {
         put("isNeedHideTitleAndTools", false)
         put("id", meta.id)
@@ -489,6 +498,26 @@ private fun articleInjection(meta: ArticleMeta, body: String, coverUrl: String):
         append("var __rr=e.target.getBoundingClientRect();")
         append("window.ArticleJsInterface.showMenu(__w,JSON.stringify({top:__rr.top,bottom:__rr.bottom,left:__rr.left,right:__rr.right}));")
         append("}catch(e){}},true);")
+        // The captured body embeds absolute https://oss.mojidict.com/article/
+        // images URLs. Rewrite their origin to the loopback mock (mirrored by
+        // tools/fetch_moji_article_images.py); with no mock configured the
+        // images are blanked instead of hitting the original CDN.
+        append("var __oss='https://oss.mojidict.com/';")
+        append("var __mock=")
+        append(jsString(if (mockMedia.isBlank()) "" else "$mockMedia/"))
+        append(';')
+        append("function __fixImg(root){if(!root||!root.querySelectorAll)return;")
+        append("root.querySelectorAll('img').forEach(function(im){")
+        append("var s=im.getAttribute('src')||'';")
+        append("if(s.indexOf(__oss)===0){")
+        append("im.setAttribute('src',(__mock||'data:image/gif;base64,R0lGODlhAQABAAAAACw=')+s.slice(__oss.length));")
+        append("}});}")
+        append("var __imgRoot=document.getElementById('article-content');")
+        append("__fixImg(__imgRoot);")
+        append("try{var __i=__imgRoot.querySelector('img');")
+        append("window.ArticleJsInterface.debugLog('img='+(__i?__i.getAttribute('src'):'none'));}catch(e){}")
+        append("try{new MutationObserver(function(){__fixImg(__imgRoot);})")
+        append(".observe(__imgRoot,{childList:true,subtree:true});}catch(e){}")
         append("}catch(e){console.error('MojiInject',e&&e.message)}})();")
     }
 }
