@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -55,6 +56,8 @@ import com.moji.offline.ui.i18n.stringsFor
 import com.moji.offline.ui.interaction.clickableNoRipple
 import com.moji.offline.ui.theme.MojiPink
 import com.moji.offline.ui.theme.MojiTheme
+import com.moji.offline.ui.SystemBarAppearance
+import com.moji.offline.ui.theme.LocalDarkTheme
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
@@ -77,6 +80,9 @@ private enum class MainTab(
 fun App() {
     val strings = stringsFor(AppLanguage.CHINESE)
     MojiTheme(themeMode = ThemeMode.SYSTEM) {
+        // Edge-to-edge: screens paint their own top bar under the status bar,
+        // so only the icon contrast is handled globally here.
+        SystemBarAppearance(darkTheme = LocalDarkTheme.current)
         CompositionLocalProvider(LocalAppStrings provides strings) {
             var selectedTab by remember { mutableStateOf(MainTab.Discover) }
             var openBook by remember { mutableStateOf<ReaderBook?>(null) }
@@ -99,6 +105,10 @@ fun App() {
                 ReaderBookRoute(book = book, onBack = { openBook = null })
             } else {
                 Scaffold(
+                    // Insets are consumed by each screen's own top/bottom bar
+                    // backgrounds; letting Scaffold pad them here would double
+                    // the status bar inset and leave a bare strip above the bar.
+                    contentWindowInsets = WindowInsets(0, 0, 0, 0),
                     bottomBar = {
                         // Original `activity_main`: AudioPlayerControllerView is
                         // layout_above the 55dp MojiTabHost, so the page is
