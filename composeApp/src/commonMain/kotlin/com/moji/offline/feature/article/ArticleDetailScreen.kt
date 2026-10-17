@@ -29,6 +29,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -48,10 +49,12 @@ import com.moji.offline.config.Secrets
 import com.moji.offline.data.article.ArticleCatalog
 import com.moji.offline.data.article.ArticleMeta
 import com.moji.offline.data.article.ArticlePlayer
-import com.moji.offline.data.article.CollectedSentences
 import com.moji.offline.data.audio.SpeechEngine
+import com.moji.offline.data.audio.QwenWordAudio
 import com.moji.offline.data.audio.openTtsVoiceInstaller
 import com.moji.offline.data.reader.BookServer
+import com.moji.offline.data.word.WordDict
+import com.moji.offline.data.word.WordEntry
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_article_auxiliary
 import com.moji.offline.resources.ic_article_note
@@ -69,6 +72,7 @@ import com.moji.offline.ui.theme.LocalDarkTheme
 import com.moji.offline.ui.webview.ComposeHtmlView
 import com.moji.offline.ui.webview.WebViewController
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.contentOrNull
@@ -114,13 +118,14 @@ fun ArticleDetailRoute(
     var failure by remember(articleId) { mutableStateOf<String?>(null) }
     var menuWord by remember(articleId) { mutableStateOf<WordInfo?>(null) }
     var detailWord by remember(articleId) { mutableStateOf<WordInfo?>(null) }
-    var menuTop by remember(articleId) { mutableStateOf(0f) }
+    var dictWord by remember(articleId) { mutableStateOf<WordInfo?>(null) }
     var showSettings by remember(articleId) { mutableStateOf(false) }
     var showShadowing by remember(articleId) { mutableStateOf(false) }
     var notice by remember(articleId) { mutableStateOf<String?>(null) }
     var voiceMissing by remember(articleId) { mutableStateOf(false) }
     val clipboard = LocalClipboardManager.current
     val speech = remember { SpeechEngine() }
+    val scope = rememberCoroutineScope()
 
     DisposableEffect(articleId) {
         onDispose { speech.stop() }
@@ -186,36 +191,32 @@ fun ArticleDetailRoute(
                         body = html,
                         pageUrl = url,
                         onToggleAudio = { ArticlePlayer.toggle() },
-                        onSelection = { word, top ->
-                            menuWord = word
-                            menuTop = top
-                        },
+                        onSelection = { word, _ -> menuWord = word },
                     )
             }
             val selected = menuWord
             if (selected != null) {
-                ArticleActionMenu(
-                    anchorTop = menuTop.dp,
-                    onDismiss = { menuWord = null },
-                    onAction = { action ->
-                        menuWord = null
-                        when (action) {
-                            // 朗读只读这个单词（本地 TTS），不播整篇文章。
-                            ArticleMenuAction.READ -> {
-                                val ok = speech.speak(selected.speakAs)
-                                if (!ok) voiceMissing = true
-                            }
-                            ArticleMenuAction.COPY -> {
-                                clipboard.setText(AnnotatedString(selected.surface))
-                                notice = "已复制"
-                            }
-                            ArticleMenuAction.COLLECT -> {
-                                CollectedSentences.add(selected.surface)
-                                notice = "已收藏"
-                            }
-                            ArticleMenuAction.DETAIL -> detailWord = selected
+                // The original word card stays open for every action; only the
+                // cross or a tap outside closes it (checked on device).
+                WordCardOverlay(
+                    word = selected,
+                    onRead = {
+                        scope.launch {
+                            // 1) Qwen TTS (real Japanese audio), 2) device
+                            // TTS, 3) explain that no Japanese voice exists.
+                            if (QwenWordAudio.speak(selected.speakAs)) return@launch
+                            if (speech.speak(selected.speakAs)) return@launch
+                            notice = "日语发音生成失败，正在检查本机语音包…"
+                            voiceMissing = true
                         }
                     },
+                    onCopy = {
+                        clipboard.setText(AnnotatedString(selected.surface))
+                        notice = "已复制"
+                    },
+                    onDetail = { detailWord = selected },
+                    onDictionary = { dictWord = selected },
+                    onDismiss = { menuWord = null },
                 )
             }
             notice?.let { text ->
@@ -223,7 +224,7 @@ fun ArticleDetailRoute(
                     text,
                     modifier = Modifier
                         .align(Alignment.BottomCenter)
-                        .padding(bottom = 12.dp)
+                        .padding(bottom = if (menuWord != null) 260.dp else 12.dp)
                         .clip(RoundedCornerShape(16.dp))
                         .background(Color(0xCC000000))
                         .padding(horizontal = 14.dp, vertical = 8.dp),
@@ -303,6 +304,17 @@ fun ArticleDetailRoute(
             card = if (LocalDarkTheme.current) Color(0xFF1C1C1E) else Color.White,
             fg = if (LocalDarkTheme.current) Color(0xFFF2F2F2) else ArticleTitle,
             onDismiss = { detailWord = null },
+        )
+    }
+    dictWord?.let { word ->
+        var entry by remember(word) { mutableStateOf<WordEntry?>(null) }
+        LaunchedEffect(word) { entry = WordDict.find(word.lemma, word.surface) }
+        WordDictSheet(
+            word = word,
+            entry = entry,
+            card = if (LocalDarkTheme.current) Color(0xFF1C1C1E) else Color.White,
+            fg = if (LocalDarkTheme.current) Color(0xFFF2F2F2) else ArticleTitle,
+            onDismiss = { dictWord = null },
         )
     }
 }

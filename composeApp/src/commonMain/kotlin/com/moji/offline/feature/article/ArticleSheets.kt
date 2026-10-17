@@ -41,6 +41,7 @@ import com.moji.offline.data.article.ArticlePlayer
 import com.moji.offline.data.audio.createAudioPlayer
 import com.moji.offline.data.audio.createAudioRecorder
 import com.moji.offline.data.audio.rememberMicPermission
+import com.moji.offline.data.word.WordEntry
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_player_menu_pause
 import com.moji.offline.resources.ic_player_menu_start
@@ -292,6 +293,54 @@ fun WordDetailSheet(
             color = fg.copy(alpha = 0.4f),
             fontSize = 12.sp,
         )
+        Spacer(Modifier.height(16.dp))
+    }
+}
+
+/**
+ * MOJi辞書 for the tapped word: the dictionary gloss from the bundled subset
+ * (worddict.json); the online dictionary stays off per project rule 零之三.
+ */
+@Composable
+fun WordDictSheet(
+    word: WordInfo,
+    entry: WordEntry?,
+    card: Color,
+    fg: Color,
+    onDismiss: () -> Unit,
+) {
+    Overlay(card, fg, onDismiss) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(word.surface, color = fg, fontSize = 24.sp, fontWeight = FontWeight.Bold)
+            val reading = entry?.pron?.takeIf { it.isNotBlank() } ?: word.reading
+            if (reading.isNotBlank()) {
+                Spacer(Modifier.width(8.dp))
+                Text(reading, color = fg.copy(alpha = 0.6f), fontSize = 16.sp)
+            }
+            val accent = entry?.accent.orEmpty()
+            if (accent.isNotBlank()) {
+                Spacer(Modifier.width(6.dp))
+                Text(accent, color = fg.copy(alpha = 0.6f), fontSize = 15.sp)
+            }
+        }
+        val e = entry
+        if (e == null) {
+            Spacer(Modifier.height(10.dp))
+            Text("离线词书暂无该词条目", color = fg.copy(alpha = 0.4f), fontSize = 12.sp)
+        } else {
+            if (e.pos.isNotBlank()) {
+                Spacer(Modifier.height(8.dp))
+                Text(e.pos, color = fg.copy(alpha = 0.55f), fontSize = 13.sp)
+            }
+            if (e.meaningZh.isNotBlank()) {
+                Spacer(Modifier.height(10.dp))
+                Text(e.meaningZh, color = fg, fontSize = 15.sp, lineHeight = 22.sp)
+            }
+            if (e.definitionJa.isNotBlank()) {
+                Spacer(Modifier.height(8.dp))
+                Text(e.definitionJa, color = fg.copy(alpha = 0.7f), fontSize = 14.sp, lineHeight = 21.sp)
+            }
+        }
         Spacer(Modifier.height(16.dp))
     }
 }

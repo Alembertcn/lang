@@ -34,6 +34,31 @@ object UserDataRepository {
         }
     }
 
+    /** Word-card star: the original keeps favorites per dictionary headword. */
+    suspend fun isWordFavorite(wordId: String): Boolean = withContext(Dispatchers.Default) {
+        runCatching { MojiDb.userData.isFavorite(wordId).executeAsOne() > 0L }.getOrDefault(false)
+    }
+
+    suspend fun addWordFavorite(
+        wordId: String,
+        spell: String,
+        pron: String,
+        excerpt: String,
+        nowMs: Long,
+    ) {
+        withContext(Dispatchers.Default) {
+            runCatching {
+                MojiDb.userData.upsertFavorite(wordId, spell, pron, excerpt, nowMs)
+            }
+        }
+    }
+
+    suspend fun removeWordFavorite(wordId: String) {
+        withContext(Dispatchers.Default) {
+            runCatching { MojiDb.userData.deleteFavorite(wordId) }
+        }
+    }
+
     suspend fun progress(articleId: String): Article_progress? = withContext(Dispatchers.Default) {
         runCatching { MojiDb.userData.selectProgress(articleId).executeAsOneOrNull() }.getOrNull()
     }

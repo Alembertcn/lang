@@ -147,6 +147,7 @@ tools/start_media_mock.sh   # :8765 -> reference/moji-api/oss（screen 常驻）
 | 音频 | OSS | 178 段 mp3 + 索引 | `fetch_moji_audio.py` |
 | 发现页数据/图片 | RPC + OSS（圈子图标、文章/计划/专栏封面） | `feed.json` + 4 组图片目录 | `tools/fetch_find_assets.py`（生成物 gitignore） |
 | 发现页正文 / 新闻 | RPC + 正文 zip + OSS 注音 zip | 94 篇首页文章 + 20 条新闻正文 | `tools/fetch_moji_find_articles.py` → `articles/{id}/`、`find/news/{id}/` |
+| 词卡词书子集 | `content/mojidict/dictionary.db` × 已打包文章正文 | `worddict.json`（12,164 词：词形/假名/声调/中文释义/日文释义） | `tools/build_word_dict.py` → `composeResources/files/worddict.json` |
 
 ### 3.2 阅读器机制（关键结论，证据均来自 base.apk）
 
@@ -177,5 +178,17 @@ tools/fetch_assets.sh          # 词库等外置资产
 python3 tools/fetch_moji_books.py && python3 tools/unpack_moji_books.py
 python3 tools/fetch_moji_find.py && python3 tools/fetch_find_assets.py   # 发现页数据与图片
 python3 tools/fetch_moji_find_articles.py                               # 发现页正文 + 新闻
+python3 tools/build_word_dict.py                                            # 词卡词书子集 worddict.json
 ./gradlew :composeApp:assembleDebug
 ```
+
+### 3.5 单词弹窗（原版词卡，2026-10-17 真机对照）
+
+- 原版＝`MojiWordDetailWebView` 深色词卡：`词｜假名 ⓪`、词性（蓝下划线）+ 收藏星 +
+  喇叭、释义段、底部「详情 | MOJi辞書」两钮、右上 ✕（截图 /tmp/orig3.png）。
+- **行为**：点 喇叭/星/复制/详情/MOJi辞書 均**不关闭**词卡；仅 ✕ 或点卡外关闭；
+  详情与辞書页以弹层叠在词卡之上，关掉弹层词卡仍在（真机逐条验证）。
+- 数据：离线不连原版接口（规则零之三），词卡字段来自打包子集 `worddict.json`
+  （lemma 优先、surface 兜底）；收藏写本地 `word_favorite` 表。
+- 朗读：用户批准的 AI 例外＝千问 TTS（日语）；账号欠费（Arrearage）时回落本机
+  TTS 并提示装日语语音包，不会读整篇。

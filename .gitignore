@@ -48,3 +48,4 @@ composeApp/src/commonMain/composeResources/files/study/
 
 # Python caches
 __pycache__/
+composeApp/src/commonMain/composeResources/files/worddict.json

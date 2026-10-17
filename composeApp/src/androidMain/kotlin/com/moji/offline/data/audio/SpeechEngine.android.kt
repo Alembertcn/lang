@@ -65,6 +65,9 @@ actual class SpeechEngine actual constructor() {
             }
             ready = true
             Log.d(TAG, "init ok availability=$availability voice=${engine.voice?.name}")
+            engine.voices
+                ?.filter { it.locale.language == "ja" }
+                ?.forEach { Log.d(TAG, "ja voice ${it.name} network=${it.isNetworkConnectionRequired} quality=${it.quality}") }
             pending?.let { speak(it) }
             pending = null
         }

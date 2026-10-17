@@ -53,3 +53,10 @@ python3 tools/build_article_assets.py # 4) 原版文章 H5 + 正文资源（生�
 # pip install git-filter-repo
 # git filter-repo --path content/mojidict/dictionary.db --path composeApp/src/commonMain/composeResources/files/books --invert-paths
 ```
+
+## 词卡词书子集
+
+- `tools/build_word_dict.py`：从 `content/mojidict/dictionary.db` 抽取「已打包文章正文里
+  出现过的词」→ `composeApp/src/commonMain/composeResources/files/worddict.json`
+  （字段 i/s/p/a/x/j＝id/词形/假名/声调/中文释义/日文释义）。生成物已 gitignore，
+  新克隆/新增文章后跑一次即可。

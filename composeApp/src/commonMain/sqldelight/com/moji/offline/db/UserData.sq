@@ -56,6 +56,10 @@ CREATE TABLE article_progress (
 selectFavorites:
 SELECT * FROM word_favorite ORDER BY created_at DESC;
 
+-- 查询：某个词是否已收藏
+isFavorite:
+SELECT COUNT(*) FROM word_favorite WHERE word_id = ?;
+
 -- 查询：最近阅读
 selectRecentHistory:
 SELECT * FROM reading_history ORDER BY last_read_at DESC LIMIT 50;
