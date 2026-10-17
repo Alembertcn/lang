@@ -250,6 +250,17 @@ private fun ArticleH5(
                 "onJsLoaded" -> controller.evaluateJs(articleInjection(meta, body, coverUrl))
                 // Pink play button in the H5 header (ArticleWebView.b.changeAudioStatus).
                 "changeAudioStatus" -> onToggleAudio()
+                // The H5 hands over the SRT timeline after rendering
+                // (ArticleJsInterface.getSRTData).
+                "getSRTData" -> ArticlePlayer.setTimeline(payload)
+                // Sentence tap while playing (ArticleJsInterface.onClickSRT).
+                "onClickSRT", "clickSRT" ->
+                    payload.toIntOrNull()?.let(ArticlePlayer::seekToIndex)
+                // window.setHightLightSRT() -> Api.smoothScrollTo(offsetTop).
+                "smoothScrollTo" -> {
+                    val top = payload.toFloatOrNull() ?: 0f
+                    controller.evaluateJs("window.scrollTo({top:$top,behavior:'smooth'})")
+                }
                 // Original ArticleDetailFragment.coordinateToolbox(): the native
                 // 56dp toolbox appears once the H5 tools row scrolls under the bar.
                 "articleScroll" -> {
@@ -260,6 +271,17 @@ private fun ArticleH5(
             }
         },
     )
+    // Original playback follows the SRT: the current sentence gets `--active`
+    // and the H5 scrolls to it (the highlight function requests the scroll).
+    LaunchedEffect(ArticlePlayer.highlightIndex) {
+        val index = ArticlePlayer.highlightIndex
+        if (index >= 0) controller.evaluateJs("window.setHightLightSRT($index)")
+    }
+    // The H5 only forwards sentence taps while `isPlayingAudio` is true
+    // (window.setAudioStatus('1'|'0'), called by the original audio VM).
+    LaunchedEffect(ArticlePlayer.playing) {
+        controller.evaluateJs("window.setAudioStatus('${if (ArticlePlayer.playing) 1 else 0}')")
+    }
     if (stickyTools) {
         Row(
             Modifier

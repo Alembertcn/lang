@@ -16,7 +16,7 @@ UI 与资源按逆向原版还原。应用包名 `com.moji.offline`。
 | 阅读器书架 | ✅ | 原版结构：全部/我的/官方 tabs + 3 列书架网格 + 9 本书真实 OSS 封面 |
 | 书籍正文阅读 | ✅ 首版 | **原版路径**：epub 1:1 解包 + 本机 HTTP 书服（Ktor CIO）+ `loadDataWithBaseURL` 直载原版 XHTML；引擎分页 + 原版翻页同步公式；真机对照通过 |
 | 媒体 mock | ✅ 基建 | 常驻服务 + adb reverse + 网络安全配置 + 一键脚本；播放器代码待同步 |
-| 短文详情页 | ✅ 首版 | **原版 H5 路径**：`article/android/index.html` + `MOJiArticleDetailDidSetHTML` 注入 1:1 正文；原生 44dp 顶栏、56dp 吸顶工具条、底部播放条；退出后底栏上方显示原版 64dp 全局进度面板（点回文章、位置保持）。资源由 `tools/build_article_assets.py` 生成 |
+| 短文详情页 | ✅ 首版 | **原版 H5 路径**：`article/android/index.html` + `MOJiArticleDetailDidSetHTML` 注入 1:1 正文；原生 44dp 顶栏、56dp 吸顶工具条、底部播放条；播放时 SRT 当前句高亮并自动定位；退出后底栏上方显示原版 64dp 全局进度面板（点回文章、位置保持）。资源由 `tools/build_article_assets.py` 生成 |
 | 发现页剩余视觉 | ⏳ | 顶部粉色背景、阅读时长/等级信息栏、圈子入口、大卡片 |
 | 词库查词 | ⏳ | SQLDelight 接入 `dictionary.db` + 词卡 H5 |
 | AI 能力 | ⏳ | 千问：长难句分析 / 核心词汇 / AI 摘要 / TTS 发音 |

@@ -12,6 +12,11 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.contentOrNull
+import kotlinx.serialization.json.jsonObject
 
 /**
  * App-scoped article audio, mirroring MOJi's singleton audio ViewModel
@@ -48,6 +53,13 @@ object ArticlePlayer {
     var speed by mutableStateOf(1.0f)
         private set
 
+    /** Sentence currently highlighted in the H5 (`window.setHightLightSRT`). */
+    var highlightIndex by mutableStateOf(-1)
+        private set
+
+    /** `[startMs, endMs]` per sentence, from the H5's `getSRTData` payload. */
+    private var timeline: List<Pair<Long, Long>> = emptyList()
+
     init {
         player.onCompletion = {
             playing = false
@@ -58,6 +70,7 @@ object ArticlePlayer {
                 delay(200)
                 if (!playing || !loaded) continue
                 positionMs = player.positionMs()
+                syncHighlight()
                 if (durationMs > 0 && positionMs >= durationMs) {
                     playing = false
                 }
@@ -105,6 +118,30 @@ object ArticlePlayer {
         if (!loaded || durationMs <= 0) return
         positionMs = (durationMs * fraction.coerceIn(0f, 1f)).toLong()
         player.seekTo(positionMs)
+        syncHighlight()
+    }
+
+    /** SRT callback from the H5 (array of {startTime,endTime} in seconds). */
+    fun setTimeline(json: String) {
+        timeline = runCatching {
+            val array = Json.parseToJsonElement(json) as JsonArray
+            array.map { element ->
+                val obj = element.jsonObject
+                val start = seconds(obj["startTime"] as? JsonPrimitive)
+                val end = seconds(obj["endTime"] as? JsonPrimitive)
+                start to end
+            }
+        }.getOrDefault(emptyList())
+        highlightIndex = -1
+        syncHighlight()
+    }
+
+    /** Sentence tap (`ArticleJsInterface.onClickSRT`) seeks to that sentence. */
+    fun seekToIndex(index: Int) {
+        val entry = timeline.getOrNull(index) ?: return
+        positionMs = entry.first
+        player.seekTo(entry.first)
+        highlightIndex = index
     }
 
     fun changeSpeed(value: Float) {
@@ -123,6 +160,19 @@ object ArticlePlayer {
         loaded = false
         positionMs = 0L
         durationMs = 0L
+        timeline = emptyList()
+        highlightIndex = -1
+    }
+
+    private fun syncHighlight() {
+        if (timeline.isEmpty()) return
+        val index = timeline.indexOfLast { positionMs >= it.first }
+        if (index >= 0 && index != highlightIndex) highlightIndex = index
+    }
+
+    private fun seconds(value: JsonPrimitive?): Long {
+        val text = value?.contentOrNull ?: return 0L
+        return ((text.toDoubleOrNull() ?: 0.0) * 1000).toLong()
     }
 
     private fun audioUrl(meta: ArticleMeta): String {
