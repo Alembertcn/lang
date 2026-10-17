@@ -66,6 +66,9 @@ object ArticlePlayer {
     var loopMode by mutableStateOf(LoopMode.NONE)
         private set
 
+    /** Sentence pinned by 单句循环 (original `Q4.q.f6096d`). */
+    private var loopSentenceIndex: Int = -1
+
     init {
         player.onCompletion = {
             when (loopMode) {
@@ -96,6 +99,7 @@ object ArticlePlayer {
                 if (!playing || !loaded) continue
                 positionMs = player.positionMs()
                 syncHighlight()
+                loopCurrentSentenceIfNeeded()
                 if (durationMs > 0 && positionMs >= durationMs) {
                     playing = false
                 }
@@ -159,6 +163,7 @@ object ArticlePlayer {
             }
         }.getOrDefault(emptyList())
         highlightIndex = -1
+        loopSentenceIndex = -1
         syncHighlight()
     }
 
@@ -168,6 +173,7 @@ object ArticlePlayer {
         positionMs = entry.startMs
         player.seekTo(entry.startMs)
         highlightIndex = index
+        if (loopMode == LoopMode.SENTENCE) loopSentenceIndex = index
     }
 
     /** 朗读 from the word/sentence menu: jump to the sentence holding [text]. */
@@ -183,6 +189,15 @@ object ArticlePlayer {
 
     fun changeLoopMode(mode: LoopMode) {
         loopMode = mode
+        loopSentenceIndex = when (mode) {
+            LoopMode.SENTENCE -> {
+                val index = if (highlightIndex >= 0) highlightIndex
+                else sentences.indexOfLast { positionMs >= it.startMs }
+                if (index >= 0) highlightIndex = index
+                index
+            }
+            else -> -1
+        }
     }
 
     fun changeSpeed(value: Float) {
@@ -203,12 +218,40 @@ object ArticlePlayer {
         durationMs = 0L
         sentences = emptyList()
         highlightIndex = -1
+        loopSentenceIndex = -1
     }
 
     private fun syncHighlight() {
         if (sentences.isEmpty()) return
+        // 单句循环 pins the sentence (original keeps f6096d until the mode or
+        // sentence changes), so the highlight must not walk to the next line.
+        if (loopMode == LoopMode.SENTENCE && loopSentenceIndex >= 0) {
+            highlightIndex = loopSentenceIndex
+            return
+        }
         val index = sentences.indexOfLast { positionMs >= it.startMs }
         if (index >= 0 && index != highlightIndex) highlightIndex = index
+    }
+
+    /**
+     * Original `Q4.q.b(positionMs)`: on every progress tick, if the position
+     * left the current sentence's [start, end] window, seek back to its start.
+     * This is what makes 单句循环 loop at the sentence boundary instead of
+     * waiting for the whole file to finish.
+     */
+    private fun loopCurrentSentenceIfNeeded() {
+        if (loopMode != LoopMode.SENTENCE) return
+        val index = if (loopSentenceIndex >= 0) loopSentenceIndex else highlightIndex
+        val entry = sentences.getOrNull(index) ?: return
+        if (index != highlightIndex) highlightIndex = index
+        if (positionMs < entry.startMs || positionMs > entry.endMs) {
+            positionMs = entry.startMs
+            player.seekTo(entry.startMs)
+            if (!playing) {
+                player.play()
+                playing = true
+            }
+        }
     }
 
     private fun seconds(value: JsonPrimitive?): Long {
