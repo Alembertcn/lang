@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.LazyRow
@@ -63,10 +64,19 @@ import kotlin.time.Clock
 import kotlin.time.Instant
 
 /**
- * Colors sampled from the original Discover 专栏推荐 section in both themes
- * (see REVERSE.md). The original has its own theme switch (设置 → 主题) and
- * adapts the top bar / tab strip to dark: bar #161618, strip = page background
- * #0E0E11, selected tab #FAFAFA, underline stays pink #CE425D.
+ * Palette taken from the original APK resources (not screenshots):
+ *
+ *  - bar:     same token as the 我的学习 bar (colorScheme.surface), per user
+ *             request 2026-10-17 (was find_title_bar_color #F9E3E9 / dark #161618)
+ *  - page:    color/find_default_magic_color (pink wash on white) / find_default_magic_color_dark #0E0E11
+ *  - card:    color/Moji_bg_color_container (white) / (dark, code-swapped) #2C2C2F
+ *  - tabs:    layout/fragment_new_find.xml TabLayout: height 38dp, paddingBottom 6dp,
+ *             paddingEnd 16dp, marginStart 16dp, tabMinWidth 58dp, tabMaxWidth 200dp,
+ *             tabTextColor #FFACACAC, tabSelectedTextColor @color/color_3a3a3a (night:
+ *             swapped in code by FindFragment.onThemeChange()/loadTheme()).
+ *  - indicator: drawable/tab_indicator_bg_find_category — 28dp x 3dp pill, radius 17dp,
+ *             2dp above the bottom, color @color/Basic_Primary_Color #FFE0315B.
+ *  - text style: style/TabLayoutNoteTextStyle — 16sp.
  */
 private data class ColumnsPalette(
     val barBg: Color,
@@ -85,13 +95,13 @@ private data class ColumnsPalette(
 @Composable
 private fun columnsPalette(): ColumnsPalette = if (LocalDarkTheme.current) {
     ColumnsPalette(
-        barBg = Color(0xFF161618),
+        barBg = MaterialTheme.colorScheme.surface,
         stripBg = Color(0xFF0E0E11),
         pageBg = Color(0xFF0E0E11),
         cardBg = Color(0xFF2C2C2F),
         selectedTab = Color(0xFFFAFAFA),
-        unselectedTab = Color(0xFFA3A3A3),
-        underline = Color(0xFFCE425D),
+        unselectedTab = Color(0xFFACACAC),
+        underline = Color(0xFFE0315B),
         title = Color(0xFFFAFAFA),
         meta = Color(0xFFACACAC),
         pillBg = Color(0xFFFCECE0),
@@ -99,15 +109,15 @@ private fun columnsPalette(): ColumnsPalette = if (LocalDarkTheme.current) {
     )
 } else {
     ColumnsPalette(
-        barBg = Color(0xFFF5E4E9),
-        stripBg = Color(0xFFF2E4E8),
+        barBg = MaterialTheme.colorScheme.surface,
+        stripBg = Color(0xFFFFFFFF),
         pageBg = Color(0xFFF8F8F8),
         cardBg = Color(0xFFFFFFFF),
         selectedTab = Color(0xFF3A3A3A),
         unselectedTab = Color(0xFFACACAC),
-        underline = Color(0xFFCE425D),
+        underline = Color(0xFFE0315B),
         title = Color(0xFF3A3A3A),
-        meta = Color(0xFFA3A3A3),
+        meta = Color(0xFFACACAC),
         pillBg = Color(0xFFFFF1DC),
         pillText = Color(0xFFCE8A2E),
     )
@@ -243,31 +253,41 @@ private fun CategoryTabStrip(
     palette: ColumnsPalette,
     onSelect: (Int) -> Unit,
 ) {
+    // Matches layout/fragment_new_find.xml: height 38dp, paddingBottom 6dp,
+    // marginStart 16dp + TabLayout's own 12dp tab padding, tabMinWidth 58dp.
     LazyRow(
         modifier = Modifier
             .fillMaxWidth()
-            .background(palette.stripBg),
-        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
-        horizontalArrangement = Arrangement.spacedBy(26.dp),
+            .height(38.dp)
+            .background(palette.stripBg)
+            .padding(bottom = 6.dp),
+        contentPadding = PaddingValues(start = 28.dp, end = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(0.dp),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         items(count = tabs.size) { index ->
             val isSelected = index == selected
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.clickableNoRipple { onSelect(index) },
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .widthIn(min = 58.dp)
+                    .clickableNoRipple { onSelect(index) }
+                    .padding(horizontal = 12.dp),
             ) {
                 Text(
                     tabs[index],
-                    fontSize = if (isSelected) 17.sp else 16.sp,
+                    fontSize = 16.sp,
                     fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
                     color = if (isSelected) palette.selectedTab else palette.unselectedTab,
                 )
-                Spacer(Modifier.height(4.dp))
+                Spacer(Modifier.height(2.dp))
+                // drawable/tab_indicator_bg_find_category: 28dp x 3dp pill.
                 Box(
                     Modifier
-                        .width(if (isSelected) 30.dp else 0.dp)
+                        .width(if (isSelected) 28.dp else 0.dp)
                         .height(3.dp)
-                        .clip(RoundedCornerShape(2.dp))
+                        .clip(RoundedCornerShape(percent = 50))
                         .background(if (isSelected) palette.underline else Color.Transparent),
                 )
             }
