@@ -23,7 +23,7 @@ MOJi阅读离线高仿（`com.moji.offline`）。本表记录阶段目标与状�
 | P7 | 发现页（专栏推荐）高仿 | ✅ 完成 | 按用户确认范围**只保留原版「专栏推荐」段**：吸顶「发现」栏 + 吸顶分类条（专栏推荐/考试/时事/生活/文学/娱乐）+ 专栏卡（封面/标题/2 篇最新文章：VIP翻译 pill/时间/缩略图）。数据=本地 find 抓取（推荐 30 列 + 各分类 20/4/7/7/8 列），`tools/fetch_find_assets.py` 打包；分类 tab 切换即时换数据源 |
 | P7b | 发现页数据补全 | ✅ 完成 | 首页正文 101 篇（去重后另拉 94 篇）+ 20 条新闻（`find/news/{id}/`：detail / body.html / body-source）+ `tools/fetch_moji_find_articles.py` + `oss/` 本地镜像（非软链）；`MOJI_*` 写入 `.env`，接口文档补「发现」两节 |
 | P8 | 词库接入 + 词卡 | ⏳ 待办 | SQLDelight prepackaged 接 `dictionary.db` + WordDetail H5 |
-| P9a | 学习 Tab | ✅ 主体完成 | 按 `StudyFragment` 还原：「我的学习」栏 + 统计卡（本月学习 N 天 / X 小时 / 全部）+ 计划/订阅两页；计划卡（还剩 N 天 / 进度条 / 已学 N/M 篇）→ 章节文章弹层 → 详情页；**计划列表**（`ReadPlanListActivity`，19 个计划 + 已加入标记）从计划页顶部「全部计划 19 >」进入；订阅空态 + 推荐专栏（复用发现 feed）。打开文章时把「计划章节 / 专栏最新文章」设为播放队列，播放列表可切歌、播完自动下一首。数据：`readStats-articleMonthlyStats`（新抓）+ `readPlan/list|mine` + 专栏列表，`tools/build_study_assets.py` 打包 |
+| P9a | 学习 Tab | ✅ 主体完成 | 按 `StudyFragment` 还原：「我的学习」栏 + 统计卡 + 计划/订阅两页；计划卡 → 章节弹层 → 详情页；**计划列表**从「全部计划 19 >」进入；**加入计划**（弹层按钮，写本地库）+ **播放进度持久化**（SQLDelight `moji.db`：加入状态/文章毫秒进度，重启后续播、学习页按本地进度展示）；订阅空态 + 推荐专栏；播放队列可切歌。数据：`readStats-articleMonthlyStats` + `readPlan/list|mine` + 专栏列表，`tools/build_study_assets.py` 打包 |
 | P9b | 阅读库 / 我的 Tab | ⏳ 待办 | 接口未采（先按「高仿工作流」第 1 步定位，再抓缓存） |
 | P10 | AI 能力 | ⏳ 待办 | 千问（长难句分析 / 核心词汇 / 摘要 / TTS）；`QWEN_*` 已在 `.env` 链路里 |
 

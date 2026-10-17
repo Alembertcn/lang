@@ -29,6 +29,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -40,10 +41,12 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.moji.offline.data.catalog.FindColumn
 import com.moji.offline.data.catalog.FindFeedStore
+import com.moji.offline.data.db.UserDataRepository
 import com.moji.offline.data.study.StudyCatalog
 import com.moji.offline.data.study.StudyColumn
 import com.moji.offline.data.study.StudyData
@@ -51,6 +54,7 @@ import com.moji.offline.data.study.StudyPlan
 import com.moji.offline.resources.Res
 import com.moji.offline.ui.interaction.clickableNoRipple
 import com.moji.offline.ui.theme.LocalDarkTheme
+import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.decodeToImageBitmap
 
 private val StudyPink = Color(0xFFE0315B)
@@ -75,10 +79,35 @@ fun StudyRoute(onOpenArticle: (String, List<String>) -> Unit) {
     var openPlan by remember { mutableStateOf<StudyPlan?>(null) }
     var openColumn by remember { mutableStateOf<FindColumn?>(null) }
     var showCatalogue by remember { mutableStateOf(false) }
+    var joinedIds by remember { mutableStateOf<Set<String>>(emptySet()) }
+    var completedIds by remember { mutableStateOf<Set<String>>(emptySet()) }
+    var refresh by remember { mutableStateOf(0) }
+    val scope = rememberCoroutineScope()
 
-    LaunchedEffect(Unit) {
-        data = StudyCatalog.data()
+    LaunchedEffect(refresh) {
+        val loaded = StudyCatalog.data()
+        data = loaded
+        UserDataRepository.seedFromServer(
+            serverPlans = loaded.plans,
+            nowMs = kotlin.time.Clock.System.now().toEpochMilliseconds(),
+        )
+        joinedIds = UserDataRepository.joinedPlanIds()
+        completedIds = UserDataRepository.allProgress()
+            .filter { it.completed == 1L }
+            .map { it.article_id }
+            .toSet()
         feed = runCatching { FindFeedStore.feed().columns }.getOrDefault(emptyList())
+    }
+
+    fun local(plan: StudyPlan): StudyPlan {
+        val ids = plan.chapters.flatMap { c -> c.articles.map { it.id } }
+        val done = ids.count { it in completedIds }
+        val remaining = (plan.artNum - done).coerceAtLeast(0)
+        return plan.copy(
+            joined = plan.id in joinedIds,
+            done = done,
+            daysLeft = remaining,
+        )
     }
 
     val dark = LocalDarkTheme.current
@@ -97,7 +126,7 @@ fun StudyRoute(onOpenArticle: (String, List<String>) -> Unit) {
                     if (current != null) {
                         if (tab == 0) {
                             PlanList(
-                                plans = current.plans,
+                                plans = current.catalogue.filter { it.id in joinedIds }.map(::local),
                                 catalogueCount = current.catalogue.size,
                                 card = card,
                                 fg = fg,
@@ -120,7 +149,7 @@ fun StudyRoute(onOpenArticle: (String, List<String>) -> Unit) {
         if (showCatalogue) {
             data?.let { current ->
                 PlanCatalogue(
-                    plans = current.catalogue,
+                    plans = current.catalogue.map(::local),
                     bg = bg,
                     card = card,
                     fg = fg,
@@ -133,7 +162,24 @@ fun StudyRoute(onOpenArticle: (String, List<String>) -> Unit) {
 
     openPlan?.let { plan ->
         val ids = plan.chapters.flatMap { c -> c.articles.map { it.id } }
-        PlanSheet(plan = plan, card = card, fg = fg, onDismiss = { openPlan = null }) { id ->
+        PlanSheet(
+            plan = plan,
+            card = card,
+            fg = fg,
+            onDismiss = { openPlan = null },
+            onJoin = {
+                scope.launch {
+                    UserDataRepository.joinPlan(
+                        planId = plan.id,
+                        title = plan.title,
+                        dailyMinutes = 10,
+                        nowMs = kotlin.time.Clock.System.now().toEpochMilliseconds(),
+                    )
+                    refresh++
+                    openPlan = plan.copy(joined = true, daysLeft = plan.artNum)
+                }
+            },
+        ) { id ->
             openPlan = null
             onOpenArticle(id, ids)
         }
@@ -425,6 +471,7 @@ private fun PlanSheet(
     card: Color,
     fg: Color,
     onDismiss: () -> Unit,
+    onJoin: () -> Unit,
     onOpenArticle: (String) -> Unit,
 ) {
     Overlay(card, fg, onDismiss) {
@@ -436,6 +483,22 @@ private fun PlanSheet(
             color = fg.copy(alpha = 0.5f),
             fontSize = 12.sp,
         )
+        if (!plan.joined) {
+            Spacer(Modifier.height(12.dp))
+            Text(
+                "加入计划",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(18.dp))
+                    .background(StudyPink)
+                    .clickableNoRipple(onClick = onJoin)
+                    .padding(vertical = 11.dp),
+                color = Color.White,
+                fontSize = 15.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center,
+            )
+        }
         Spacer(Modifier.height(12.dp))
         LazyColumn(Modifier.height(360.dp)) {
             plan.chapters.forEach { chapter ->

@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import com.moji.offline.config.Secrets
 import com.moji.offline.data.audio.createAudioPlayer
+import com.moji.offline.data.db.UserDataRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -69,6 +70,7 @@ object ArticlePlayer {
         private set
 
     private var autoPlayWhenLoaded = false
+    private var lastPersistMs = 0L
 
     enum class LoopMode { NONE, SENTENCE, ARTICLE }
 
@@ -99,8 +101,10 @@ object ArticlePlayer {
                 LoopMode.NONE -> {
                     // MOJi's playlist advances to the next audio work.
                     if (queueIndex in 0 until queue.lastIndex) {
+                        persistProgress(completed = true)
                         playAt(queueIndex + 1)
                     } else {
+                        persistProgress(completed = true)
                         playing = false
                         positionMs = durationMs
                     }
@@ -114,6 +118,7 @@ object ArticlePlayer {
                 positionMs = player.positionMs()
                 syncHighlight()
                 loopCurrentSentenceIfNeeded()
+                persistProgressIfDue()
                 if (durationMs > 0 && positionMs >= durationMs) {
                     playing = false
                 }
@@ -156,6 +161,7 @@ object ArticlePlayer {
     /** Prepares [next] unless it is already the current track. */
     fun setTrack(next: ArticleMeta) {
         if (meta?.id == next.id) return
+        persistProgress(completed = false)
         loadJob?.cancel()
         player.pause()
         player.release()
@@ -173,6 +179,14 @@ object ArticlePlayer {
                 val reported = player.load(url)
                 if (reported > 0) durationMs = reported
                 loaded = true
+                // Resume where the user left off (skip finished tracks).
+                val saved = UserDataRepository.progress(next.id)
+                if (saved != null && saved.completed == 0L &&
+                    saved.position_ms in 1_000 until (durationMs - 1_000).coerceAtLeast(0)
+                ) {
+                    positionMs = saved.position_ms
+                    player.seekTo(saved.position_ms)
+                }
                 if (autoPlayWhenLoaded) {
                     autoPlayWhenLoaded = false
                     player.play()
@@ -187,6 +201,7 @@ object ArticlePlayer {
         if (playing) {
             player.pause()
             playing = false
+            persistProgress(completed = false)
         } else {
             player.play()
             playing = true
@@ -258,6 +273,7 @@ object ArticlePlayer {
 
     /** Close from the mini player: stops playback and removes the track. */
     fun close() {
+        persistProgress(completed = false)
         loadJob?.cancel()
         player.pause()
         player.release()
@@ -285,6 +301,31 @@ object ArticlePlayer {
         }
         val index = sentences.indexOfLast { positionMs >= it.startMs }
         if (index >= 0 && index != highlightIndex) highlightIndex = index
+    }
+
+    /** Saves the current position (throttled to ~5s while playing). */
+    private fun persistProgressIfDue() {
+        val now = kotlin.time.Clock.System.now().toEpochMilliseconds()
+        if (now - lastPersistMs < 5_000) return
+        lastPersistMs = now
+        persistProgress(completed = false)
+    }
+
+    private fun persistProgress(completed: Boolean) {
+        val m = meta ?: return
+        if (!loaded || durationMs <= 0) return
+        val position = if (completed) durationMs else positionMs
+        val now = kotlin.time.Clock.System.now().toEpochMilliseconds()
+        lastPersistMs = now
+        scope.launch {
+            UserDataRepository.saveProgress(
+                articleId = m.id,
+                positionMs = position,
+                durationMs = durationMs,
+                completed = completed || position >= durationMs - 1_000,
+                nowMs = now,
+            )
+        }
     }
 
     /**
