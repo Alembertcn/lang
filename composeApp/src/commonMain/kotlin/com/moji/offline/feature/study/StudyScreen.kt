@@ -74,6 +74,7 @@ fun StudyRoute(onOpenArticle: (String) -> Unit) {
     var tab by remember { mutableStateOf(0) }
     var openPlan by remember { mutableStateOf<StudyPlan?>(null) }
     var openColumn by remember { mutableStateOf<FindColumn?>(null) }
+    var showCatalogue by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
         data = StudyCatalog.data()
@@ -85,31 +86,47 @@ fun StudyRoute(onOpenArticle: (String) -> Unit) {
     val card = if (dark) Color(0xFF1C1C1E) else Color.White
     val fg = if (dark) Color(0xFFF2F2F2) else StudyTitle
 
-    Column(Modifier.fillMaxSize().background(bg)) {
-        TopBar(fg)
-        Column(Modifier.fillMaxSize()) {
-            data?.let { StatsCard(it, card, fg) }
-            TabRow(tab, fg, onSelect = { tab = it })
-            Box(Modifier.weight(1f)) {
-                val current = data
-                if (current != null) {
-                    if (tab == 0) {
-                        PlanList(
-                            plans = current.plans,
-                            card = card,
-                            fg = fg,
-                            onOpen = { openPlan = it },
-                        )
-                    } else {
-                        SubscribeList(
-                            subscribed = current.subscribed,
-                            columns = feed,
-                            card = card,
-                            fg = fg,
-                            onOpenColumn = { openColumn = it },
-                        )
+    Box(Modifier.fillMaxSize()) {
+        Column(Modifier.fillMaxSize().background(bg)) {
+            TopBar(fg)
+            Column(Modifier.fillMaxSize()) {
+                data?.let { StatsCard(it, card, fg) }
+                TabRow(tab, fg, onSelect = { tab = it })
+                Box(Modifier.weight(1f)) {
+                    val current = data
+                    if (current != null) {
+                        if (tab == 0) {
+                            PlanList(
+                                plans = current.plans,
+                                catalogueCount = current.catalogue.size,
+                                card = card,
+                                fg = fg,
+                                onOpen = { openPlan = it },
+                                onOpenCatalogue = { showCatalogue = true },
+                            )
+                        } else {
+                            SubscribeList(
+                                subscribed = current.subscribed,
+                                columns = feed,
+                                card = card,
+                                fg = fg,
+                                onOpenColumn = { openColumn = it },
+                            )
+                        }
                     }
                 }
+            }
+        }
+        if (showCatalogue) {
+            data?.let { current ->
+                PlanCatalogue(
+                    plans = current.catalogue,
+                    bg = bg,
+                    card = card,
+                    fg = fg,
+                    onBack = { showCatalogue = false },
+                    onOpenPlan = { showCatalogue = false; openPlan = it },
+                )
             }
         }
     }
@@ -219,9 +236,11 @@ private fun TabRow(selected: Int, fg: Color, onSelect: (Int) -> Unit) {
 @Composable
 private fun PlanList(
     plans: List<StudyPlan>,
+    catalogueCount: Int,
     card: Color,
     fg: Color,
     onOpen: (StudyPlan) -> Unit,
+    onOpenCatalogue: () -> Unit,
 ) {
     if (plans.isEmpty()) {
         Column(
@@ -237,6 +256,7 @@ private fun PlanList(
                 modifier = Modifier
                     .clip(RoundedCornerShape(16.dp))
                     .background(StudyPink.copy(alpha = 0.08f))
+                    .clickableNoRipple(onClick = onOpenCatalogue)
                     .padding(horizontal = 16.dp, vertical = 8.dp),
             )
         }
@@ -249,6 +269,23 @@ private fun PlanList(
         ),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
+        item {
+            // 原版入口在发现页「阅读计划」段的「全部 %d >」；该段已裁剪，
+            // 这里把同样的入口放到计划页顶部。
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .clickableNoRipple(onClick = onOpenCatalogue)
+                    .padding(vertical = 4.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text("全部计划", color = fg, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.width(4.dp))
+                Text("$catalogueCount", color = fg.copy(alpha = 0.4f), fontSize = 13.sp)
+                Spacer(Modifier.weight(1f))
+                Chevron(fg.copy(alpha = 0.35f))
+            }
+        }
         items(plans, key = { it.id }) { plan -> PlanCard(plan, card, fg) { onOpen(plan) } }
     }
 }
@@ -393,7 +430,8 @@ private fun PlanSheet(
         Text(plan.title, color = fg, fontSize = 18.sp, fontWeight = FontWeight.Bold)
         Spacer(Modifier.height(4.dp))
         Text(
-            "还剩 ${plan.daysLeft} 天学完 · 已学 ${plan.done}/${plan.artNum} 篇",
+            if (plan.joined) "还剩 ${plan.daysLeft} 天学完 · 已学 ${plan.done}/${plan.artNum} 篇"
+            else "共 ${plan.artNum} 篇 · 未加入",
             color = fg.copy(alpha = 0.5f),
             fontSize = 12.sp,
         )
@@ -517,8 +555,132 @@ private fun Chevron(color: Color) {
     }
 }
 
+/**
+ * `ReadPlanListActivity` — the plan catalogue reached from the original
+ * Discover「阅读计划」section ("全部 %d >") and the empty Study page.
+ */
 @Composable
-private fun Cover(path: String, size: Int) {
+private fun PlanCatalogue(
+    plans: List<StudyPlan>,
+    bg: Color,
+    card: Color,
+    fg: Color,
+    onBack: () -> Unit,
+    onOpenPlan: (StudyPlan) -> Unit,
+) {
+    Column(Modifier.fillMaxSize().background(bg)) {
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .background(MaterialTheme.colorScheme.surface)
+                .statusBarsPadding()
+                .height(44.dp),
+            contentAlignment = Alignment.Center,
+        ) {
+            Row(
+                Modifier.fillMaxSize().padding(start = 6.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Box(
+                    Modifier.size(44.dp).clickableNoRipple(onClick = onBack),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Canvas(Modifier.size(24.dp)) {
+                        drawLine(
+                            fg,
+                            Offset(size.width * 0.62f, size.height * 0.22f),
+                            Offset(size.width * 0.38f, size.height * 0.5f),
+                            strokeWidth = 2.dp.toPx(),
+                            cap = StrokeCap.Round,
+                        )
+                        drawLine(
+                            fg,
+                            Offset(size.width * 0.38f, size.height * 0.5f),
+                            Offset(size.width * 0.62f, size.height * 0.78f),
+                            strokeWidth = 2.dp.toPx(),
+                            cap = StrokeCap.Round,
+                        )
+                    }
+                }
+                Text("阅读计划", color = fg, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+            }
+        }
+        LazyColumn(
+            Modifier.fillMaxSize(),
+            contentPadding = androidx.compose.foundation.layout.PaddingValues(
+                start = 16.dp, end = 16.dp, top = 12.dp, bottom = 24.dp,
+            ),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            items(plans, key = { it.id }) { plan ->
+                Row(
+                    Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(14.dp))
+                        .background(card)
+                        .clickableNoRipple { onOpenPlan(plan) }
+                        .padding(12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Cover(path = plan.coverFile, size = 88, width = 88, height = 62)
+                    Column(Modifier.weight(1f).padding(start = 12.dp)) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text(
+                                plan.title,
+                                modifier = Modifier.weight(1f),
+                                color = fg,
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Bold,
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
+                            )
+                            if (plan.joined) {
+                                Text(
+                                    "已加入",
+                                    color = StudyPink,
+                                    fontSize = 11.sp,
+                                    modifier = Modifier
+                                        .clip(RoundedCornerShape(10.dp))
+                                        .background(StudyPink.copy(alpha = 0.1f))
+                                        .padding(horizontal = 8.dp, vertical = 2.dp),
+                                )
+                            }
+                        }
+                        Spacer(Modifier.height(4.dp))
+                        Text(
+                            plan.desc,
+                            color = fg.copy(alpha = 0.45f),
+                            fontSize = 12.sp,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                        Spacer(Modifier.height(6.dp))
+                        Text(
+                            buildString {
+                                if (plan.levels.isNotEmpty()) append(plan.levels.joinToString("/"))
+                                if (plan.levels.isNotEmpty()) append(" · ")
+                                append("${formatCount(plan.participants)}人参与 · ${plan.artNum} 篇")
+                            },
+                            color = fg.copy(alpha = 0.35f),
+                            fontSize = 11.sp,
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+private fun formatCount(value: Int): String =
+    if (value >= 10_000) {
+        val tenths = kotlin.math.round(value / 1000f).toInt()
+        "${tenths / 10}.${tenths % 10}万"
+    } else {
+        value.toString()
+    }
+
+@Composable
+private fun Cover(path: String, size: Int, width: Int = size, height: Int = size) {
     val bitmap by produceState<ImageBitmap?>(null, path) {
         value = if (path.isBlank()) null else runCatching {
             Res.readBytes("files/find/$path").decodeToImageBitmap()
@@ -526,7 +688,8 @@ private fun Cover(path: String, size: Int) {
     }
     Box(
         Modifier
-            .size(size.dp)
+            .width(width.dp)
+            .height(height.dp)
             .clip(RoundedCornerShape(8.dp))
             .background(Color(0xFFE9ECF2)),
         contentAlignment = Alignment.Center,
@@ -536,7 +699,7 @@ private fun Cover(path: String, size: Int) {
                 it,
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.size(size.dp),
+                modifier = Modifier.width(width.dp).height(height.dp),
             )
         }
     }

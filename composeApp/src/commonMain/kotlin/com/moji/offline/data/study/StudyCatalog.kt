@@ -37,6 +37,11 @@ data class StudyChapter(
 data class StudyPlan(
     val id: String = "",
     val title: String = "",
+    val desc: String = "",
+    val levels: List<String> = emptyList(),
+    val participants: Int = 0,
+    /** True for plans already joined (catalogue badge). */
+    val joined: Boolean = false,
     /** Relative to `files/find/`, e.g. `plans/68b7a2....jpg`. */
     val coverFile: String = "",
     val artNum: Int = 0,
@@ -60,6 +65,8 @@ data class StudyColumn(
 data class StudyData(
     val stats: StudyStats = StudyStats(),
     val plans: List<StudyPlan> = emptyList(),
+    /** All plans (ReadPlanListActivity catalogue). */
+    val catalogue: List<StudyPlan> = emptyList(),
     val subscribed: List<StudyColumn> = emptyList(),
 )
 

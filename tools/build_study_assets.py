@@ -79,7 +79,46 @@ def my_plans() -> list[dict]:
                 "coverFile": plan_cover(plan_id),
                 "artNum": art_num,
                 "done": len(done_ids),
+                "joined": True,
                 "daysLeft": max(1, math.ceil(remaining / per_day)) if remaining else 0,
+                "chapters": chapters,
+            }
+        )
+    return rows
+
+
+def catalogue(joined_ids: set[str]) -> list[dict]:
+    """All 19 plans from readPlan.list + cached detail chapters (ReadPlanListActivity)."""
+    listing = read(API / "responses" / "readPlan.list.json", {})
+    rows = []
+    for plan in listing.get("readPlans", []):
+        plan_id = plan.get("objectId", "")
+        detail = result_of(read(API / "responses" / "readPlan.detail" / f"{plan_id}.json", {}))
+        detail_plan = detail.get("readPlan") or {}
+        articles = {a.get("objectId"): a.get("title", "") for a in detail.get("articles", [])}
+        chapters = []
+        for chapter in detail_plan.get("chapters") or plan.get("chapters") or []:
+            chapters.append(
+                {
+                    "title": chapter.get("title", ""),
+                    "articles": [
+                        {"id": aid, "title": articles.get(aid, ""), "done": False}
+                        for aid in chapter.get("artIds") or []
+                    ],
+                }
+            )
+        rows.append(
+            {
+                "id": plan_id,
+                "title": plan.get("title", ""),
+                "desc": plan.get("desc", ""),
+                "levels": plan.get("level") or [],
+                "participants": int(plan.get("participants") or 0),
+                "artNum": int(plan.get("artNum") or 0),
+                "coverFile": plan_cover(plan_id),
+                "daysLeft": 0,
+                "done": 0,
+                "joined": plan_id in joined_ids,
                 "chapters": chapters,
             }
         )
@@ -90,13 +129,15 @@ def main() -> None:
     stats = result_of(read(API / "reader" / "readStats-articleMonthlyStats.json", {}))
     subscribed = read(API / "reader" / "column-mySubscribed.json", {})
     subscribed_rows = result_of(subscribed).get("data") or []
+    mine = my_plans()
     payload = {
         "stats": {
             "days": int(stats.get("totalDays") or 0),
             "durSec": int(stats.get("totalDurSec") or 0),
             "num": int(stats.get("totalNum") or 0),
         },
-        "plans": my_plans(),
+        "plans": mine,
+        "catalogue": catalogue({p["id"] for p in mine}),
         "subscribed": [
             {
                 "id": c.get("objectId", ""),
@@ -112,6 +153,7 @@ def main() -> None:
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
         f"study.json: {len(payload['plans'])} plans, "
+        f"{len(payload['catalogue'])} catalogue, "
         f"{len(payload['subscribed'])} subscriptions, "
         f"{payload['stats']['days']} study days -> {OUT.relative_to(ROOT)}"
     )

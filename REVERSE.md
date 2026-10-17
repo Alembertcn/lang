@@ -23,6 +23,7 @@
 | 短文详情页 | `ArticleActivity` → `ArticleDetailFragment`：`activity_base_detail`（44dp `MojiToolbar` + 专栏名 14sp bold @48dp）+ 原版 H5（`file:///android_asset/web/mojiread/article/android/index.html`）+ `ArticleDetailAudioPlayerView` | `feature/article/ArticleDetailScreen.kt` + `data/article/*`（原版 H5 由 `BookServer` 本机供给） | ✅ 首版（真机验证；遗留见 PLAN P6c） |
 | 词卡（查词详情） | `assets/WordDetail` H5 + Bridge | H5 资产已就绪，待接 SQLDelight 词库 | ⏳ |
 | 学习 | `StudyFragment`：MojiToolbar「我的学习」+ `fragment_study` 统计卡（本月学习/小时/全部）+ TabLayout「计划」「订阅」+ ViewPager2（`MyStudyPlanFragment` / `SubscribeHomeFragment`）；计划卡见 `item_main_study_plan`（18sp 标题、还剩 N 天、8dp 进度条） | `feature/study/StudyScreen.kt` + `data/study/StudyCatalog.kt` | ✅ 主体完成（阅读库/我的仍待做） |
+| 计划列表 | `ReadPlanListActivity`（`activity_plan_list`：TabLayout + ViewPager2 列表，卡片 `item_find_read_plan`）；入口两处：发现页「阅读计划」段的「全部 %d >」（该段已按用户要求裁剪）、学习页计划为空时的「查看推荐计划」。有已加入计划时空态不出现，故本实现在计划页顶部补了同样的「全部计划 19 >」入口 | `PlanCatalogue`（19 个计划：封面/标题/简介/等级/参与人数/篇数 + 已加入标记）→ 计划章节弹层 → 文章详情 | ✅ |
 | 我的 | `MineFragment`（未展开） | — | ⏳ |
 
 ## 二、接口（数据抓取与本地 mock）
