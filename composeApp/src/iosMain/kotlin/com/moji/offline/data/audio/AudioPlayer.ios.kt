@@ -63,6 +63,11 @@ private class IosAudioPlayer : AudioPlayer {
     override fun positionMs(): Long =
         player?.currentTime()?.let { (CMTimeGetSeconds(it) * 1000).toLong() } ?: 0L
 
+    override fun setSpeed(rate: Float) {
+        speed = rate.coerceIn(0.5f, 2.0f)
+        player?.rate = speed
+    }
+
     override fun release() {
         player?.pause()
         player?.replaceCurrentItemWithPlayerItem(null)

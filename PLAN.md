@@ -19,7 +19,7 @@ MOJi阅读离线高仿（`com.moji.offline`）。本表记录阶段目标与状�
 | P5 | 媒体 mock 基建 | ✅ 完成 | 常驻服务 / adb reverse / 网络安全配置 / 一键脚本 |
 | P6 | 阅读器书架页（原版还原） | ✅ 完成 | 9 本书真实封面 + 全部/我的/官方 tabs + 上传卡位；数据来自 reader 接口 |
 | P6b | 书籍正文阅读（原版路径） | ✅ 首版 | epub 1:1 解包 + 本机 HTTP 服务 + `loadDataWithBaseURL`；真机与原版同页逐行一致；遗留对齐项（析标记/全书页码/目录抽屉/设置菜单）见 `content/engine/INTEGRATION.md` |
-| P6c | 阅读详情 + 播放器 | 🟡 首版完成 | **原版 H5 路径**：`article/android/index.html` + `MOJiArticleDetailDidSetHTML` 注入 1:1 `body.html`；原生 44dp 顶栏 + 56dp 吸顶工具条 + 底部播放条（30fps 进度、seek、prev/next、速度面板）；真机播放 mock mp3 通过。遗留：逐句 SRT 跟随/点句跳转、跟读、暗色主题、播放设置完整面板 |
+| P6c | 阅读详情 + 播放器 | 🟡 首版完成 | **原版 H5 路径**：`article/android/index.html` + `MOJiArticleDetailDidSetHTML` 注入 1:1 `body.html`；原生 44dp 顶栏 + 56dp 吸顶工具条 + 底部播放条（进度、seek、prev/next、速度面板）；**全局播放会话**：退出文章后底栏上方出现原版 64dp 进度面板（封面/标题/环形进度/播放/关闭，点面板回文章且位置保持）。遗留：逐句 SRT 跟随/点句跳转、跟读、暗色主题、播放设置完整面板、列表面板内容 |
 | P7 | 发现页（专栏推荐）高仿 | ✅ 完成 | 按用户确认范围**只保留原版「专栏推荐」段**：吸顶「发现」栏 + 吸顶分类条（专栏推荐/考试/时事/生活/文学/娱乐）+ 专栏卡（封面/标题/2 篇最新文章：VIP翻译 pill/时间/缩略图）。数据=本地 find 抓取（推荐 30 列 + 各分类 20/4/7/7/8 列），`tools/fetch_find_assets.py` 打包；分类 tab 切换即时换数据源 |
 | P7b | 发现页数据补全 | ✅ 完成 | 首页正文 101 篇（去重后另拉 94 篇）+ 20 条新闻（`find/news/{id}/`：detail / body.html / body-source）+ `tools/fetch_moji_find_articles.py` + `oss/` 本地镜像（非软链）；`MOJI_*` 写入 `.env`，接口文档补「发现」两节 |
 | P8 | 词库接入 + 词卡 | ⏳ 待办 | SQLDelight prepackaged 接 `dictionary.db` + WordDetail H5 |

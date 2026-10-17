@@ -1,6 +1,7 @@
 package com.moji.offline.data.audio
 
 import android.media.MediaPlayer
+import android.media.PlaybackParams
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
@@ -12,6 +13,7 @@ actual fun createAudioPlayer(): AudioPlayer = AndroidAudioPlayer()
 /** MOJi uses Media3/ExoPlayer; a plain MediaPlayer covers the single-file bar. */
 private class AndroidAudioPlayer : AudioPlayer {
     @Volatile private var player: MediaPlayer? = null
+    @Volatile private var speed = 1.0f
 
     override var onCompletion: (() -> Unit)? = null
 
@@ -48,7 +50,13 @@ private class AndroidAudioPlayer : AudioPlayer {
     }
 
     override fun play() {
-        player?.let { runCatching { it.start() } }
+        player?.let {
+            runCatching {
+                it.start()
+                // Setting a non-zero speed also starts playback, so apply after start().
+                if (speed != 1f) it.playbackParams = PlaybackParams().setSpeed(speed)
+            }
+        }
     }
 
     override fun pause() {
@@ -61,6 +69,13 @@ private class AndroidAudioPlayer : AudioPlayer {
 
     override fun positionMs(): Long =
         player?.let { mp -> runCatching { mp.currentPosition.toLong() }.getOrNull() } ?: 0L
+
+    override fun setSpeed(rate: Float) {
+        speed = rate.coerceIn(0.5f, 2.0f)
+        player?.let { mp ->
+            runCatching { if (mp.isPlaying) mp.playbackParams = PlaybackParams().setSpeed(speed) }
+        }
+    }
 
     override fun release() {
         val mp = player ?: return

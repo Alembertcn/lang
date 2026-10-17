@@ -43,8 +43,7 @@ import androidx.compose.ui.unit.sp
 import com.moji.offline.config.Secrets
 import com.moji.offline.data.article.ArticleCatalog
 import com.moji.offline.data.article.ArticleMeta
-import com.moji.offline.data.audio.AudioPlayer
-import com.moji.offline.data.audio.createAudioPlayer
+import com.moji.offline.data.article.ArticlePlayer
 import com.moji.offline.data.reader.BookServer
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_article_auxiliary
@@ -98,15 +97,6 @@ fun ArticleDetailRoute(
     var body by remember(articleId) { mutableStateOf<String?>(null) }
     var pageUrl by remember(articleId) { mutableStateOf<String?>(null) }
     var failure by remember(articleId) { mutableStateOf<String?>(null) }
-    val player = remember(articleId) { createAudioPlayer() }
-    var playing by remember(articleId) { mutableStateOf(false) }
-
-    DisposableEffect(articleId) {
-        onDispose {
-            player.onCompletion = null
-            player.release()
-        }
-    }
 
     LaunchedEffect(articleId) {
         val port = runCatching { BookServer.ensureStarted() }.getOrNull()
@@ -132,6 +122,11 @@ fun ArticleDetailRoute(
         val current = meta
         val html = body
         val url = pageUrl
+        // Hands the track to the app-scoped session: leaving the article keeps
+        // playing and the global mini player appears above the tabs.
+        LaunchedEffect(current) {
+            current?.let(ArticlePlayer::setTrack)
+        }
         // The original article H5 is a white page; the WebView itself stays
         // transparent so the reader can share it, so paint the page here.
         Box(Modifier.weight(1f).background(Color.White)) {
@@ -146,19 +141,12 @@ fun ArticleDetailRoute(
                         meta = current,
                         body = html,
                         pageUrl = url,
-                        onToggleAudio = { playing = !playing },
+                        onToggleAudio = { ArticlePlayer.toggle() },
                     )
             }
         }
         val m = meta
-        if (m != null) {
-            ArticleAudioBar(
-                meta = m,
-                player = player,
-                playing = playing,
-                onPlayingChange = { playing = it },
-            )
-        }
+        if (m != null) ArticleAudioBar(meta = m)
     }
 }
 
@@ -375,56 +363,18 @@ private fun jsString(value: String): String = buildString {
  * 70x38 listen-read pill, 36/40/36 transport, 24dp hexagon settings + speed.
  */
 @Composable
-private fun ArticleAudioBar(
-    meta: ArticleMeta,
-    player: AudioPlayer,
-    playing: Boolean,
-    onPlayingChange: (Boolean) -> Unit,
-) {
+private fun ArticleAudioBar(meta: ArticleMeta) {
     val dark = MaterialTheme.colorScheme.surface.luminance() < 0.5f
     val bg = if (dark) DarkBarBg else BarBg
     val fg = if (dark) DarkBarFg else ArticleTitle
     val sub = if (dark) Color(0xFF8B8787) else SubGray
 
-    val base = Secrets.MOCK_MEDIA_BASE.trimEnd('/')
-    val audioUrl = if (base.isNotBlank() && meta.audioId.isNotBlank()) {
-        "$base/article/audio/${meta.audioId}"
-    } else {
-        ""
-    }
-
-    var durationMs by remember(meta.id) { mutableStateOf(meta.audioDuration * 1000L) }
-    var positionMs by remember(meta.id) { mutableStateOf(0L) }
-    var loaded by remember(meta.id) { mutableStateOf(false) }
-    var speed by remember(meta.id) { mutableStateOf(1.0f) }
     var showSpeed by remember(meta.id) { mutableStateOf(false) }
-
-    LaunchedEffect(audioUrl) {
-        if (audioUrl.isBlank()) return@LaunchedEffect
-        runCatching {
-            val reported = player.load(audioUrl)
-            if (reported > 0) durationMs = reported
-            loaded = true
-        }
-    }
-
-    LaunchedEffect(playing) {
-        while (playing) {
-            positionMs = player.positionMs()
-            if (durationMs > 0 && positionMs >= durationMs) {
-                onPlayingChange(false)
-                break
-            }
-            delay(200)
-        }
-    }
-
-    // Single place that drives MediaPlayer: the bar button and the H5's pink
-    // header button both only flip `playing`.
-    LaunchedEffect(playing, loaded) {
-        if (!loaded) return@LaunchedEffect
-        if (playing) player.play() else player.pause()
-    }
+    val durationMs = ArticlePlayer.durationMs
+    val positionMs = ArticlePlayer.positionMs
+    val loaded = ArticlePlayer.loaded
+    val playing = ArticlePlayer.playing
+    val speed = ArticlePlayer.speed
 
     Column(
         Modifier
@@ -453,12 +403,7 @@ private fun ArticleAudioBar(
                 enabled = loaded,
                 played = SeekPlayed,
                 track = SeekTrack,
-                onSeek = { fraction ->
-                    if (durationMs > 0) {
-                        positionMs = (durationMs * fraction).roundToLong()
-                        player.seekTo(positionMs)
-                    }
-                },
+                onSeek = { fraction -> ArticlePlayer.seekToFraction(fraction) },
             )
             Spacer(Modifier.width(12.dp))
             Text(formatTime(durationMs), color = sub, fontSize = 14.sp)
@@ -494,7 +439,7 @@ private fun ArticleAudioBar(
                     enabled = loaded,
                     size = 36.dp,
                     padding = 10.dp,
-                ) { player.seekTo(0) }
+                ) { ArticlePlayer.seekToFraction(0f) }
                 Spacer(Modifier.width(10.dp))
                 Box(
                     Modifier
@@ -502,7 +447,7 @@ private fun ArticleAudioBar(
                         .clip(CircleShape)
                         .background(PillBg)
                         .clickableNoRipple(enabled = loaded) {
-                            onPlayingChange(!playing)
+                            ArticlePlayer.toggle()
                         },
                     contentAlignment = Alignment.Center,
                 ) {
@@ -521,7 +466,7 @@ private fun ArticleAudioBar(
                     enabled = loaded,
                     size = 36.dp,
                     padding = 10.dp,
-                ) { if (durationMs > 0) player.seekTo(durationMs) }
+                ) { ArticlePlayer.seekToFraction(1f) }
             }
             Box(
                 Modifier
@@ -557,9 +502,7 @@ private fun ArticleAudioBar(
                             .clip(RoundedCornerShape(14.dp))
                             .background(if (selected) SeekPlayed else PillBg)
                             .clickableNoRipple {
-                                speed = value
-                                // MediaPlayer has no public rate API here; the
-                                // badge still mirrors the original control.
+                                ArticlePlayer.changeSpeed(value)
                             }
                             .padding(horizontal = 12.dp, vertical = 6.dp),
                         color = if (selected) Color.White else fg,

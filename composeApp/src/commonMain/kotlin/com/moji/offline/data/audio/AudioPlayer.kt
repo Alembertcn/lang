@@ -13,6 +13,9 @@ interface AudioPlayer {
 
     fun positionMs(): Long
 
+    /** MOJi playback speeds 0.6–1.4. */
+    fun setSpeed(rate: Float)
+
     var onCompletion: (() -> Unit)?
 
     fun release()

@@ -2,6 +2,11 @@ package com.moji.offline
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,8 +35,10 @@ import com.moji.offline.domain.model.ThemeMode
 import com.moji.offline.feature.article.ArticleDetailRoute
 import com.moji.offline.feature.discover.DiscoverRoute
 import com.moji.offline.data.catalog.ReaderBook
+import com.moji.offline.data.article.ArticlePlayer
 import com.moji.offline.feature.reader.ReaderBookRoute
 import com.moji.offline.feature.reader.ReaderRoute
+import com.moji.offline.feature.article.GlobalMiniPlayer
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_home_find_def
 import com.moji.offline.resources.ic_home_find_sel
@@ -85,7 +92,19 @@ fun App() {
             } else {
                 Scaffold(
                     bottomBar = {
-                        MojiBottomBar(selectedTab) { selectedTab = it }
+                        // Original `activity_main`: AudioPlayerControllerView is
+                        // layout_above the 55dp MojiTabHost, so the page is
+                        // shortened while the mini player is visible.
+                        Column {
+                            AnimatedVisibility(
+                                visible = ArticlePlayer.visible,
+                                enter = slideInVertically { it } + fadeIn(),
+                                exit = slideOutVertically { it } + fadeOut(),
+                            ) {
+                                GlobalMiniPlayer(onOpenArticle = { openArticle = it })
+                            }
+                            MojiBottomBar(selectedTab) { selectedTab = it }
+                        }
                     },
                 ) { padding ->
                     Box(Modifier.fillMaxSize().padding(padding)) {
