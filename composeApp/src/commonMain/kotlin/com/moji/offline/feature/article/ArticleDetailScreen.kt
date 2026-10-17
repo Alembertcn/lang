@@ -262,10 +262,15 @@ private fun ArticleH5(
                     controller.evaluateJs("window.scrollTo({top:$top,behavior:'smooth'})")
                 }
                 // Original ArticleDetailFragment.coordinateToolbox(): the native
-                // 56dp toolbox appears once the H5 tools row scrolls under the bar.
+                // 56dp toolbox shows only while scrolling up past the H5 tools
+                // row; any downward scroll hides it so it never covers text.
                 "articleScroll" -> {
-                    val top = payload.toFloatOrNull()
-                    if (top != null) stickyTools = top <= 54f
+                    val parts = payload.split('|')
+                    val top = parts.getOrNull(0)?.toFloatOrNull()
+                    val direction = parts.getOrNull(1)
+                    if (top != null && direction != null) {
+                        stickyTools = top <= 54f && direction == "up"
+                    }
                 }
                 else -> Unit
             }
@@ -355,8 +360,12 @@ private fun articleInjection(meta: ArticleMeta, body: String, coverUrl: String):
         // Report the tools row position while scrolling, like the native
         // onScrollChange listener feeding coordinateToolbox().
         append("var __t=document.getElementById('article-tools');")
+        append("var __lastY=window.pageYOffset||0;")
         append("var __send=function(){try{")
-        append("window.ArticleJsInterface.articleScroll(String(__t.getBoundingClientRect().top));")
+        append("var __y=window.pageYOffset||0;")
+        append("var __top=__t.getBoundingClientRect().top;")
+        append("window.ArticleJsInterface.articleScroll(__top+'|'+(__y>__lastY?'down':'up'));")
+        append("__lastY=__y;")
         append("}catch(e){}};")
         append("window.addEventListener('scroll',__send,{passive:true});__send();")
         append("}catch(e){console.error('MojiInject',e&&e.message)}})();")
