@@ -38,6 +38,7 @@ import com.moji.offline.data.catalog.ReaderBook
 import com.moji.offline.data.article.ArticlePlayer
 import com.moji.offline.feature.reader.ReaderBookRoute
 import com.moji.offline.feature.reader.ReaderRoute
+import com.moji.offline.feature.study.StudyRoute
 import com.moji.offline.feature.article.GlobalMiniPlayer
 import com.moji.offline.feature.article.ArticleQueueDialog
 import com.moji.offline.resources.Res
@@ -123,6 +124,7 @@ fun App() {
                                 onBrowsePlans = {},
                             )
                             MainTab.Reader -> ReaderRoute(onOpenBook = { openBook = it })
+                            MainTab.Study -> StudyRoute(onOpenArticle = { openArticle = it })
                             else -> Box(
                                 Modifier.fillMaxSize(),
                                 contentAlignment = Alignment.Center,

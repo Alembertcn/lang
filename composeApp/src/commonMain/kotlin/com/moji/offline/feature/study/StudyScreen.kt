@@ -1,0 +1,543 @@
+package com.moji.offline.feature.study
+
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.moji.offline.data.catalog.FindColumn
+import com.moji.offline.data.catalog.FindFeedStore
+import com.moji.offline.data.study.StudyCatalog
+import com.moji.offline.data.study.StudyColumn
+import com.moji.offline.data.study.StudyData
+import com.moji.offline.data.study.StudyPlan
+import com.moji.offline.resources.Res
+import com.moji.offline.ui.interaction.clickableNoRipple
+import com.moji.offline.ui.theme.LocalDarkTheme
+import org.jetbrains.compose.resources.decodeToImageBitmap
+
+private val StudyPink = Color(0xFFE0315B)
+private val StudyTitle = Color(0xFF030303)
+private val StudyGray = Color(0xFF8B8787)
+private val StudyTrack = Color(0xFFEDEDED)
+
+/**
+ * 学习 tab — port of `StudyFragment` (base.apk 3.4.9):
+ * MojiToolbar「我的学习」+ 统计卡（本月学习 N 天 / X 小时 / 全部）+
+ * ViewPager 两个页签：计划（MyStudyPlanFragment）/ 订阅（SubscribeHomeFragment）。
+ *
+ * Data comes from the captured cache via [StudyCatalog]; column recommendations
+ * reuse the Discover feed (`FindFeedStore`) since this account has no
+ * subscriptions.
+ */
+@Composable
+fun StudyRoute(onOpenArticle: (String) -> Unit) {
+    var data by remember { mutableStateOf<StudyData?>(null) }
+    var feed by remember { mutableStateOf<List<FindColumn>>(emptyList()) }
+    var tab by remember { mutableStateOf(0) }
+    var openPlan by remember { mutableStateOf<StudyPlan?>(null) }
+    var openColumn by remember { mutableStateOf<FindColumn?>(null) }
+
+    LaunchedEffect(Unit) {
+        data = StudyCatalog.data()
+        feed = runCatching { FindFeedStore.feed().columns }.getOrDefault(emptyList())
+    }
+
+    val dark = LocalDarkTheme.current
+    val bg = if (dark) Color(0xFF0E0E11) else Color(0xFFF5F5F7)
+    val card = if (dark) Color(0xFF1C1C1E) else Color.White
+    val fg = if (dark) Color(0xFFF2F2F2) else StudyTitle
+
+    Column(Modifier.fillMaxSize().background(bg)) {
+        TopBar(fg)
+        Column(Modifier.fillMaxSize()) {
+            data?.let { StatsCard(it, card, fg) }
+            TabRow(tab, fg, onSelect = { tab = it })
+            Box(Modifier.weight(1f)) {
+                val current = data
+                if (current != null) {
+                    if (tab == 0) {
+                        PlanList(
+                            plans = current.plans,
+                            card = card,
+                            fg = fg,
+                            onOpen = { openPlan = it },
+                        )
+                    } else {
+                        SubscribeList(
+                            subscribed = current.subscribed,
+                            columns = feed,
+                            card = card,
+                            fg = fg,
+                            onOpenColumn = { openColumn = it },
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    openPlan?.let { plan ->
+        PlanSheet(plan = plan, card = card, fg = fg, onDismiss = { openPlan = null }) { id ->
+            openPlan = null
+            onOpenArticle(id)
+        }
+    }
+    openColumn?.let { column ->
+        ColumnSheet(column = column, card = card, fg = fg, onDismiss = { openColumn = null }) { id ->
+            openColumn = null
+            onOpenArticle(id)
+        }
+    }
+}
+
+@Composable
+private fun TopBar(fg: Color) {
+    Box(
+        Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.surface)
+            .statusBarsPadding()
+            .height(44.dp),
+        contentAlignment = Alignment.Center,
+    ) {
+        Text("我的学习", color = fg, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+    }
+}
+
+/** `fragment_study` header card: 本月学习 N 天 · X 小时 + 全部. */
+@Composable
+private fun StatsCard(data: StudyData, card: Color, fg: Color) {
+    val stats = data.stats
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .padding(start = 16.dp, end = 16.dp, top = 12.dp)
+            .clip(RoundedCornerShape(16.dp))
+            .background(card)
+            .padding(horizontal = 18.dp, vertical = 14.dp),
+    ) {
+        Text("本月学习", color = fg.copy(alpha = 0.55f), fontSize = 12.sp)
+        Spacer(Modifier.height(6.dp))
+        Row(verticalAlignment = Alignment.Bottom) {
+            Text("${stats.days}", color = fg, fontSize = 28.sp, fontWeight = FontWeight.Bold)
+            Text(" 天", color = fg, fontSize = 13.sp, modifier = Modifier.padding(bottom = 4.dp))
+            Spacer(Modifier.width(14.dp))
+            val tenths = kotlin.math.round(stats.hours * 10f).toInt()
+            Text(
+                "${tenths / 10}.${tenths % 10} 小时",
+                color = fg.copy(alpha = 0.7f),
+                fontSize = 14.sp,
+                modifier = Modifier.padding(bottom = 5.dp),
+            )
+            Spacer(Modifier.weight(1f))
+            Text(
+                "全部",
+                color = fg.copy(alpha = 0.6f),
+                fontSize = 12.sp,
+                modifier = Modifier
+                    .clip(RoundedCornerShape(14.dp))
+                    .background(fg.copy(alpha = 0.06f))
+                    .padding(horizontal = 12.dp, vertical = 6.dp),
+            )
+        }
+    }
+}
+
+@Composable
+private fun TabRow(selected: Int, fg: Color, onSelect: (Int) -> Unit) {
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .padding(top = 14.dp, bottom = 6.dp),
+        horizontalArrangement = Arrangement.Center,
+    ) {
+        listOf("计划", "订阅").forEachIndexed { index, label ->
+            val active = selected == index
+            Column(
+                Modifier
+                    .padding(horizontal = 22.dp)
+                    .clickableNoRipple { onSelect(index) },
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Text(
+                    label,
+                    color = if (active) fg else fg.copy(alpha = 0.45f),
+                    fontSize = 15.sp,
+                    fontWeight = if (active) FontWeight.Bold else FontWeight.Normal,
+                )
+                Spacer(Modifier.height(6.dp))
+                Box(
+                    Modifier
+                        .width(22.dp)
+                        .height(3.dp)
+                        .clip(RoundedCornerShape(2.dp))
+                        .background(if (active) StudyPink else Color.Transparent),
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun PlanList(
+    plans: List<StudyPlan>,
+    card: Color,
+    fg: Color,
+    onOpen: (StudyPlan) -> Unit,
+) {
+    if (plans.isEmpty()) {
+        Column(
+            Modifier.fillMaxSize().padding(top = 80.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Text("暂无加入任何阅读计划～", color = fg.copy(alpha = 0.55f), fontSize = 14.sp)
+            Spacer(Modifier.height(12.dp))
+            Text(
+                "查看推荐计划",
+                color = StudyPink,
+                fontSize = 14.sp,
+                modifier = Modifier
+                    .clip(RoundedCornerShape(16.dp))
+                    .background(StudyPink.copy(alpha = 0.08f))
+                    .padding(horizontal = 16.dp, vertical = 8.dp),
+            )
+        }
+        return
+    }
+    LazyColumn(
+        Modifier.fillMaxSize(),
+        contentPadding = androidx.compose.foundation.layout.PaddingValues(
+            start = 16.dp, end = 16.dp, top = 8.dp, bottom = 20.dp,
+        ),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+    ) {
+        items(plans, key = { it.id }) { plan -> PlanCard(plan, card, fg) { onOpen(plan) } }
+    }
+}
+
+/** `item_main_study_plan`: 18sp title, 还剩 N 天 / percent, 8dp bar, count. */
+@Composable
+private fun PlanCard(plan: StudyPlan, card: Color, fg: Color, onClick: () -> Unit) {
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(16.dp))
+            .background(card)
+            .clickableNoRipple(onClick = onClick)
+            .padding(16.dp),
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(
+                plan.title,
+                modifier = Modifier.weight(1f),
+                color = fg,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+            Chevron(fg.copy(alpha = 0.35f))
+        }
+        Spacer(Modifier.height(12.dp))
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(
+                if (plan.daysLeft > 0) "还剩 ${plan.daysLeft} 天学完" else "计划已完成",
+                color = fg.copy(alpha = 0.5f),
+                fontSize = 12.sp,
+            )
+            Spacer(Modifier.weight(1f))
+            Text("${(plan.progress * 100).toInt()}%", color = fg.copy(alpha = 0.5f), fontSize = 12.sp)
+        }
+        Spacer(Modifier.height(8.dp))
+        Box(Modifier.fillMaxWidth().height(8.dp).clip(RoundedCornerShape(4.dp)).background(StudyTrack)) {
+            Box(
+                Modifier
+                    .fillMaxWidth(plan.progress)
+                    .height(8.dp)
+                    .clip(RoundedCornerShape(4.dp))
+                    .background(StudyPink),
+            )
+        }
+        Spacer(Modifier.height(10.dp))
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("已学 ${plan.done} / ${plan.artNum} 篇", color = fg.copy(alpha = 0.45f), fontSize = 13.sp)
+        }
+    }
+}
+
+@Composable
+private fun SubscribeList(
+    subscribed: List<StudyColumn>,
+    columns: List<FindColumn>,
+    card: Color,
+    fg: Color,
+    onOpenColumn: (FindColumn) -> Unit,
+) {
+    LazyColumn(
+        Modifier.fillMaxSize(),
+        contentPadding = androidx.compose.foundation.layout.PaddingValues(
+            start = 16.dp, end = 16.dp, top = 8.dp, bottom = 20.dp,
+        ),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+    ) {
+        if (subscribed.isEmpty()) {
+            item {
+                Text(
+                    "暂无订阅专栏",
+                    color = fg.copy(alpha = 0.55f),
+                    fontSize = 13.sp,
+                    modifier = Modifier.padding(vertical = 6.dp),
+                )
+            }
+            item {
+                Text(
+                    "推荐订阅",
+                    color = fg,
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.Bold,
+                )
+            }
+        }
+        items(columns, key = { it.id }) { column ->
+            ColumnCard(column, card, fg) { onOpenColumn(column) }
+        }
+    }
+}
+
+@Composable
+private fun ColumnCard(column: FindColumn, card: Color, fg: Color, onClick: () -> Unit) {
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(14.dp))
+            .background(card)
+            .clickableNoRipple(onClick = onClick)
+            .padding(12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Cover(path = column.cover, size = 44)
+        Column(Modifier.weight(1f).padding(start = 12.dp)) {
+            Text(
+                column.title,
+                color = fg,
+                fontSize = 15.sp,
+                fontWeight = FontWeight.Bold,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+            if (column.subtitle.isNotBlank()) {
+                Text(
+                    column.subtitle,
+                    color = fg.copy(alpha = 0.45f),
+                    fontSize = 12.sp,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+        }
+        Text(
+            "${column.articles.size} 篇最新",
+            color = fg.copy(alpha = 0.4f),
+            fontSize = 12.sp,
+        )
+    }
+}
+
+@Composable
+private fun PlanSheet(
+    plan: StudyPlan,
+    card: Color,
+    fg: Color,
+    onDismiss: () -> Unit,
+    onOpenArticle: (String) -> Unit,
+) {
+    Overlay(card, fg, onDismiss) {
+        Text(plan.title, color = fg, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+        Spacer(Modifier.height(4.dp))
+        Text(
+            "还剩 ${plan.daysLeft} 天学完 · 已学 ${plan.done}/${plan.artNum} 篇",
+            color = fg.copy(alpha = 0.5f),
+            fontSize = 12.sp,
+        )
+        Spacer(Modifier.height(12.dp))
+        LazyColumn(Modifier.height(360.dp)) {
+            plan.chapters.forEach { chapter ->
+                item {
+                    Text(
+                        chapter.title,
+                        color = fg.copy(alpha = 0.5f),
+                        fontSize = 12.sp,
+                        modifier = Modifier.padding(vertical = 8.dp),
+                    )
+                }
+                items(chapter.articles, key = { it.id }) { article ->
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .clickableNoRipple { onOpenArticle(article.id) }
+                            .padding(vertical = 10.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Text(
+                            article.title.ifBlank { article.id },
+                            modifier = Modifier.weight(1f),
+                            color = fg,
+                            fontSize = 15.sp,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                        if (article.done) {
+                            Text("已学", color = StudyPink, fontSize = 12.sp)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ColumnSheet(
+    column: FindColumn,
+    card: Color,
+    fg: Color,
+    onDismiss: () -> Unit,
+    onOpenArticle: (String) -> Unit,
+) {
+    Overlay(card, fg, onDismiss) {
+        Text(column.title, color = fg, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+        if (column.subtitle.isNotBlank()) {
+            Text(column.subtitle, color = fg.copy(alpha = 0.5f), fontSize = 12.sp)
+        }
+        Spacer(Modifier.height(12.dp))
+        if (column.articles.isEmpty()) {
+            Text("该专栏暂无本地缓存的文章", color = fg.copy(alpha = 0.55f), fontSize = 13.sp)
+        } else {
+            LazyColumn(Modifier.height(360.dp)) {
+                items(column.articles, key = { it.id }) { article ->
+                    Column(
+                        Modifier
+                            .fillMaxWidth()
+                            .clickableNoRipple { onOpenArticle(article.id) }
+                            .padding(vertical = 10.dp),
+                    ) {
+                        Text(
+                            article.title.ifBlank { article.id },
+                            color = fg,
+                            fontSize = 15.sp,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun Overlay(card: Color, fg: Color, onDismiss: () -> Unit, content: @Composable () -> Unit) {
+    val source = remember { MutableInteractionSource() }
+    Box(Modifier.fillMaxSize()) {
+        Box(
+            Modifier
+                .fillMaxSize()
+                .background(Color(0x66000000))
+                .clickable(interactionSource = source, indication = null, onClick = onDismiss),
+        )
+        Column(
+            Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
+                .background(card)
+                .navigationBarsPadding()
+                .padding(horizontal = 20.dp, vertical = 16.dp),
+        ) {
+            content()
+        }
+    }
+}
+
+@Composable
+private fun Chevron(color: Color) {
+    Canvas(Modifier.size(16.dp)) {
+        drawLine(
+            color,
+            Offset(size.width * 0.35f, size.height * 0.22f),
+            Offset(size.width * 0.65f, size.height * 0.5f),
+            strokeWidth = 1.6.dp.toPx(),
+            cap = StrokeCap.Round,
+        )
+        drawLine(
+            color,
+            Offset(size.width * 0.65f, size.height * 0.5f),
+            Offset(size.width * 0.35f, size.height * 0.78f),
+            strokeWidth = 1.6.dp.toPx(),
+            cap = StrokeCap.Round,
+        )
+    }
+}
+
+@Composable
+private fun Cover(path: String, size: Int) {
+    val bitmap by produceState<ImageBitmap?>(null, path) {
+        value = if (path.isBlank()) null else runCatching {
+            Res.readBytes("files/find/$path").decodeToImageBitmap()
+        }.getOrNull()
+    }
+    Box(
+        Modifier
+            .size(size.dp)
+            .clip(RoundedCornerShape(8.dp))
+            .background(Color(0xFFE9ECF2)),
+        contentAlignment = Alignment.Center,
+    ) {
+        bitmap?.let {
+            Image(
+                it,
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.size(size.dp),
+            )
+        }
+    }
+}

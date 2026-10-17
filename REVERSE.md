@@ -22,7 +22,8 @@
 | 阅读页 ⋮ 设置 / 「析」/ 右下按钮 | `ReaderWebView2` 接口 + `tv_pageInfo` / 浮动按钮 | 部分（析已开；⋮ 菜单、右下按钮待做） | ⏳ |
 | 短文详情页 | `ArticleActivity` → `ArticleDetailFragment`：`activity_base_detail`（44dp `MojiToolbar` + 专栏名 14sp bold @48dp）+ 原版 H5（`file:///android_asset/web/mojiread/article/android/index.html`）+ `ArticleDetailAudioPlayerView` | `feature/article/ArticleDetailScreen.kt` + `data/article/*`（原版 H5 由 `BookServer` 本机供给） | ✅ 首版（真机验证；遗留见 PLAN P6c） |
 | 词卡（查词详情） | `assets/WordDetail` H5 + Bridge | H5 资产已就绪，待接 SQLDelight 词库 | ⏳ |
-| 学习 / 我的 | `i5.*` / `q5.*` 等（未展开） | — | ⏳ |
+| 学习 | `StudyFragment`：MojiToolbar「我的学习」+ `fragment_study` 统计卡（本月学习/小时/全部）+ TabLayout「计划」「订阅」+ ViewPager2（`MyStudyPlanFragment` / `SubscribeHomeFragment`）；计划卡见 `item_main_study_plan`（18sp 标题、还剩 N 天、8dp 进度条） | `feature/study/StudyScreen.kt` + `data/study/StudyCatalog.kt` | ✅ 主体完成（阅读库/我的仍待做） |
+| 我的 | `MineFragment`（未展开） | — | ⏳ |
 
 ## 二、接口（数据抓取与本地 mock）
 
