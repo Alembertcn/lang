@@ -18,6 +18,22 @@ val envValues: Map<String, String> = run {
     }
 }
 
+// local.properties（gitignore）里的本机配置，目前只有 MOCK_MEDIA_BASE。
+val localValues: Map<String, String> = run {
+    val f = rootProject.file("local.properties")
+    if (!f.exists()) {
+        emptyMap()
+    } else {
+        f.readLines()
+            .map { it.trim() }
+            .filter { it.isNotEmpty() && !it.startsWith("#") && it.contains("=") }
+            .associate {
+                val i = it.indexOf('=')
+                it.substring(0, i).trim() to it.substring(i + 1).trim()
+            }
+    }
+}
+
 val generateSecrets by tasks.registering {
     val outDir = layout.buildDirectory.dir("generated/mojiSecrets")
     outputs.dir(outDir)
@@ -38,6 +54,9 @@ val generateSecrets by tasks.registering {
             appendLine("    const val QWEN_TTS_VOICE: String = \"${esc(envValues["QWEN_TTS_VOICE"] ?: "Cherry")}\"")
             appendLine("    const val QWEN_TTS_BASE_URL: String = \"${esc(envValues["QWEN_TTS_BASE_URL"] ?: "https://dashscope.aliyuncs.com/api/v1")}\"")
             appendLine("    const val CONTENT_BASE_URL: String = \"${esc(envValues["CONTENT_BASE_URL"] ?: "")}\"")
+            appendLine()
+            appendLine("    /** 本机媒体 mock 根（手机侧经 adb reverse 访问），空 = 播放器禁用。 */")
+            appendLine("    const val MOCK_MEDIA_BASE: String = \"${esc(envValues["MOCK_MEDIA_BASE"] ?: localValues["MOCK_MEDIA_BASE"] ?: "")}\"")
             appendLine("}")
             appendLine()
             appendLine("val hasQwenKey: Boolean get() = Secrets.QWEN_API_KEY.isNotBlank()")

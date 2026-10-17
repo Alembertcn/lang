@@ -11,6 +11,7 @@
 | 词库 `content/mojidict/dictionary.db` | 64 MB | **Release（`assets-v1`）** |
 | 书籍解包树（`composeResources/files/books/{id}/**`） | ~0.5 MB | **生成物，不入库**，用 `unpack_moji_books.py` 从 epub 源 1:1 解包（原版路径，无转换） |
 | 发现页数据/图片（`composeResources/files/find/**`） | ~6 MB | **生成物，不入库**，用 `tools/fetch_find_assets.py` 重建（圈子/文章/计划/专栏封面 + `feed.json`） |
+| 文章详情页资源（`composeResources/files/article_h5/**`、`article_detail/**`） | ~22 MB | **生成物，不入库**，用 `tools/build_article_assets.py` 从 `content/h5` + `reference/moji-api` 1:1 重建（原版 H5 + 299 篇 body.html + Noto 字体） |
 | 书籍 epub 源（`reference/moji-api/oss/books/**`） | ~1.2 MB | Release 或本地抓取（`fetch_moji_books.py`） |
 | 音频 mp3（`reference/moji-api/oss/article/audio/**`） | 468 MB | 保持本地 mock（.gitignore 已有） |
 | 文章源（`reference/moji-api/articles/**`） | 15 MB | 本地抓取（`fetch_moji_articles.py`） |
@@ -32,7 +33,8 @@ gh release create assets-v1 content/mojidict/../mojidict-db.zip \
 tools/fetch_assets.sh                 # 1) 下载 Release 资产（词库 / epub 源）
 python3 tools/fetch_moji_books.py     # 2)（可选）抓取 epub 源到 reference/（若 Release 已含可跳过）
 python3 tools/unpack_moji_books.py    # 3) 1:1 解包 epub → composeResources/files/books/（生成物）
-./gradlew :composeApp:assembleDebug   # 4) 构建
+python3 tools/build_article_assets.py # 4) 原版文章 H5 + 正文资源（生成物）
+./gradlew :composeApp:assembleDebug   # 5) 构建
 ```
 
 ## 说明

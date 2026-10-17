@@ -20,7 +20,7 @@
 | 阅读器书架 | `ReaderLibraryListFragment`（全部/我的/官方 + 3 列网格 + 上传卡位） | `feature/reader/ReaderScreen.kt` | ✅ |
 | 书籍正文阅读器 | `ReaderActivity` + `activity_reader` + `ReaderPageFragment`（ViewPager 主轴 + WebView 显示层 + 目录抽屉 + 页码） | `feature/reader/ReaderBookScreen.kt` + `data/reader/*` | ✅ 首版（逐项对齐中，见 INTEGRATION.md 遗留清单） |
 | 阅读页 ⋮ 设置 / 「析」/ 右下按钮 | `ReaderWebView2` 接口 + `tv_pageInfo` / 浮动按钮 | 部分（析已开；⋮ 菜单、右下按钮待做） | ⏳ |
-| 文章精读 + 播放器 | `ArticleActivity`（见 moji逆.md） | 方案已验证，待移植 | ⏳ |
+| 短文详情页 | `ArticleActivity` → `ArticleDetailFragment`：`activity_base_detail`（44dp `MojiToolbar` + 专栏名 14sp bold @48dp）+ 原版 H5（`file:///android_asset/web/mojiread/article/android/index.html`）+ `ArticleDetailAudioPlayerView` | `feature/article/ArticleDetailScreen.kt` + `data/article/*`（原版 H5 由 `BookServer` 本机供给） | ✅ 首版（真机验证；遗留见 PLAN P6c） |
 | 词卡（查词详情） | `assets/WordDetail` H5 + Bridge | H5 资产已就绪，待接 SQLDelight 词库 | ⏳ |
 | 学习 / 我的 | `i5.*` / `q5.*` 等（未展开） | — | ⏳ |
 
@@ -104,6 +104,22 @@ tools/start_media_mock.sh   # :8765 -> reference/moji-api/oss（screen 常驻）
 
 新增模块的固定动作见 `PLAN.md`「高仿工作流」：先定位接口 → 抓取落盘 → 同步接口文档
 → 按缓存实现 → 同一页对照验收。
+
+### 2.6 短文详情页的数据/资源路径（P6c）
+
+原版正文不是原生排版，而是**原版 H5** 在 WebView 里渲染：
+
+| 环节 | 原版证据 | 本实现 |
+| --- | --- | --- |
+| 页面入口 | `ArticleActivity.onCreate` → `setDefaultContentView(false)` → 装入 `ArticleFragment`/`ArticleDetailFragment` | `App.kt` 的 `openArticle` 全屏路由（系统返回键回到发现页） |
+| 页面骨架 | `res/layout/activity_base_detail.xml`：`MojiToolbar` 44dp、`ll_article_detail_column_container` 48dp 边距、`ll_toolbox` 56dp、`ArticleDetailAudioPlayerView` | `ArticleTopBar` + 吸顶工具条 + `ArticleAudioBar` |
+| 正文加载 | `ArticleWebView` 加载 `file:///android_asset/web/mojiread/article/android/index.html`；`index-fd51caf4.js` 回调 `CommonJsInterface.onJsLoaded` | `BookServer` 在回环 HTTP 上提供同路径文档（H5 的绝对 `/android_asset/...` 资源原样解析） |
+| 正文注入 | `ArticleDetailFragment` 构造 `ArticleJsParams`，`evaluateJavascript("MOJiArticleDetailDidSetHTML(json, body, underlines)")` | 同样调用；`body` = `reference/moji-api/articles/{id}/body.html` 的 1:1 副本 |
+| 工具按钮 | `ArticleWebView.z(i)` → `MOJiArticleToolsCtrl(i,'true')`（0 JLPT / 1 辅助阅读 / 3 笔记） | 注入后显示 1（辅助）与 3（笔记）；滚动过工具行后原生 56dp 吸顶条出现（`coordinateToolbox`） |
+| 播放条 | `layout_audio_player_manager`：14sp 时间、2dp seek、70x38 精听胶囊、36/40/36 传输键、24dp 六边形设置 + 速度角标 | `ArticleAudioBar`（同尺寸）；音频来自 `MOCK_MEDIA_BASE/article/audio/{audioId}` |
+
+资源由 `tools/build_article_assets.py` 生成（gitignore）：
+`files/article_h5/`（原版 H5 + Noto Sans JP）、`files/article_detail/{id}.{json,html}`（299 篇）。
 
 ## 三、逆向还原（资产与机制）
 

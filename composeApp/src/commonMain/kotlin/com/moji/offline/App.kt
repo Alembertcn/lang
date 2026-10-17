@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.moji.offline.domain.model.AppLanguage
 import com.moji.offline.domain.model.ThemeMode
+import com.moji.offline.feature.article.ArticleDetailRoute
 import com.moji.offline.feature.discover.DiscoverRoute
 import com.moji.offline.data.catalog.ReaderBook
 import com.moji.offline.feature.reader.ReaderBookRoute
@@ -70,8 +71,14 @@ fun App() {
         CompositionLocalProvider(LocalAppStrings provides strings) {
             var selectedTab by remember { mutableStateOf(MainTab.Discover) }
             var openBook by remember { mutableStateOf<ReaderBook?>(null) }
+            var openArticle by remember { mutableStateOf<String?>(null) }
             val book = openBook
-            if (book != null) {
+            val article = openArticle
+            if (article != null) {
+                // ArticleActivity is a separate full-screen Activity in the
+                // original app: tabs and bottom bar are hidden here too.
+                ArticleDetailRoute(articleId = article, onBack = { openArticle = null })
+            } else if (book != null) {
                 // The original reader is a separate Activity on top of the tabs —
                 // same here: full screen, bottom bar hidden.
                 ReaderBookRoute(book = book, onBack = { openBook = null })
@@ -85,7 +92,10 @@ fun App() {
                         when (selectedTab) {
                             MainTab.Discover -> DiscoverRoute(
                                 onOpenPlan = {},
-                                onOpenReading = { _, _ -> },
+                                // Discover passes "" as the plan id for article taps.
+                                onOpenReading = { planId, articleId ->
+                                    if (planId.isBlank()) openArticle = articleId
+                                },
                                 onBrowsePlans = {},
                             )
                             MainTab.Reader -> ReaderRoute(onOpenBook = { openBook = it })

@@ -16,7 +16,7 @@ UI 与资源按逆向原版还原。应用包名 `com.moji.offline`。
 | 阅读器书架 | ✅ | 原版结构：全部/我的/官方 tabs + 3 列书架网格 + 9 本书真实 OSS 封面 |
 | 书籍正文阅读 | ✅ 首版 | **原版路径**：epub 1:1 解包 + 本机 HTTP 书服（Ktor CIO）+ `loadDataWithBaseURL` 直载原版 XHTML；引擎分页 + 原版翻页同步公式；真机对照通过 |
 | 媒体 mock | ✅ 基建 | 常驻服务 + adb reverse + 网络安全配置 + 一键脚本；播放器代码待同步 |
-| 阅读详情 + 播放器 | ⏳ | 待从原型项目移植（"下载一次缓存后本地播放"方案已验证） |
+| 短文详情页 | ✅ 首版 | **原版 H5 路径**：`article/android/index.html` + `MOJiArticleDetailDidSetHTML` 注入 1:1 正文；原生 44dp 顶栏、56dp 吸顶工具条、底部播放条（mock mp3 真机播放通过）。资源由 `tools/build_article_assets.py` 生成 |
 | 发现页剩余视觉 | ⏳ | 顶部粉色背景、阅读时长/等级信息栏、圈子入口、大卡片 |
 | 词库查词 | ⏳ | SQLDelight 接入 `dictionary.db` + 词卡 H5 |
 | AI 能力 | ⏳ | 千问：长难句分析 / 核心词汇 / AI 摘要 / TTS 发音 |
@@ -85,6 +85,7 @@ moji-offline/
 | `fetch_moji_covers.py` / `fetch_moji_reader.py` | 书架 / 封面素材 |
 | `fetch_moji_books.py` / `unpack_moji_books.py` | 下载书籍 epub 源 / 1:1 解包到 `composeResources/files/books/` |
 | `fetch_find_assets.py` | 把发现页数据 + 图片打包成 `composeResources/files/find/`（生成物） |
+| `build_article_assets.py` | 原版文章 H5 + 299 篇正文（1:1）+ 字体打包成 `files/article_h5/`、`files/article_detail/`（生成物） |
 | `fetch_assets.sh` | 拉取 Release 外置资产（词库 / epub 源），见 `ASSETS.md` |
 | `convert_moji_articles.py` | `body.html` → 打包 JSON（SRT 时间轴 + 原文 + 翻译） |
 | `start_media_mock.sh` | 启动常驻媒体 mock（screen）+ adb reverse 端口转发 |
