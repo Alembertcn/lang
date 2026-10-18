@@ -53,11 +53,11 @@ python3 tools/fetch_find_assets.py
 | --- | --- | --- |
 | `reference/moji-api/oss/**` | `/volume1/docker/caddy/res/lang/**` | `https://static.ailuo.fun/lang/**` |
 
-同步：
+同步（绿联 NAS 禁用任意路径 rsync，脚本用 **tar-over-ssh**）：
 
 ```bash
-tools/sync_lang_media_to_nas.sh          # rsync oss → NAS lang
-# 首次还需 Caddyfile 含 /lang/*（脚本可 --apply-caddy）
+tools/sync_lang_media_to_nas.sh --apply-caddy   # 首次：打补丁 + 全量同步 oss → lang
+tools/sync_lang_media_to_nas.sh                 # 之后只同步
 ```
 
 App 配置（二选一）：
