@@ -1,6 +1,6 @@
 # 项目规则（每次开工前必读）
 
-moji-offline 是 MOJi阅读（com.mojidict.read）的离线高仿项目。
+**Lang**（品牌 **MJ**；仓库目录名 moji-offline）是原版 MOJi阅读（com.mojidict.read）的离线高仿项目。
 以下规则来自两次真实事故的复盘（翻页吸附被漏、阅读引擎未复用），**必须遵守**。
 
 ## 零、四条纪律（2026-10-16 阅读器对齐事故后补记）

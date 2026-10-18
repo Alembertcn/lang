@@ -24,7 +24,6 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.ContentScale
@@ -32,6 +31,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.moji.offline.data.article.ArticlePlayer
+import com.moji.offline.data.mine.MineStore
 import com.moji.offline.resources.Res
 import com.moji.offline.resources.ic_player_menu_close
 import com.moji.offline.resources.ic_player_menu_close_dark
@@ -41,9 +41,9 @@ import com.moji.offline.resources.ic_player_menu_pause
 import com.moji.offline.resources.ic_player_menu_pause_dark
 import com.moji.offline.resources.ic_player_menu_play_dark
 import com.moji.offline.resources.ic_player_menu_start
+import com.moji.offline.ui.MockImage
 import com.moji.offline.ui.interaction.clickableNoRipple
 import com.moji.offline.ui.theme.LocalDarkTheme
-import org.jetbrains.compose.resources.decodeToImageBitmap
 import org.jetbrains.compose.resources.painterResource
 
 /**
@@ -89,14 +89,10 @@ fun GlobalMiniPlayer(onOpenArticle: (String) -> Unit, onOpenQueue: () -> Unit) {
                 .clickableNoRipple { onOpenArticle(meta.id) },
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            val cover by produceState<ImageBitmap?>(null, meta.coverFile) {
-                value = if (meta.coverFile.isNotBlank()) {
-                    runCatching {
-                        Res.readBytes("files/find/articles/${meta.coverFile}").decodeToImageBitmap()
-                    }.getOrNull()
-                } else {
-                    null
-                }
+            // Same cover resolution as article detail / history: bundled
+            // find cover first, else mock OSS by coverId (never CDN).
+            val coverSource by produceState("", meta.id, meta.coverFile, meta.coverId) {
+                value = MineStore.coverSource(meta.id)
             }
             Box(
                 Modifier
@@ -105,17 +101,15 @@ fun GlobalMiniPlayer(onOpenArticle: (String) -> Unit, onOpenQueue: () -> Unit) {
                     .background(if (dark) Color(0xFF2C2C2F) else Color(0xFFE9ECF2)),
                 contentAlignment = Alignment.Center,
             ) {
-                val image = cover
-                if (image != null) {
-                    Image(
-                        image,
-                        contentDescription = null,
+                if (coverSource.isNotBlank()) {
+                    MockImage(
+                        coverSource,
+                        Modifier.size(44.dp),
                         contentScale = ContentScale.Crop,
-                        modifier = Modifier.size(44.dp),
+                        placeholder = if (dark) Color(0xFF2C2C2F) else Color(0xFFE9ECF2),
                     )
                 } else {
-                    // Plan articles without a bundled cover: keep a stable
-                    // glyph instead of an empty white square.
+                    // No bundled cover and no mock mirror: keep a stable glyph.
                     Text(
                         meta.title.take(1),
                         color = if (dark) Color(0xFF8B8787) else Color(0xFF9AA0A6),

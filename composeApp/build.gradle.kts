@@ -51,7 +51,7 @@ val generateSecrets by tasks.registering {
             appendLine("    const val QWEN_MODEL: String = \"${esc(envValues["QWEN_MODEL"] ?: "qwen-plus")}\"")
             appendLine("    const val QWEN_BASE_URL: String = \"${esc(envValues["QWEN_BASE_URL"] ?: "https://dashscope.aliyuncs.com/compatible-mode/v1")}\"")
             appendLine("    const val QWEN_TTS_MODEL: String = \"${esc(envValues["QWEN_TTS_MODEL"] ?: "qwen-tts")}\"")
-            appendLine("    const val QWEN_TTS_VOICE: String = \"${esc(envValues["QWEN_TTS_VOICE"] ?: "Cherry")}\"")
+            appendLine("    const val QWEN_TTS_VOICE: String = \"${esc(envValues["QWEN_TTS_VOICE"] ?: "Lenn")}\"")
             appendLine("    const val QWEN_TTS_BASE_URL: String = \"${esc(envValues["QWEN_TTS_BASE_URL"] ?: "https://dashscope.aliyuncs.com/api/v1")}\"")
             appendLine("    const val CONTENT_BASE_URL: String = \"${esc(envValues["CONTENT_BASE_URL"] ?: "")}\"")
             appendLine()
@@ -139,6 +139,10 @@ sqldelight {
     databases {
         create("MojiDatabase") {
             packageName.set("com.moji.offline.db")
+        }
+        create("WordBookDatabase") {
+            packageName.set("com.moji.offline.wordbook")
+            srcDirs.setFrom("src/commonMain/wordbook-sqldelight")
         }
     }
 }

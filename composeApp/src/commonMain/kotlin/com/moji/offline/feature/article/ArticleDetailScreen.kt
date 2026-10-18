@@ -49,10 +49,14 @@ import com.moji.offline.config.Secrets
 import com.moji.offline.data.article.ArticleCatalog
 import com.moji.offline.data.article.ArticleMeta
 import com.moji.offline.data.article.ArticlePlayer
+import com.moji.offline.data.article.ArticleQueue
 import com.moji.offline.data.audio.SpeechEngine
-import com.moji.offline.data.audio.QwenWordAudio
+import com.moji.offline.data.audio.WordAudio
 import com.moji.offline.data.audio.openTtsVoiceInstaller
+import com.moji.offline.data.db.UserDataRepository
 import com.moji.offline.data.reader.BookServer
+import com.moji.offline.data.settings.AppSettings
+import com.moji.offline.data.settings.ArticleDisplaySettings
 import com.moji.offline.data.word.WordDict
 import com.moji.offline.data.word.WordEntry
 import com.moji.offline.resources.Res
@@ -60,12 +64,19 @@ import com.moji.offline.resources.ic_article_auxiliary
 import com.moji.offline.resources.ic_article_note
 import com.moji.offline.resources.ic_common_listen_read
 import com.moji.offline.resources.ic_player_menu_pause
-import com.moji.offline.resources.ic_player_next
-import com.moji.offline.resources.ic_player_next_unable
+import com.moji.offline.resources.ic_player_menu_pause_dark
+import com.moji.offline.resources.ic_player_menu_play_dark
 import com.moji.offline.resources.ic_player_menu_start
+import com.moji.offline.resources.ic_player_next
+import com.moji.offline.resources.ic_player_next_dark
+import com.moji.offline.resources.ic_player_next_unable
 import com.moji.offline.resources.ic_player_prev
+import com.moji.offline.resources.ic_player_prev_dark
 import com.moji.offline.resources.ic_player_prev_unable
 import com.moji.offline.resources.ic_player_set
+import com.moji.offline.resources.ic_player_set_dark
+import org.jetbrains.compose.resources.DrawableResource
+import com.moji.offline.ui.MojiBackGlyph
 import com.moji.offline.ui.interaction.clickableNoRipple
 import com.moji.offline.ui.PlatformBackHandler
 import com.moji.offline.ui.theme.LocalDarkTheme
@@ -74,16 +85,20 @@ import com.moji.offline.ui.webview.WebViewController
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
+import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.buildJsonArray
+import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.float
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
-import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import org.jetbrains.compose.resources.painterResource
 import androidx.compose.foundation.Image
 import kotlin.math.roundToLong
+import kotlin.time.Clock
 
 /**
  * 短文详情页 — faithful port of `ArticleActivity` + `ArticleDetailFragment`
@@ -99,11 +114,15 @@ import kotlin.math.roundToLong
 private val ArticleTitle = Color(0xFF030303)
 private val SubGray = Color(0xFFACACAC)
 private val SeekTrack = Color(0xFFEDEDED)
+private val SeekTrackDark = Color(0xFF3B3B3B)
 private val SeekPlayed = Color(0xFFE0315B)
 private val BarBg = Color(0xFFFFFFFF)
 private val PillBg = Color(0xFFF8F8F8)
+private val PillBgDark = Color(0xFF2C2C2F)
 private val DarkBarBg = Color(0xFF1C1C1E)
 private val DarkBarFg = Color(0xFFF2F2F2)
+/** 对位原版 `Moji_bg_color_page_dark` / H5 `--background-color`（theme-dark）。 */
+private val PageBgDark = Color(0xFF0E0E11)
 
 @Composable
 fun ArticleDetailRoute(
@@ -111,21 +130,51 @@ fun ArticleDetailRoute(
     queueIds: List<String> = emptyList(),
     onBack: () -> Unit,
 ) {
-    PlatformBackHandler(enabled = true, onBack = onBack)
     var meta by remember(articleId) { mutableStateOf<ArticleMeta?>(null) }
     var body by remember(articleId) { mutableStateOf<String?>(null) }
     var pageUrl by remember(articleId) { mutableStateOf<String?>(null) }
     var failure by remember(articleId) { mutableStateOf<String?>(null) }
     var menuWord by remember(articleId) { mutableStateOf<WordInfo?>(null) }
+    // 本篇当次查过的词条 id。对位 ArticleDetailViewModel 里那份 LinkedHashSet：
+    // 同一词再查不重复写入，删掉之后这次打开也不会再补。
+    val notedWordIds = remember(articleId) { mutableSetOf<String>() }
     var detailWord by remember(articleId) { mutableStateOf<WordInfo?>(null) }
+    var readingNote by remember(articleId) { mutableStateOf(false) }
+    var assistRead by remember(articleId) { mutableStateOf(false) }
+    var inlineNote by remember(articleId) { mutableStateOf<Pair<String, String>?>(null) }
     var dictWord by remember(articleId) { mutableStateOf<WordInfo?>(null) }
     var showSettings by remember(articleId) { mutableStateOf(false) }
     var showShadowing by remember(articleId) { mutableStateOf(false) }
     var notice by remember(articleId) { mutableStateOf<String?>(null) }
     var voiceMissing by remember(articleId) { mutableStateOf(false) }
+    // 更多面板（右上角 ⋮）。controller 提到这一层，面板改设置时才能把 JS
+    // 推给已经加载好的 H5（对位原版 BaseDetailFragment → ArticleWebView）。
+    val controller = remember(articleId) { WebViewController() }
+    var h5Ready by remember(articleId) { mutableStateOf(false) }
+    var showMore by remember(articleId) { mutableStateOf(false) }
+    var showTransSheet by remember(articleId) { mutableStateOf(false) }
+    var showFontSheet by remember(articleId) { mutableStateOf(false) }
+    var favorited by remember(articleId) { mutableStateOf(false) }
     val clipboard = LocalClipboardManager.current
     val speech = remember { SpeechEngine() }
     val scope = rememberCoroutineScope()
+
+    // 弹层打开时系统返回先关弹层；无弹层时再退出详情。
+    PlatformBackHandler(enabled = true, onBack = {
+        when {
+            showMore -> showMore = false
+            showTransSheet -> showTransSheet = false
+            showFontSheet -> showFontSheet = false
+            showSettings -> showSettings = false
+            showShadowing -> showShadowing = false
+            detailWord != null -> detailWord = null
+            readingNote -> readingNote = false
+            assistRead -> assistRead = false
+            inlineNote != null -> inlineNote = null
+            dictWord != null -> dictWord = null
+            else -> onBack()
+        }
+    })
 
     DisposableEffect(articleId) {
         onDispose { speech.stop() }
@@ -144,13 +193,41 @@ fun ArticleDetailRoute(
             failure = "本机内容服务启动失败"
             return@LaunchedEffect
         }
+        // 先读回上次的显示设置与收藏态，再放行页面加载，避免注入时用默认值闪一下。
+        ArticleDisplaySettings.load()
         meta = ArticleCatalog.meta(articleId)
         body = ArticleCatalog.body(articleId)
         if (meta == null || body == null) {
             failure = "没有找到这篇文章的离线缓存"
             return@LaunchedEffect
         }
+        favorited = UserDataRepository.isArticleFavorite(articleId)
         pageUrl = "http://127.0.0.1:$port/android_asset/web/mojiread/article/android/index.html"
+    }
+
+    // 设置变化 → 实时推给 H5（原版 setWebFontSize / clickTranslate / toggleSentenceAnalysis）。
+    LaunchedEffect(h5Ready, ArticleDisplaySettings.fontsSize) {
+        if (h5Ready) {
+            controller.evaluateJs(
+                "window.MOJiArticleDetailSetFontSize(" + q(ArticleDisplaySettings.fontsSize) + ")",
+            )
+        }
+    }
+    LaunchedEffect(h5Ready, ArticleDisplaySettings.translationMode) {
+        if (h5Ready) {
+            controller.evaluateJs(
+                "window.MOJiReadingArticleDetailVCSwitchTranslation(" +
+                    q(ArticleDisplaySettings.translationMode.index) + ")",
+            )
+        }
+    }
+    LaunchedEffect(h5Ready, ArticleDisplaySettings.explanationOpen) {
+        if (h5Ready) {
+            controller.evaluateJs(
+                "window.toggleSentenceAnalysis(" +
+                    (if (ArticleDisplaySettings.explanationOpen) 1 else 0) + ")",
+            )
+        }
     }
 
     val colors = MaterialTheme.colorScheme
@@ -158,6 +235,7 @@ fun ArticleDetailRoute(
         ArticleTopBar(
             title = meta?.columnTitle.orEmpty(),
             onBack = onBack,
+            onMore = { showMore = true },
         )
         val current = meta
         val html = body
@@ -167,18 +245,16 @@ fun ArticleDetailRoute(
         LaunchedEffect(current, queueIds) {
             val entry = current ?: return@LaunchedEffect
             // Plan chapters / column articles form the playback queue
-            // (MOJi's `dialog_audio_player_list`).
-            val items = if (queueIds.size > 1) {
-                queueIds.mapNotNull { ArticleCatalog.meta(it) }
-            } else {
-                emptyList()
-            }
-            val effective = if (items.any { it.id == articleId }) items else listOf(entry)
+            // (MOJi's `dialog_audio_player_list`). Expand when the opener
+            // only passed the current id (e.g. restore / discover).
+            val resolved = ArticleQueue.resolve(articleId, queueIds)
+            val effective = if (resolved.isEmpty()) listOf(entry) else resolved
             ArticlePlayer.setQueue(effective, articleId)
         }
-        // The original article H5 is a white page; the WebView itself stays
-        // transparent so the reader can share it, so paint the page here.
-        Box(Modifier.weight(1f).background(Color.White)) {
+        // H5 body 背景透明（原版 WebView 同）；页面底色由原生壳铺，
+        // 深色对位 `Moji_bg_color_page_dark` / CSS `--background-color: #0e0e11`。
+        val pageBg = if (LocalDarkTheme.current) PageBgDark else Color.White
+        Box(Modifier.weight(1f).background(pageBg)) {
             when {
                 failure != null -> Text(
                     failure!!,
@@ -190,8 +266,24 @@ fun ArticleDetailRoute(
                         meta = current,
                         body = html,
                         pageUrl = url,
+                        controller = controller,
+                        onJsReady = { h5Ready = true },
                         onToggleAudio = { ArticlePlayer.toggle() },
                         onSelection = { word, _ -> menuWord = word },
+                        onNotice = { notice = it },
+                        onTool = { index ->
+                            when (index) {
+                                1 -> assistRead = true
+                                3 -> readingNote = true
+                            }
+                        },
+                        onArticleNote = { title, text -> inlineNote = title to text },
+                        onCollectSentence = { text ->
+                            scope.launch {
+                                UserDataRepository.addSentenceReadingNote(articleId, text)
+                                notice = "已收藏"
+                            }
+                        },
                     )
             }
             val selected = menuWord
@@ -200,12 +292,13 @@ fun ArticleDetailRoute(
                 // cross or a tap outside closes it (checked on device).
                 WordCardOverlay(
                     word = selected,
+                    articleId = articleId,
+                    notedWordIds = notedWordIds,
                     onRead = {
                         scope.launch {
-                            // 1) Qwen TTS (real Japanese audio), 2) device
-                            // TTS, 3) explain that no Japanese voice exists.
-                            if (QwenWordAudio.speak(selected.speakAs)) return@launch
-                            if (speech.speak(selected.speakAs)) return@launch
+                            val entry = WordDict.find(selected.surface, selected.lemma)
+                            if (entry != null && WordAudio.speak(entry.id)) return@launch
+                            if (speech.speak(entry?.spokenOr(selected.speakAs) ?: selected.speakAs)) return@launch
                             notice = "日语发音生成失败，正在检查本机语音包…"
                             voiceMissing = true
                         }
@@ -234,7 +327,7 @@ fun ArticleDetailRoute(
             }
         }
         val m = meta
-        if (m != null) {
+        if (m != null && m.hasPlayableAudio()) {
             ArticleAudioBar(
                 meta = m,
                 onOpenSettings = { showSettings = true },
@@ -243,6 +336,65 @@ fun ArticleDetailRoute(
         }
     }
     if (showSettings) ArticleSettingsSheet(onDismiss = { showSettings = false })
+
+    // 右上角 ⋮ → 更多面板（BaseDetailFragment.showArticleDetailSettingDialog）
+    if (showMore) {
+        MoreMenuSheet(
+            explanationOpen = ArticleDisplaySettings.explanationOpen,
+            favorited = favorited,
+            translationMode = ArticleDisplaySettings.translationMode,
+            fontSizeLevel = ArticleDisplaySettings.fontSizeLevel,
+            onDismiss = { showMore = false },
+            onToggleExplanation = { open ->
+                showMore = false
+                scope.launch { ArticleDisplaySettings.setExplanationOpen(open) }
+            },
+            onToggleFavorite = {
+                showMore = false
+                scope.launch {
+                    if (favorited) {
+                        UserDataRepository.removeArticleFavorite(articleId)
+                        favorited = false
+                    } else {
+                        UserDataRepository.addArticleFavorite(
+                            articleId,
+                            meta?.title.orEmpty(),
+                            Clock.System.now().toEpochMilliseconds(),
+                        )
+                        favorited = true
+                    }
+                }
+            },
+            onPickTranslationMode = {
+                showMore = false
+                showTransSheet = true
+            },
+            onPickFontSize = {
+                showMore = false
+                showFontSheet = true
+            },
+        )
+    }
+    if (showTransSheet) {
+        TranslationModeSheet(
+            selected = ArticleDisplaySettings.translationMode,
+            onSelect = { mode ->
+                showTransSheet = false
+                scope.launch { ArticleDisplaySettings.setTranslationMode(mode) }
+            },
+            onDismiss = { showTransSheet = false },
+        )
+    }
+    if (showFontSheet) {
+        FontSizeSheet(
+            selected = ArticleDisplaySettings.fontSizeLevel,
+            onSelect = { level ->
+                showFontSheet = false
+                scope.launch { ArticleDisplaySettings.setFontsSize(level.size) }
+            },
+            onDismiss = { showFontSheet = false },
+        )
+    }
     if (showShadowing) ShadowingSheet(onDismiss = { showShadowing = false })
     if (voiceMissing) {
         val colors = MaterialTheme.colorScheme
@@ -298,17 +450,16 @@ fun ArticleDetailRoute(
         }
     }
     detailWord?.let { word ->
-        WordDetailSheet(
-            word = word,
-            sentence = ArticlePlayer.sentences.firstOrNull { it.text.contains(word.surface) }?.text,
-            card = if (LocalDarkTheme.current) Color(0xFF1C1C1E) else Color.White,
-            fg = if (LocalDarkTheme.current) Color(0xFFF2F2F2) else ArticleTitle,
-            onDismiss = { detailWord = null },
-        )
+        WordDetailPage(word = word, onDismiss = { detailWord = null })
+    }
+    if (readingNote) ReadingNotePage(articleId = articleId, onBack = { readingNote = false })
+    if (assistRead) AssistReadPage(onBack = { assistRead = false })
+    inlineNote?.let { (title, text) ->
+        ArticleNoteSheet(title, text, onDismiss = { inlineNote = null })
     }
     dictWord?.let { word ->
         var entry by remember(word) { mutableStateOf<WordEntry?>(null) }
-        LaunchedEffect(word) { entry = WordDict.find(word.lemma, word.surface) }
+        LaunchedEffect(word) { entry = WordDict.find(word.surface, word.lemma) }
         WordDictSheet(
             word = word,
             entry = entry,
@@ -321,7 +472,7 @@ fun ArticleDetailRoute(
 
 /** `activity_base_detail`: MojiToolbar 44dp + the column title at 48dp. */
 @Composable
-private fun ArticleTopBar(title: String, onBack: () -> Unit) {
+private fun ArticleTopBar(title: String, onBack: () -> Unit, onMore: () -> Unit) {
     val colors = MaterialTheme.colorScheme
     Row(
         Modifier
@@ -338,7 +489,7 @@ private fun ArticleTopBar(title: String, onBack: () -> Unit) {
                 .clickableNoRipple(onClick = onBack),
             contentAlignment = Alignment.Center,
         ) {
-            BackChevron(colors.onSurface)
+            MojiBackGlyph()
         }
         Text(
             title,
@@ -349,33 +500,15 @@ private fun ArticleTopBar(title: String, onBack: () -> Unit) {
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
         )
-        Box(Modifier.size(44.dp), contentAlignment = Alignment.Center) {
+        Box(
+            Modifier
+                .size(44.dp)
+                .clickableNoRipple(onClick = onMore),
+            contentAlignment = Alignment.Center,
+        ) {
             MoreDots(colors.onSurface)
         }
         Spacer(Modifier.width(6.dp))
-    }
-}
-
-/** The original back glyph is a 24dp chevron inside the 44dp touch target. */
-@Composable
-private fun BackChevron(color: Color) {
-    Canvas(Modifier.size(24.dp)) {
-        val w = size.width
-        val h = size.height
-        drawLine(
-            color = color,
-            start = Offset(w * 0.62f, h * 0.22f),
-            end = Offset(w * 0.38f, h * 0.5f),
-            strokeWidth = 2.dp.toPx(),
-            cap = StrokeCap.Round,
-        )
-        drawLine(
-            color = color,
-            start = Offset(w * 0.38f, h * 0.5f),
-            end = Offset(w * 0.62f, h * 0.78f),
-            strokeWidth = 2.dp.toPx(),
-            cap = StrokeCap.Round,
-        )
     }
 }
 
@@ -395,13 +528,20 @@ private fun ArticleH5(
     meta: ArticleMeta,
     body: String,
     pageUrl: String,
+    controller: WebViewController,
+    onJsReady: () -> Unit,
     onToggleAudio: () -> Unit,
     onSelection: (WordInfo, Float) -> Unit,
+    onNotice: (String) -> Unit,
+    onTool: (Int) -> Unit,
+    onArticleNote: (String, String) -> Unit,
+    onCollectSentence: (String) -> Unit,
 ) {
-    val controller = remember(meta.id) { WebViewController() }
     var stickyTools by remember(meta.id) { mutableStateOf(false) }
     val server = remember { runCatching { BookServer.baseUrl }.getOrDefault("") }
     val mockMedia = remember { Secrets.MOCK_MEDIA_BASE.trimEnd('/') }
+    val dark = LocalDarkTheme.current
+    val scope = rememberCoroutineScope()
     val coverUrl = remember(meta.id) {
         when {
             meta.coverFile.isNotBlank() -> "$server/article-cover/${meta.coverFile}"
@@ -419,38 +559,78 @@ private fun ArticleH5(
         controller = controller,
         modifier = Modifier.fillMaxSize(),
         onMessage = { method, payload ->
-            when (method) {
-                "onJsLoaded" ->
-                    controller.evaluateJs(articleInjection(meta, body, coverUrl, mockMedia))
+            val (bridgedMethod, bridgedPayload) = unwrapArticleBridge(method, payload)
+            when (bridgedMethod) {
+                "onJsLoaded" -> {
+                    controller.evaluateJs(articleInjection(meta, body, coverUrl, mockMedia, dark))
+                    onJsReady()
+                }
                 // Pink play button in the H5 header (ArticleWebView.b.changeAudioStatus).
                 "changeAudioStatus" -> onToggleAudio()
                 // The H5 hands over the SRT timeline after rendering
                 // (ArticleJsInterface.getSRTData).
-                "getSRTData" -> ArticlePlayer.setTimeline(payload)
+                "getSRTData" -> ArticlePlayer.setTimeline(bridgedPayload)
                 // Sentence tap while playing (ArticleJsInterface.onClickSRT).
                 "onClickSRT", "clickSRT" ->
-                    payload.toIntOrNull()?.let(ArticlePlayer::seekToIndex)
+                    bridgedPayload.toIntOrNull()?.let(ArticlePlayer::seekToIndex)
                 // window.setHightLightSRT() -> Api.smoothScrollTo(offsetTop).
                 "smoothScrollTo" -> {
-                    val top = payload.toFloatOrNull() ?: 0f
+                    val top = bridgedPayload.toFloatOrNull() ?: 0f
                     controller.evaluateJs("window.scrollTo({top:$top,behavior:'smooth'})")
                 }
                 // Text selection -> popup_article_action_mode.
                 "showMenu" -> {
-                    val parts = payload.split('\u0001')
+                    val parts = bridgedPayload.split('\u0001')
                     val raw = parts.getOrNull(0).orEmpty()
                     val top = runCatching {
                         Json.parseToJsonElement(parts.getOrNull(1).orEmpty())
                             .jsonObject["top"]!!.jsonPrimitive.float
                     }.getOrDefault(0f)
                     val word = parseWordInfo(raw)
+                    println("MOJI_PARSED surface=${word.surface} reading=${word.reading.map { it.code }} lemma=${word.lemma}")
                     if (word.surface.isNotBlank()) onSelection(word, top)
                 }
-                // Original ArticleDetailFragment.coordinateToolbox(): the native
-                // 56dp toolbox shows only while scrolling up past the H5 tools
-                // row; any downward scroll hides it so it never covers text.
+                // H5 ge(articleId, isLogin) only binds option clicks after a
+                // not-yet-voted status. Offline never tallies: 投票 just opens
+                // the answer already stored in .voter_description.
+                "getVoteStatus" -> {
+                    val ids = voteIds(bridgedPayload)
+                    scope.launch {
+                        val json = voteStatusJson(ids)
+                        val opened = openedVoteIds(ids)
+                        controller.evaluateJs(
+                            "javascript:updateVotes(${jsSingleQuoted(json)});${revealQuizJs(opened)}",
+                        )
+                    }
+                }
+                "actVote" -> {
+                    val voted = parseActVote(bridgedPayload)
+                    if (voted != null) {
+                        scope.launch {
+                            UserDataRepository.putSetting(voteSettingKey(voted.id), "1")
+                            controller.evaluateJs("javascript:${revealQuizJs(listOf(voted.id))}")
+                        }
+                    }
+                }
+                "voteErrorTips" -> if (bridgedPayload.isNotBlank()) onNotice(bridgedPayload)
+                // 工具栏图标：0 精读高亮、1 辅助阅读、3 阅读笔记
+                // （ArticleDetailFragment.initView$lambda$32$lambda$6）。
+                "btnClickTrigger" -> bridgedPayload.toIntOrNull()?.let(onTool)
+                // 正文里的「注」：clickArticleNote(data-text, data-content)。
+                "clickArticleNote" -> {
+                    val parts = bridgedPayload.split('\u0001')
+                    val title = parts.getOrNull(0).orEmpty()
+                    val text = parts.getOrNull(1).orEmpty()
+                    if (title.isNotBlank() || text.isNotBlank()) onArticleNote(title, text)
+                }
+                // 长按句子收藏，对位选区菜单里的「收藏」→ fav-addManySens。
+                "collectSentence" -> {
+                    val text = bridgedPayload.trim()
+                    if (text.isNotBlank()) onCollectSentence(text)
+                }
+                // Toolbox shows only while scrolling up past the H5 tools row.
                 "articleScroll" -> {
-                    val parts = payload.split('|')
+                    val parts = bridgedPayload.split('|')
                     val top = parts.getOrNull(0)?.toFloatOrNull()
                     val direction = parts.getOrNull(1)
                     if (top != null && direction != null) {
@@ -484,13 +664,13 @@ private fun ArticleH5(
             Image(
                 painterResource(Res.drawable.ic_article_note),
                 contentDescription = "笔记",
-                modifier = Modifier.size(36.dp),
+                modifier = Modifier.size(36.dp).clickableNoRipple { onTool(3) },
             )
             Spacer(Modifier.width(12.dp))
             Image(
                 painterResource(Res.drawable.ic_article_auxiliary),
                 contentDescription = "辅助阅读",
-                modifier = Modifier.size(36.dp),
+                modifier = Modifier.size(36.dp).clickableNoRipple { onTool(1) },
             )
             Spacer(Modifier.width(20.dp))
         }
@@ -502,15 +682,19 @@ private fun articleInjection(
     body: String,
     coverUrl: String,
     mockMedia: String,
+    dark: Boolean,
 ): String {
     val options = buildJsonObject {
         put("isNeedHideTitleAndTools", false)
         put("id", meta.id)
-        put("isLogin", false)
-        put("theme", "theme-light")
+        // ge(articleId, isLogin) only requests vote status when this is true.
+        // Offline has no account wall; a false value leaves the voter on
+        // gotoLogin and never binds the options or the 投票 button.
+        put("isLogin", true)
+        put("theme", if (dark) "theme-dark" else "theme-light")
         put("coverHidden", coverUrl.isBlank())
-        put("furiganaType", 0)
-        put("localizedStringLanguage", "zh-Hans")
+        put("furiganaType", AppSettings.spell.code)
+        put("localizedStringLanguage", AppSettings.language.tag)
         // "1" = collapsed translation with the original 「翻译」 label.
         put("translationState", "1")
         put("previousId", meta.previousId)
@@ -519,7 +703,7 @@ private fun articleInjection(
         put("isVIP", false)
         put("isPro", true)
         put("transHideType", meta.transHideType)
-        put("useJpFont", true)
+        put("useJpFont", AppSettings.useJpFont)
         put("fontSize", 1.0)
         put("tags", "")
         put("isReadSuc", false)
@@ -558,43 +742,67 @@ private fun articleInjection(
         append("__lastY=__y;")
         append("}catch(e){}};")
         append("window.addEventListener('scroll',__send,{passive:true});__send();")
+        // 注音只给词卡在没有 pron 时兜底显示。点词查找用词面，对位 clickContent。
+        append("function __rubyOf(__n){var n=__n;while(n&&n.nodeType===3)n=n.parentNode;")
+        append("while(n&&n!==document.body){if(n.nodeName==='RUBY')return n;n=n.parentNode;}return null;}")
+        append("function __wordInfo(__n){var o={surface:'',reading:'',lemma:''};")
+        append("try{var ruby=__rubyOf(__n);")
+        append("if(ruby){var __b=ruby.querySelector('rb'),__t=ruby.querySelector('rt');")
+        append("o.surface=__b?__b.textContent:'';")
+        append("o.reading=__t?(__t.getAttribute('hiragana')||''):'';")
+        append("o.lemma=__t?(__t.getAttribute('lemma')||''):'';}")
+        append("else if(__n&&__n.nodeName==='SPAN'&&__n.className&&(''+__n.className).indexOf('moji-toolkit-org')>=0){")
+        append("o.surface=__n.innerText;o.lemma=__n.getAttribute('lemma')||'';}")
+        append("}catch(e){}")
+        append("if(!o.lemma)o.lemma=o.surface;")
+        append("return o;}")
+        // 长按句子收藏。原版是选区菜单的「收藏」再确认；空态文案是「长按收藏」。
+        // 取最近的字幕句，没有字幕时退回所在段落，去掉注音。
+        append("var __justCollected=0;")
+        append("function __plainText(__node){var t='',w=document.createTreeWalker(__node,NodeFilter.SHOW_TEXT,null),n;")
+        append("while((n=w.nextNode())){var p=n.parentNode,skip=false;")
+        append("while(p&&p!==__node){var nm=p.nodeName;if(nm==='RT'||nm==='RP'){skip=true;break;}p=p.parentNode;}")
+        append("if(!skip)t+=n.nodeValue;}return t.replace(/\\s+/g,' ').trim();}")
+        append("function __sentenceNode(__t){var n=__t;")
+        append("while(n&&n!==document.body){if(n.getAttribute&&n.getAttribute('srt-start'))return n;n=n.parentNode;}")
+        append("n=__t;while(n&&n!==document.body){if(n.nodeName==='P')return n;n=n.parentNode;}return null;}")
+        append("function __collectSentence(__t){try{")
+        append("var node=__sentenceNode(__t);if(!node)return;")
+        append("var text=__plainText(node);if(!text||text.length<2)return;")
+        append("__justCollected=Date.now();")
+        append("try{window.getSelection().removeAllRanges();}catch(e){}")
+        append("window.ArticleJsInterface.collectSentence(text);")
+        append("}catch(e){}}")
+        append("var __hold;")
         // Text selection -> native popup_article_action_mode.
         append("var __selT;")
         append("document.addEventListener('selectionchange',function(){")
         append("clearTimeout(__selT);")
         append("__selT=setTimeout(function(){try{")
-        append("var __s=window.getSelection();var __tx=__s?__s.toString().trim():'';")
-        append("if(!__tx)return;")
+        append("if(Date.now()-__justCollected<800)return;")
+        append("var __s=window.getSelection();if(!__s||__s.rangeCount<1)return;")
+        append("var __node=__s.anchorNode;var __el=__node&&__node.nodeType===1?__node:__node&&__node.parentNode;")
+        append("var __wi=__wordInfo(__el);var __tx=__s.toString().trim();")
+        append("if(!__wi.surface)__wi={surface:__tx,reading:'',lemma:__tx};")
+        append("if(!__wi.surface||__wi.surface.length>12)return;")
         append("var __r=__s.getRangeAt(0).getBoundingClientRect();")
-        append("window.ArticleJsInterface.showMenu(JSON.stringify({surface:__tx}),JSON.stringify({top:__r.top,bottom:__r.bottom,left:__r.left,right:__r.right}));")
+        append("window.ArticleJsInterface.showMenu(JSON.stringify(__wi),JSON.stringify({top:__r.top,bottom:__r.bottom,left:__r.left,right:__r.right}));")
         append("}catch(e){}},60);")
         append("},true);")
         // Word tap: the H5's own handler forwards the word via clickContent;
         // capture the rect here so the native menu can anchor to the word.
-        // Word info mirrors the ruby data the original uses: surface + kana +
-        // dictionary (lemma) form, so 朗读 speaks the word, not the sentence.
-        append("function __wordInfo(__n){var o={surface:'',reading:'',lemma:''};")
-        append("try{")
-        append("if(__n.nodeName==='RUBY'){var __b=__n.querySelector('rb'),__t=__n.querySelector('rt');")
-        append("o.surface=__b?__b.textContent:'';")
-        append("o.reading=__t?(__t.getAttribute('hiragana')||''):'';")
-        append("o.lemma=__t?(__t.getAttribute('lemma')||''):'';}")
-        append("else if(__n.nodeName==='RB'){var __p=__n.parentNode,__t2=__p&&__p.querySelector?__p.querySelector('rt'):null;")
-        append("o.surface=__n.textContent;")
-        append("o.reading=__t2?(__t2.getAttribute('hiragana')||''):'';")
-        append("o.lemma=__t2?(__t2.getAttribute('lemma')||''):'';}")
-        append("else if(__n.nodeName==='RT'){var __p2=__n.parentNode,__b2=__p2&&__p2.querySelector?__p2.querySelector('rb'):null;")
-        append("o.surface=__b2?__b2.textContent:'';")
-        append("o.reading=__n.getAttribute('hiragana')||'';")
-        append("o.lemma=__n.getAttribute('lemma')||'';}")
-        append("else if(__n.nodeName==='SPAN'&&__n.className&&(''+__n.className).indexOf('moji-toolkit-org')>=0){")
-        append("o.surface=__n.innerText;o.lemma=__n.getAttribute('lemma')||'';}")
-        append("}catch(e){}")
-        append("if(!o.lemma)o.lemma=o.surface;")
-        append("return o;}")
         append("var __ct=document.getElementById('article-content');")
+        append("var __hx=0,__hy=0;")
+        append("__ct&&__ct.addEventListener('touchstart',function(e){clearTimeout(__hold);var t=e.target;")
+        append("var p=e.touches&&e.touches[0];__hx=p?p.clientX:0;__hy=p?p.clientY:0;")
+        append("__hold=setTimeout(function(){__collectSentence(t);},550);},{passive:true});")
+        append("__ct&&__ct.addEventListener('touchend',function(){clearTimeout(__hold);},{passive:true});")
+        append("__ct&&__ct.addEventListener('touchcancel',function(){clearTimeout(__hold);},{passive:true});")
+        append("__ct&&__ct.addEventListener('touchmove',function(e){var p=e.touches&&e.touches[0];if(!p)return;")
+        append("if(Math.abs(p.clientX-__hx)>12||Math.abs(p.clientY-__hy)>12)clearTimeout(__hold);},{passive:true});")
         append("__ct&&__ct.addEventListener('click',function(e){")
         append("try{")
+        append("if(Date.now()-__justCollected<800)return;")
         append("var __wi=__wordInfo(e.target);")
         append("if(!__wi||!__wi.surface||__wi.surface.length>12)return;")
         append("var __rr=e.target.getBoundingClientRect();")
@@ -641,6 +849,126 @@ private fun jsString(value: String): String = buildString {
     append('"')
 }
 
+/** H5 接口习惯收单引号字面量（`MOJiArticleDetailSetFontSize('1.2')`）。 */
+private fun q(value: Any): String = "'$value'"
+
+/** Bottom player shows only when the article has a real audio id (o5.W.d). */
+private fun ArticleMeta.hasPlayableAudio(): Boolean =
+    audioId.isNotBlank() && audioId != "null"
+
+/**
+ * iOS posts `{name, args}` on one `articleBridge` channel. Android already
+ * arrives as the method name plus `\u0001`-joined arguments.
+ */
+private fun unwrapArticleBridge(method: String, payload: String): Pair<String, String> {
+    if (method != "articleBridge") return method to payload
+    val obj = runCatching { Json.parseToJsonElement(payload).jsonObject }.getOrNull()
+        ?: return method to payload
+    val name = obj["name"]?.jsonPrimitive?.contentOrNull ?: return method to payload
+    val args = obj["args"] as? JsonArray ?: return name to ""
+    val joined = args.joinToString("\u0001") { arg ->
+        when (arg) {
+            is JsonArray -> arg.joinToString(",") { it.jsonPrimitive.content }
+            is JsonPrimitive -> arg.content
+            else -> ""
+        }
+    }
+    return name to joined
+}
+
+private data class LocalVote(val id: String, val options: List<Int>)
+
+private fun voteSettingKey(voteId: String) = "article_vote_$voteId"
+
+private fun voteIds(payload: String): List<String> =
+    payload.split('\u0001')
+        .getOrNull(1)
+        .orEmpty()
+        .split(',')
+        .map { it.trim() }
+        .filter { it.isNotEmpty() && it.all { ch -> ch.isLetterOrDigit() } }
+
+/** Always "not voted", so the H5 binds clicks and does not draw tallies. */
+private fun voteStatusJson(ids: List<String>): String =
+    JsonArray(ids.map { voteEntity(it) }).toString()
+
+private suspend fun openedVoteIds(ids: List<String>): List<String> =
+    ids.filter { UserDataRepository.setting(voteSettingKey(it))?.isNotBlank() == true }
+
+/**
+ * Shape consumed by H5 `updateVotes` before a choice.
+ * `votedNums` must be an object: the binder indexes `votedNums[i]` and throws
+ * if the field is missing, so the options never get a click. `isVoted` stays
+ * false — a true value is what draws 票数 and 「共 N 人参与」.
+ */
+private fun voteEntity(id: String): JsonElement = buildJsonObject {
+    put("objectId", id)
+    put("isVoted", false)
+    put("answer", buildJsonObject { put("options", buildJsonArray {}) })
+    put("votedNums", buildJsonObject {})
+    put("voterNum", 0)
+}
+
+/**
+ * Opens the answer block already in the article HTML and marks the option
+ * named by 「正确答案」. Does not add vote counts or a participant line.
+ */
+private fun revealQuizJs(ids: List<String>): String {
+    val list = ids.joinToString(",") { "'$it'" }
+    return """
+        (function(){
+          [$list].forEach(function(id){
+            var e=document.querySelector('.mojiVote-'+id);
+            if(!e) return;
+            e.querySelectorAll('.voter_option').forEach(function(d){
+              d.classList.add('pointer_events_none');
+            });
+            var btn=e.querySelector('.voter_button');
+            if(btn) btn.style.display='none';
+            e.querySelectorAll('.voter_number,.voter_rate,.voter_progress,.voter_totalNumber')
+              .forEach(function(n){ n.remove(); });
+            var desc=e.querySelector('.voter_description');
+            if(desc){ desc.style.visibility='visible'; desc.style.height='auto'; }
+            var raw=desc?(desc.innerText||''):'';
+            var m=raw.match(/正确答案[:：]\s*([0-9０-９]+(?:\s*[、,，]\s*[0-9０-９]+)*)/);
+            if(!m) return;
+            m[1].split(/[、,，]/).forEach(function(s){
+              var n=parseInt(s.replace(/[０-９]/g,function(c){
+                return String.fromCharCode(c.charCodeAt(0)-65248);
+              }),10);
+              if(!n) return;
+              var opt=e.querySelector('.voter_option[data-value="'+(n-1)+'"]');
+              if(opt) opt.style.background='rgba(255,58,58,0.08)';
+            });
+          });
+        })()
+    """.trimIndent()
+}
+
+private fun parseActVote(raw: String): LocalVote? {
+    val obj = runCatching { Json.parseToJsonElement(raw).jsonObject }.getOrNull() ?: return null
+    val id = obj["voteId"]?.jsonPrimitive?.contentOrNull?.trim().orEmpty()
+    if (id.isEmpty()) return null
+    val options = (obj["options"] as? JsonArray)?.mapNotNull { element ->
+        element.jsonPrimitive.content.toIntOrNull()
+    }.orEmpty()
+    return LocalVote(id, options)
+}
+
+/** Embed JSON inside the single-quoted argument original evaluateJavascript uses. */
+private fun jsSingleQuoted(value: String): String = buildString {
+    append('\'')
+    value.forEach { c ->
+        when (c) {
+            '\\' -> append("\\\\")
+            '\'' -> append("\\'")
+            '\n', '\r' -> append(' ')
+            else -> append(c)
+        }
+    }
+    append('\'')
+}
+
 /** `{surface, reading, lemma}` from the injected script; plain text fallback. */
 private fun parseWordInfo(raw: String): WordInfo {
     val trimmed = raw.trim()
@@ -665,10 +993,12 @@ private fun ArticleAudioBar(
     onOpenSettings: () -> Unit,
     onOpenShadowing: () -> Unit,
 ) {
-    val dark = MaterialTheme.colorScheme.surface.luminance() < 0.5f
+    val dark = LocalDarkTheme.current
     val bg = if (dark) DarkBarBg else BarBg
     val fg = if (dark) DarkBarFg else ArticleTitle
     val sub = if (dark) Color(0xFF8B8787) else SubGray
+    val pill = if (dark) PillBgDark else PillBg
+    val seekTrack = if (dark) SeekTrackDark else SeekTrack
 
     val durationMs = ArticlePlayer.durationMs
     val positionMs = ArticlePlayer.positionMs
@@ -702,7 +1032,7 @@ private fun ArticleAudioBar(
                 },
                 enabled = loaded,
                 played = SeekPlayed,
-                track = SeekTrack,
+                track = seekTrack,
                 onSeek = { fraction -> ArticlePlayer.seekToFraction(fraction) },
             )
             Spacer(Modifier.width(12.dp))
@@ -712,6 +1042,8 @@ private fun ArticleAudioBar(
         Box(Modifier.fillMaxWidth().height(54.dp)) {
             // 精听跟读 pill (70x38, radius 16) — entry point only; the original
             // hands the article to its intensive-reading activity.
+            // 原版 `ic_common_listen_read` 无 _dark 资源（深灰笔画），深色下
+            // 仍用浅底 pill，对位原版在深色壳上保留浅色胶囊的做法。
             Row(
                 Modifier
                     .padding(start = 20.dp)
@@ -735,7 +1067,11 @@ private fun ArticleAudioBar(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 PlayerIcon(
-                    if (loaded) Res.drawable.ic_player_prev else Res.drawable.ic_player_prev_unable,
+                    when {
+                        !loaded -> Res.drawable.ic_player_prev_unable
+                        dark -> Res.drawable.ic_player_prev_dark
+                        else -> Res.drawable.ic_player_prev
+                    },
                     "上一句",
                     enabled = loaded,
                     size = 36.dp,
@@ -746,23 +1082,25 @@ private fun ArticleAudioBar(
                     Modifier
                         .size(40.dp)
                         .clip(CircleShape)
-                        .background(PillBg)
+                        .background(pill)
                         .clickableNoRipple(enabled = loaded) {
                             ArticlePlayer.toggle()
                         },
                     contentAlignment = Alignment.Center,
                 ) {
                     Image(
-                        painterResource(
-                            if (playing) Res.drawable.ic_player_menu_pause else Res.drawable.ic_player_menu_start,
-                        ),
+                        painterResource(playPauseIcon(playing = playing, dark = dark)),
                         contentDescription = if (playing) "暂停" else "播放",
                         modifier = Modifier.size(22.dp),
                     )
                 }
                 Spacer(Modifier.width(10.dp))
                 PlayerIcon(
-                    if (loaded) Res.drawable.ic_player_next else Res.drawable.ic_player_next_unable,
+                    when {
+                        !loaded -> Res.drawable.ic_player_next_unable
+                        dark -> Res.drawable.ic_player_next_dark
+                        else -> Res.drawable.ic_player_next
+                    },
                     "下一句",
                     enabled = loaded,
                     size = 36.dp,
@@ -778,7 +1116,9 @@ private fun ArticleAudioBar(
                 contentAlignment = Alignment.Center,
             ) {
                 Image(
-                    painterResource(Res.drawable.ic_player_set),
+                    painterResource(
+                        if (dark) Res.drawable.ic_player_set_dark else Res.drawable.ic_player_set,
+                    ),
                     contentDescription = "播放设置",
                     modifier = Modifier.size(24.dp),
                 )
@@ -845,9 +1185,17 @@ private fun SeekBar(
     }
 }
 
+/** 对位原版 `ic_player_menu_{pause,start}` / `_play_dark` / `_pause_dark`。 */
+private fun playPauseIcon(playing: Boolean, dark: Boolean): DrawableResource = when {
+    playing && dark -> Res.drawable.ic_player_menu_pause_dark
+    playing -> Res.drawable.ic_player_menu_pause
+    dark -> Res.drawable.ic_player_menu_play_dark
+    else -> Res.drawable.ic_player_menu_start
+}
+
 @Composable
 private fun PlayerIcon(
-    icon: org.jetbrains.compose.resources.DrawableResource,
+    icon: DrawableResource,
     description: String,
     enabled: Boolean,
     size: androidx.compose.ui.unit.Dp,

@@ -152,6 +152,7 @@ def main() -> None:
                 "title": col.get("title", ""),
                 "subtitle": col.get("subtitle", ""),
                 "cover": rel,
+                "levelTags": list(col.get("levelTags") or []),
                 "articles": articles,
             })
         return out

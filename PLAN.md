@@ -1,6 +1,6 @@
 # 开发计划与进度
 
-MOJi阅读离线高仿（`com.moji.offline`）。本表记录阶段目标与状态，目录/工具/mock
+**Lang**（品牌 **MJ**）——原版 MOJi阅读离线高仿（`com.moji.offline`）。本表记录阶段目标与状态，目录/工具/mock
 等详细说明见 [README.md](README.md)。
 
 三份配套文档：**[高仿工作流](#高仿工作流每个模块开工前先做这五步)**（下）——
@@ -19,12 +19,12 @@ MOJi阅读离线高仿（`com.moji.offline`）。本表记录阶段目标与状�
 | P5 | 媒体 mock 基建 | ✅ 完成 | 常驻服务 / adb reverse / 网络安全配置 / 一键脚本 |
 | P6 | 阅读器书架页（原版还原） | ✅ 完成 | 9 本书真实封面 + 全部/我的/官方 tabs + 上传卡位；数据来自 reader 接口 |
 | P6b | 书籍正文阅读（原版路径） | ✅ 首版 | epub 1:1 解包 + 本机 HTTP 服务 + `loadDataWithBaseURL`；真机与原版同页逐行一致；遗留对齐项（析标记/全书页码/目录抽屉/设置菜单）见 `content/engine/INTEGRATION.md` |
-| P6c | 阅读详情 + 播放器 | 🟡 主体完成 | **原版 H5 路径** + 原生外壳；**播放跟随**（SRT 高亮 #E0315B / 定位 / 点句跳转）；**单词弹窗＝原版词卡**（深色卡：词｜假名+声调 / 词性+收藏星+喇叭+复制 / 释义 / 详情+MOJi辞書 两钮；**任何动作都不关弹窗**，仅 ✕ 或点外关闭，真机对照原版）；朗读＝千问 TTS 日语（用户批准的 AI 例外，账号欠费时回落本机 TTS 并提示）；收藏写本地 `word_favorite`；词卡数据＝打包子集 `worddict.json`（12,164 词，`tools/build_word_dict.py`）；**精听跟读**；**播放设置**；**播放队列**。遗留：全量词库/例句(P8)、AI(P10)、iOS 录音、暗色主题 |
-| P7 | 发现页（专栏推荐）高仿 | ✅ 完成 | 按用户确认范围**只保留原版「专栏推荐」段**：吸顶「发现」栏 + 吸顶分类条（专栏推荐/考试/时事/生活/文学/娱乐）+ 专栏卡（封面/标题/2 篇最新文章：VIP翻译 pill/时间/缩略图）。数据=本地 find 抓取（推荐 30 列 + 各分类 20/4/7/7/8 列），`tools/fetch_find_assets.py` 打包；分类 tab 切换即时换数据源 |
+| P6c | 阅读详情 + 播放器 | 🟡 主体完成 | **原版 H5** + 原生外壳；SRT 跟随；词卡不关弹窗；**更多菜单**（精讲/收藏/译文/字号）；**选择题投票**；**迷你条续播与封面**；朗读＝离线声优（七海/恵太/葵/直樹，mock mp3）。遗留：长按句子收藏的 JS 桥、例句里点词、iOS 录音 |
+| P7 | 发现页（专栏推荐）高仿 | ✅ 完成 | 专栏推荐段 + 分类条 + **考试等级条**（N5~N4 / N3~N2 / N1 / N1以上，按 `levelTags` 过滤）。数据=`tools/fetch_find_assets.py` |
 | P7b | 发现页数据补全 | ✅ 完成 | 首页正文 101 篇（去重后另拉 94 篇）+ 20 条新闻（`find/news/{id}/`：detail / body.html / body-source）+ `tools/fetch_moji_find_articles.py` + `oss/` 本地镜像（非软链）；`MOJI_*` 写入 `.env`，接口文档补「发现」两节 |
-| P8 | 词库接入 + 词卡 | ⏳ 待办 | SQLDelight prepackaged 接 `dictionary.db` + WordDetail H5 |
+| P8 | 词库接入 + 词卡 | 🟡 主体完成 | 运行时查词走 `wordbook.db`（SQLDelight `WordDict`，二进制在 GitHub Release，不进 git）。`dictionary.db` / Realm 只作逆向源，打进 `dict-source.zip`。原版 WordDetail H5 未接 |
 | P9a | 学习 Tab | ✅ 主体完成 | 按 `StudyFragment` 还原：「我的学习」栏 + 统计卡 + 计划/订阅两页；计划卡 → 章节弹层 → 详情页；**计划列表**从「全部计划 19 >」进入；**加入计划**（弹层按钮，写本地库）+ **播放进度持久化**（SQLDelight `moji.db`：加入状态/文章毫秒进度，重启后续播、学习页按本地进度展示）；订阅空态 + 推荐专栏；播放队列可切歌。数据：`readStats-articleMonthlyStats` + `readPlan/list|mine` + 专栏列表，`tools/build_study_assets.py` 打包 |
-| P9b | 阅读库 / 我的 Tab | ⏳ 待办 | 接口未采（先按「高仿工作流」第 1 步定位，再抓缓存） |
+| P9b | 我的 Tab | 🟡 主体完成 | 设置（主题 / 常亮 / 日语声优 / 语速）、收藏与阅读历史写 `moji.db`。阅读库专栏页仍待做（接口缓存在 `reader/`） |
 | P10 | AI 能力 | ⏳ 待办 | 千问（长难句分析 / 核心词汇 / 摘要 / TTS）；`QWEN_*` 已在 `.env` 链路里 |
 
 ## 高仿工作流（每个模块开工前先做这五步）

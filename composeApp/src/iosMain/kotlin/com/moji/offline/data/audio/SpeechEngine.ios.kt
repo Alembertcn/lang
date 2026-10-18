@@ -1,8 +1,10 @@
 package com.moji.offline.data.audio
 
+import com.moji.offline.data.settings.AppSettings
 import platform.AVFAudio.AVSpeechSynthesizer
 import platform.AVFAudio.AVSpeechSynthesisVoice
 import platform.AVFAudio.AVSpeechUtterance
+import platform.AVFAudio.AVSpeechUtteranceDefaultSpeechRate
 import platform.AVFAudio.AVSpeechBoundary
 
 actual class SpeechEngine actual constructor() {
@@ -15,6 +17,7 @@ actual class SpeechEngine actual constructor() {
         val utterance = AVSpeechUtterance(string = value)
         val voice = AVSpeechSynthesisVoice.voiceWithLanguage("ja-JP") ?: return false
         utterance.voice = voice
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate * AppSettings.voiceSpeed.rate
         synth.speakUtterance(utterance)
         return true
     }

@@ -96,4 +96,4 @@ MOCK_MEDIA_BASE=https://static.ailuo.fun/lang
 
 ## 历史瘦身
 
-大文件已从历史中剔除（`git filter-repo`）。若仍见旧体积，确认没有其它 remote 的旧包，并 `git reflog expire --expire=now --all && git gc --prune=now --aggressive`。
+2026-10-18 已用 `git filter-repo` 从全部历史去掉 APK、Realm、`dictionary.db`。当前包约 8MB，历史里没有超过 5MB 的 blob。不要在工作区有未提交改动时再跑 filter-repo。若体积回升，先确认没有别的 remote 带着旧包，再 `git reflog expire --expire=now --all && git gc --prune=now --aggressive`。

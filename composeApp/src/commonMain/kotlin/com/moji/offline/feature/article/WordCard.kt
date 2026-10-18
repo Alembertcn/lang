@@ -58,7 +58,7 @@ import kotlinx.coroutines.launch
  * (`MojiWordDetailWebView` dialog, base.apk 3.4.9): a #1B1B1D rounded-16 card
  * pinned above the audio bar with `spell|reading accent`, a part-of-speech row
  * carrying the favorite star and the speaker, the dictionary gloss and a
- * detail / MOJi-dictionary button row.
+ * detail / MJ-dictionary button row.
  *
  * Behaviour matched on device 2026-10-17: tapping read / favorite / copy /
  * detail / dictionary keeps the card open; only the cross or a tap outside
@@ -73,6 +73,8 @@ private val CardDivider = Color(0xFF3A3A3A)
 @Composable
 fun WordCardOverlay(
     word: WordInfo,
+    articleId: String = "",
+    notedWordIds: MutableSet<String> = mutableSetOf(),
     onRead: () -> Unit,
     onCopy: () -> Unit,
     onDetail: () -> Unit,
@@ -80,7 +82,28 @@ fun WordCardOverlay(
     onDismiss: () -> Unit,
 ) {
     var entry by remember(word) { mutableStateOf<WordEntry?>(null) }
-    LaunchedEffect(word) { entry = WordDict.find(word.lemma, word.surface) }
+    LaunchedEffect(word) {
+        // 关联词带 objectId：多音词同形不同条，必须按 id 取，不能只按拼写。
+        entry = if (word.id.isNotBlank()) {
+            WordDict.findById(word.id) ?: WordDict.find(word.surface, word.lemma)
+        } else {
+            WordDict.find(word.surface, word.lemma)
+        }
+    }
+    // 查到词条 id 才记笔记，对位搜索成功后 word.getPk() → readNote-add。
+    // 本篇当次已记过的 id 不再写，和原版 ViewModel 的 LinkedHashSet 一样。
+    LaunchedEffect(articleId, entry?.id) {
+        val found = entry ?: return@LaunchedEffect
+        val wordId = found.id.takeIf { it.isNotBlank() } ?: return@LaunchedEffect
+        if (articleId.isBlank()) return@LaunchedEffect
+        if (!notedWordIds.add(wordId)) return@LaunchedEffect
+        UserDataRepository.addWordReadingNote(
+            articleId = articleId,
+            wordId = wordId,
+            title = found.spell.ifBlank { word.surface },
+            excerpt = found.excerpt,
+        )
+    }
     var favorite by remember(word) { mutableStateOf(false) }
     LaunchedEffect(word, entry) {
         favorite = UserDataRepository.isWordFavorite(favoriteKey(entry, word))
@@ -112,7 +135,7 @@ fun WordCardOverlay(
                     if (next) {
                         UserDataRepository.addWordFavorite(
                             wordId = key,
-                            spell = word.surface,
+                            spell = entry?.spell?.takeIf { it.isNotBlank() } ?: word.surface,
                             pron = entry?.pron ?: word.reading,
                             excerpt = entry?.excerpt.orEmpty(),
                             nowMs = Clock.System.now().toEpochMilliseconds(),
@@ -147,6 +170,7 @@ private fun WordCard(
     onDictionary: () -> Unit,
     onDismiss: () -> Unit,
 ) {
+    val head = entry?.spell?.takeIf { it.isNotBlank() } ?: word.surface
     val reading = entry?.pron?.takeIf { it.isNotBlank() } ?: word.reading
     val accent = entry?.accent.orEmpty()
     val pos = entry?.pos.orEmpty()
@@ -171,7 +195,7 @@ private fun WordCard(
             Modifier.padding(start = 20.dp, end = 20.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Text(word.surface, color = CardFg, fontSize = 22.sp, fontWeight = FontWeight.Medium)
+            Text(head, color = CardFg, fontSize = 22.sp, fontWeight = FontWeight.Medium)
             if (reading.isNotBlank()) {
                 Text("｜", color = CardFg.copy(alpha = 0.7f), fontSize = 22.sp)
                 Text(reading, color = CardFg, fontSize = 22.sp, fontWeight = FontWeight.Medium)
@@ -221,7 +245,7 @@ private fun WordCard(
         Row(Modifier.fillMaxWidth().height(62.dp)) {
             CardButton(label = "详情", glyph = { DetailGlyph(CardFg, 20.dp) }, onClick = onDetail)
             Box(Modifier.width(1.dp).fillMaxHeight().background(CardDivider))
-            CardButton(label = "MOJi辞書", glyph = { SearchGlyph(CardFg, 20.dp) }, onClick = onDictionary)
+            CardButton(label = "MJ辞書", glyph = { SearchGlyph(CardFg, 20.dp) }, onClick = onDictionary)
         }
     }
 }

@@ -16,6 +16,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         AppContext.context = applicationContext
+        LaunchPage.raw = intent?.getStringExtra("page").orEmpty()
         setContent { App() }
     }
 }

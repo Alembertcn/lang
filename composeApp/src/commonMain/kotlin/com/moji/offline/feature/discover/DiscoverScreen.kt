@@ -88,8 +88,6 @@ private data class ColumnsPalette(
     val underline: Color,
     val title: Color,
     val meta: Color,
-    val pillBg: Color,
-    val pillText: Color,
 )
 
 @Composable
@@ -104,8 +102,6 @@ private fun columnsPalette(): ColumnsPalette = if (LocalDarkTheme.current) {
         underline = Color(0xFFE0315B),
         title = Color(0xFFFAFAFA),
         meta = Color(0xFFACACAC),
-        pillBg = Color(0xFFFCECE0),
-        pillText = Color(0xFFCF9E57),
     )
 } else {
     ColumnsPalette(
@@ -118,19 +114,46 @@ private fun columnsPalette(): ColumnsPalette = if (LocalDarkTheme.current) {
         underline = Color(0xFFE0315B),
         title = Color(0xFF3A3A3A),
         meta = Color(0xFFACACAC),
-        pillBg = Color(0xFFFFF1DC),
-        pillText = Color(0xFFCE8A2E),
     )
 }
 
 /**
  * Discover tab = the original's 专栏推荐 section only (per user request):
  * pinned 「发现」bar + pinned category strip (专栏推荐/考试/时事/生活/文学/娱乐)
- * + column cards (cover, title, 2 latest articles with VIP pill/time/cover).
+ * + column cards (cover, title, 2 latest articles with time/cover).
+ *
+ * 考试 Tab: horizontal level chips (N5~N4 / N3~N2 / N1 / N1以上) matching
+ * FindCategoryFragment.testTypes — client-side filter on column.levelTags
+ * (original TabContentViewModel also filters locally after fetching ALL).
  *
  * Data: reference/moji-api/find (readingCnt-privateRecmColumns + category 子目录),
  * bundled by tools/fetch_find_assets.py.
  */
+/** One chip on the 考试 Tab — mirrors APK `FindCategoryTypeEntity`. */
+private data class ExamLevelChip(
+    val label: String,
+    val levels: List<String>,
+)
+
+private fun examLevelChips(strings: AppStrings): List<ExamLevelChip> = listOf(
+    ExamLevelChip(strings.findExamLevelN54, listOf("N5", "N4")),
+    ExamLevelChip(strings.findExamLevelN32, listOf("N3", "N2")),
+    ExamLevelChip(strings.findExamLevelN1, listOf("N1")),
+    ExamLevelChip(strings.findExamLevelN1Up, listOf("n1up")),
+)
+
+/**
+ * Original `TabContentViewModel` filter: no chip selected → all columns;
+ * otherwise keep columns whose levelTags intersect any selected level.
+ */
+private fun filterColumnsByLevels(
+    columns: List<FindColumn>,
+    selectedLevels: Set<String>,
+): List<FindColumn> {
+    if (selectedLevels.isEmpty()) return columns
+    return columns.filter { col -> col.levelTags.any { it in selectedLevels } }
+}
+
 @Composable
 fun DiscoverRoute(
     onOpenPlan: (String) -> Unit,
@@ -151,6 +174,9 @@ fun DiscoverRoute(
             feed.categories.forEach { add(it.columns) }
         }
     }
+    // feed.json tab labels stay Chinese ("考试"); chips only on that page.
+    val examPageIndex = remember(tabs) { tabs.indexOfFirst { it == "考试" } }
+    var selectedExamLevels by remember { mutableStateOf(emptySet<String>()) }
 
     val scope = rememberCoroutineScope()
     val palette = columnsPalette()
@@ -182,11 +208,26 @@ fun DiscoverRoute(
                     .fillMaxWidth()
                     .weight(1f),
             ) { page ->
+                val isExam = page == examPageIndex
+                val raw = pageColumns.getOrElse(page) { emptyList() }
+                val columns = if (isExam) {
+                    filterColumnsByLevels(raw, selectedExamLevels)
+                } else {
+                    raw
+                }
                 ColumnPage(
-                    columns = pageColumns.getOrElse(page) { emptyList() },
+                    columns = columns,
                     strings = strings,
                     palette = palette,
                     listState = listStates[page.coerceIn(0, listStates.lastIndex)],
+                    levelChips = if (isExam) examLevelChips(strings) else emptyList(),
+                    selectedLevels = selectedExamLevels,
+                    onToggleChip = { levels ->
+                        selectedExamLevels = selectedExamLevels.toMutableSet().also { set ->
+                            if (levels.all { it in set }) set.removeAll(levels.toSet())
+                            else set.addAll(levels)
+                        }
+                    },
                     onOpenArticle = { id -> onOpenReading("", id) },
                 )
             }
@@ -200,6 +241,9 @@ private fun ColumnPage(
     strings: AppStrings,
     palette: ColumnsPalette,
     listState: LazyListState,
+    levelChips: List<ExamLevelChip>,
+    selectedLevels: Set<String>,
+    onToggleChip: (List<String>) -> Unit,
     onOpenArticle: (String) -> Unit,
 ) {
     LazyColumn(
@@ -208,6 +252,16 @@ private fun ColumnPage(
         contentPadding = PaddingValues(top = 12.dp, bottom = 24.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
+        if (levelChips.isNotEmpty()) {
+            item(key = "exam-level-chips") {
+                ExamLevelChipRow(
+                    chips = levelChips,
+                    selectedLevels = selectedLevels,
+                    onToggle = onToggleChip,
+                    modifier = Modifier.padding(horizontal = 16.dp),
+                )
+            }
+        }
         items(count = columns.size, key = { index -> columns[index].id.ifEmpty { "col$index" } }) { index ->
             ColumnCard(
                 column = columns[index],
@@ -215,6 +269,50 @@ private fun ColumnPage(
                 palette = palette,
                 modifier = Modifier.padding(horizontal = 16.dp),
                 onOpenArticle = onOpenArticle,
+            )
+        }
+    }
+}
+
+/**
+ * Original `item_find_category_tag`: 11sp TextView, padding 7dp, marginEnd 8dp;
+ * selected = white on #E0315B; unselected = #3A3A3A on #1AACACAC (dark: #8B8787 / #1C1C1E).
+ * Radius from `shape_radius_4_solid_*` = 4dp.
+ */
+@Composable
+private fun ExamLevelChipRow(
+    chips: List<ExamLevelChip>,
+    selectedLevels: Set<String>,
+    onToggle: (List<String>) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val dark = LocalDarkTheme.current
+    LazyRow(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        items(count = chips.size, key = { chips[it].label }) { index ->
+            val chip = chips[index]
+            val selected = chip.levels.any { it in selectedLevels }
+            val bg = when {
+                selected -> Color(0xFFE0315B)
+                dark -> Color(0xFF1C1C1E)
+                else -> Color(0x1AACACAC)
+            }
+            val fg = when {
+                selected -> Color.White
+                dark -> Color(0xFF8B8787)
+                else -> Color(0xFF3A3A3A)
+            }
+            Text(
+                text = chip.label,
+                fontSize = 11.sp,
+                color = fg,
+                modifier = Modifier
+                    .clip(RoundedCornerShape(4.dp))
+                    .background(bg)
+                    .clickableNoRipple { onToggle(chip.levels) }
+                    .padding(7.dp),
             )
         }
     }
@@ -365,20 +463,7 @@ private fun ColumnArticleRow(
                 color = palette.title,
             )
             Spacer(Modifier.height(10.dp))
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                if (article.vip) {
-                    Surface(shape = RoundedCornerShape(4.dp), color = palette.pillBg) {
-                        Text(
-                            strings.findVipTrans,
-                            fontSize = 10.sp,
-                            color = palette.pillText,
-                            modifier = Modifier.padding(horizontal = 5.dp, vertical = 2.dp),
-                        )
-                    }
-                    Spacer(Modifier.width(8.dp))
-                }
-                Text(newsDateLabel(article.timeMs, strings), fontSize = 13.sp, color = palette.meta)
-            }
+            Text(newsDateLabel(article.timeMs, strings), fontSize = 13.sp, color = palette.meta)
         }
         Spacer(Modifier.width(12.dp))
         if (article.cover.isNotEmpty()) {

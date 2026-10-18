@@ -52,6 +52,38 @@ CREATE TABLE article_progress (
   updated_at INTEGER NOT NULL
 );
 
+-- 显示设置 KV：key 沿用原版 SharedPreferences 名
+-- （article_fonts_size / translation_displayed_mode / key_is_read_explanation_open）
+CREATE TABLE user_setting (
+  key TEXT NOT NULL PRIMARY KEY,
+  value TEXT NOT NULL
+);
+
+-- 短文收藏（原版 article_fav，本地版落 SQLite，供二次进入回显收藏态）
+CREATE TABLE article_favorite (
+  article_id TEXT NOT NULL PRIMARY KEY,
+  title TEXT NOT NULL,
+  created_at INTEGER NOT NULL
+);
+
+-- 阅读笔记。原版单词走 readNote-add / readNote-list（srcType + srcId + targetType，
+-- 每页 20），例句走 fav-addManySens / fav-listSens（按 srcId）。
+-- 同一篇里同一个目标只保留一条，对位查词当次去重后服务端已有记录。
+CREATE TABLE reading_note (
+  object_id TEXT NOT NULL PRIMARY KEY,
+  src_type INTEGER NOT NULL,
+  src_id TEXT NOT NULL,
+  target_type INTEGER NOT NULL,
+  target_id TEXT NOT NULL,
+  title TEXT NOT NULL,
+  excerpt TEXT NOT NULL DEFAULT '',
+  trans TEXT NOT NULL DEFAULT '',
+  underline TEXT NOT NULL DEFAULT '',
+  collected INTEGER NOT NULL DEFAULT 0,
+  created_at INTEGER NOT NULL,
+  UNIQUE (src_id, src_type, target_type, target_id)
+);
+
 -- 查询：收藏列表
 selectFavorites:
 SELECT * FROM word_favorite ORDER BY created_at DESC;
@@ -63,6 +95,10 @@ SELECT COUNT(*) FROM word_favorite WHERE word_id = ?;
 -- 查询：最近阅读
 selectRecentHistory:
 SELECT * FROM reading_history ORDER BY last_read_at DESC LIMIT 50;
+
+-- 查询：删除单条历史（我的 → 阅读历史 长按移除）
+deleteHistory:
+DELETE FROM reading_history WHERE article_id = ?;
 
 -- 查询：某天的阅读事件
 selectEventsForDay:
@@ -127,3 +163,48 @@ SELECT * FROM article_progress;
 upsertProgress:
 INSERT OR REPLACE INTO article_progress(article_id, position_ms, duration_ms, completed, updated_at)
 VALUES (?, ?, ?, ?, ?);
+
+-- 设置：读单条 / 读全量 / 写单条
+selectSetting:
+SELECT value FROM user_setting WHERE key = ?;
+
+selectAllSettings:
+SELECT * FROM user_setting;
+
+upsertSetting:
+INSERT OR REPLACE INTO user_setting(key, value) VALUES (?, ?);
+
+-- 短文收藏
+isArticleFavorite:
+SELECT COUNT(*) FROM article_favorite WHERE article_id = ?;
+
+selectArticleFavorites:
+SELECT * FROM article_favorite ORDER BY created_at DESC;
+
+addArticleFavorite:
+INSERT OR REPLACE INTO article_favorite(article_id, title, created_at) VALUES (?, ?, ?);
+
+removeArticleFavorite:
+DELETE FROM article_favorite WHERE article_id = ?;
+
+insertReadingNote:
+INSERT OR IGNORE INTO reading_note(
+  object_id, src_type, src_id, target_type, target_id,
+  title, excerpt, trans, underline, collected, created_at
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+-- 单词页：readNote-list，page 从 1 起，limit 20。
+selectReadingNotes:
+SELECT * FROM reading_note
+WHERE src_type = ? AND src_id = ? AND target_type = ?
+ORDER BY created_at DESC
+LIMIT ? OFFSET ?;
+
+-- 例句页：fav-listSens 只按 srcId，不翻页。
+selectSentenceNotes:
+SELECT * FROM reading_note
+WHERE src_id = ? AND target_type = ?
+ORDER BY created_at DESC;
+
+deleteReadingNote:
+DELETE FROM reading_note WHERE object_id = ?;

@@ -46,9 +46,10 @@ private class IosAudioPlayer : AudioPlayer {
     }
 
     override fun play() {
+        // AVPlayer.play() 等价于把 rate 设回 1，必须放在设速之前。
         player?.let {
-            it.rate = speed
             it.play()
+            it.rate = speed
         }
     }
 

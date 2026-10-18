@@ -135,7 +135,7 @@ private fun SettingsHome(onBack: () -> Unit, onOpen: (SettingsPage) -> Unit) {
             }
             Spacer(Modifier.height(12.dp))
             Column(Modifier.fillMaxWidth().background(card)) {
-                ValueRow("关于MOJi阅读", "1.0.0", onClick = { onOpen(SettingsPage.About) })
+                ValueRow("关于Lang", "1.0.0", onClick = { onOpen(SettingsPage.About) })
             }
             Spacer(Modifier.height(40.dp))
             Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
@@ -407,7 +407,7 @@ private fun AboutPage(onBack: () -> Unit) {
     val strings = LocalAppStrings.current
     val (pageBg, _, titleFg) = colors()
     Column(Modifier.fillMaxSize().background(pageBg)) {
-        MojiToolbar("关于MOJi阅读", background = pageBg, leading = { MojiBackButton(onBack) })
+        MojiToolbar("关于Lang", background = pageBg, leading = { MojiBackButton(onBack) })
         Column(
             Modifier.fillMaxWidth().padding(horizontal = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -419,7 +419,7 @@ private fun AboutPage(onBack: () -> Unit) {
                 modifier = Modifier.size(72.dp),
             )
             Spacer(Modifier.height(12.dp))
-            Text("MOJi阅读", fontSize = 18.sp, fontWeight = FontWeight.Bold, color = titleFg)
+            Text("Lang", fontSize = 18.sp, fontWeight = FontWeight.Bold, color = titleFg)
             Spacer(Modifier.height(20.dp))
             Text(
                 strings.mineAboutBody,

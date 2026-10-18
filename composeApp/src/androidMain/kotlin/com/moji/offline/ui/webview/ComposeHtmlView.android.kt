@@ -143,7 +143,10 @@ private class ArticleJsBridge(
     @JavascriptInterface fun clickShowTranslation() = dispatch("clickShowTranslation")
     @JavascriptInterface fun finishReading() = dispatch("finishReading")
     @JavascriptInterface fun getSRTData(json: String?) = dispatch("getSRTData", json)
-    @JavascriptInterface fun getVoteStatus(targetId: String?, voteIds: String?) = dispatch("getVoteStatus", targetId, voteIds)
+    // H5 `voterProcess` 第二个参数是 id 数组（`ArticleJsInterface.getVoteStatus(e, i)`）。
+    // 收成 String 时 WebView 对不上重载，状态回不去，选项一直绑在 gotoLogin 上。
+    @JavascriptInterface fun getVoteStatus(targetId: String?, voteIds: Array<String>?) =
+        dispatch("getVoteStatus", targetId, voteIds?.joinToString(",").orEmpty())
     @JavascriptInterface fun getWords(html: String?): String = ""
     @JavascriptInterface fun goExercise() = dispatch("goExercise")
     @JavascriptInterface fun goNotebook() = dispatch("goNotebook")

@@ -1,8 +1,8 @@
-# moji-offline
+# Lang（仓库目录名 moji-offline）
 
-MOJi阅读（`com.mojidict.read` v3.4.9）的离线高仿：**Kotlin Multiplatform +
-Compose Multiplatform** 双端（Android / iOS），定位「离线优先 + 按需联网」，
-UI 与资源按逆向原版还原。应用包名 `com.moji.offline`。
+**Lang**（品牌 **MJ**）——原版 MOJi阅读（`com.mojidict.read` v3.4.9）的离线高仿：
+**Kotlin Multiplatform + Compose Multiplatform** 双端（Android / iOS），定位「离线优先 +
+按需联网」，UI 与资源按逆向原版还原。应用包名 `com.moji.offline`。
 
 ## 当前进度
 
@@ -11,16 +11,16 @@ UI 与资源按逆向原版还原。应用包名 `com.moji.offline`。
 | 逆向资产 | ✅ | 词库（44 万词条）、H5 页面、原版图标、接口数据（19 计划 / 299 文章 / 20 新闻 / 178 音频 / 9 本书） |
 | KMP 工程 | ✅ | Kotlin 2.4.21 + CMP 1.11.1 + SQLDelight + Ktor；真机（XQ-AT72）跑通 |
 | 数据管线 | ✅ | 抓取 → 转换 → 打包（170 篇真实文章：SRT 时间轴 + 原文 + 中文翻译） |
-| 发现页 | ✅ 高仿完成 | 按确认范围只保留原版「专栏推荐」：吸顶发现栏 + 分类条（6 tab）+ 专栏卡列表；数据=本地 find 抓取，图片打包见 `tools/fetch_find_assets.py` |
 | 底部 Tab | ✅ | 原版 `ic_home_*` def/sel 双态图标、品牌粉 #E0325C、10sp 文字 |
 | 阅读器书架 | ✅ | 原版结构：全部/我的/官方 tabs + 3 列书架网格 + 9 本书真实 OSS 封面 |
 | 学习 Tab | ✅ 主体 | 「我的学习」+ 统计 + 计划/订阅；计划目录（19 个）→ 加入计划 → 章节 → 详情；订阅空态 + 推荐专栏。加入状态与播放进度存本地 SQLite（SQLDelight `moji.db`），重启后按上次进度展示/续播 |
 | 书籍正文阅读 | ✅ 首版 | **原版路径**：epub 1:1 解包 + 本机 HTTP 书服（Ktor CIO）+ `loadDataWithBaseURL` 直载原版 XHTML；引擎分页 + 原版翻页同步公式；真机对照通过 |
-| 媒体 mock | ✅ 基建 | 常驻服务 + adb reverse + 网络安全配置 + 一键脚本；播放器代码待同步 |
-| 短文详情页 | ✅ 主体完成 | **原版 H5 路径** + 原生外壳：44dp 顶栏、56dp 吸顶工具条（下滚隐藏）、播放条、SRT 高亮/定位、单词菜单（复制 / 朗读单词 / 收藏 / 详情）、精听跟读（录音+回放）、播放设置（循环/倍速）、播放队列（计划/专栏，自动下一首）；退出后底栏上方 64dp 全局面板 |
-| 发现页剩余视觉 | ⏳ | 顶部粉色背景、阅读时长/等级信息栏、圈子入口、大卡片 |
-| 词库查词 | ⏳ | SQLDelight 接入 `dictionary.db` + 词卡 H5 |
-| AI 能力 | ⏳ | 千问：长难句分析 / 核心词汇 / AI 摘要 / TTS 发音 |
+| 媒体 | ✅ | 本地 mock（`start_media_mock.sh` + adb reverse）或 NAS `https://static.ailuo.fun/lang`。音频/配图不进 git |
+| 短文详情页 | ✅ 主体完成 | **原版 H5 路径** + 原生外壳：顶栏更多（精讲 / 收藏 / 译文 / 字号）、选择题投票、SRT 跟随、单词菜单、精听跟读、播放设置、播放队列；退出后续播（迷你条 + 封面）。朗读走离线声优 mp3 |
+| 发现页 | ✅ 高仿完成 | 专栏推荐 + 考试等级条（N5~N4 / N3~N2 / N1 / N1以上）。剩余视觉：粉色顶栏、圈子、大卡片 |
+| 我的 | 🟡 主体 | 设置（主题 / 常亮 / 声优 / 语速）、收藏与历史写本地库 |
+| 词库查词 | 🟡 主体 | 运行时用 Release 上的 `wordbook.db`（`WordDict`）；原版词卡 H5 未接。`dictionary.db` 不再进仓库 |
+| AI 能力 | ⏳ | 千问：长难句分析 / 核心词汇 / AI 摘要。词卡发音不走千问 |
 
 阶段表与完成标准见 [PLAN.md](PLAN.md)。
 
@@ -28,34 +28,41 @@ UI 与资源按逆向原版还原。应用包名 `com.moji.offline`。
 
 ```bash
 # 环境：JDK 17 + Android SDK（compileSdk 36）
-./gradlew :composeApp:assembleDebug
-adb install -r composeApp/build/outputs/apk/debug/composeApp-debug.apk
+# 词书等大文件：tools/fetch_assets.sh（见 ASSETS.md）
+just android          # 编译并安装到已连接的 Android；页面名可省略
 
-# 媒体 mock（听音频需要）：常驻服务 + USB 端口转发
+# 媒体：本地 mock，或把 MOCK_MEDIA_BASE 指到 NAS
 tools/start_media_mock.sh
 ```
+
+大文件不进 git。分工见 [ASSETS.md](ASSETS.md)：打进 APK 的生成物、GitHub Release 上的词书/逆向包、NAS 上的音频和配图。
 
 ## 目录结构
 
 ```text
 moji-offline/
-├── composeApp/
-│   └── src/commonMain/
-│       ├── kotlin/com/moji/offline/        # 源码（feature/discover 等）
-│       └── composeResources/
-│           ├── drawable/                   # 原版图标（ic_find_* / ic_home_*，提取自 APK）
-│           └── files/articles/             # 170 篇真实文章 JSON + index（打包进 app）
-├── content/                                # 一次性逆向资产（git 管理）
-│   ├── mojidict/dictionary.db              # 词库（95,412 词条 / 44.3 万行 / 4 表）
-│   └── h5/                                 # H5 页面资产（词卡 / 文章渲染复用）
+├── composeApp/src/commonMain/
+│   ├── kotlin/com/moji/offline/            # 源码
+│   └── composeResources/
+│       ├── drawable/                       # 原版图标（进 git）
+│       └── files/                          # 生成物与词书，多数 gitignore，见 ASSETS.md
+├── content/
+│   ├── h5/                                 # 词卡等 H5（进 git）
+│   ├── engine/                             # 阅读引擎说明；运行时包在 composeResources/files/engine
+│   └── mojidict/dictionary.db              # 不进 git → Release dict-source.zip
 ├── reference/
-│   ├── moji-read/                          # 官方 APK（base + split）与参考素材
-│   ├── dict/                               # 从 APK 解出的 Realm 词库源
-│   └── moji-api/                           # 接口数据工作区（见下）
-├── tools/                                  # 工具链（见下）
-├── PLAN.md                                 # 计划与进度
-├── REVERSE.md                              # 逆向还原 / 页面仿造 / 接口总览
-└── env.example                             # 本地配置模板
+│   ├── moji-read/*.apk                     # 不进 git → Release reverse-apk.zip
+│   ├── dict/*.realm                        # 不进 git → Release dict-source.zip
+│   └── moji-api/                           # 接口缓存（进 git，oss/ 除外）
+│       ├── articles/ find/ reader/ responses/
+│       ├── words/ wordbook/                # 不进 git，只供打包
+│       └── oss/                            # 不进 git → NAS https://static.ailuo.fun/lang/
+├── dist/release/                           # 不进 git，package_release_assets.sh 的产物
+├── tools/
+├── PLAN.md
+├── ASSETS.md
+├── REVERSE.md
+└── env.example
 ```
 
 ### reference/moji-api（接口数据工作区）

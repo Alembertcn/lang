@@ -40,7 +40,6 @@ data class FindNews(
 data class FindColumnArticle(
     val id: String = "",
     val title: String = "",
-    val vip: Boolean = false,
     val cover: String = "",
     val timeMs: Long = 0,
 )
@@ -51,6 +50,8 @@ data class FindColumn(
     val title: String = "",
     val subtitle: String = "",
     val cover: String = "",
+    /** JLPT tags from `readingCnt-category` (`N1`…`N5`, `n1up`); used by 考试 Tab chips. */
+    val levelTags: List<String> = emptyList(),
     val articles: List<FindColumnArticle> = emptyList(),
 )
 

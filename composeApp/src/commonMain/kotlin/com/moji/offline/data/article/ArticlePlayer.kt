@@ -7,6 +7,7 @@ import androidx.compose.runtime.setValue
 import com.moji.offline.config.Secrets
 import com.moji.offline.data.audio.createAudioPlayer
 import com.moji.offline.data.db.UserDataRepository
+import com.moji.offline.data.mine.MineStore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -25,13 +26,26 @@ import kotlinx.serialization.json.jsonObject
  *
  * One continuous file per article + the captured `audioDuration`; the same
  * session feeds the in-article bar and the global mini player above the tabs.
+ *
+ * 会话落盘对位原版 MMKV：`play_sound_object_id` / `play_current_position` /
+ * `play_total_duration` / `play_speed` / `play_mode`；杀掉进程再进仍能还原
+ * 迷你播放器与进度（不自动续播，需用户点播放）。
  */
 object ArticlePlayer {
+
+    /** 原版 MMKV key（SharedPreferences / MMKV 同名）。 */
+    private const val KEY_OBJECT_ID = "play_sound_object_id"
+    private const val KEY_POSITION = "play_current_position"
+    private const val KEY_DURATION = "play_total_duration"
+    private const val KEY_SPEED = "play_speed"
+    private const val KEY_MODE = "play_mode"
+    private const val KEY_QUEUE = "play_queue_ids"
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
     private val player = createAudioPlayer()
     private var loadJob: Job? = null
-
+    private var restoring = false
+    private var lastRecordedMs = 0L
     var meta by mutableStateOf<ArticleMeta?>(null)
         private set
 
@@ -126,6 +140,21 @@ object ArticlePlayer {
         }
     }
 
+    /**
+     * 播放列表弹层打开时：若当前只是单曲队列，按栏目/计划展开完整列表。
+     */
+    fun expandQueueIfNeeded() {
+        val current = meta ?: return
+        if (queue.size > 1) return
+        scope.launch {
+            val expanded = ArticleQueue.resolve(current.id, queue.map { it.id })
+            if (expanded.size <= 1) return@launch
+            val index = expanded.indexOfFirst { it.id == current.id }.coerceAtLeast(0)
+            queue = expanded
+            queueIndex = index
+        }
+    }
+
     /** Sets the queue [items] and starts on [startId]'s entry. */
     fun setQueue(items: List<ArticleMeta>, startId: String) {
         if (items.isEmpty()) return
@@ -135,6 +164,58 @@ object ArticlePlayer {
         val wasVisible = visible
         setTrack(items[index])
         if (wasVisible) visible = true
+        persistSession()
+    }
+
+    /**
+     * 冷启动还原上次迷你播放器会话（对位原版 MainActivity 读 MMKV）。
+     * 只铺轨 + 定位，不自动 play。
+     *
+     * 优先读 `play_sound_object_id`；没有则回落到最近一条未完成的
+     * `article_progress`（原版进度表），保证杀进程后仍能看到迷你条。
+     */
+    suspend fun restoreSession() {
+        if (meta != null || restoring) return
+        restoring = true
+        try {
+            val sessionId = UserDataRepository.setting(KEY_OBJECT_ID)?.trim().orEmpty()
+            val latest = UserDataRepository.allProgress()
+                .filter { it.completed == 0L && it.position_ms >= 1_000L }
+                .maxByOrNull { it.updated_at }
+            val id = sessionId.ifEmpty { latest?.article_id.orEmpty() }
+            if (id.isEmpty()) return
+            val queueIds = UserDataRepository.setting(KEY_QUEUE)
+                ?.split(',')
+                ?.map { it.trim() }
+                ?.filter { it.isNotEmpty() }
+                .orEmpty()
+            val items = buildList {
+                val seen = mutableSetOf<String>()
+                for (qid in queueIds.ifEmpty { listOf(id) }) {
+                    if (!seen.add(qid)) continue
+                    ArticleCatalog.meta(qid)?.let(::add)
+                }
+                if (none { it.id == id }) {
+                    ArticleCatalog.meta(id)?.let(::add)
+                }
+            }
+            val current = items.firstOrNull { it.id == id } ?: return
+            queue = items
+            queueIndex = items.indexOfFirst { it.id == id }.coerceAtLeast(0)
+            UserDataRepository.setting(KEY_SPEED)?.toFloatOrNull()?.let {
+                speed = it.coerceIn(0.5f, 2.0f)
+            }
+            UserDataRepository.setting(KEY_MODE)?.let { raw ->
+                loopMode = runCatching { LoopMode.valueOf(raw) }.getOrDefault(LoopMode.NONE)
+            }
+            val savedPos = UserDataRepository.setting(KEY_POSITION)?.toLongOrNull()
+                ?: latest?.takeIf { it.article_id == id }?.position_ms
+                ?: 0L
+            autoPlayWhenLoaded = false
+            loadTrack(current, resumeMs = savedPos.coerceAtLeast(0L), showMini = true)
+        } finally {
+            restoring = false
+        }
     }
 
     /** Switches to the queue entry at [index] and keeps playing. */
@@ -162,15 +243,21 @@ object ArticlePlayer {
     fun setTrack(next: ArticleMeta) {
         if (meta?.id == next.id) return
         persistProgress(completed = false)
+        loadTrack(next, resumeMs = null, showMini = false)
+    }
+
+    private fun loadTrack(next: ArticleMeta, resumeMs: Long?, showMini: Boolean) {
         loadJob?.cancel()
         player.pause()
         player.release()
         loaded = false
+        lastRecordedMs = 0L
         playing = false
-        visible = false
+        visible = showMini
         positionMs = 0L
         durationMs = next.audioDuration * 1000L
         meta = next
+        player.setSpeed(speed)
 
         val url = audioUrl(next)
         if (url.isBlank()) return
@@ -179,19 +266,32 @@ object ArticlePlayer {
                 val reported = player.load(url)
                 if (reported > 0) durationMs = reported
                 loaded = true
-                // Resume where the user left off (skip finished tracks).
-                val saved = UserDataRepository.progress(next.id)
-                if (saved != null && saved.completed == 0L &&
-                    saved.position_ms in 1_000 until (durationMs - 1_000).coerceAtLeast(0)
-                ) {
-                    positionMs = saved.position_ms
-                    player.seekTo(saved.position_ms)
+                val target = when {
+                    resumeMs != null && resumeMs in 1_000 until (durationMs - 1_000).coerceAtLeast(0) ->
+                        resumeMs
+                    else -> {
+                        val saved = UserDataRepository.progress(next.id)
+                        if (saved != null && saved.completed == 0L &&
+                            saved.position_ms in 1_000 until (durationMs - 1_000).coerceAtLeast(0)
+                        ) {
+                            saved.position_ms
+                        } else {
+                            0L
+                        }
+                    }
+                }
+                if (target > 0L) {
+                    positionMs = target
+                    lastRecordedMs = target
+                    player.seekTo(target)
                 }
                 if (autoPlayWhenLoaded) {
                     autoPlayWhenLoaded = false
                     player.play()
                     playing = true
+                    visible = true
                 }
+                persistSession()
             }
         }
     }
@@ -206,6 +306,7 @@ object ArticlePlayer {
             player.play()
             playing = true
             visible = true
+            persistSession()
         }
     }
 
@@ -214,8 +315,8 @@ object ArticlePlayer {
         positionMs = (durationMs * fraction.coerceIn(0f, 1f)).toLong()
         player.seekTo(positionMs)
         syncHighlight()
+        persistSession()
     }
-
     /** SRT callback from the H5 (array of {startTime,endTime} in seconds). */
     fun setTimeline(json: String) {
         sentences = runCatching {
@@ -240,8 +341,8 @@ object ArticlePlayer {
         player.seekTo(entry.startMs)
         highlightIndex = index
         if (loopMode == LoopMode.SENTENCE) loopSentenceIndex = index
+        persistSession()
     }
-
     /** 朗读 from the word/sentence menu: jump to the sentence holding [text]. */
     fun seekToText(text: String): Boolean {
         val needle = text.trim()
@@ -264,11 +365,13 @@ object ArticlePlayer {
             }
             else -> -1
         }
+        persistSession()
     }
 
     fun changeSpeed(value: Float) {
         speed = value
         player.setSpeed(value)
+        persistSession()
     }
 
     /** Close from the mini player: stops playback and removes the track. */
@@ -281,6 +384,7 @@ object ArticlePlayer {
         visible = false
         playing = false
         loaded = false
+        lastRecordedMs = 0L
         positionMs = 0L
         durationMs = 0L
         sentences = emptyList()
@@ -289,8 +393,8 @@ object ArticlePlayer {
         autoPlayWhenLoaded = false
         highlightIndex = -1
         loopSentenceIndex = -1
+        clearSession()
     }
-
     private fun syncHighlight() {
         if (sentences.isEmpty()) return
         // 单句循环 pins the sentence (original keeps f6096d until the mode or
@@ -317,6 +421,10 @@ object ArticlePlayer {
         val position = if (completed) durationMs else positionMs
         val now = kotlin.time.Clock.System.now().toEpochMilliseconds()
         lastPersistMs = now
+        // 我的页的打卡 / 历史 / 累积时长都来自这次增量（单次最多计 6s，
+        // 与 5s 的落盘节流对齐；拖进度条的前跳不计入）。
+        val deltaSec = (position - lastRecordedMs).coerceIn(0, 6_000) / 1_000
+        lastRecordedMs = position
         scope.launch {
             UserDataRepository.saveProgress(
                 articleId = m.id,
@@ -325,9 +433,53 @@ object ArticlePlayer {
                 completed = completed || position >= durationMs - 1_000,
                 nowMs = now,
             )
+            UserDataRepository.recordReading(
+                articleId = m.id,
+                title = m.title,
+                cover = MineStore.coverSource(m.id),
+                deltaSec = deltaSec,
+                nowMs = now,
+            )
+            persistSessionLocked(m, position)
         }
     }
 
+    private fun persistSession() {
+        val m = meta ?: return
+        if (!visible && !playing) return
+        val position = positionMs
+        val dur = durationMs
+        val spd = speed
+        val mode = loopMode.name
+        val ids = queue.map { it.id }.ifEmpty { listOf(m.id) }.joinToString(",")
+        scope.launch {
+            UserDataRepository.putSetting(KEY_OBJECT_ID, m.id)
+            UserDataRepository.putSetting(KEY_POSITION, position.coerceAtLeast(0L).toString())
+            UserDataRepository.putSetting(KEY_DURATION, dur.coerceAtLeast(0L).toString())
+            UserDataRepository.putSetting(KEY_SPEED, spd.toString())
+            UserDataRepository.putSetting(KEY_MODE, mode)
+            UserDataRepository.putSetting(KEY_QUEUE, ids)
+        }
+    }
+
+    private suspend fun persistSessionLocked(m: ArticleMeta, position: Long) {
+        UserDataRepository.putSetting(KEY_OBJECT_ID, m.id)
+        UserDataRepository.putSetting(KEY_POSITION, position.coerceAtLeast(0L).toString())
+        UserDataRepository.putSetting(KEY_DURATION, durationMs.coerceAtLeast(0L).toString())
+        UserDataRepository.putSetting(KEY_SPEED, speed.toString())
+        UserDataRepository.putSetting(KEY_MODE, loopMode.name)
+        val ids = queue.map { it.id }.ifEmpty { listOf(m.id) }
+        UserDataRepository.putSetting(KEY_QUEUE, ids.joinToString(","))
+    }
+
+    private fun clearSession() {
+        scope.launch {
+            UserDataRepository.putSetting(KEY_OBJECT_ID, "")
+            UserDataRepository.putSetting(KEY_POSITION, "0")
+            UserDataRepository.putSetting(KEY_DURATION, "0")
+            UserDataRepository.putSetting(KEY_QUEUE, "")
+        }
+    }
     /**
      * Original `Q4.q.b(positionMs)`: on every progress tick, if the position
      * left the current sentence's [start, end] window, seek back to its start.

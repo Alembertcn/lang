@@ -46,7 +46,7 @@ actual suspend fun saveImageToGallery(bytes: ByteArray, displayName: String): Bo
             val values = ContentValues().apply {
                 put(MediaStore.Images.Media.DISPLAY_NAME, displayName)
                 put(MediaStore.Images.Media.MIME_TYPE, mimeOf(displayName))
-                put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/moji-offline")
+                put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/Lang")
                 put(MediaStore.Images.Media.IS_PENDING, 1)
             }
             val uri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)

@@ -94,6 +94,10 @@ object BookServer {
             get("/android_asset/web/mojiread/article/android/index.html") {
                 serveResource("${ARTICLE_H5_PREFIX}index.html")
             }
+            // 辅助阅读：原版 AnalysisDetailActivity 加载的 analysisReading 页。
+            get("/android_asset/web/mojiread/analysisReading/android/index.html") {
+                serveResource("${ARTICLE_H5_PREFIX}analysis.html")
+            }
             get("/android_asset/h5hybrid/assets/{path...}") {
                 val relPath = call.parameters.getAll("path").orEmpty().joinToString("/")
                 serveResource(ARTICLE_H5_PREFIX + "assets/" + relPath)
