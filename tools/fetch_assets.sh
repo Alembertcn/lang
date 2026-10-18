@@ -3,7 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-BASE_URL="${MOJI_ASSETS_BASE_URL:-https://github.com/<owner>/<repo>/releases/download/assets-v1}"
+BASE_URL="${MOJI_ASSETS_BASE_URL:-https://github.com/Alembertcn/lang/releases/download/assets-v1}"
 WORDBOOK_DEST="composeApp/src/commonMain/composeResources/files/wordbook.db"
 
 fetch() {
