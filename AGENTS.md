@@ -39,6 +39,20 @@ app 运行时的**所有**接口与资源都必须来自本机 mock，**禁止�
 5. 确需联网的能力（如千问 AI）默认关闭，启用前必须向用户说明并取得确认，
    且不得混入「高仿接口」的数据路径。
 
+## 零之四、做完先上真机看一眼（2026-10-17，用户要求）
+
+功能改完、准备说「做完了」之前，先看有没有 Android 手机连着（`adb devices`）：
+
+1. **有设备就装上看。** 跑 `just android <页面>`（iPhone 用 `just ios <页面>`）安装并打开刚改的页面，把主路径点一遍（进入、返回、关键开关或列表）。页面名：`discover` / `reader` / `study` / `mine` / `settings` / `history` / `favorites`，省略则停在发现页。只编译通过不算完成。Android **禁止**直接 `adb install`，一律走 `just android` / `tools/android_install_confirm.py`（确认流程与机型 profile 在脚本里维护）。
+2. **有必要就和原版同页比。** 布局、入口层级或文案可能和原版不一致时，打开原版 `com.mojidict.read` 切到同一页，两边截图再下结论。对照仍须同一页（见纪律 2）。
+3. **没连手机就说明。** 回复里写明这次没做真机自验证，不要当成已经看过。
+
+这一步只要求「页面能开、主操作有反应、没有明显走错页」。像素级验收仍按第三节的操作序列对照，不拿这一步替代。
+
+## 零之五、固定流程点击走脚本（2026-10-18）
+
+系统确认等固定点击：**实现与经验写在** `tools/android_install_confirm.py`（及 `android_install_profiles/`），规则里不展开。新场景同类需求时扩展该脚本或照其轻量做法，勿在规则里堆步骤细节。
+
 ## 一、逆向资产要挖三层（缺一不可）
 
 对任何要还原的功能，按顺序回答三个问题：
@@ -56,6 +70,11 @@ app 运行时的**所有**接口与资源都必须来自本机 mock，**禁止�
 - **禁止**以"耦合深/成本高/可能不行"为由跳过复用——这类预判必须先花
   ≤30 分钟做可行性验证（读协议、下载试跑），再决定自研还是对接。
 - 复用优先级：**资源（图/字/HTML/JS）> 协议（Bridge/接口）> 逻辑规格 > 完全自研**。
+- **图标直接用原版文件**（2026-10-18，用户要求）：箭头、返回、列表尾标这类
+  UI 图标，从 APK `res/drawable*` 原样放进 `composeResources`，按原图像素对应的
+  dp 显示，不重画、不染色、不另做一份。只有原版是 View 机制、Compose 对不上
+  （例如带状态的 selector、主题属性着色、Compose 吃不进的矢量动画）时，才分析
+  后改画法，并且仍然从原版资源出发。
 - 反例：Bridge.js 曾因"预判耦合深"被绕过，实际从发现到拿到引擎只用了十几分钟。
 
 ## 三、交互还原方法
@@ -78,7 +97,7 @@ app 运行时的**所有**接口与资源都必须来自本机 mock，**禁止�
 | --- | --- | --- |
 | 阅读引擎（运行时） | `composeApp/src/commonMain/composeResources/files/engine/epubReader/` | 原版 epuReader v1_3_3 资产：Bridge 协议 + Readium CFI + 高亮/取词（由本机书服供给） |
 | 阅读引擎（源包） | `content/engine/epuReader-v1_3_3.zip` | 原始 CDN 下载包（归档） |
-| 词库 | `content/mojidict/dictionary.db` | 44 万词条（4 表） |
+| 词书（运行时） | `composeResources/files/wordbook.db` | mock 词包打成的 SQLite；Release `wordbook.db.zip`（见 ASSETS.md） |
 | H5 页面 | `content/h5/` | 文章渲染 / 词卡 / 题目 / 分析等 |
 | 书籍 epub 源 | `reference/moji-api/oss/books/` | 9 本原版 epub 下载包（`fetch_moji_books.py` 抓取） |
 | 书籍解包树 | `composeApp/.../composeResources/files/books/{id}/**` | `tools/unpack_moji_books.py` 生成的 1:1 解包目录（gitignore，运行时由 BookServer 供给） |
@@ -87,6 +106,6 @@ app 运行时的**所有**接口与资源都必须来自本机 mock，**禁止�
 ## 六、每阶段完成标准（与 PLAN.md 一致）
 
 1. 构建通过（`./gradlew :composeApp:assembleDebug`）；
-2. 真机安装 + **交互对照**（不只截图）；
+2. 真机安装 + **交互对照**（不只截图）；有 Android 手机连着时按「零之四」先做基础自验证；
 3. 更新 PLAN.md / README.md 进度；
 4. git 提交（消息注明验证方式）。

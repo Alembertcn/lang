@@ -1,62 +1,99 @@
-# 资产外置方案（GitHub Release 维护）
+# 资产放置：APK / GitHub Release / NAS
 
-大体积资产不进 git 历史，改由 **GitHub Release** 发布；仓库只保留代码、
-脚本、文档与轻量资源。
+大体积与生成物不进 git 历史。仓库只保留代码、脚本、文档与轻量资源。
 
-## 资产分类
+## 三层分工
 
-| 资产 | 体积 | 处理 |
+| 层 | 放什么 | 位置 |
 | --- | --- | --- |
-| 代码 / 脚本 / 文档 / 图标 / 阅读引擎 / 文章 JSON | < 3 MB | **进 git** |
-| 词库 `content/mojidict/dictionary.db` | 64 MB | **Release（`assets-v1`）** |
-| 书籍解包树（`composeResources/files/books/{id}/**`） | ~0.5 MB | **生成物，不入库**，用 `unpack_moji_books.py` 从 epub 源 1:1 解包（原版路径，无转换） |
-| 发现页数据/图片（`composeResources/files/find/**`） | ~6 MB | **生成物，不入库**，用 `tools/fetch_find_assets.py` 重建（圈子/文章/计划/专栏封面 + `feed.json`） |
-| 文章详情页资源（`composeResources/files/article_h5/**`、`article_detail/**`） | ~22 MB | **生成物，不入库**，用 `tools/build_article_assets.py` 从 `content/h5` + `reference/moji-api` 1:1 重建（原版 H5 + 299 篇 body.html + Noto 字体） |
-| 书籍 epub 源（`reference/moji-api/oss/books/**`） | ~1.2 MB | Release 或本地抓取（`fetch_moji_books.py`） |
-| 音频 mp3（`reference/moji-api/oss/article/audio/**`） | 468 MB | 保持本地 mock（.gitignore 已有） |
-| 文章图片（`reference/moji-api/oss/article/images/**`） | 47 MB | 本地 mock 镜像（`fetch_moji_article_images.py`，.gitignore 已有） |
-| 文章源（`reference/moji-api/articles/**`） | 15 MB | 本地抓取（`fetch_moji_articles.py`） |
+| **APK（打包）** | 文章 HTML/JSON、发现页、H5、书籍解包树、引擎、`wordbook.db` | `composeResources/files/**`（多为生成物） |
+| **GitHub Release** | 新克隆必下的大二进制（词书 db、可选逆向包） | tag `assets-v1` |
+| **NAS 静态** | 运行时音频/配图（原 `oss/`） | `https://static.ailuo.fun/lang/` |
 
-## 首次发布（仓库建好后，二选一）
-
-```bash
-# 方式 A：gh CLI
-cd content/mojidict && zip -q ../mojidict-db.zip dictionary.db && cd ../..
-gh release create assets-v1 content/mojidict/../mojidict-db.zip \
-  reference/moji-api/oss/books -F "离线资产 v1：词库 + 书籍 epub 源"
-
-# 方式 B：GitHub 网页 → Releases → Draft a new release → tag `assets-v1` → 上传 zip
+```
+开发机 reference/moji-api/
+├── articles/     → build → APK files/article_detail/
+├── find/         → build → APK files/find/
+├── reader/       → 按需 → APK files/reader/
+├── responses/    → 仅开发机
+├── words/        → 仅开发机（词接口缓存）
+├── wordbook/     → build → APK wordbook.db（JSON 不进 git）
+└── oss/          → rsync → NAS …/res/lang/   ★ 唯一公网媒体根
 ```
 
-## 新克隆的启动流程
+## GitHub Release（`assets-v1`）
+
+本地打包目录：`dist/release/`（gitignore）。上传用：
 
 ```bash
-tools/fetch_assets.sh                 # 1) 下载 Release 资产（词库 / epub 源）
-python3 tools/fetch_moji_books.py     # 2)（可选）抓取 epub 源到 reference/（若 Release 已含可跳过）
-python3 tools/unpack_moji_books.py    # 3) 1:1 解包 epub → composeResources/files/books/（生成物）
-python3 tools/build_article_assets.py # 4) 原版文章 H5 + 正文资源（生成物）
-./gradlew :composeApp:assembleDebug   # 5) 构建
+tools/package_release_assets.sh   # 生成 zip
+# 仓库建好后：
+gh release create assets-v1 dist/release/*.zip -t assets-v1 -n "offline assets v1"
 ```
 
-## 说明
+| 文件 | 内容 | 新克隆 |
+| --- | --- | --- |
+| `wordbook.db.zip` | 查词库 SQLite（~156MB 原文件） | **必下** → `composeResources/files/wordbook.db` |
+| `reverse-apk.zip` | 原版 `base.apk` + split | 可选（逆向） |
+| `dict-source.zip` | 旧 `dictionary.db` + Realm 源 | 可选（已不用于运行时） |
 
-- `tools/fetch_assets.sh` 从 `https://github.com/<owner>/<repo>/releases/download/assets-v1/`
-  下载并解包；owner/repo 可用 `MOJI_ASSETS_BASE_URL` 覆盖（默认占位）。
-- 本地已有资产的开发者可跳过第 1 步。
-- 书籍走**原版路径**：解包树只由 `unpack_moji_books.py` 生成，禁止再引入任何
-  HTML/CSS 转换步骤（见 `content/engine/INTEGRATION.md`）。
-- 历史提交中的大文件如需彻底清理，可用 `git filter-repo`（见文末备忘），
-  操作前先备份；本仓库当前不自动重写历史。
+环境变量 `MOJI_ASSETS_BASE_URL` 可覆盖下载根（默认见 `tools/fetch_assets.sh`）。
 
 ```bash
-# 备忘：彻底瘦身（可选，重写历史，操作前备份）
-# pip install git-filter-repo
-# git filter-repo --path content/mojidict/dictionary.db --path composeApp/src/commonMain/composeResources/files/books --invert-paths
+tools/fetch_assets.sh             # 拉 wordbook.db
+python3 tools/unpack_moji_books.py
+python3 tools/build_article_assets.py
+python3 tools/fetch_find_assets.py
+./gradlew :composeApp:assembleDebug
 ```
 
-## 词卡词书子集
+## NAS（`lang` 媒体）
 
-- `tools/build_word_dict.py`：从 `content/mojidict/dictionary.db` 抽取「已打包文章正文里
-  出现过的词」→ `composeApp/src/commonMain/composeResources/files/worddict.json`
-  （字段 i/s/p/a/x/j＝id/词形/假名/声调/中文释义/日文释义）。生成物已 gitignore，
-  新克隆/新增文章后跑一次即可。
+| 本机 | NAS 宿主机 | 公网 URL |
+| --- | --- | --- |
+| `reference/moji-api/oss/**` | `/volume1/docker/caddy/res/lang/**` | `https://static.ailuo.fun/lang/**` |
+
+同步：
+
+```bash
+tools/sync_lang_media_to_nas.sh          # rsync oss → NAS lang
+# 首次还需 Caddyfile 含 /lang/*（脚本可 --apply-caddy）
+```
+
+App 配置（二选一）：
+
+```properties
+# 本地 mock（adb reverse）
+MOCK_MEDIA_BASE=http://127.0.0.1:18080
+
+# 远程 NAS
+MOCK_MEDIA_BASE=https://static.ailuo.fun/lang
+```
+
+**不要**把 `words/`、`wordbook/*.json` 挂到公网 `lang`。
+
+## 已从 git 移除（改 Release / 本机）
+
+| 原路径 | 去向 |
+| --- | --- |
+| `composeApp/.../files/wordbook.db` | Release `wordbook.db.zip`（本机可留） |
+| `content/mojidict/dictionary.db` | Release `dict-source.zip` / 废弃运行时 |
+| `reference/dict/*.realm` | Release `dict-source.zip` |
+| `reference/moji-read/base.apk` 与 split | Release `reverse-apk.zip` |
+| `reference/moji-api/oss/**` | NAS `lang/`（始终 gitignore） |
+
+本地副本可放在 `dist/release-staging/`（gitignore），便于重新打 zip。
+
+## APK 内生成物（gitignore，脚本重建）
+
+| 路径 | 脚本 |
+| --- | --- |
+| `files/article_detail/`、`files/article_h5/` | `build_article_assets.py` |
+| `files/find/` | `fetch_find_assets.py` |
+| `files/books/` | `unpack_moji_books.py` |
+| `files/wordbook.db` | Release 下载，或 `build_word_book.py` |
+| `files/study/` | `build_study_assets.py` |
+
+## 历史瘦身
+
+大文件已从历史中剔除（`git filter-repo`）。若仍见旧体积，确认没有其它 remote 的旧包，并 `git reflog expire --expire=now --all && git gc --prune=now --aggressive`。

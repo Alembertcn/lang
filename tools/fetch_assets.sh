@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Download release-hosted assets (dictionary db, book epub sources) and unpack
-# them into the expected locations. See ASSETS.md.
+# Download Release-hosted build inputs. See ASSETS.md.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
 BASE_URL="${MOJI_ASSETS_BASE_URL:-https://github.com/<owner>/<repo>/releases/download/assets-v1}"
+WORDBOOK_DEST="composeApp/src/commonMain/composeResources/files/wordbook.db"
 
 fetch() {
   local name="$1" dest="$2"
@@ -14,25 +14,32 @@ fetch() {
   mv "$dest.tmp" "$dest"
 }
 
-# 1) Dictionary database (64 MB)
-if [ ! -f content/mojidict/dictionary.db ]; then
-  fetch "mojidict-db.zip" "/tmp/mojidict-db.zip"
-  mkdir -p content/mojidict
-  unzip -o -q "/tmp/mojidict-db.zip" -d content/mojidict
-  echo "dictionary.db ready"
+# 1) Word book (required for lookup)
+if [ ! -f "$WORDBOOK_DEST" ]; then
+  fetch "wordbook.db.zip" "/tmp/moji-wordbook.db.zip"
+  unzip -o -q "/tmp/moji-wordbook.db.zip" -d "$(dirname "$WORDBOOK_DEST")"
+  echo "wordbook.db ready"
 else
-  echo "skip dictionary.db (exists)"
+  echo "skip wordbook.db (exists)"
 fi
 
-# 2) Book epub sources (small; optional when local copies exist)
-if [ ! -d reference/moji-api/oss/books ] || [ -z "$(ls -A reference/moji-api/oss/books 2>/dev/null)" ]; then
-  fetch "moji-books-oss.zip" "/tmp/moji-books-oss.zip"
-  mkdir -p reference/moji-api/oss
-  unzip -o -q "/tmp/moji-books-oss.zip" -d reference/moji-api/oss
-  echo "book epub sources ready"
+# 2) Book epub sources (optional; only if oss/books empty)
+if [ ! -d reference/moji-api/oss/books ] || [ -z "$(ls -A reference/moji-api/oss/books 2>/dev/null || true)" ]; then
+  if curl -L --fail -s -o /tmp/moji-books-oss.zip "$BASE_URL/moji-books-oss.zip" 2>/dev/null; then
+    mkdir -p reference/moji-api/oss
+    unzip -o -q /tmp/moji-books-oss.zip -d reference/moji-api/oss
+    echo "book epub sources ready"
+  else
+    echo "skip book sources (no moji-books-oss.zip on Release; use fetch_moji_books.py)"
+  fi
 else
   echo "skip book sources (exist)"
 fi
 
 echo
-echo "next: python3 tools/convert_moji_books.py && ./gradlew :composeApp:assembleDebug"
+echo "next:"
+echo "  python3 tools/unpack_moji_books.py"
+echo "  python3 tools/build_article_assets.py"
+echo "  python3 tools/fetch_find_assets.py"
+echo "  ./gradlew :composeApp:assembleDebug"
+echo "media: tools/sync_lang_media_to_nas.sh  or  tools/start_media_mock.sh"
