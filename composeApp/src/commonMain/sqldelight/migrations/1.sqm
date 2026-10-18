@@ -1,0 +1,14 @@
+-- 1 → 2：新增显示设置 KV 表与短文收藏表
+-- （对应原版 SharedPreferences: article_fonts_size /
+--   translation_displayed_mode / key_is_read_explanation_open，以及 article 收藏）
+
+CREATE TABLE user_setting (
+  key TEXT NOT NULL PRIMARY KEY,
+  value TEXT NOT NULL
+);
+
+CREATE TABLE article_favorite (
+  article_id TEXT NOT NULL PRIMARY KEY,
+  title TEXT NOT NULL,
+  created_at INTEGER NOT NULL
+);

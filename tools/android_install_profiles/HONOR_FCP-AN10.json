@@ -1,0 +1,33 @@
+{
+  "brand": "HONOR",
+  "model": "FCP-AN10",
+  "serial_recorded_on": "A2AV024B08000258",
+  "screen": {
+    "width": 1060,
+    "height": 2376
+  },
+  "touch_device": "/dev/input/event11",
+  "taps": [
+    {
+      "t_ms": 400,
+      "x": 816,
+      "y": 2173
+    },
+    {
+      "t_ms": 1369,
+      "x": 580,
+      "y": 1686
+    },
+    {
+      "t_ms": 1833,
+      "x": 674,
+      "y": 2098
+    },
+    {
+      "t_ms": 2897,
+      "x": 907,
+      "y": 1469
+    }
+  ],
+  "recorded_at": "2026-10-18T12:21:51"
+}

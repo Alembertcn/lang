@@ -1,0 +1,57 @@
+-- 词书只读库。打开一个词时按 id 查这一条，不把整本词书读进内存。
+-- 关联词分组顺序与原版 H5 一致：i t a p y n s。
+
+CREATE TABLE headword (
+  id TEXT NOT NULL PRIMARY KEY,
+  spell TEXT NOT NULL,
+  pron TEXT NOT NULL,
+  accent TEXT NOT NULL,
+  romaji TEXT NOT NULL,
+  excerpt TEXT NOT NULL,
+  definition_ja TEXT NOT NULL
+);
+
+CREATE INDEX headword_spell ON headword(spell);
+
+CREATE TABLE sense (
+  word_id TEXT NOT NULL,
+  sort_order INTEGER NOT NULL,
+  zh TEXT NOT NULL,
+  ja TEXT NOT NULL,
+  examples_json TEXT NOT NULL,
+  PRIMARY KEY (word_id, sort_order)
+);
+
+CREATE TABLE related_group (
+  word_id TEXT NOT NULL,
+  sort_order INTEGER NOT NULL,
+  kind TEXT NOT NULL,
+  words_json TEXT NOT NULL,
+  PRIMARY KEY (word_id, sort_order)
+);
+
+selectById:
+SELECT id, spell, pron, accent, romaji, excerpt, definition_ja
+FROM headword
+WHERE id = ?;
+
+-- 原版 WordClickSearchEngine.searchFromDB：Wort.spell equalTo 后 findAll 不排序，
+-- 第 0 条得分 1000，后面每条减 1。词书按离线 Realm 表序写入，同形的异读追加在后。
+selectBySpell:
+SELECT id, spell, pron, accent, romaji, excerpt, definition_ja
+FROM headword
+WHERE spell = ?
+ORDER BY rowid ASC
+LIMIT 1;
+
+selectSenses:
+SELECT zh, ja, examples_json
+FROM sense
+WHERE word_id = ?
+ORDER BY sort_order;
+
+selectRelated:
+SELECT kind, words_json
+FROM related_group
+WHERE word_id = ?
+ORDER BY sort_order;

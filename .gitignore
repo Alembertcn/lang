@@ -17,6 +17,7 @@ xcuserdata/
 
 # IDE / system
 .idea/
+.cursor/
 .DS_Store
 *.iml
 
