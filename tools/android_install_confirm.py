@@ -446,8 +446,8 @@ def replay_taps(
     taps: list[dict],
     *,
     ready: threading.Event | None = None,
-    after_logcat_s: float = 0.45,
-    step_gap_s: float = 0.85,
+    after_logcat_s: float = 0.8,
+    step_gap_s: float = 0.9,
 ) -> None:
     """logcat 出现 PackageInstaller 后，固定间隔按坐标硬点（不做 uiautomator dump）。"""
     if not taps:

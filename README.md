@@ -95,7 +95,7 @@ moji-offline/
 | `fetch_moji_books.py` / `unpack_moji_books.py` | 下载书籍 epub 源 / 1:1 解包到 `composeResources/files/books/` |
 | `fetch_find_assets.py` | 把发现页数据 + 图片打包成 `composeResources/files/find/`（生成物） |
 | `build_article_assets.py` | 原版文章 H5 + 299 篇正文（1:1）+ 字体打包成 `files/article_h5/`、`files/article_detail/`（生成物） |
-| `fetch_assets.sh` | 拉取 Release 外置资产（词库 / epub 源），见 `ASSETS.md` |
+| `fetch_assets.sh` | 拉取 Release 外置资产（词库 / epub 源 / 逆向 APK），见 `ASSETS.md` |
 | `convert_moji_articles.py` | `body.html` → 打包 JSON（SRT 时间轴 + 原文 + 翻译） |
 | `start_media_mock.sh` | 启动常驻媒体 mock（screen）+ adb reverse 端口转发 |
 | `mojidict-export/` | 词库逆向与导出（zip 密码 / Realm key / 表结构，见其 README） |

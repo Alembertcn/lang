@@ -34,13 +34,13 @@ gh release create assets-v1 dist/release/*.zip -t assets-v1 -n "offline assets v
 | 文件 | 内容 | 新克隆 |
 | --- | --- | --- |
 | `wordbook.db.zip` | 查词库 SQLite（~156MB 原文件） | **必下** → `composeResources/files/wordbook.db` |
-| `reverse-apk.zip` | 原版 `base.apk` + split | 可选（逆向） |
+| `reverse-apk.zip` | 原版 `base.apk` + split | 可选（逆向）；`fetch_assets.sh` 会拉 |
 | `dict-source.zip` | 旧 `dictionary.db` + Realm 源 | 可选（已不用于运行时） |
 
 环境变量 `MOJI_ASSETS_BASE_URL` 可覆盖下载根（默认见 `tools/fetch_assets.sh`）。
 
 ```bash
-tools/fetch_assets.sh             # 拉 wordbook.db
+tools/fetch_assets.sh             # 拉 wordbook.db + reverse-apk（缺则下）
 python3 tools/unpack_moji_books.py
 python3 tools/build_article_assets.py
 python3 tools/fetch_find_assets.py

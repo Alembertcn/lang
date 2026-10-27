@@ -37,7 +37,9 @@ val localValues: Map<String, String> = run {
 val generateSecrets by tasks.registering {
     val outDir = layout.buildDirectory.dir("generated/mojiSecrets")
     outputs.dir(outDir)
+    // .env + local.properties both feed Secrets; either change must re-run.
     inputs.properties(envValues)
+    inputs.properties(localValues)
     doLast {
         val dir = outDir.get().asFile
         dir.mkdirs()

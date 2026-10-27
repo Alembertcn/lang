@@ -41,6 +41,7 @@ import com.moji.offline.data.article.ArticlePlayer
 import com.moji.offline.data.settings.AppSettings
 import com.moji.offline.feature.reader.ReaderBookRoute
 import com.moji.offline.feature.reader.ReaderRoute
+import com.moji.offline.feature.study.StudyPlanCatalogueRoute
 import com.moji.offline.feature.study.StudyRoute
 import com.moji.offline.feature.article.GlobalMiniPlayer
 import com.moji.offline.feature.article.ArticleQueueDialog
@@ -123,6 +124,8 @@ fun App() {
             var openArticle by remember { mutableStateOf<String?>(null) }
             var articleQueue by remember { mutableStateOf<List<String>>(emptyList()) }
             var showQueue by remember { mutableStateOf(false) }
+            // 阅读计划列表对位原版 ReadPlanListActivity：盖住底栏。
+            var showPlanCatalogue by remember { mutableStateOf(false) }
             // 设置 / 收藏夹 / 主题对位原版独立 Activity：盖住 MainActivity 底栏。
             var mineOverlay by remember {
                 mutableStateOf(
@@ -145,6 +148,15 @@ fun App() {
                 // The original reader is a separate Activity on top of the tabs —
                 // same here: full screen, bottom bar hidden.
                 ReaderBookRoute(book = book, onBack = { openBook = null })
+            } else if (showPlanCatalogue) {
+                StudyPlanCatalogueRoute(
+                    onBack = { showPlanCatalogue = false },
+                    onOpenArticle = { id, ids ->
+                        showPlanCatalogue = false
+                        articleQueue = ids.ifEmpty { listOf(id) }
+                        openArticle = id
+                    },
+                )
             } else when (val overlay = mineOverlay) {
                 MineDest.Settings -> MineSettingsPage(onBack = { mineOverlay = null })
                 MineDest.Favorites -> MineFavoritesPage(
@@ -183,7 +195,7 @@ fun App() {
                         Box(Modifier.fillMaxSize().padding(padding)) {
                             when (selectedTab) {
                                 MainTab.Discover -> DiscoverRoute(
-                                    onOpenPlan = {},
+                                    onOpenPlan = { showPlanCatalogue = true },
                                     // Discover passes "" as the plan id for article taps.
                                     onOpenReading = { planId, articleId ->
                                         if (planId.isBlank()) {
@@ -191,7 +203,7 @@ fun App() {
                                             openArticle = articleId
                                         }
                                     },
-                                    onBrowsePlans = {},
+                                    onBrowsePlans = { showPlanCatalogue = true },
                                 )
                                 MainTab.Reader -> ReaderRoute(onOpenBook = { openBook = it })
                                 MainTab.Study -> StudyRoute(
@@ -199,6 +211,7 @@ fun App() {
                                         articleQueue = ids.ifEmpty { listOf(id) }
                                         openArticle = id
                                     },
+                                    onBrowsePlans = { showPlanCatalogue = true },
                                 )
                                 MainTab.Mine -> MineRoute(
                                     onOpenArticle = { id, ids ->

@@ -36,6 +36,20 @@ else
   echo "skip book sources (exist)"
 fi
 
+# 3) Original APK for reverse (optional; base.apk + splits)
+APK_DEST="reference/moji-read/base.apk"
+if [ ! -f "$APK_DEST" ]; then
+  if curl -L --fail -s -o /tmp/moji-reverse-apk.zip "$BASE_URL/reverse-apk.zip" 2>/dev/null; then
+    mkdir -p reference/moji-read
+    unzip -o -q /tmp/moji-reverse-apk.zip -d reference/moji-read
+    echo "reverse APK ready ($APK_DEST)"
+  else
+    echo "skip reverse APK (no reverse-apk.zip on Release)"
+  fi
+else
+  echo "skip reverse APK (exists)"
+fi
+
 echo
 echo "next:"
 echo "  python3 tools/unpack_moji_books.py"

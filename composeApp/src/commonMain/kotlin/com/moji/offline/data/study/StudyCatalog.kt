@@ -80,7 +80,10 @@ object StudyCatalog {
         val loaded = runCatching {
             json.decodeFromString<StudyData>(Res.readBytes(PATH).decodeToString())
         }.getOrDefault(StudyData())
-        cache = loaded
+        // 缺资产时不缓存空结果，便于补打 study.json 后热重载仍可读到。
+        if (loaded.catalogue.isNotEmpty() || loaded.plans.isNotEmpty()) {
+            cache = loaded
+        }
         return loaded
     }
 }

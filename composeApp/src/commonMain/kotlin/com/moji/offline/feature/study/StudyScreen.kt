@@ -72,13 +72,15 @@ private val StudyTrack = Color(0xFFEDEDED)
  * subscriptions.
  */
 @Composable
-fun StudyRoute(onOpenArticle: (String, List<String>) -> Unit) {
+fun StudyRoute(
+    onOpenArticle: (String, List<String>) -> Unit,
+    onBrowsePlans: () -> Unit,
+) {
     var data by remember { mutableStateOf<StudyData?>(null) }
     var feed by remember { mutableStateOf<List<FindColumn>>(emptyList()) }
     var tab by remember { mutableStateOf(0) }
     var openPlan by remember { mutableStateOf<StudyPlan?>(null) }
     var openColumn by remember { mutableStateOf<FindColumn?>(null) }
-    var showCatalogue by remember { mutableStateOf(false) }
     var joinedIds by remember { mutableStateOf<Set<String>>(emptySet()) }
     var completedIds by remember { mutableStateOf<Set<String>>(emptySet()) }
     var refresh by remember { mutableStateOf(0) }
@@ -131,7 +133,7 @@ fun StudyRoute(onOpenArticle: (String, List<String>) -> Unit) {
                                 card = card,
                                 fg = fg,
                                 onOpen = { openPlan = it },
-                                onOpenCatalogue = { showCatalogue = true },
+                                onOpenCatalogue = onBrowsePlans,
                             )
                         } else {
                             SubscribeList(
@@ -144,18 +146,6 @@ fun StudyRoute(onOpenArticle: (String, List<String>) -> Unit) {
                         }
                     }
                 }
-            }
-        }
-        if (showCatalogue) {
-            data?.let { current ->
-                PlanCatalogue(
-                    plans = current.catalogue.map(::local),
-                    bg = bg,
-                    card = card,
-                    fg = fg,
-                    onBack = { showCatalogue = false },
-                    onOpenPlan = { showCatalogue = false; openPlan = it },
-                )
             }
         }
     }
@@ -188,6 +178,87 @@ fun StudyRoute(onOpenArticle: (String, List<String>) -> Unit) {
         ColumnSheet(column = column, card = card, fg = fg, onDismiss = { openColumn = null }) { id ->
             openColumn = null
             onOpenArticle(id, column.articles.map { it.id })
+        }
+    }
+}
+
+/**
+ * 原版 `ReadPlanListActivity`：独立页盖住底栏。从学习空态「查看推荐计划」/
+ * 「全部计划 N >」进入。
+ */
+@Composable
+fun StudyPlanCatalogueRoute(
+    onBack: () -> Unit,
+    onOpenArticle: (String, List<String>) -> Unit,
+) {
+    var data by remember { mutableStateOf<StudyData?>(null) }
+    var openPlan by remember { mutableStateOf<StudyPlan?>(null) }
+    var joinedIds by remember { mutableStateOf<Set<String>>(emptySet()) }
+    var completedIds by remember { mutableStateOf<Set<String>>(emptySet()) }
+    var refresh by remember { mutableStateOf(0) }
+    val scope = rememberCoroutineScope()
+
+    LaunchedEffect(refresh) {
+        val loaded = StudyCatalog.data()
+        data = loaded
+        joinedIds = UserDataRepository.joinedPlanIds()
+        completedIds = UserDataRepository.allProgress()
+            .filter { it.completed == 1L }
+            .map { it.article_id }
+            .toSet()
+    }
+
+    fun local(plan: StudyPlan): StudyPlan {
+        val ids = plan.chapters.flatMap { c -> c.articles.map { it.id } }
+        val done = ids.count { it in completedIds }
+        val remaining = (plan.artNum - done).coerceAtLeast(0)
+        return plan.copy(
+            joined = plan.id in joinedIds,
+            done = done,
+            daysLeft = remaining,
+        )
+    }
+
+    val dark = LocalDarkTheme.current
+    val bg = if (dark) Color(0xFF0E0E11) else Color(0xFFF5F5F7)
+    val card = if (dark) Color(0xFF1C1C1E) else Color.White
+    val fg = if (dark) Color(0xFFF2F2F2) else StudyTitle
+
+    Box(Modifier.fillMaxSize()) {
+        data?.let { current ->
+            PlanCatalogue(
+                plans = current.catalogue.map(::local),
+                bg = bg,
+                card = card,
+                fg = fg,
+                onBack = onBack,
+                onOpenPlan = { openPlan = it },
+            )
+        }
+    }
+
+    openPlan?.let { plan ->
+        val ids = plan.chapters.flatMap { c -> c.articles.map { it.id } }
+        PlanSheet(
+            plan = plan,
+            card = card,
+            fg = fg,
+            onDismiss = { openPlan = null },
+            onJoin = {
+                scope.launch {
+                    UserDataRepository.joinPlan(
+                        planId = plan.id,
+                        title = plan.title,
+                        dailyMinutes = 10,
+                        nowMs = kotlin.time.Clock.System.now().toEpochMilliseconds(),
+                    )
+                    refresh++
+                    openPlan = plan.copy(joined = true, daysLeft = plan.artNum)
+                }
+            },
+        ) { id ->
+            openPlan = null
+            onOpenArticle(id, ids)
         }
     }
 }

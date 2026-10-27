@@ -251,6 +251,14 @@ fun ArticleDetailRoute(
             val effective = if (resolved.isEmpty()) listOf(entry) else resolved
             ArticlePlayer.setQueue(effective, articleId)
         }
+        // 开播收起词卡，对位原版播放态不再响应点词。
+        LaunchedEffect(ArticlePlayer.playing) {
+            if (ArticlePlayer.playing) {
+                menuWord = null
+                detailWord = null
+                dictWord = null
+            }
+        }
         // H5 body 背景透明（原版 WebView 同）；页面底色由原生壳铺，
         // 深色对位 `Moji_bg_color_page_dark` / CSS `--background-color: #0e0e11`。
         val pageBg = if (LocalDarkTheme.current) PageBgDark else Color.White
@@ -283,6 +291,11 @@ fun ArticleDetailRoute(
                                 UserDataRepository.addSentenceReadingNote(articleId, text)
                                 notice = "已收藏"
                             }
+                        },
+                        onSentenceSeek = {
+                            menuWord = null
+                            detailWord = null
+                            dictWord = null
                         },
                     )
             }
@@ -536,6 +549,7 @@ private fun ArticleH5(
     onTool: (Int) -> Unit,
     onArticleNote: (String, String) -> Unit,
     onCollectSentence: (String) -> Unit,
+    onSentenceSeek: () -> Unit = {},
 ) {
     var stickyTools by remember(meta.id) { mutableStateOf(false) }
     val server = remember { runCatching { BookServer.baseUrl }.getOrDefault("") }
@@ -571,8 +585,10 @@ private fun ArticleH5(
                 // (ArticleJsInterface.getSRTData).
                 "getSRTData" -> ArticlePlayer.setTimeline(bridgedPayload)
                 // Sentence tap while playing (ArticleJsInterface.onClickSRT).
-                "onClickSRT", "clickSRT" ->
+                "onClickSRT", "clickSRT" -> {
                     bridgedPayload.toIntOrNull()?.let(ArticlePlayer::seekToIndex)
+                    onSentenceSeek()
+                }
                 // window.setHightLightSRT() -> Api.smoothScrollTo(offsetTop).
                 "smoothScrollTo" -> {
                     val top = bridgedPayload.toFloatOrNull() ?: 0f
@@ -774,11 +790,25 @@ private fun articleInjection(
         append("window.ArticleJsInterface.collectSentence(text);")
         append("}catch(e){}}")
         append("var __hold;")
-        // Text selection -> native popup_article_action_mode.
-        append("var __selT;")
+        // Text selection / 点词 → showMenu。门禁对齐原版 H5 `ie`：
+        // 播放中：只有点在当前句.--active 上才弹词卡；点其它字幕句只走 onClickSRT。
+        // 注意时序：H5 点非当前句会 g(clickSRT) 再 setTimeout(q) 把 --active 挪过去；
+        // 若 selectionchange 在跳播后仍开卡，会误判「已是当前句」。播放中禁用选区弹卡。
+        append("function __under(t,cls){var n=t;")
+        append("while(n&&n!==document&&n!==document.documentElement){")
+        append("if(n.classList&&n.classList.contains(cls))return true;n=n.parentNode;}")
+        append("return false;}")
+        append("function __blockWordWhilePlay(t){")
+        append("if(!window.isPlayingAudio)return false;")
+        // 对位 ie: dt(.moji-article-srt) && playing && !parent(--active)
+        append("return __under(t,'moji-article-srt')&&!__under(t,'--active');}")
+        append("var __selT,__suppressWordUntil=0;")
         append("document.addEventListener('selectionchange',function(){")
         append("clearTimeout(__selT);")
         append("__selT=setTimeout(function(){try{")
+        // 播放中点词只认 click；选区会在 onClickSRT 挪 --active 之后误弹。
+        append("if(window.isPlayingAudio)return;")
+        append("if(Date.now()<__suppressWordUntil)return;")
         append("if(Date.now()-__justCollected<800)return;")
         append("var __s=window.getSelection();if(!__s||__s.rangeCount<1)return;")
         append("var __node=__s.anchorNode;var __el=__node&&__node.nodeType===1?__node:__node&&__node.parentNode;")
@@ -789,8 +819,7 @@ private fun articleInjection(
         append("window.ArticleJsInterface.showMenu(JSON.stringify(__wi),JSON.stringify({top:__r.top,bottom:__r.bottom,left:__r.left,right:__r.right}));")
         append("}catch(e){}},60);")
         append("},true);")
-        // Word tap: the H5's own handler forwards the word via clickContent;
-        // capture the rect here so the native menu can anchor to the word.
+        // Word tap: capture 里按「点击瞬间」的 --active 判断；非当前句清选区并短抑弹卡。
         append("var __ct=document.getElementById('article-content');")
         append("var __hx=0,__hy=0;")
         append("__ct&&__ct.addEventListener('touchstart',function(e){clearTimeout(__hold);var t=e.target;")
@@ -802,6 +831,11 @@ private fun articleInjection(
         append("if(Math.abs(p.clientX-__hx)>12||Math.abs(p.clientY-__hy)>12)clearTimeout(__hold);},{passive:true});")
         append("__ct&&__ct.addEventListener('click',function(e){")
         append("try{")
+        append("if(__blockWordWhilePlay(e.target)){")
+        append("__suppressWordUntil=Date.now()+500;")
+        append("try{window.getSelection().removeAllRanges();}catch(x){}")
+        append("return;}")
+        append("if(Date.now()<__suppressWordUntil)return;")
         append("if(Date.now()-__justCollected<800)return;")
         append("var __wi=__wordInfo(e.target);")
         append("if(!__wi||!__wi.surface||__wi.surface.length>12)return;")
